@@ -1,0 +1,23 @@
+{
+  "name": "PrimeBiometry",
+  "short_name": "PrimeBio",
+  "description": "Independent comparison of biometric authentication and identity verification software",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#2563EB",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "start_url": "/"
+}

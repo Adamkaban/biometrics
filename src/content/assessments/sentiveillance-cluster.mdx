@@ -1,0 +1,58 @@
+---
+vendor: sentiveillance-cluster
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Security and surveillance operators needing multi-stream video analytics with face identification and vehicle tracking at scale
+avoidIf: Organizations seeking a standard KYC or customer onboarding identity verification platform — SentiVeillance is a surveillance engine, not a KYC product
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+SentiVeillance Cluster by NeuroTechnology is architecturally unlike most vendors in this category. Where the majority of biometric platforms focus on one-at-a-time identity verification for onboarding or authentication, SentiVeillance is a multi-stream video surveillance engine built around face identification and vehicle tracking across concurrent camera feeds. The "Cluster" designation reflects its distributed processing architecture — designed to handle large numbers of simultaneous video streams without degradation, making it relevant for airports, stadiums, critical infrastructure, and smart city deployments rather than standard enterprise KYC. NeuroTechnology itself has been a biometric algorithm provider since the 1990s, giving the underlying recognition technology credibility that newer vendors lack.
+
+### Best For
+
+Physical security teams and government agencies deploying large-scale surveillance infrastructure that requires real-time face identification against watchlists across multiple simultaneous camera feeds — scenarios where algorithmic throughput and clustering architecture matter more than onboarding UX.
+
+### Avoid If
+
+Compliance or IT teams evaluating KYC, digital onboarding, or customer identity verification tools — SentiVeillance addresses physical surveillance use cases and does not offer the document verification, AML screening, or regulated-onboarding workflows that identity verification buyers need.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✓ |
+
+### Integration Complexity
+
+**Low** — REST API, Web SDK, iOS SDK, and Android SDK are listed. The cluster architecture is deployed on-premise or in private cloud configurations. Integration complexity for surveillance deployments is more dependent on camera infrastructure, network bandwidth, and database configuration than on SDK availability — buyers should factor in professional services time for initial cluster tuning.
+
+### Pricing Analysis
+
+SentiVeillance Cluster does not publish standard pricing tiers. The "contact for pricing" model reflects the nature of the product: deployment cost is determined by the number of camera streams, the size of the watchlist database, and cluster node requirements — variables that make fixed-tier pricing impractical.
+
+For security operations buyers, the relevant budgeting framework is per-stream licensing versus per-server node licensing. Organizations comparing SentiVeillance against other video analytics platforms should request both models from the vendor and model against their projected stream count at 12, 24, and 36 months. Early-stage vendors in this space often provide more favorable per-stream pricing for large initial deployments to establish reference sites.
+
+## FAQ
+
+**How many simultaneous video streams can SentiVeillance Cluster process?**
+The cluster architecture is designed to scale horizontally by adding nodes, so theoretical throughput scales with infrastructure. The vendor should be asked for documented benchmark figures (streams per server node) for the specific camera resolution and frame rate relevant to your deployment.
+
+**Does SentiVeillance require NeuroTechnology's proprietary biometric algorithms, or can third-party algorithms be integrated?**
+SentiVeillance is built on NeuroTechnology's own face recognition and person tracking algorithms. Third-party algorithm integration is not a standard feature — buyers requiring algorithm flexibility should verify this with the vendor.
+
+**What is the latency for face identification against large watchlist databases?**
+For time-sensitive surveillance scenarios, identification latency against large databases (100,000+ enrolled faces) is a critical specification. Buyers should request benchmark data for their target watchlist size and network configuration.
+
+**How does SentiVeillance handle GDPR compliance in surveillance deployments, particularly for public spaces?**
+Mass biometric surveillance in public spaces under GDPR requires specific legal bases and often a Data Protection Impact Assessment (DPIA). Buyers deploying in EU jurisdictions should ensure their use case qualifies under applicable national law — GDPR certification on the software side does not automatically make a surveillance deployment legally compliant.
+
+**Is there a managed cloud option, or is SentiVeillance exclusively on-premise?**
+Given the product name "Cluster" and NeuroTechnology's traditional market positioning, on-premise deployment is the primary model. Organizations requiring a fully managed cloud video analytics service should assess whether SentiVeillance's architecture fits their infrastructure model or whether a cloud-native competitor is more appropriate.

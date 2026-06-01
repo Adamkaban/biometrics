@@ -1,0 +1,58 @@
+---
+vendor: faceonlive-identity-verification-software
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Organizations requiring on-premise biometric deployment where cloud data processing is prohibited by policy or regulation
+avoidIf: Teams seeking a proven large-scale track record — FaceOnLive has only 4 published reviews, indicating limited market validation
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+FaceOnLive differentiates itself in a cloud-dominated identity verification market by centering its architecture around on-premise deployment options alongside cloud. For organizations in highly regulated sectors — defense contractors, government agencies, or financial institutions with strict data residency requirements — this on-premise-first stance reduces the compliance surface area that comes with routing biometric data through third-party cloud infrastructure. The vendor covers the standard KYC stack: face recognition, passive and active liveness detection, and document verification, all available via REST API and mobile SDKs.
+
+### Best For
+
+Organizations in regulated industries (healthcare, government, financial services) that require biometric processing to remain within their own infrastructure perimeter, or those with contractual prohibitions on transmitting biometric data to third-party cloud environments.
+
+### Avoid If
+
+Buyers that rely on published peer reviews and established reference customers to validate vendor credibility — with only 4 G2 reviews, FaceOnLive has a thin public track record, making thorough reference checking during the sales process essential before committing.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✓ |
+
+### Integration Complexity
+
+**Low** — REST API, Web SDK, iOS SDK, Android SDK, and JavaScript SDK are all available. Both cloud and on-premise deployment options are documented. The breadth of SDK availability means most development teams can integrate without custom adapter work.
+
+### Pricing Analysis
+
+FaceOnLive publishes flat monthly pricing starting at $19/month (Basic, 1,000 verifications) and $49/month (Pro, 5,000 verifications), which is unusually transparent for an on-premise-capable vendor. For startups or teams running proof-of-concept evaluations, the entry-level tier is accessible without requiring a sales conversation.
+
+At scale, the flat monthly model becomes less predictable for variable-volume use cases. Enterprise deployments with high or seasonal verification volumes should negotiate a custom agreement to avoid overage penalties. The on-premise licensing model is not covered in the published tiers — expect separate enterprise pricing discussions for self-hosted deployments.
+
+## FAQ
+
+**Does FaceOnLive's on-premise option include full feature parity with the cloud version?**
+On-premise deployment is listed as a supported option, but buyers should confirm during evaluation which specific features — particularly real-time analytics and cloud-hosted model updates — are available in the on-premise configuration versus the cloud offering.
+
+**What liveness detection standard does FaceOnLive meet?**
+The vendor does not publish iBeta PAD certification status in its marketing materials. Buyers with regulatory requirements for certified liveness detection should request iBeta PAD test reports during due diligence.
+
+**Is the $19/month Basic plan suitable for production KYC workflows?**
+The Basic tier at 1,000 verifications/month is better suited for development and testing environments. Production KYC deployments typically require the Pro tier ($49/month, 5,000 verifications) at minimum, with enterprise custom pricing for volumes beyond that.
+
+**What document types does FaceOnLive support for document verification?**
+The vendor supports identity documents for users in the USA, Canada, UK, and EU countries. Organizations onboarding users outside these regions should verify document coverage scope before committing.
+
+**How does the facial recognition accuracy claim of 99% hold up in adverse conditions?**
+The 99% accuracy claim should be treated as a baseline under controlled conditions. Buyers should request testing data for lower-quality capture scenarios (poor lighting, partial occlusion, mobile front cameras) that reflect their actual deployment environment.

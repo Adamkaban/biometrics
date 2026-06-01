@@ -1,0 +1,58 @@
+---
+vendor: mity
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Startups and mid-market apps needing AI-powered selfie liveness verification without requiring premium device hardware
+avoidIf: Enterprise buyers needing documented compliance certifications and established vendor history before procurement
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Mity (operating under ibera.run) is a small AI-powered identity verification product focused on liveness detection and selfie verification, distinguishing itself by claiming hardware-independence -- the system adapts to challenging verification scenarios without requiring high-end device cameras. Founded in 2015 with a team of 2-10 people, Mity is a micro-vendor with zero published reviews. Its "4-dimensional biometric authentication" framing and Mobile Deposit technology suggest origins in mobile financial services. The funding data ($435M) appears inconsistent with a 2-10 person company and should be treated as unreliable. Early-stage vendor with limited published reviews.
+
+### Best For
+
+Mobile-first platforms, digital banks, or fintech apps that need selfie-based liveness verification to work reliably across a wide range of consumer device quality levels, particularly where user base skews toward mid-range or budget smartphones in emerging markets.
+
+### Avoid If
+
+Regulated financial institutions, insurance carriers, or enterprise procurement teams that require SOC 2, ISO 27001, or HIPAA certification as contract prerequisites -- Mity's compliance posture is not externally validated at the level required for most enterprise identity governance frameworks.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — Mity provides tiered plans (Starter/Pro/Enterprise) with a self-serve model starting at $29/month. The product is positioned for quick onboarding, and the pricing structure implies API-based integration without requiring enterprise implementation services.
+
+### Pricing Analysis
+
+Mity's published pricing is competitive at entry level: $29/month (Starter) includes basic identity verification, liveness detection, and address verification. The $99/month Pro tier adds passwordless authentication and reverification -- useful for returning user workflows. Enterprise is contact-based.
+
+Given the extremely small team size (2-10 employees), buyers should evaluate vendor sustainability before building production dependencies on this product. For organizations willing to accept early-adopter risk, the low price point and broad feature set at the Starter tier offers good value for pilot testing. However, negotiate clear data portability provisions and escrow terms into any multi-year Enterprise contract to mitigate continuity risk.
+
+## FAQ
+
+**What does Mity mean by "4-dimensional biometric authentication"?**
+The "4-dimensional" framing is not a standard industry term. Based on product context, it likely refers to a combination of facial recognition, liveness detection, behavioral signals, and device intelligence as verification layers. Request a technical architecture briefing to confirm what dimensions are actually measured.
+
+**Does Mity's hardware-independent liveness work on low-end smartphones?**
+Hardware-independence is a stated differentiator -- the system claims to adapt to poor lighting and lower camera quality. This should be stress-tested during evaluation with your target device population before production deployment.
+
+**Is Mity the same as Mitek Systems?**
+No. The scraped website data references miteksystems.com, which appears to be a data error. Mity is a separate, unrelated product operating at ibera.run. Mitek Systems is a well-established, publicly traded identity verification company.
+
+**What is the difference between Mity's Starter and Pro tiers?**
+Starter ($29/month) covers basic liveness and address verification. Pro ($99/month) adds passwordless authentication and reverification, which allows returning users to re-authenticate without a full identity check -- reducing friction in repeat-access flows.
+
+**Given Mity's small team, what are the vendor continuity risks?**
+With 2-10 employees, Mity carries higher continuity risk than established vendors. Evaluate whether the product roadmap, support SLA, and uptime guarantees are contractually backed. Request reference customers and confirm production uptime metrics before dependency.

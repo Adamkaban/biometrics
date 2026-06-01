@@ -1,0 +1,58 @@
+---
+vendor: folio3-ai-face-recognition
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Mid-market companies needing attribute-rich face analysis (age, emotion, liveness) beyond simple identity matching
+avoidIf: Organizations requiring HIPAA compliance or heavily regulated financial KYC with deep audit trail requirements
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Folio3 AI Face Recognition distinguishes itself by offering attribute detection beyond identity verification -- the platform analyzes age, gender, ethnicity, emotion, and liveness in addition to standard face matching. This positions it closer to facial analytics than pure KYC, making it relevant for access control, workforce monitoring, retail analytics, and augmented identity verification use cases. Folio3, founded in 2005 and employing 500-1,000 people, is a software development services company, meaning this face recognition product exists within a broader custom development portfolio rather than as a standalone identity verification platform. Early-stage vendor with limited published reviews.
+
+### Best For
+
+Mid-market technology companies, integrators, or platform builders that need to embed rich facial attribute analysis (not just identity matching) into custom applications -- particularly access control systems, field service tools, or customer experience platforms where demographic and emotional context adds value.
+
+### Avoid If
+
+Organizations with strict KYC/AML compliance requirements in financial services, where the absence of HIPAA coverage, limited compliance certifications relative to dedicated IDV vendors, and no published review track record are meaningful procurement risks.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — Folio3 provides REST API access, basic analytics dashboards, and tiered plans (Starter/Pro/Enterprise) suggesting a SaaS delivery model. Published pricing tiers with defined features indicate a self-serve entry path, though enterprise customization engagements will involve Folio3's development services team.
+
+### Pricing Analysis
+
+Folio3 publishes starting prices at $49/month (Starter) and $99/month (Pro), making it one of the more accessible entry points in the biometric authentication space. These tiers are appropriate for testing and low-volume production use cases.
+
+The critical unknown is what verification or API call volume is included in each tier. The "Basic Verification" vs. "Advanced Verification" distinction between Starter and Pro is vague -- clarify whether advanced attributes (age, emotion, ethnicity detection) are Pro-only before designing your integration. Enterprise pricing is contact-based; given Folio3's consulting model, enterprise engagements may include custom development components that add cost beyond pure SaaS licensing.
+
+## FAQ
+
+**Does Folio3 AI Face Recognition perform standard KYC document verification?**
+Folio3's product focuses on facial recognition and attribute detection. Full KYC document verification (passport, driver's license scanning and authentication) is not a core listed feature -- verify whether this is included or requires integration with a separate document verification vendor.
+
+**What facial attributes can the system detect beyond identity matching?**
+Based on product descriptions, Folio3 AI Face Recognition detects age, gender, ethnicity, emotions, and liveness. This attribute set is more extensive than most pure-KYC vendors and is suited for use cases requiring contextual facial analysis.
+
+**Is the platform suitable for real-time video stream analysis?**
+Folio3 positions "real-time biometric analysis" as a key feature. Whether this extends to live video streams vs. single frame captures should be confirmed with the vendor, as the distinction matters significantly for access control and surveillance use cases.
+
+**What is the liveness detection approach -- active or passive?**
+Liveness detection is listed as a core capability but the methodology (active challenge-response vs. passive AI analysis) is not publicly documented. For fraud-sensitive deployments, request ISO 30107-3 PAD test results before committing.
+
+**Does Folio3 offer custom model training for specific demographic populations?**
+As a software development services company, Folio3 has the capacity for custom model work. Enterprise engagements should explicitly discuss whether default model accuracy is validated for your specific use case population and request accuracy benchmarks broken down by demographic group.

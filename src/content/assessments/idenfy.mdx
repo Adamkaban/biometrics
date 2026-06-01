@@ -1,0 +1,58 @@
+---
+vendor: idenfy
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Fintech startups needing fast KYC onboarding with under 500 verifications/month
+avoidIf: Enterprise with complex multi-jurisdiction requirements — pricing scales unfavorably at volume
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+iDenfy stands out in the crowded KYC market by combining automated document verification with human review fallback, making it one of the few vendors that can handle edge cases without a full engineering escalation. Its transparent per-verification pricing removes the guesswork that plagues enterprise contracts, while the SDK coverage (iOS, Android, Web) means faster integration cycles than most competitors.
+
+### Best For
+
+Fintech startups and neobanks needing fast KYC onboarding with under 500 verifications per month. The free trial with real verifications — not just sandbox data — lets engineering teams validate accuracy before committing budget.
+
+### Avoid If
+
+Enterprise with complex multi-jurisdiction requirements. At high volume, per-verification pricing scales unfavorably compared to flat-rate enterprise alternatives like Jumio or Onfido.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✓ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API with webhooks, SDK available for iOS/Android/Web. Typical integration takes 1–3 days. Dashboard provides test mode with real document processing.
+
+### Pricing Analysis
+
+iDenfy uses per-verification pricing starting at $0.55/check, with volume discounts above 1,000/month. For a startup running 200 verifications/month, monthly cost is approximately $110 — competitive against Onfido's minimum contracts. The free tier (500 free checks) is genuinely useful for pilot programs, not a crippled demo.
+
+Mid-market companies (5,000–20,000 checks/month) should request a custom quote — the published rates apply to lower tiers only.
+
+## FAQ
+
+**Does iDenfy support passive liveness detection?**
+Yes. iDenfy uses both passive and active liveness checks depending on risk configuration. Passive liveness runs without user prompts; active liveness requires the user to perform a head movement. Both modes are configurable per flow.
+
+**What documents does iDenfy verify?**
+iDenfy supports 3,000+ document types across 200+ countries, including passports, national IDs, and driver's licenses. Document authentication includes MRZ reading, NFC chip reading (for supported passports), and forgery detection.
+
+**How accurate is iDenfy's ID verification?**
+iDenfy reports 99%+ accuracy on supported documents in controlled conditions. Edge cases (poor lighting, damaged documents) are routed to human review, which typically resolves within 2 minutes during business hours.
+
+**Is there a free trial?**
+Yes — iDenfy offers 500 free identity verifications with no credit card required. The trial uses the production system, not a sandbox, so results reflect real-world accuracy.
+
+**Does iDenfy offer on-premise deployment?**
+No. iDenfy is cloud-only (hosted in EU data centers). For organizations requiring on-premise processing, consider Aware or BioID instead.

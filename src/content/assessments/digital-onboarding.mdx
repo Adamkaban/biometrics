@@ -1,0 +1,58 @@
+---
+vendor: digital-onboarding
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Banks and telecoms in Europe needing passive liveness-based remote onboarding with cloud or on-premise flexibility
+avoidIf: Teams requiring transparent per-verification pricing or self-serve onboarding — all plans require sales contact
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Digital Onboarding is the identity verification product line from FacePhi, a Spanish biometrics company founded in 2012 and backed with Series A funding. The platform's distinctive approach centers on passive liveness detection during selfie capture — users don't need to follow active prompts, which reduces drop-off in mobile onboarding flows. FacePhi's roots in the European banking sector (notably Spanish and Latin American banks) give the product a mature posture on GDPR compliance and financial services regulatory requirements, though its footprint outside those regions is less established.
+
+### Best For
+
+European banks, neo-banks, and telecom providers looking for mobile-first onboarding with passive liveness technology and the option for on-premise deployment to meet data residency requirements under GDPR or local financial regulations.
+
+### Avoid If
+
+Organizations outside the European and Latin American financial services sector, or any team that needs pricing transparency upfront — Digital Onboarding has no published tiers and all procurement goes through sales, adding weeks to evaluation timelines.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API, Mobile SDK for iOS and Android, and Web SDK are all available. Both cloud-based and on-premise deployments are supported. The mobile SDK is particularly mature given FacePhi's primary customer base in mobile banking apps.
+
+### Pricing Analysis
+
+Digital Onboarding uses a fully custom enterprise pricing model with no published tiers — all plans are "contact for pricing." This positions it firmly in the enterprise segment rather than the self-serve or developer market. Given the Series A funding stage and 51-200 employee size, pricing is likely more flexible than larger incumbents like Experian, but buyers should anticipate negotiation rather than a straightforward sign-up flow.
+
+For fintech startups evaluating cost per verification, this vendor is unlikely to be cost-competitive at low volumes (under 10,000 verifications/month). The product becomes more relevant when advanced passive liveness, on-premise deployment, or European data residency are hard requirements that justify the added procurement effort.
+
+## FAQ
+
+**What makes passive liveness detection different from active liveness detection?**
+Passive liveness analysis determines whether the selfie is from a live person using a single image, without requiring the user to blink, turn their head, or follow prompts. This significantly reduces user friction and mobile drop-off rates compared to active liveness approaches.
+
+**Does Digital Onboarding support document verification alongside biometric checks?**
+Yes — the platform handles automatic document capture (ID cards, passports) combined with the selfie-based biometric check, which covers the standard KYC flow required by EU banking regulations.
+
+**Is Digital Onboarding the same as FacePhi's other products?**
+Digital Onboarding is the name used on Gartner's identity verification market listing, but it refers to the FacePhi platform. FacePhi operates under its own brand and "Digital Onboarding" reflects the use case branding on review platforms.
+
+**What countries and document types are supported?**
+FacePhi supports global document coverage, with particularly deep support for European and Latin American ID documents given its customer base in those regions.
+
+**Can the solution handle high-volume onboarding spikes, such as during product launches?**
+The cloud-based deployment model supports elastic scaling. On-premise deployments will require capacity planning. Discuss SLAs and burst capacity explicitly during procurement negotiations.

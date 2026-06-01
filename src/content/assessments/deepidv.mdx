@@ -1,0 +1,58 @@
+---
+vendor: deepidv
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Fintechs and lenders needing combined identity verification plus bank statement retrieval and AI-powered financial document analysis
+avoidIf: Organizations needing only standard document-plus-selfie KYC without the financial document analysis layer; deepidv bundles both
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+deepidv is a seed-stage identity verification startup (founded 2024, $1.4M raised, 2-10 employees) with a distinctive product angle: it combines biometric identity verification with AI-powered bank statement retrieval and financial document analysis, plus biometric-enabled e-signatures in a single platform. This combination targets lenders, fintechs, and any organization that needs to simultaneously verify who a customer is and assess their financial standing — eliminating the need for separate KYC and document analysis vendors. With 3 G2 reviews all rating at 5.0, early adopter feedback is positive but the sample size is too small for confident generalization.
+
+### Best For
+
+Lending platforms, neobanks, and fintechs that need to run identity verification and income/bank statement verification in the same onboarding flow. The biometric e-signature capability is particularly useful for fully digital loan origination or account opening workflows that require a legally binding signature alongside identity confirmation.
+
+### Avoid If
+
+Organizations that need only standard KYC document verification without the financial document analysis layer, or buyers requiring enterprise SLAs, a proven compliance track record, and >24-month vendor stability. deepidv is a very early-stage company and carries meaningful business continuity risk.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API, Web SDK, and iOS/Android Mobile SDKs are all listed. Cloud-based and on-premises deployment options are documented. The full integration surface is comparable to larger KYC vendors, which is notable for a 2-10 person team.
+
+### Pricing Analysis
+
+deepidv publishes tiered pricing (Basic $29/month, Pro $99/month, Enterprise custom), but these appear to be placeholder estimates rather than verified rates — the official site indicates "Contact vendor" pricing. Given the seed-stage company size, pricing is likely highly negotiable in exchange for case studies or reference commitments.
+
+Early adopters willing to serve as design partners or provide testimonials may be able to negotiate significantly below-market rates or extended pilots. However, buyers in regulated industries should factor in vendor stability risk: a 2-10 person seed-stage company may not have the infrastructure to support enterprise SLAs or survive a market downturn without additional funding.
+
+## FAQ
+
+**What makes deepidv different from standard KYC vendors like Onfido or Veriff?**
+deepidv adds bank statement retrieval and AI-powered financial document analysis on top of standard biometric identity verification. This is aimed at lending and credit use cases where knowing a customer's identity is insufficient without also assessing their financial documents in the same workflow.
+
+**What does "biometric-enabled e-signature" mean in practice?**
+deepidv's e-signature capability ties a digital signature to a biometric identity verification event, creating an audit trail that links the signer's verified identity to the signed document. This is relevant for loan agreements, account opening forms, or any contract requiring both identity verification and a legally binding signature.
+
+**Is deepidv suitable for regulated financial institutions given it was founded in 2024?**
+The vendor holds SOC 2 and ISO 27001 certifications, which is credible for a seed-stage company. However, regulated institutions (banks, payment institutions) should conduct full due diligence on financial stability, data processing agreements, and business continuity plans given the early stage and small team size.
+
+**Does deepidv cover AML screening or only KYC identity verification?**
+deepidv covers KYC identity verification and financial document analysis. AML screening (sanctions, PEP lists) is listed in the categories but buyers should confirm current AML coverage depth in a product demo, as capabilities at this stage may be more limited than established AML providers.
+
+**What is the vendor's current geographic coverage for document support?**
+deepidv lists supported countries as USA, Canada, EU, UK, and Australia. Buyers with significant volumes outside these markets should confirm document type support for their specific countries before signing a contract.

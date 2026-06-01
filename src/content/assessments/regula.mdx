@@ -1,0 +1,58 @@
+---
+vendor: regula
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Enterprises needing forensic-grade document verification with 254-country coverage for regulated onboarding and border control
+avoidIf: Buyers seeking transparent self-serve pricing — all tiers require sales contact and custom enterprise negotiation
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Regula stands apart from the typical identity verification vendor in one critical dimension: it originated as a forensic document examination company (founded 1989, later 1992 per company data) and expanded into software, rather than being built software-first. This heritage is visible in its product line, which includes physical Video Spectral Comparators used in border control and forensic labs alongside its API-accessible Document Reader SDK. The practical implication is that Regula's document verification accuracy — claimed at 99.8% with coverage across 254 countries and territories — reflects decades of forensic document database building, not just machine learning applied to publicly available ID samples. For organizations in travel, border security, and regulated financial services, this depth of document coverage is a meaningful differentiator.
+
+### Best For
+
+Regulated enterprises in travel, banking, and government that require forensic-quality document verification across a wide international document set, including edge cases like legacy document formats, regional ID variations, and multi-layer security feature checking — particularly at the integration layer where an SDK embedded into existing systems is preferred over a black-box API.
+
+### Avoid If
+
+Organizations that need published pricing and quick self-serve evaluation paths — Regula's entire pricing model is custom/enterprise and requires direct engagement, making it a poor fit for teams that need to move fast without budget pre-approval.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — Mobile SDK (iOS/Android), Web API, and Face Web API are available, with additional App Store and Google Play distribution channels. The Document Reader SDK can be embedded directly into applications for on-device processing. Regula's developer documentation and free API sandbox at api.regulaforensics.com allow technical evaluation without a sales conversation, which is atypical for an enterprise-only vendor.
+
+### Pricing Analysis
+
+Regula's pricing model is entirely custom and enterprise-negotiated across all five product lines (Document Reader SDK, Identity Verification Platform, Face Recognition SDK, Document Readers hardware, Video Spectral Comparators). There are no published tiers or per-verification rates.
+
+For software buyers, the relevant cost levers are SDK licensing (often per-application or per-deployment) versus API-call billing for the cloud-hosted Identity Verification Platform. Hardware procurement for Document Readers and VSCs adds a separate capital expenditure dimension that software-only alternatives don't carry. Organizations budgeting for Regula should request separate quotes for software and hardware components, and negotiate volume discounts based on projected verification throughput rather than user seats.
+
+## FAQ
+
+**What makes Regula's document verification coverage across 254 countries significant in practice?**
+Most identity verification vendors support the top 50-100 document-issuing countries reliably; coverage gaps become apparent at the margins — provincial IDs, older document generations, or low-volume issuing jurisdictions. Regula's forensic origin means it maintains active databases for obscure document variants that ML-only approaches miss, which matters for travel and immigration use cases where document diversity is high.
+
+**How does Regula's Document Reader SDK differ from its Identity Verification Platform?**
+The Document Reader SDK is an embeddable library for in-app document reading and authentication — designed for developers building their own verification flows. The Identity Verification Platform is an end-to-end hosted service. Organizations with development resources and specific UX requirements typically prefer the SDK; those seeking minimal integration effort use the platform.
+
+**Does Regula's liveness detection hold iBeta PAD certification?**
+Regula holds iBeta PAD certification, which is listed among its compliance certifications. Buyers in regulated sectors (financial services, healthcare) that require independently certified liveness detection should verify the certification level and date during vendor evaluation.
+
+**Can Regula's hardware (Document Readers) be combined with its software API for a hybrid deployment?**
+Yes. Regula is one of the few vendors that offers integrated hardware-software solutions, allowing organizations to use physical document readers at high-throughput checkpoints (airports, bank branches) while the same software SDK handles mobile digital onboarding. This hardware-software unification is a distinct advantage for organizations with both digital and physical verification touchpoints.
+
+**Is there a free tier or sandbox for technical evaluation?**
+Regula provides a public API sandbox at api.regulaforensics.com for technical evaluation. This is an important differentiator — developers can test document recognition and liveness detection before any sales engagement or contract discussion.

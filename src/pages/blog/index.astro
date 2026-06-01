@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog").catch(() => []);
+const posts = allPosts
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://primebiometry.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://primebiometry.com/blog" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Blog - Identity Verification Insights"
+  description="Expert analysis on biometric authentication, KYC compliance, identity verification, and AML software for IT and security teams."
+  canonicalUrl="https://primebiometry.com/blog"
+  schema={schema}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-10" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500">
+        <li><a href="/" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-600 dark:text-zinc-300" aria-current="page">Blog</li>
+      </ol>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+      Analysis & Guides
+    </h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[60ch] mb-12">
+      Expert analysis on biometric authentication, KYC compliance, identity verification, and fraud prevention for IT and security teams.
+    </p>
+
+    {posts.length > 0 ? (
+      <div class="divide-y divide-zinc-200 dark:divide-zinc-800">
+        {posts.map((post) => (
+          <article class="py-8 first:pt-0">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="rounded-full border border-zinc-200 dark:border-zinc-700 px-3 py-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                {post.data.category}
+              </span>
+              <time
+                datetime={post.data.pubDate.toISOString().slice(0, 10)}
+                class="text-xs font-mono text-zinc-400 dark:text-zinc-500"
+              >
+                {new Date(post.data.pubDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </time>
+            </div>
+            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2 leading-snug">
+              <a
+                href={`/blog/${post.slug}`}
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                {post.data.title}
+              </a>
+            </h2>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch] mb-3">
+              {post.data.description}
+            </p>
+            <p class="text-xs text-zinc-400 dark:text-zinc-500">By {post.data.author}</p>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <!-- Empty state -->
+      <div class="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50 p-12 text-center">
+        <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 mb-2">Coming soon</p>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 max-w-[40ch] mx-auto">
+          We are publishing in-depth vendor comparisons, pricing guides, and compliance resources.
+        </p>
+        <a
+          href="/vendors"
+          class="inline-block mt-6 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+        >
+          Browse vendors
+        </a>
+      </div>
+    )}
+
+  </div>
+</BaseLayout>

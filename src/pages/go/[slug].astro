@@ -1,0 +1,26 @@
+---
+import { vendors, getOutboundUrl } from "../../lib/vendors";
+
+export function getStaticPaths() {
+  return vendors.map(v => ({
+    params: { slug: v.slug },
+    props: { url: getOutboundUrl(v) },
+  }));
+}
+
+interface Props { url: string }
+const { url } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="refresh" content={`0; url=${url}`} />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={url} rel="nofollow noopener">{url}</a>...</p>
+  </body>
+</html>

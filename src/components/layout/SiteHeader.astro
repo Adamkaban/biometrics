@@ -1,0 +1,76 @@
+---
+// No frontmatter imports needed — pure Astro/HTML
+---
+
+<header class="sticky top-0 z-40 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a
+        href="/"
+        class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
+      >
+        PrimeBiometry
+      </a>
+
+      <!-- Desktop nav -->
+      <nav
+        class="hidden md:flex items-center gap-6"
+        aria-label="Main navigation"
+      >
+        <a href="/vendors" class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Vendors</a>
+        <a href="/blog"    class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Blog</a>
+        <a href="/methodology" class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Methodology</a>
+      </nav>
+
+      <!-- Mobile hamburger button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 -mr-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <!-- Hamburger icon (Phosphor List, 256 viewBox, fill) -->
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+          <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/>
+        </svg>
+        <!-- X icon (Phosphor X, 256 viewBox, fill) — initially hidden -->
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" class="hidden">
+          <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu drawer -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950"
+    role="navigation"
+    aria-label="Mobile navigation"
+  >
+    <div class="px-4 py-4 flex flex-col gap-1">
+      <a href="/vendors"     class="rounded-md px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Vendors</a>
+      <a href="/blog"        class="rounded-md px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Blog</a>
+      <a href="/methodology" class="rounded-md px-3 py-2 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Methodology</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn     = document.getElementById("mobile-menu-btn");
+  const menu    = document.getElementById("mobile-menu");
+  const iconMenu  = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
+
+  btn?.addEventListener("click", () => {
+    // toggle returns true if class was ADDED (menu now hidden), false if REMOVED (menu now open)
+    const isHidden = menu?.classList.toggle("hidden");
+    btn.setAttribute("aria-expanded", String(!isHidden));
+    // Show hamburger when menu hidden, show X when menu open
+    iconMenu?.classList.toggle("hidden", !isHidden);
+    iconClose?.classList.toggle("hidden", !!isHidden);
+  });
+</script>

@@ -1,0 +1,217 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import VendorCard from "../components/catalog/VendorCard.astro";
+import HeroSearch from "../components/catalog/HeroSearch";
+import { vendors, getCategorySlug, categories, CATEGORY_SLUGS } from "../lib/vendors";
+import { getCollection } from "astro:content";
+import {
+  IdentificationCard,
+  ShieldCheck,
+  Fingerprint,
+  CurrencyDollar,
+  ShieldWarning,
+} from "@phosphor-icons/react";
+
+// Top 6 vendors by review count (highest brand search demand)
+const topVendors = [...vendors]
+  .sort((a, b) => b.reviews_count - a.reviews_count)
+  .slice(0, 6);
+
+// Category metadata with Phosphor icon components
+const categoryData = [
+  { name: "Identity Verification",    Icon: IdentificationCard },
+  { name: "KYC Compliance",           Icon: ShieldCheck },
+  { name: "Biometric Authentication", Icon: Fingerprint },
+  { name: "AML",                      Icon: CurrencyDollar },
+  { name: "Fraud Prevention",         Icon: ShieldWarning },
+].map((c) => ({
+  ...c,
+  slug:  getCategorySlug(c.name),
+  count: vendors.filter((v) => v.categories.includes(c.name)).length,
+}));
+
+// Lightweight data for HeroSearch island
+const searchVendors = vendors.map((v) => ({ name: v.name, slug: v.slug }));
+const searchCategories = Object.entries(CATEGORY_SLUGS).map(([name, slug]) => ({ name, slug }));
+
+// Blog preview — empty on launch, section hidden when no posts
+const allPosts = await getCollection("blog");
+const latestPosts = allPosts
+  .sort(
+    (a, b) =>
+      new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  )
+  .slice(0, 3);
+
+// Homepage schema: Organization + WebSite with SiteLinksSearchBox
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "PrimeBiometry",
+      url: "https://primebiometry.com",
+      description:
+        "Independent comparison of biometric authentication and identity verification software",
+    },
+    {
+      "@type": "WebSite",
+      name: "PrimeBiometry",
+      url: "https://primebiometry.com",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate:
+            "https://primebiometry.com/vendors?search={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Compare Biometric Authentication Software 2026"
+  description="Independent analysis of 69+ biometric authentication, identity verification, and KYC vendors. Expert reviews, pricing, and comparisons for IT and security teams."
+  canonicalUrl="https://primebiometry.com"
+  schema={schema}
+>
+
+  <!-- 1. Hero ---------------------------------------------------------------->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-12 md:pt-24 md:pb-16">
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+      Compare Biometric<br class="hidden sm:block" /> Authentication Software
+    </h1>
+    <p class="mt-4 text-base text-zinc-600 dark:text-zinc-400 max-w-[65ch] leading-relaxed">
+      Independent analysis of {vendors.length}+ identity verification and KYC vendors
+      for IT and security teams.
+    </p>
+
+    <!-- Search island with autocomplete -->
+    <HeroSearch
+      vendors={searchVendors}
+      categories={searchCategories}
+      client:load
+    />
+
+    <!-- Category chip links — static anchors, no JS, param = slug -->
+    <nav
+      class="mt-4 flex flex-wrap gap-2"
+      aria-label="Browse by category"
+    >
+      {categoryData.map((cat) => (
+        <a
+          href={`/vendors?category=${cat.slug}`}
+          class="inline-flex items-center rounded-full border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-3 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-300 dark:hover:border-blue-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        >
+          {cat.name}
+        </a>
+      ))}
+    </nav>
+  </section>
+
+  <!-- 2. Stats strip --------------------------------------------------------->
+  <div class="bg-zinc-100 dark:bg-zinc-900 border-y border-zinc-200 dark:border-zinc-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap gap-x-6 gap-y-1">
+      <span class="text-sm text-zinc-500 dark:text-zinc-400">
+        <span class="font-mono font-semibold text-zinc-900 dark:text-zinc-100">
+          {vendors.length}
+        </span>{" "}vendors
+      </span>
+      <span class="text-sm text-zinc-500 dark:text-zinc-400">
+        <span class="font-mono font-semibold text-zinc-900 dark:text-zinc-100">5</span>{" "}categories
+      </span>
+      <span class="text-sm text-zinc-500 dark:text-zinc-400">Updated June 2026</span>
+    </div>
+  </div>
+
+  <!-- 3. Top Vendors --------------------------------------------------------->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Top Vendors
+      </h2>
+      <a
+        href="/vendors"
+        class="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        Browse all {vendors.length}
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {topVendors.map((v) => <VendorCard vendor={v} />)}
+    </div>
+  </section>
+
+  <!-- 4. Browse by Category ------------------------------------------------->
+  <section class="border-t border-zinc-200 dark:border-zinc-700 bg-zinc-50/50 dark:bg-zinc-950/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6">
+        Browse by Category
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+        {categoryData.map((cat) => {
+          const Icon = cat.Icon;
+          return (
+            <a
+              href={`/categories/${cat.slug}`}
+              class="group flex flex-col gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+            >
+              <Icon
+                size={20}
+                weight="regular"
+                className="text-zinc-400 dark:text-zinc-500 group-hover:text-blue-500 transition-colors"
+              />
+              <div>
+                <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-snug">
+                  {cat.name}
+                </p>
+                <p class="mt-0.5 text-xs font-mono text-zinc-400 dark:text-zinc-500">
+                  {cat.count} vendors
+                </p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Blog preview (hidden until posts exist) ---------------------------->
+  {latestPosts.length > 0 && (
+    <section class="border-t border-zinc-200 dark:border-zinc-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+            Analysis & Guides
+          </h2>
+          <a href="/blog" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+            View all
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {latestPosts.map((post) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="group flex flex-col gap-2 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-5 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+            >
+              <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {post.data.title}
+              </p>
+              <p class="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+                {new Date(post.data.pubDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+</BaseLayout>

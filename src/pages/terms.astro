@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://primebiometry.com" },
+    { "@type": "ListItem", position: 2, name: "Terms of Use", item: "https://primebiometry.com/terms" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Terms of Use"
+  description="PrimeBiometry terms of use: site usage, editorial independence, affiliate disclosure, and limitations of liability."
+  canonicalUrl="https://primebiometry.com/terms"
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-10" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500">
+        <li><a href="/" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-600 dark:text-zinc-300" aria-current="page">Terms of Use</li>
+      </ol>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+      Terms of Use
+    </h1>
+    <p class="text-sm text-zinc-400 dark:text-zinc-500 mb-10">Last updated: June 1, 2026</p>
+
+    <div class="space-y-10 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">1. Acceptance of Terms</h2>
+        <p>By accessing primebiometry.com, you agree to these terms. If you do not agree, please do not use this site. These terms apply to all visitors and users.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">2. Content and Editorial Independence</h2>
+        <p class="mb-3">PrimeBiometry provides independent research and comparison information about biometric authentication and identity verification software. Our editorial assessments reflect our analysts' independent judgment based on the <a href="/methodology" class="text-blue-600 dark:text-blue-400 hover:underline">methodology</a> we publish.</p>
+        <p>Vendor information including pricing, features, and compliance certifications is sourced from publicly available data and may change without notice. Always verify current pricing and specifications directly with vendors before making purchasing decisions.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">3. Affiliate Disclosure</h2>
+        <p class="mb-3">PrimeBiometry participates in affiliate programs. When you click links marked as affiliate links (routed through <code class="bg-zinc-100 dark:bg-zinc-800 px-1 rounded text-xs">/go/[vendor]</code>) and subsequently make a purchase, we may receive a commission from the vendor at no additional cost to you.</p>
+        <p class="mb-3">Affiliate relationships do not influence our editorial assessments or scoring. We evaluate all vendors against the same criteria regardless of commercial relationships.</p>
+        <p>Featured vendor placements are paid placements and are labeled "Featured." Placement fees do not affect editorial scores.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">4. Accuracy of Information</h2>
+        <p class="mb-3">We strive to keep vendor information accurate and current. However, software pricing, features, and compliance certifications change frequently. PrimeBiometry makes no warranty that information on this site is complete, current, or error-free.</p>
+        <p>Do not rely solely on this site for purchasing decisions, legal compliance assessments, or security evaluations. Consult directly with vendors and qualified advisors.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">5. Limitation of Liability</h2>
+        <p>PrimeBiometry is provided "as is" without warranties of any kind. To the maximum extent permitted by law, PrimeBiometry and its operators are not liable for any direct, indirect, incidental, or consequential damages arising from your use of this site or reliance on information published here.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">6. Intellectual Property</h2>
+        <p>All original content on PrimeBiometry, including editorial assessments, scoring methodology, and written analysis, is the property of PrimeBiometry. You may quote or excerpt content with attribution and a link to the source. Reproducing full pages or assessments without permission is not permitted.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">7. Third-Party Links</h2>
+        <p>This site links to third-party websites. We are not responsible for the content, privacy practices, or accuracy of linked sites. Links do not constitute endorsement.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">8. Changes to Terms</h2>
+        <p>We may update these terms at any time. The "Last updated" date reflects the most recent revision. Continued use of the site after changes constitutes acceptance of the updated terms.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">9. Contact</h2>
+        <p>Questions about these terms: <a href="mailto:support@primebiometry.com" class="text-blue-600 dark:text-blue-400 hover:underline">support@primebiometry.com</a></p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

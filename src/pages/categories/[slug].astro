@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import VendorCard from "../../components/catalog/VendorCard.astro";
+import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
+import { CATEGORY_SLUGS, getVendorsByCategory } from "../../lib/vendors";
+import siteConfig from "../../../site.config";
+
+export function getStaticPaths() {
+  return Object.entries(CATEGORY_SLUGS).map(([name, slug]) => ({
+    params: { slug },
+    props: { categoryName: name },
+  }));
+}
+
+interface Props {
+  categoryName: string;
+}
+
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  "Biometric Authentication":
+    "Biometric authentication software uses physical characteristics -- face, fingerprint, voice, or iris -- to verify identity. These solutions replace passwords with hardware sensors or software-based cameras, reducing credential theft risk while improving user experience.",
+  "KYC Compliance":
+    "Know Your Customer (KYC) compliance software automates identity verification during customer onboarding. Regulated industries use these tools to verify government-issued IDs, screen against sanctions lists, and maintain audit trails for AML compliance.",
+  "Identity Verification":
+    "Identity verification platforms confirm that users are who they claim to be by checking documents, selfies, and databases. Used in financial services, healthcare, and gig economy platforms for remote onboarding and access control.",
+  "AML":
+    "Anti-Money Laundering (AML) software monitors transactions, screens customers against sanctions and PEP lists, and generates Suspicious Activity Reports. Mandatory for banks, fintechs, and cryptocurrency exchanges under FATF and regional regulations.",
+  "Fraud Prevention":
+    "Fraud prevention platforms combine device fingerprinting, behavioral analytics, and machine learning to detect account takeover, synthetic identity fraud, and payment fraud in real time.",
+};
+
+const { categoryName } = Astro.props;
+const { slug } = Astro.params;
+
+const vendors = getVendorsByCategory(categoryName);
+const description = CATEGORY_DESCRIPTIONS[categoryName] ?? "";
+const metaDescription = description.slice(0, 160);
+const canonicalUrl = `${siteConfig.seo.siteUrl}/categories/${slug}`;
+
+const pageTitle = `Best ${categoryName} Software 2026: Compare ${vendors.length} Tools`;
+
+// ItemList schema
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `${categoryName} Software`,
+  numberOfItems: vendors.length,
+  itemListElement: vendors.map((v, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: v.name,
+    url: `${siteConfig.seo.siteUrl}/vendors/${v.slug}`,
+  })),
+};
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Vendors", url: "/vendors" },
+  { name: categoryName, url: `/categories/${slug}` },
+];
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={metaDescription}
+  canonicalUrl={canonicalUrl}
+  schema={[itemListSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+    <BreadcrumbSchema items={breadcrumbItems} />
+
+    <div class="mt-6 mb-10">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Best {categoryName} Software 2026
+      </h1>
+      <p class="mt-4 text-base text-zinc-600 dark:text-zinc-400 max-w-[65ch] leading-relaxed">
+        {CATEGORY_DESCRIPTIONS[categoryName]}
+      </p>
+      <p class="mt-2 text-sm text-zinc-500">
+        Comparing {vendors.length} vendors
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {vendors.map((v) => <VendorCard vendor={v} />)}
+    </div>
+  </div>
+</BaseLayout>

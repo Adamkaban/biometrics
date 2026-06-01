@@ -1,0 +1,58 @@
+---
+vendor: au10tix
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: High-volume platforms in fintech, gaming, and crypto needing deepfake detection and serial fraud prevention at scale
+avoidIf: Small businesses under 500 verifications/month — the $500/month minimum makes unit economics unfavorable at low volume
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+AU10TIX's origins in airport security (handling physical document verification for border agencies) give it a document authentication depth that most software-first competitors lack. Its Serial Fraud Monitor is a technically differentiated capability: it cross-references new verification attempts against a consortium of previously flagged fraudulent identities, detecting coordinated bot attacks and synthetic identity rings that per-session AI checks miss. The NIST top-rated algorithm claim for biometric verification, combined with IBETA-ISO Level 1 and Level 2 PAD certifications, puts its liveness detection in the top tier of independently validated solutions.
+
+### Best For
+
+Mid-market and enterprise platforms in regulated industries (crypto, gaming, fintech) processing 500+ verifications per month that face organized fraud — particularly those encountering deepfake attacks, injection attacks, or coordinated synthetic identity fraud where consortium-based detection adds measurable value beyond standard AI checks.
+
+### Avoid If
+
+Low-volume use cases where the $500/month minimum creates poor per-verification economics. At 100 verifications/month, AU10TIX's minimum commit equals $5.00/verification — far above competitors' published rates. The platform is also overkill for simple employee onboarding or age verification use cases that don't require Serial Fraud Monitor or deepfake detection.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✓ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API, Mobile SDK (iOS/Android), and Web SDK are all available. AU10TIX also offers on-premise deployment for enterprise customers with data sovereignty requirements. The platform supports both cloud and on-premise configurations, which is relevant for gaming regulators (PGCB, NGCB Nevada) that require specific deployment models.
+
+### Pricing Analysis
+
+AU10TIX's $500/month minimum applies across Basic KYC, Enhanced KYC, and Enterprise tiers — the minimum is a floor, not a per-tier price. Basic KYC covers ID verification, biometrics, and liveness; Enhanced adds deepfake detection, proof of address, Serial Fraud Monitor, and injection detection; Enterprise adds continuous risk monitoring, KYB, age estimation, and a reusable digital ID.
+
+The tiered structure is well-designed for buyers who want to start at Basic KYC and upgrade as their fraud needs increase. For platforms processing 5,000+ verifications/month, the volume pricing available at Enterprise tier typically brings per-verification costs well below competitors' published rates. Buyers should ask specifically about Serial Fraud Monitor pricing — it is the most defensible differentiator and its incremental cost relative to Basic KYC determines whether AU10TIX's value proposition holds at a given volume level.
+
+## FAQ
+
+**What is AU10TIX's Serial Fraud Monitor and how does it work?**
+Serial Fraud Monitor cross-references biometric and document data from new verification attempts against AU10TIX's consortium database of previously identified fraudulent identities. This means that a fraudster who was caught attempting fraud on one AU10TIX customer is flagged across all customers using the feature — without exposing the underlying identity data. It is particularly effective against organized fraud rings using synthetic or stolen identities at scale.
+
+**How does AU10TIX's deepfake detection work?**
+AU10TIX's deepfake detection analyzes video and image artifacts that indicate AI-generated or manipulated facial images, including digital injection attacks where pre-recorded or synthetic video is injected into the camera stream. This capability is distinct from passive liveness detection and addresses the emerging threat of AI-generated identity fraud.
+
+**What gaming regulatory certifications does AU10TIX hold?**
+AU10TIX holds PGCB (Pennsylvania Gaming Control Board) and NGCB (Nevada Gaming Control Board) certifications, making it one of the few IDV vendors with verified approval from major US gaming regulators. This is a hard requirement for online gambling platforms in these jurisdictions.
+
+**Does AU10TIX support reusable digital identity credentials?**
+Yes. The Reusable Digital ID product allows a user who has been verified once to reuse tamper-proof digital credentials across multiple platforms that use AU10TIX. This reduces friction for repeat onboarding and is relevant for platforms participating in the digital credential ecosystem.
+
+**What is AU10TIX's document coverage compared to competitors?**
+AU10TIX supports 5,000+ document types with a claimed 99% pass rate and 90% reduction in unidentified documents. This is comparable to Veriff (230+ countries) and Sumsub, and is particularly strong for physical document formats encountered in gaming and hospitality where diverse ID types are common.

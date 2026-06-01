@@ -1,0 +1,58 @@
+---
+vendor: meon-ekyc
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Indian financial services, insurance, and telecom companies needing Aadhaar-based eKYC with DigiLocker integration and facial authentication
+avoidIf: Organizations outside India or those requiring global document coverage — Meon eKYC is built around the Indian Aadhaar identity infrastructure
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Meon eKYC is a specialized identity verification platform built for the Indian regulatory environment, designed around Aadhaar authentication, DigiLocker document retrieval, and OTP-based verification — all of which are specific to India's digital identity infrastructure (India Stack). Founded in 2020 and headquartered in India, this is not a general-purpose global KYC platform; it is purpose-built to leverage India's unique government identity infrastructure, which allows near-instant identity verification for the 1.3 billion+ individuals in the Aadhaar database. Early-stage vendor with no published reviews; independent validation is not available.
+
+### Best For
+
+Indian banks, NBFCs, insurance companies, telecoms, and fintech startups that need regulatory-compliant eKYC using Aadhaar authentication and DigiLocker for digital document retrieval — particularly organizations serving retail customers in India where Aadhaar-based KYC is the fastest and most cost-effective compliance path.
+
+### Avoid If
+
+Organizations operating outside India or serving a primarily non-Indian customer base — Meon eKYC's core technical differentiation (Aadhaar + DigiLocker + eNACH integration) has no equivalent outside the Indian regulatory context. For global KYC requirements, this platform offers minimal value.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API, Web SDK, and Mobile SDK (iOS/Android) are all available alongside cloud and on-premise deployment options. Integration with Aadhaar authentication and DigiLocker is natively built in, which simplifies the technical work for Indian deployments compared to building these integrations independently. The drag-and-drop KYC workflow builder reduces dependency on engineering for workflow changes.
+
+### Pricing Analysis
+
+Meon eKYC offers a free Basic plan (basic eSign capabilities), custom Pro pricing (advanced KYC, bulk upload, real-time status), and custom Enterprise pricing (unlimited verifications, dedicated account manager). The free entry tier is a meaningful differentiator for early-stage Indian startups exploring digital onboarding before committing to paid plans.
+
+For companies processing under 1,000 verifications/month, the free tier provides a working proof-of-concept environment. As volumes scale, Pro and Enterprise pricing should be negotiated based on monthly verification volume and which Meon product modules are required — the platform bundles workflow builder, face verification, and eSign as distinct products that may be priced separately. Indian RBI and IRDAI regulatory requirements often mandate specific KYC workflows; confirm that Meon's default workflows satisfy your regulator's current eKYC guidelines during evaluation.
+
+## FAQ
+
+**What is Aadhaar-based eKYC and why is it significant for Indian businesses?**
+Aadhaar is India's biometric national identity system covering 1.3 billion+ residents. Aadhaar-based eKYC allows businesses to verify a customer's identity instantly using their 12-digit Aadhaar number and OTP or biometric authentication against the UIDAI database — dramatically faster and cheaper than manual document verification. It is the preferred KYC method for RBI-regulated financial services in India.
+
+**What is DigiLocker integration and how does it benefit the onboarding process?**
+DigiLocker is an Indian government platform where citizens store verified digital copies of official documents (driving license, PAN card, insurance, educational certificates). Meon eKYC's DigiLocker integration allows users to share these verified documents directly during onboarding, eliminating the need to photograph and upload physical documents and reducing fraud risk from tampered document images.
+
+**Does Meon eKYC support video-based KYC (V-CIP) as required by RBI guidelines?**
+Video-based Customer Identification Process (V-CIP) is required by RBI for certain account opening scenarios. Meon's facial authentication with geolocation feature suggests video KYC capability, but buyers should explicitly confirm V-CIP compliance with RBI's 2020 guidelines during evaluation, as regulatory requirements are specific and frequently updated.
+
+**What is eNACH integration used for in the KYC context?**
+eNACH (Electronic National Automated Clearing House) is used for automated payment mandate registration during customer onboarding — relevant for loan disbursements, insurance premium payments, and subscription services. Bundling eKYC and eNACH in a single workflow reduces friction in financial product onboarding.
+
+**Is Meon eKYC compliant with PDPB (India's Personal Data Protection Bill)?**
+India's data protection regulatory framework is evolving. GDPR compliance is listed, but Indian-specific data protection compliance should be confirmed given the Aadhaar data handling involved. Buyers should request a current data processing agreement and confirm UIDAI-compliant data handling practices.

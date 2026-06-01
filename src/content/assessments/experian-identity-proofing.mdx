@@ -1,0 +1,58 @@
+---
+vendor: experian-identity-proofing
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Mid-to-large enterprises in banking, insurance, or healthcare that already use Experian data and need unified identity + fraud tooling
+avoidIf: Organizations prioritizing biometric accuracy above data enrichment — Experian's strength is data, not leading-edge biometrics
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Experian Identity Proofing is a product within Experian's broader risk and fraud platform, not a standalone biometric specialist. Its primary differentiator is the integration of document verification and biometric checks with Experian's vast credit and identity data network — a combination that allows it to cross-reference identity claims against real-world financial behavior patterns. For organizations already embedded in the Experian ecosystem, the unified vendor relationship simplifies procurement and data governance. However, with a Gartner rating of only 3.5 from 2 reviews, the product has not built the same third-party credibility as purpose-built identity verification peers.
+
+### Best For
+
+Large enterprises in banking, insurance, automotive, or gaming that are already Experian data customers and want to add identity proofing without onboarding a new vendor — the commercial and integration synergy with existing Experian contracts is the primary buying rationale.
+
+### Avoid If
+
+Organizations that need best-in-class biometric accuracy or are evaluating identity verification as a standalone decision — Experian's 3.5 Gartner rating and limited review volume suggest the product trails pure-play competitors in biometric capability and customer satisfaction.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API, Mobile SDK (iOS/Android), and Web SDK are documented. Cloud-based and on-premise options are available. As a 20,000+ employee company, Experian has mature API documentation standards, but integration support quality may vary by region and account tier.
+
+### Pricing Analysis
+
+Experian lists both flat monthly tiers ($500/month Basic, $1,500/month Premium) and a per-verification model ($10/verification), which is unusual transparency for an enterprise vendor. However, these published figures are likely scraped reference points rather than actual contract terms — large-scale deployments will be negotiated separately. At $10/verification, costs escalate rapidly above a few thousand checks per month, making this uncompetitive for high-volume KYC use cases.
+
+The flat monthly plans ($500-$1,500) appear aimed at smaller internal use cases — fraud investigation teams or HR background screening, not customer-facing KYC at scale. Enterprise buyers should approach this as a bundle negotiation with their existing Experian contracts rather than treating the listed pricing as authoritative.
+
+## FAQ
+
+**How does Experian Identity Proofing compare to Experian's other identity products like CrossCore?**
+Experian CrossCore is the broader fraud and identity orchestration platform; Identity Proofing is a specific module within that ecosystem covering document and biometric verification. Buyers evaluating the full Experian identity stack should understand whether they need the standalone module or the orchestration layer.
+
+**What is the accuracy rate for Experian's biometric and document verification?**
+Experian cites approximately 95% accuracy for its verification checks. This figure should be validated in a proof-of-concept against your specific document types and user demographics, as accuracy varies significantly by geography and ID document complexity.
+
+**Is Experian Identity Proofing suitable for gaming and age verification use cases?**
+Yes — gaming is listed as a target industry and age verification aligns with the product's document + biometric capability. Regulatory requirements for online gaming age checks vary by jurisdiction; confirm country-specific compliance support during evaluation.
+
+**Does Experian offer a free trial for identity proofing?**
+A free trial is listed, though the scope is not formally defined. Expect a sales-facilitated sandbox environment rather than a self-serve trial, given the enterprise pricing model.
+
+**What happens to biometric data after verification — does Experian retain facial images?**
+Data retention policies are a critical due diligence question for any Experian deployment. GDPR compliance is confirmed, but buyers should request explicit data processing agreements covering biometric data retention, deletion, and third-party data sharing policies.

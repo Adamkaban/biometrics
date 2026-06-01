@@ -1,0 +1,58 @@
+---
+vendor: face-recognition-api
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Developers needing flexible face recognition infrastructure with both cloud API and on-prem SDK options
+avoidIf: Teams needing out-of-box compliance certifications beyond GDPR/ISO 27001 — limited regulatory coverage for regulated industries
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+ARSA AI's Face Recognition API differentiates by offering the same underlying AI across multiple deployment models: cloud API for fast integration, on-premises SDK for data sovereignty, and edge hardware (AI Box Series) for latency-critical environments. The claimed 99.7% face recognition accuracy and inclusion of both active and passive liveness detection position this as a technically capable offering for security and access control use cases. As an early-stage vendor (founded 2022) with no published reviews, buyers should run rigorous accuracy testing against their own data before production commitment.
+
+### Best For
+
+Development teams building security surveillance, physical access control, or identity verification applications that need deployment flexibility — cloud today, on-prem tomorrow. The edge computing hardware option (AI Box) suits rapid-rollout projects in retail, traffic management, or physical security.
+
+### Avoid If
+
+Organizations in financial services, healthcare, or other sectors requiring SOC 2, HIPAA, or CCPA compliance attestations. ARSA AI's current certifications (GDPR, ISO 27001) are insufficient for US-regulated industries or HIPAA-covered entities.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — Developer-friendly cloud API enables rapid integration. On-prem SDK and plug-and-play AI Box hardware provide additional deployment paths for teams with different infrastructure requirements. The multi-modal deployment architecture reduces migration risk if requirements change.
+
+### Pricing Analysis
+
+All pricing tiers are contact-only with no published rates. The three-product structure (Face Recognition API, AI Video Analytics, AI Box hardware) suggests separate pricing models: API likely uses consumption-based pricing, hardware is a capital purchase, and on-prem SDK may be an annual license. Buyers should clarify whether the cloud API includes minimum commitment requirements before engaging in procurement discussions.
+
+Given the 2022 founding date and early-stage status, ARSA AI is actively building its customer base. Buyers willing to provide case study material or serve as reference customers may be able to negotiate favorable pilot pricing. Volume commitments above 100,000 API calls/month should trigger a custom pricing conversation.
+
+## FAQ
+
+**What is the claimed accuracy of ARSA AI's face recognition?**
+ARSA AI reports 99.7% accuracy for face recognition. This figure should be interpreted carefully — accuracy varies significantly based on lighting conditions, camera quality, and demographic diversity of the test set. Request methodology details and test your deployment environment specifically.
+
+**Does the Face Recognition API support both 1:1 and 1:N matching?**
+Yes. The API supports 1:1 verification (confirming a person matches a reference image) and 1:N identification (matching a face against a database). Both use cases are documented in the product listing.
+
+**What is the AI Box, and when is it appropriate?**
+The AI Box is an edge computing hardware device that runs ARSA AI's models locally, with no cloud dependency. It is designed for rapid deployment in environments with limited internet connectivity or where real-time latency is critical.
+
+**What liveness detection methods does ARSA AI support?**
+The platform supports both active liveness (user performs an action) and passive liveness (no user interaction required). Passive liveness is preferred for high-friction-sensitive environments like customer onboarding.
+
+**Is there a free trial available?**
+ARSA AI does not publish a self-serve free trial. Contact the vendor to request a proof-of-concept engagement with API access for evaluation purposes.

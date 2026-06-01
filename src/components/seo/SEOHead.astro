@@ -1,0 +1,63 @@
+---
+import siteConfig from "../../../site.config";
+
+export interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const {
+  title,
+  description = siteConfig.seo.defaultDescription,
+  canonicalUrl,
+  ogImage = siteConfig.seo.ogImage,
+  noindex = false,
+  schema,
+} = Astro.props;
+
+const fullTitle = siteConfig.seo.titleTemplate.replace("%s", title);
+
+const canonical =
+  canonicalUrl ?? new URL(Astro.url.pathname, siteConfig.seo.siteUrl).toString();
+
+const ogImageUrl = ogImage.startsWith("http")
+  ? ogImage
+  : new URL(ogImage, siteConfig.seo.siteUrl).toString();
+
+const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
+---
+
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#2563EB" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={robotsContent} />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteConfig.brand.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImageUrl} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+{
+  schema && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schema)}
+    />
+  )
+}

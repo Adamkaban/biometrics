@@ -1,0 +1,58 @@
+---
+vendor: trust-swiftly
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: US government contractors and regulated platforms needing FedRAMP-aligned IAL3 identity proofing with adaptive fraud controls
+avoidIf: Consumer-scale onboarding requiring per-verification pricing — Trust Swiftly is enterprise-only with no self-serve tier
+integrationComplexity: Medium
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Trust Swiftly occupies a distinct niche: it is one of the few commercial identity verification vendors explicitly aligned with FedRAMP and NIST IAL3 requirements, making it relevant for US federal contractors and regulated enterprises where government identity assurance levels are non-negotiable. Its risk-based workflow orchestration and adaptive fraud controls reflect a platform designed for high-assurance verification rather than volume consumer KYC. With only 3 Gartner reviews (and a perfect 5/5 rating), Trust Swiftly is an early-stage vendor in terms of published review depth — buyers should request references from comparable organizations during evaluation.
+
+### Best For
+
+US-based government contractors, financial institutions, and regulated platforms (healthcare portals, federal agency vendors) that need NIST IAL3-compliant identity proofing with audit-ready evidence trails and risk-based workflow orchestration.
+
+### Avoid If
+
+Global platforms primarily serving non-US markets, or organizations that need broad international document coverage. Trust Swiftly's FedRAMP focus is a US-centric strength that may not translate to international compliance requirements.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✗ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — Trust Swiftly's API-first architecture supports custom integration, and the platform offers managed verification station options. However, the risk-based workflow orchestration requires configuration expertise to implement correctly; expect 3-6 weeks for production deployment with proper workflow tuning.
+
+### Pricing Analysis
+
+Trust Swiftly operates as a single enterprise tier at contact-for-pricing. Given its specialized positioning around FedRAMP and IAL3 compliance, pricing reflects the premium on regulated-sector assurance rather than commodity verification volume.
+
+Organizations pursuing FedRAMP authorization who need an IAL3 identity proofing vendor have limited alternatives at this specification level — this reduces the competitive leverage buyers typically hold in KYC procurement. Focus negotiations on audit log retention periods, evidence package format, and SLA commitments for identity proofing session latency. Buyers with existing federal compliance infrastructure (ATO processes, continuous monitoring) should evaluate integration with existing GRC tooling.
+
+## FAQ
+
+**What is NIST IAL3 and why does it matter?**
+NIST SP 800-63-3 Identity Assurance Level 3 (IAL3) requires in-person or supervised-remote identity proofing with biometric binding. It is the highest assurance level and is required for high-value federal transactions, privileged access provisioning, and some healthcare systems. Very few commercial vendors support IAL3-equivalent proofing.
+
+**What is FedRAMP alignment in the context of identity verification?**
+FedRAMP (Federal Risk and Authorization Management Program) is the US government's cloud security assessment framework. FedRAMP-aligned means Trust Swiftly's infrastructure and processes are designed to meet FedRAMP security controls — a prerequisite for providing services to US federal agencies or contractors serving them.
+
+**What does "audit-ready evidence" mean in practice?**
+Trust Swiftly captures and retains structured evidence packages from each identity proofing session — document captures, biometric comparison results, liveness check outcomes, and decision logs — formatted for regulatory audits or legal proceedings.
+
+**How does risk-based workflow orchestration work?**
+Rather than applying the same verification steps to all users, Trust Swiftly dynamically adjusts verification depth based on risk signals (device, behavior, document type, prior fraud indicators). Low-risk sessions may require fewer steps; high-risk sessions trigger additional checks, including human review.
+
+**Is Trust Swiftly suitable for healthcare patient identity verification?**
+Trust Swiftly's IAL3 capability and audit trail features align with healthcare identity proofing requirements, though HIPAA certification is not listed. Healthcare buyers should explicitly verify HIPAA BAA availability and PHI handling during the sales process.

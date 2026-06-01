@@ -1,0 +1,58 @@
+---
+vendor: authenticid-identity-proofing
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Enterprises needing automated document analysis with biometric fraud prevention for high-stakes identity proofing workflows
+avoidIf: Buyers needing extensive peer reviews for vendor validation — only 1 published Gartner review limits independent validation; run a thorough POC
+integrationComplexity: Medium
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+AuthenticID has been building identity intelligence products since 2001, making it one of the more tenured vendors in this market. Its identity proofing platform focuses on automated document analysis combined with biometric verification for fraud prevention — a combination designed for high-stakes onboarding where fraudulent identity documents are a primary attack vector. The company was acquired (funding_stage: Acquired) and $25M in total funding suggests meaningful product investment over its 25-year history. However, with only 1 Gartner review, public validation is extremely limited; buyers must treat this as a relatively opaque vendor from an independent review standpoint.
+
+### Best For
+
+Enterprises with sophisticated fraud prevention requirements for identity document verification — particularly organizations handling high-value transactions or regulated onboarding (financial services, government contractors) where document authenticity analysis depth matters more than per-verification price.
+
+### Avoid If
+
+Teams that rely on peer review platforms for vendor validation. A single published review makes it impossible to assess real-world performance patterns. AuthenticID requires a rigorous internal POC to compensate for the lack of public proof points.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✗ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — AuthenticID integrates via API for document analysis and biometric matching. The scraped data shows limited public documentation on SDK availability. Enterprise onboarding requires direct engagement; expect 4-8 weeks to production for standard deployments.
+
+### Pricing Analysis
+
+AuthenticID operates on a "Contact Sales" pricing model with no published tiers. The company's acquisition status means pricing decisions may now sit with the acquiring entity, which could affect flexibility in contract negotiation.
+
+With no published pricing benchmarks and limited reviews, buyers are in an information asymmetry position. Mitigate this by running a structured POC against a defined fraud use case, requiring AuthenticID to provide referenceable customers at similar scale, and establishing clear SLAs for document acceptance rates and biometric match latency before contract signature. The acquisition status is a flag worth investigating — confirm the acquiring company, its financial health, and any planned product changes or integrations.
+
+## FAQ
+
+**What does "identity intelligence" mean in AuthenticID's context?**
+AuthenticID's identity intelligence approach combines automated document forensics (detecting altered or fraudulent identity documents) with biometric verification to create a layered fraud detection capability — the goal is identifying not just whether a document is real, but whether it belongs to the person presenting it.
+
+**Is AuthenticID suitable for high-volume consumer onboarding?**
+AuthenticID's platform handles automated document analysis, but without published throughput benchmarks or volume-based pricing tiers, buyers should explicitly validate high-volume performance during a POC rather than assuming parity with purpose-built KYC-as-a-service platforms.
+
+**What types of identity documents does AuthenticID analyze?**
+AuthenticID's fraud prevention focus suggests support for a broad document library including passports, national IDs, and driver's licenses. Buyers should request the specific supported document list and accuracy benchmarks by document type during evaluation.
+
+**What is the status of AuthenticID's acquisition and who acquired them?**
+AuthenticID is listed as "Acquired" in available data. Buyers should confirm the acquiring entity, the impact on the product roadmap, and whether support and pricing structures have changed as a result of the acquisition.
+
+**How does AuthenticID compare to biometric-first vendors like Veriff or Onfido?**
+AuthenticID's 25-year history gives it deep document forensics expertise, which may surpass newer vendors in specific fraud detection scenarios. However, newer vendors typically have more modern developer tooling, transparent pricing, and larger review bases. The evaluation should specifically benchmark document fraud detection accuracy on the document types most relevant to your use case.

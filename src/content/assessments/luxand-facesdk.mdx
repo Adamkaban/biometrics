@@ -1,0 +1,58 @@
+---
+vendor: luxand-facesdk
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Software developers and ISVs embedding face recognition directly into applications needing cross-platform SDK with on-premise deployment
+avoidIf: Teams looking for a managed KYC/AML compliance service — Luxand is a developer SDK, not a compliance platform with regulatory workflows
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Luxand FaceSDK is categorically different from the other vendors in this comparison: it is a developer-facing face recognition library, not a managed KYC/IDV service. Founded in 2005 (21 years of face recognition R&D), Luxand sells a cross-platform SDK that enables software engineers to embed facial recognition, face detection, landmark tracking, and liveness detection directly into their own applications — without sending biometric data to a third-party cloud. This on-premise, SDK-first model is the defining differentiator: organizations with data sovereignty requirements, air-gapped environments, or biometric data minimization obligations can process face recognition entirely within their own infrastructure. The 5.0 G2 rating across 10 reviews reflects a small but highly satisfied developer user base.
+
+### Best For
+
+Software developers, ISVs, and in-house engineering teams building applications that require embedded face recognition with full data control — access control systems, time-and-attendance kiosks, healthcare check-in terminals, and gaming/fintech apps where biometric data cannot leave the customer's infrastructure. Particularly suited for enterprise IT teams with strict data sovereignty or air-gap requirements.
+
+### Avoid If
+
+Organizations seeking a turnkey KYC compliance platform with document verification, AML screening, audit workflows, and regulatory reporting. Luxand provides the biometric engine but none of the compliance infrastructure. Teams without in-house development capacity to integrate an SDK and build surrounding application logic should evaluate managed IDV services (Veriff, Sumsub, ComplyCube) instead.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API, Mobile SDK (iOS/Android), and Web SDK are all available, plus on-premise deployment with no cloud dependency required. Cross-platform support covers Windows, macOS, Linux, iOS, and Android. The SDK approach means developers have full control over data flow, making GDPR data minimization compliance easier to implement compared to cloud-based IDV services.
+
+### Pricing Analysis
+
+Luxand's published pricing ($29–99/month for Basic and Pro) appears to be placeholder pricing that does not reflect actual SDK licensing terms. Enterprise SDK licensing for commercial deployment is typically structured per-deployment or per-device, not per-user per-month — the actual commercial terms require direct engagement with Luxand's sales team.
+
+For ISVs building commercial products on top of Luxand's SDK, the key pricing question is OEM licensing terms: whether redistribution is permitted, royalty structures, and per-seat vs. unlimited deployment options. For enterprise IT teams deploying internally, perpetual license options (one-time payment vs. annual subscription) are worth negotiating. Luxand's small team size (11-50 employees) means less bureaucracy in licensing negotiations but also less dedicated enterprise support infrastructure compared to larger vendors.
+
+## FAQ
+
+**Does Luxand FaceSDK require sending biometric data to Luxand's servers?**
+No. Luxand FaceSDK is an on-premise library that runs entirely within the customer's infrastructure. Biometric processing happens locally on the device or server where the SDK is installed. No facial data is transmitted to Luxand, which is a critical advantage for GDPR data minimization compliance and air-gapped deployments.
+
+**What programming languages and platforms does Luxand FaceSDK support?**
+Luxand FaceSDK supports C/C++, .NET (C#, VB.NET), Java, Delphi, and other languages through its API, with native SDKs for iOS and Android. It runs on Windows, macOS, Linux, iOS, and Android — making it one of the most cross-platform face recognition libraries commercially available.
+
+**How accurate is Luxand's face recognition compared to cloud-based IDV services?**
+Luxand claims 99.9% accuracy for face recognition. Cloud-based services (Veriff: 99.6%, Sumsub: 99.5%) operate on larger training datasets with continuous learning from production traffic. For controlled environments (access control, kiosks, known users), Luxand's on-premise accuracy is competitive. For uncontrolled environments with diverse documents and unknown users, cloud-based services typically have advantages from continuous model updates.
+
+**Is Luxand FaceSDK suitable for building a KYC compliance product?**
+Luxand provides the biometric verification layer (face matching, liveness detection) but does not include document verification, AML screening, case management, or regulatory workflow tools. Building a KYC-compliant product on top of Luxand would require significant additional development for document processing, compliance workflows, and audit trail management. Teams without those development resources should use a managed IDV service instead.
+
+**What is the difference between Luxand FaceSDK and Luxand's cloud-based products?**
+Luxand offers both the on-premise FaceSDK and cloud-based identity verification services under the same brand. FaceSDK is the developer library for custom integration; the cloud products function more like managed IDV services. The FaceSDK is Luxand's heritage product dating to 2005 and represents the core IP that differentiates it from newer cloud-only competitors.

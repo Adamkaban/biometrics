@@ -1,0 +1,58 @@
+---
+vendor: oz-liveness
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Enterprises needing ISO 30107-3 certified passive liveness detection to replace or augment existing IDV workflows
+avoidIf: Organizations that need a complete identity verification platform; Oz Liveness is a liveness component, not end-to-end KYC
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Oz Liveness (by Oz Forensics, founded 2017) is a specialized liveness detection product rather than a full identity verification suite. Its technical differentiator is a multilayered security architecture combining real-time environment analysis with anti-spoofing algorithms, certified to ISO 30107-3 Level 1 and Level 2 -- the biometric industry's primary presentation attack detection standard. With a perfect 5/5 rating from two Capterra reviews and SOC 2 Type II certification, Oz Liveness presents an unusually clean compliance and quality signal for its size. The use case is typically as a liveness SDK component embedded within a larger IDV or authentication pipeline.
+
+### Best For
+
+Financial institutions, identity verification vendors, and platform builders that need a proven, standards-certified liveness detection component to integrate into an existing verification workflow -- particularly where ISO 30107-3 Level 2 certification is a regulatory or procurement requirement.
+
+### Avoid If
+
+Organizations that need a complete out-of-the-box KYC solution with document verification, AML screening, and onboarding orchestration. Oz Liveness is a specialized liveness component and will require pairing with other vendors to form a complete identity stack.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — Oz Liveness offers platform-agnostic SDKs designed for seamless integration. The free trial URL (ozforensics.com/trynow) indicates a self-serve evaluation path. The multilayered architecture is designed to work across web, iOS, and Android environments with minimal custom engineering.
+
+### Pricing Analysis
+
+Oz Liveness pricing is entirely custom and contact-based. Given that this is a component product (liveness SDK) rather than a full platform, pricing is typically volume-based per liveness check or per API call, bundled within a vendor contract. No public pricing benchmarks are available.
+
+For organizations embedding Oz Liveness within their own identity product, the commercial model will depend on your end-user volume and whether you need on-premise or cloud deployment. For enterprise buyers using Oz Liveness as a third-party liveness layer on top of an existing IDV vendor, evaluate whether the cost of a separate liveness vendor is justified against an integrated platform that already includes certified liveness (e.g., Jumio or iDenfy).
+
+## FAQ
+
+**What is ISO 30107-3 certification and why does it matter?**
+ISO 30107-3 is the international standard for Presentation Attack Detection (PAD) in biometric systems -- it defines how liveness detection systems resist spoofing attacks like photos, videos, and 3D masks. Level 1 covers standard attacks; Level 2 covers more sophisticated adversarial attacks. Oz Liveness holds both Level 1 and Level 2 certification, which is a meaningful differentiator in regulated environments.
+
+**Is Oz Liveness a standalone product or an SDK for embedding?**
+Primarily an SDK. Oz Liveness is designed to be embedded into existing applications and identity verification flows via API or mobile SDK, not used as a standalone end-user product.
+
+**Does Oz Liveness support passive liveness detection?**
+Yes. Oz Liveness uses passive liveness detection (no user action required beyond looking at the camera), combined with active environment analysis. This approach balances user friction against security.
+
+**What platforms does the Oz Liveness SDK support?**
+Oz Liveness supports web browser-based deployment, iOS, and Android. Cross-platform compatibility is confirmed, though specific framework support (React Native, Flutter) should be verified during technical evaluation.
+
+**How does Oz Liveness handle poor lighting or low-quality cameras?**
+Real-time environment analysis is listed as a core feature, suggesting the system adapts to suboptimal capture conditions. For high-fraud-risk deployments, request false acceptance rate (FAR) and false rejection rate (FRR) benchmarks under degraded conditions from the vendor.

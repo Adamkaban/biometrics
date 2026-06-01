@@ -1,0 +1,58 @@
+---
+vendor: digidentity
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Dutch and EU-regulated organizations needing eIDAS-qualified electronic signatures combined with biometric identity verification and passport chip reading
+avoidIf: Non-EU companies or those needing extensive peer reviews — Digidentity has 0 published reviews and a Netherlands-centric regulatory focus
+integrationComplexity: Medium
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Digidentity is a Netherlands-based digital identity platform with a specific and meaningful technical differentiator: passport chip reading (NFC-based) combined with biometric liveness detection, operating as a Qualified Trust Service Provider (QTSP) under eIDAS regulation. The QTSP status is a formal EU legal designation — not a self-claimed certification — that authorizes Digidentity to issue legally binding qualified electronic signatures valid across all EU member states. This places Digidentity in a small, accredited group of vendors capable of the highest-assurance digital identity flows permitted under EU law. Note that Digidentity has 0 published reviews, making independent validation impossible; this is an early-stage vendor from a review coverage standpoint.
+
+### Best For
+
+Dutch public sector organizations, EU financial institutions, and regulated businesses requiring eIDAS-qualified signatures (QES) and high-assurance remote identity verification with NFC passport chip reading — particularly for eHerkenning (Dutch business identity) workflows.
+
+### Avoid If
+
+Any organization outside the EU looking for straightforward document KYC. Digidentity's value is entirely in its EU regulatory certifications (QTSP, EUTL, AATL) and eHerkenning specialization — these are irrelevant outside the European regulatory framework.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — Digidentity offers API-based integration with "quick and seamless integration" as a stated differentiator. However, the eHerkenning and QES workflows have regulatory requirements that add implementation complexity beyond standard KYC integrations. NFC passport chip reading requires compatible mobile hardware and specific SDK implementation. Expect 4-8 weeks for production deployment of the full QES + identity verification stack.
+
+### Pricing Analysis
+
+All three of Digidentity's product lines — eHerkenning, Digital Signing, and KYC Services — are contact-for-pricing only. The company's QTSP status means it operates in a regulated market where pricing is influenced by the cost of maintaining formal trust certifications, not just development overhead.
+
+EU public sector and regulated financial buyers should budget for premium pricing relative to non-QTSP competitors — the legal validity of Digidentity's qualified signatures commands a higher price point than simple electronic signatures. For organizations specifically needing eHerkenning compliance (Dutch business identity verification for government services), Digidentity is one of a limited number of authorized providers, which reduces competitive pressure in negotiations. Request clear SLA terms for certificate issuance and renewal as part of any QTSP engagement.
+
+## FAQ
+
+**What is a Qualified Trust Service Provider (QTSP) and why does it matter?**
+A QTSP is a trust service provider formally accredited by an EU member state supervisory body under the eIDAS Regulation. Only QTSPs can issue qualified electronic signatures (QES), which carry the same legal weight as handwritten signatures throughout the EU. This designation is not self-certified — it requires formal government authorization and ongoing audits.
+
+**What is eHerkenning and who needs it?**
+eHerkenning is the Dutch government's business identity scheme, required for companies and organizations to log into Dutch government digital services and portals. Digidentity is one of a small number of authorized eHerkenning providers, making it the go-to choice for organizations needing access to Dutch public sector systems.
+
+**What is NFC passport chip reading and what advantages does it provide?**
+NFC chip reading extracts cryptographically signed biographic and biometric data directly from the RFID chip in modern passports and identity cards. Because the chip data cannot be altered or forged (unlike the printed page), this provides higher assurance than optical document scanning alone — relevant for high-value financial transactions or regulated onboarding.
+
+**Is Digidentity's Adobe Approved Trust List (AATL) membership significant?**
+AATL membership means Digidentity's digital certificates are trusted by Adobe Acrobat and Reader by default, allowing documents signed with Digidentity-issued certificates to display as verified in Adobe products without additional configuration — practically important for document workflows in legal, financial, and HR contexts.
+
+**How does Digidentity's zero-review status affect procurement decisions?**
+With 0 published reviews on any major platform, buyers cannot rely on peer experience for validation. This means procurement must include direct reference checks with named existing customers, a structured POC with defined acceptance criteria, and contractual protections for service levels before go-live.

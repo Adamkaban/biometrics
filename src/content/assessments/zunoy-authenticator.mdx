@@ -1,0 +1,58 @@
+---
+vendor: zunoy-authenticator
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: SaaS teams and developers needing TOTP-based 2FA with cloud backup and biometric app-lock, as a lightweight Google Authenticator alternative
+avoidIf: Enterprises requiring enterprise SSO, SAML/SCIM provisioning, or centralized admin control over 2FA enrollment
+integrationComplexity: Medium
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Zunoy Authenticator is a two-factor authentication app from Zunoy, an India-based software company founded in 2020. The product generates TOTP (time-based one-time passwords) and adds cloud backup with cross-device sync and biometric lock — a direct improvement on Google Authenticator's historically offline-only approach. However, important context for buyers on this site: the website data collected for Zunoy maps primarily to their "Uptime" monitoring product (uptime.zunoy.com), suggesting the Authenticator product may be a secondary offering or early-stage product with limited dedicated infrastructure. Early-stage vendor with no published reviews; independent validation is not available.
+
+### Best For
+
+Small SaaS teams, individual developers, and early-stage companies looking for a lightweight, low-cost TOTP authenticator with cloud backup and biometric screen lock — particularly teams already using other Zunoy products where consolidation on one vendor simplifies billing and support.
+
+### Avoid If
+
+Enterprise organizations requiring centralized authentication management, SAML 2.0 or SCIM provisioning, audit logging, or compliance-grade MFA (for SOC 2, ISO 27001, or FedRAMP requirements). Zunoy Authenticator is a consumer-grade 2FA app, not an enterprise identity provider or authentication platform.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — The Authenticator product works as a TOTP client (compatible with any TOTP-supporting service) and the Zunoy platform provides REST API, mobile SDK (iOS/Android), and webhook access for its monitoring products. However, the Authenticator itself functions primarily as an end-user app rather than an enterprise integration layer. Developer teams requiring centralized 2FA management will need additional tooling.
+
+### Pricing Analysis
+
+Zunoy's pricing tiers (Free at $0, Starter at $7/month, Growth at $14/month, Business at $29/month) are documented for their Uptime monitoring product and likely reflect the overall Zunoy platform pricing rather than Authenticator-specific tiers. The Authenticator component may be bundled or available separately at no additional cost for Zunoy platform subscribers.
+
+For startups and small teams, the free tier (10 monitors, 3 team members) and the $7/month Starter plan are accessible entry points. However, buyers evaluating Zunoy specifically for its biometric authenticator capability should clarify with the vendor whether the Authenticator is a standalone product or requires an active Zunoy platform subscription.
+
+## FAQ
+
+**How does Zunoy Authenticator's cloud backup differ from Google Authenticator?**
+Google Authenticator historically stored TOTP secrets locally only, meaning device loss would require manual re-enrollment across all accounts. Zunoy Authenticator syncs authentication codes across multiple devices via cloud backup, significantly reducing recovery friction. This is now also available in newer versions of Google Authenticator, so buyers should evaluate whether Zunoy's implementation offers meaningful additional security or convenience.
+
+**What is the biometric lock feature and how does it work?**
+The biometric lock protects access to the Authenticator app itself using device-level biometrics (fingerprint or face ID), preventing unauthorized access to OTP codes if a device is unlocked by another person. This is an app-level security layer, not a biometric identity verification system.
+
+**Is Zunoy Authenticator suitable for enterprise 2FA management?**
+No — Zunoy Authenticator is a personal 2FA app without centralized admin controls, provisioning workflows, or compliance audit logging. Enterprise teams requiring managed MFA should evaluate purpose-built solutions like Duo Security, Okta, or Microsoft Authenticator with enterprise management capabilities.
+
+**What happens to my TOTP accounts if Zunoy shuts down or discontinues the product?**
+TOTP secrets stored in the Authenticator are based on the open RFC 6238 standard. They can be re-enrolled in any compatible authenticator app using the original QR code or secret key. The risk is not TOTP lock-in, but cloud backup continuity — confirm Zunoy's data export policy to ensure recovery access in a business continuity scenario.
+
+**Does Zunoy Authenticator support hardware security keys (FIDO2/WebAuthn)?**
+Based on available data, Zunoy Authenticator is a TOTP-based software authenticator. FIDO2/WebAuthn hardware key support was not confirmed. Organizations requiring phishing-resistant MFA (which TOTP does not provide) should evaluate hardware key solutions separately.

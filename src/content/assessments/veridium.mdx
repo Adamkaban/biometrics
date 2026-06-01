@@ -1,0 +1,58 @@
+---
+vendor: veridium
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Enterprises replacing password-based MFA with biometric authentication using fingerprint or face, no hardware tokens needed
+avoidIf: Startups needing transparent per-verification pricing — Veridium's enterprise-only model requires sales engagement
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Veridium is a software-only passwordless authentication platform built for enterprises that want to eliminate shared secrets (passwords, OTPs, hardware tokens) entirely from their authentication stack. Unlike most biometric vendors that focus on onboarding and KYC, Veridium's core thesis is continuous session authentication — binding biometric factors directly to enterprise identity providers like Active Directory, Azure AD, and Okta. Founded in 2012 with $12.3M in Series B funding, it occupies a specific niche between consumer-grade face login and full FIDO2 hardware deployments.
+
+### Best For
+
+Large enterprises (500+ employees) modernizing legacy VPN and remote access workflows by deploying fingerprint or facial biometrics as a primary authenticator, particularly in financial services and healthcare where password-fatigue risk is high and hardware token logistics are costly.
+
+### Avoid If
+
+Early-stage startups or mid-market companies that need transparent self-serve pricing and fast go-live without a lengthy sales cycle — Veridium does not publish pricing and requires a scoping conversation before any evaluation.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API + Web SDK + Mobile SDK (iOS/Android) are all available. Veridium also ships pre-built connectors for SAML/OIDC identity providers, which significantly reduces integration time for enterprises already running an IdP. Expect 2-4 weeks for a standard enterprise deployment with an existing IdP.
+
+### Pricing Analysis
+
+Veridium operates on a custom enterprise pricing model — no published tiers, no self-serve sign-up beyond the free trial. For buyers, this means cost is negotiated based on seat count and deployment scope, which can work in your favor at higher volumes (500+ users) but creates friction for smaller evaluations.
+
+For enterprises that qualify, the total cost of ownership argument is strong: eliminating hardware token provisioning, help desk calls for lost tokens, and password reset workflows typically delivers measurable ROI within 12-18 months. Ask your account rep to provide a TCO comparison against your current MFA spend during the evaluation.
+
+## FAQ
+
+**Does Veridium require biometric hardware to be deployed on employee devices?**
+No. Veridium is a software-only platform that uses the native biometric sensors already built into modern smartphones and laptops (fingerprint readers, face cameras). No additional hardware procurement is needed.
+
+**Which identity providers does Veridium integrate with out of the box?**
+Veridium supports SAML 2.0 and OIDC integrations, covering major IdPs including Microsoft Azure AD/Entra, Okta, and Ping Identity. Active Directory on-premise is also supported.
+
+**What biometric modalities does Veridium support?**
+Veridium supports fingerprint recognition and facial recognition as primary biometric factors. Both can be used independently or in combination for step-up authentication scenarios.
+
+**Is biometric data stored on the server or on the device?**
+Veridium follows a privacy-by-design approach where biometric templates are processed and stored on the user's device rather than centrally, reducing data breach exposure and simplifying GDPR compliance documentation.
+
+**How does Veridium handle users without compatible biometric-capable devices?**
+Veridium supports fallback authentication mechanisms for users on legacy devices, though this is configured per policy during deployment. This is a relevant scoping question for organizations with mixed device fleets.

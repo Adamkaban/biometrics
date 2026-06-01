@@ -1,0 +1,159 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { FacebookLogo, XLogo, LinkedinLogo } from "@phosphor-icons/react";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "James Whitfield",
+      jobTitle: "Senior Identity Verification Analyst",
+      url: "https://primebiometry.com/about",
+      image: "https://primebiometry.com/images/authors/author.webp",
+      sameAs: [
+        "https://www.linkedin.com/in/james-whitfield",
+        "https://x.com/jwhitfield",
+      ],
+      worksFor: {
+        "@type": "Organization",
+        name: "PrimeBiometry",
+        url: "https://primebiometry.com",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://primebiometry.com" },
+        { "@type": "ListItem", position: 2, name: "About", item: "https://primebiometry.com/about" },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="About PrimeBiometry"
+  description="PrimeBiometry is an independent research platform comparing biometric authentication and identity verification vendors for IT and security teams."
+  canonicalUrl="https://primebiometry.com/about"
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-10" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500">
+        <li><a href="/" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-600 dark:text-zinc-300" aria-current="page">About</li>
+      </ol>
+    </nav>
+
+    <!-- Mission -->
+    <section class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6">
+        About PrimeBiometry
+      </h1>
+      <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
+        PrimeBiometry is an independent research platform helping IT directors, security officers, and compliance teams evaluate biometric authentication and identity verification software. We cover 69+ vendors across KYC compliance, fraud prevention, AML, and biometric authentication.
+      </p>
+      <p class="mt-4 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
+        Every vendor assessment is written from scratch based on direct research: vendor documentation, pricing pages, API evaluation, and aggregated user reviews. We do not republish G2 summaries or vendor-supplied copy.
+      </p>
+    </section>
+
+    <!-- Author -->
+    <section class="border-t border-zinc-200 dark:border-zinc-800 pt-16">
+      <h2 class="text-xs uppercase tracking-wide text-zinc-400 dark:text-zinc-500 mb-8">Lead Analyst</h2>
+
+      <div class="flex flex-col sm:flex-row gap-8 items-start">
+
+        <!-- Photo -->
+        <div class="shrink-0">
+          <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800">
+            <img
+              src="/images/authors/author.webp"
+              alt="James Whitfield"
+              width="96"
+              height="96"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="flex-1">
+          <h3 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">James Whitfield</h3>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">Senior Identity Verification Analyst</p>
+
+          <!-- Social links -->
+          <div class="flex gap-3 mt-3">
+            <a
+              href="https://www.linkedin.com/in/james-whitfield"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <LinkedinLogo size={18} weight="fill" />
+            </a>
+            <a
+              href="https://x.com/jwhitfield"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              aria-label="X (Twitter)"
+            >
+              <XLogo size={18} weight="fill" />
+            </a>
+            <a
+              href="https://www.facebook.com/james.whitfield"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="Facebook"
+            >
+              <FacebookLogo size={18} weight="fill" />
+            </a>
+          </div>
+
+          <!-- Bio -->
+          <div class="mt-5 space-y-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[60ch]">
+            <p>
+              James has spent 10+ years evaluating identity verification and access management systems for financial services, fintech, and healthcare organizations. Prior to PrimeBiometry, he worked as a compliance consultant helping regulated firms implement KYC and AML workflows.
+            </p>
+            <p>
+              He holds CISSP and CIAM certifications and has evaluated over 200 vendors across identity verification, biometric authentication, and fraud prevention categories.
+            </p>
+          </div>
+
+          <!-- Expertise tags -->
+          <div class="mt-5 flex flex-wrap gap-2">
+            {["KYC Compliance", "AML", "Biometric Auth", "Identity Verification", "GDPR", "IAM"].map((tag) => (
+              <span class="rounded-full border border-zinc-200 dark:border-zinc-700 px-3 py-1 text-xs text-zinc-500 dark:text-zinc-400">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial independence note -->
+    <section class="mt-16 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50 p-6">
+      <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Editorial Independence</h2>
+      <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        PrimeBiometry earns revenue through affiliate links and featured vendor placements. Featured placements are labeled. Affiliate relationships do not influence editorial scoring or assessments. We evaluate all vendors against the same criteria documented in our <a href="/methodology" class="text-blue-600 dark:text-blue-400 hover:underline">methodology</a>.
+      </p>
+    </section>
+
+    <!-- Contact CTA -->
+    <div class="mt-10 text-sm text-zinc-500 dark:text-zinc-400">
+      Questions or vendor submissions: <a href="mailto:support@primebiometry.com" class="text-blue-600 dark:text-blue-400 hover:underline">support@primebiometry.com</a>
+    </div>
+
+  </div>
+</BaseLayout>

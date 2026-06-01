@@ -1,0 +1,58 @@
+---
+vendor: jumio
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Mid-market to enterprise companies needing end-to-end ID + biometric + AML verification in a single platform
+avoidIf: Startups under 1,000 verifications/month where per-verification pricing at enterprise rates is cost-prohibitive
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Jumio is one of the most established names in automated identity verification, founded in 2010 and backed by $150M in private equity funding. Its platform spans the full verification stack: government ID authentication, facial biometrics with liveness detection, and integrated AML screening -- all within a single vendor relationship. This breadth is Jumio's primary differentiator against point solutions; it eliminates the need to stitch together separate KYC, biometric, and AML vendors. However, with zero published reviews on major platforms despite its market prominence, buyers should conduct reference checks directly with Jumio's customer success team before contracting. Early-stage vendor with limited published reviews.
+
+### Best For
+
+Mid-market and enterprise companies in regulated industries (fintech, crypto exchanges, banking, gaming) that need a unified KYC + biometric + AML workflow, particularly where reducing vendor count and maintaining a single compliance audit trail matters more than per-verification cost optimization.
+
+### Avoid If
+
+Early-stage startups or businesses running fewer than 5,000 verifications/month -- Jumio's pricing model and minimum commitments are optimized for scale, and point solutions or usage-based vendors will deliver better unit economics at lower volumes.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — Jumio provides Web SDK, iOS SDK, Android SDK, and REST API. The developer portal is publicly accessible with comprehensive documentation. Standard integration for a web onboarding flow typically takes 1-2 weeks. Mobile SDK integration adds 1-2 additional weeks depending on native vs. React Native implementation.
+
+### Pricing Analysis
+
+Jumio's published pricing tiers (Starter at $0, Pro at $199/month) appear to be entry-level tiers with limited volume. In practice, Jumio's per-verification pricing for meaningful volumes is negotiated via enterprise contract. The $199/month "Pro" tier is unlikely to accommodate production workloads for most B2B buyers.
+
+For organizations running 10,000+ verifications/month, expect a custom per-verification rate with volume discounts and a minimum annual commitment. AML screening adds cost per check on top of the base verification fee. Budget for a total cost well above the published tier prices. When negotiating, push for a dedicated success manager, SLA for verification turnaround time, and data residency options upfront -- these are easier to secure at contract time than as add-ons.
+
+## FAQ
+
+**Does Jumio cover both ID document verification and biometric matching?**
+Yes. Jumio's platform includes government-issued ID authentication (passports, driver's licenses, national IDs across 200+ countries), biometric facial comparison with liveness detection, and AML screening -- all accessible via a single API integration.
+
+**What liveness detection standard does Jumio's biometric system meet?**
+Jumio uses AI-powered liveness detection and claims compliance with ISO 30107-3 passive liveness standards. Buyers with high fraud risk (crypto, gaming) should verify the specific iBeta PAD Level tested against current standards.
+
+**Is Jumio suitable for GDPR-regulated customer data?**
+Yes. Jumio holds GDPR compliance and supports data processing agreements. Data residency options (EU, US) are available for enterprise contracts -- confirm the default residency in your contract.
+
+**How does Jumio handle verification failures and manual review?**
+Jumio operates an automated review pipeline with fallback to human review for edge cases. Manual review SLAs and the ratio of automated vs. human decisions should be discussed during the sales process, as they directly affect your onboarding conversion rate.
+
+**What is the minimum viable contract size for Jumio?**
+Jumio does not publish minimum contract terms. Based on market positioning and funding stage, expect minimum annual commitments in the range of $12,000-$50,000 for mid-tier accounts. Startups below this threshold should evaluate Starter-tier or contact the sales team about growth programs.

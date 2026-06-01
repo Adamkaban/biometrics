@@ -1,0 +1,58 @@
+---
+vendor: facetec-3d-face-authentication
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: High-security applications needing best-in-class spoof resistance with independently certified 3D liveness at 1-in-125M FAR
+avoidIf: Teams that need bundled document verification and AML in one platform — FaceTec is a pure biometric SDK, not a full KYC stack
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+FaceTec is the most technically specialized vendor in this comparison: it does one thing — 3D face authentication with certified liveness detection — and optimizes relentlessly for that single capability. The published false acceptance rate of 1 in 125 million for its 3D Face Matching, combined with iBeta PAD Level 1-5 and NIST FRVT-PAD certifications, positions FaceTec at the top of the independently verified liveness detection market. This is not a platform play or a full KYC stack — it is a biometric authentication engine that other vendors and integrators embed into their own products. The combination of usage-based pricing, a free developer SDK at dev.facetec.com, and a small but focused team (~44 employees) reflects a technology licensing business model rather than a services or compliance platform.
+
+### Best For
+
+Security architects and development teams building high-assurance authentication into fintech, government, or healthcare applications where deepfake and spoofing attack resistance must be independently certified — particularly when the requirement is for a 3D liveness + face matching SDK that can be embedded into a proprietary application rather than relying on a third-party verification service.
+
+### Avoid If
+
+Organizations seeking a turnkey KYC/AML platform with document verification, AML screening, and compliance workflows included — FaceTec provides only biometric authentication and identity deduplication, requiring integration with document verification and AML vendors to complete a full onboarding stack.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — iOS SDK, Android SDK, Web SDK, and REST API are all available. FaceTec distributes developer SDKs directly and maintains demo applications for rapid evaluation. The free developer portal (dev.facetec.com) allows technical integration testing before any commercial discussion, which is a developer-experience advantage.
+
+### Pricing Analysis
+
+FaceTec's pricing has two dimensions: a monthly billing model for liveness checks (usage-based, per verification) and a "Per User Pricing" track for per-enrolled-user billing. Neither has published rates — both require a quote request. Unusually, FaceTec explicitly mentions pricing access for not-for-profits and government agencies, suggesting a structured nonprofit/public sector pricing tier.
+
+For commercial buyers, the per-user model (billing based on enrolled biometric users rather than verification events) is often more cost-predictable for authentication use cases where the same user authenticates repeatedly — the per-verification model can become expensive at high-frequency authentication touchpoints. Buyers should model both pricing tracks against their projected monthly active user count and average authentication frequency before requesting a quote.
+
+## FAQ
+
+**What is the 1-in-125M false acceptance rate based on, and how does it compare to competitors?**
+FaceTec's 1/125M FAR refers to the probability that a different person would incorrectly match against an enrolled user's biometric template under the 3D face matching system. This figure is derived from FaceTec's internal testing and represents a significantly stronger claim than the 1/1M FAR typical of 2D face recognition systems. Buyers requiring independent validation should reference FaceTec's NIST FRVT-PAD results alongside iBeta PAD Level 1-5 certification documentation.
+
+**What is iBeta PAD Level 1-5 certification and why does it matter?**
+iBeta PAD (Presentation Attack Detection) testing is an independent third-party evaluation of liveness detection algorithms against physical spoof attacks (printed photos, videos, 3D masks). Levels 1-5 represent progressively sophisticated attack scenarios. FaceTec's Level 1-5 certification is among the most comprehensive independently certified liveness claims available — most vendors only certify at Level 1 or 2.
+
+**Does FaceTec process and store 3D biometric data in the cloud, or on-device?**
+FaceTec supports both cloud and on-premise deployment options, and its architecture processes a 3D FaceMaps (its biometric template format) rather than raw video or images. The specific data residency model depends on deployment configuration — buyers with GDPR or CCPA data minimization requirements should confirm whether FaceMaps are transmitted to FaceTec servers or remain within the buyer's infrastructure.
+
+**Can FaceTec be used as a standalone authentication factor, or does it always require a username/password combination?**
+FaceTec is designed to replace passwords entirely as a primary authentication factor (passwordless authentication) or as a strong second factor. The "UR Codes" product enables truly passwordless authentication flows. This is relevant for organizations looking to eliminate credential-based login entirely rather than add biometrics on top of existing password flows.
+
+**How does FaceTec's developer pricing work, and what are the limits of the free tier?**
+FaceTec's developer portal at dev.facetec.com provides free access to demo apps and sample code. Free access is for development and testing only — production deployments require a commercial agreement. Buyers should not plan production infrastructure around the free developer tier.

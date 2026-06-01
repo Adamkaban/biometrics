@@ -1,0 +1,33 @@
+---
+---
+
+<div
+  id="cookie-banner"
+  hidden
+  class="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-zinc-200 shadow-sm dark:bg-zinc-900 dark:border-zinc-700"
+>
+  <div class="container-page flex items-center justify-between gap-4 py-3">
+    <p class="text-sm text-zinc-600 dark:text-zinc-400">
+      We use cookies to improve your experience. See our{" "}
+      <a href="/privacy" class="text-blue-600 hover:underline dark:text-blue-400">Privacy Policy</a>.
+    </p>
+    <button
+      id="cookie-accept"
+      class="shrink-0 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md px-4 py-1.5 transition-colors"
+    >
+      Got it
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    if (!localStorage.getItem("pb_cookie_consent")) {
+      document.getElementById("cookie-banner").removeAttribute("hidden");
+    }
+    document.getElementById("cookie-accept").addEventListener("click", function () {
+      localStorage.setItem("pb_cookie_consent", "accepted");
+      document.getElementById("cookie-banner").setAttribute("hidden", "");
+    });
+  })();
+</script>

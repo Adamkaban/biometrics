@@ -1,0 +1,58 @@
+---
+vendor: faceplugin
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Privacy-first organizations needing on-premise face recognition with full data control and no cloud dependency
+avoidIf: Companies lacking dedicated DevOps/infrastructure capacity — on-prem deployment requires significant operational overhead
+integrationComplexity: Medium
+hasFreeTrialVerified: false
+---
+
+## PrimeBiometry Assessment
+
+FacePlugin takes a fundamentally different architectural stance than most identity verification vendors: everything runs on your infrastructure. The on-premises server SDK and mobile SDK combination gives engineering teams complete control over data flow, which matters critically in healthcare, government, and financial services where biometric data cannot leave the organizational perimeter. The rating of 5.0 from 2 reviews is statistically insufficient for procurement decisions — direct reference customers in similar regulatory environments are essential.
+
+### Best For
+
+Organizations in highly regulated industries (healthcare, government, financial services) that have data sovereignty requirements prohibiting biometric data from transiting third-party cloud infrastructure. Teams with mobile app development resources who need iOS/Android SDK integration alongside server-side face recognition.
+
+### Avoid If
+
+Startups or mid-market companies without dedicated infrastructure teams to deploy and maintain on-premise servers. On-prem identity verification requires patching, uptime management, and capacity planning that SaaS vendors handle automatically.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✗ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — Server SDK and mobile SDKs (iOS/Android) are available, which reduces client-side integration effort. However, on-premise deployment requires server provisioning, model deployment, and ongoing infrastructure management not required with SaaS alternatives.
+
+### Pricing Analysis
+
+FacePlugin uses a contact-for-pricing model with no published tiers. On-premise SDK licensing typically follows a perpetual license or annual subscription model based on deployment scope (number of servers, API call volume, or named users). The absence of cloud infrastructure costs can offset the license fee for high-volume use cases.
+
+Buyers evaluating FacePlugin against cloud vendors should model total cost of ownership including server infrastructure, DevOps time, and ongoing maintenance — not just the license fee. For organizations already running on-premise infrastructure, FacePlugin's marginal operational cost may be lower than it appears.
+
+## FAQ
+
+**Does FacePlugin require an internet connection to operate?**
+No. The on-premise deployment model means face recognition processing occurs entirely within your infrastructure. This is the primary differentiator for air-gapped environments or strict data residency requirements.
+
+**What biometric capabilities does FacePlugin include?**
+FacePlugin includes face recognition, liveness detection (to prevent spoofing), and ID document recognition. The combination supports full identity verification workflows without third-party dependencies.
+
+**What platforms does the mobile SDK support?**
+FacePlugin provides SDKs for both iOS and Android, along with server-side SDKs for backend integration. This enables end-to-end biometric verification within a single vendor's stack.
+
+**Is FacePlugin suitable for real-time access control?**
+Yes. The solution supports real-time face detection and tracking in addition to static image verification, making it applicable for physical access control systems as well as digital identity verification.
+
+**How does FacePlugin handle liveness detection?**
+Liveness detection is included to prevent photo, video, and mask spoofing. Buyers should request specific accuracy benchmarks (e.g., ISO 30107-3 compliance level) and test against their threat model before production deployment.

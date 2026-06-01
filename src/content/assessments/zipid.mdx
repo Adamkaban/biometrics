@@ -1,0 +1,58 @@
+---
+vendor: zipid
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: US employers needing NIST-validated biometric identity verification for I-9 employment eligibility compliance
+avoidIf: Non-US companies or organizations needing general KYC/AML capabilities beyond I-9 employment verification
+integrationComplexity: Medium
+hasFreeTrialVerified: false
+---
+
+## PrimeBiometry Assessment
+
+ZipID is one of the few identity verification products built explicitly around US I-9 employment eligibility requirements — a regulatory obligation that affects every US employer but is often handled with inadequate identity assurance. The product's founding by a former Homeland Security Director signals both deep regulatory expertise and an institutional understanding of the fraud patterns that I-9 verification is meant to prevent. NIST-validated 1:1 facial recognition with 99.8% claimed accuracy sets a credible technical foundation. As an early-stage vendor (founded 2020) with no published reviews, buyers should request reference customers in comparable hiring contexts before deployment.
+
+### Best For
+
+US-based HR and compliance teams at mid-market and enterprise employers who need to strengthen I-9 verification beyond the standard manual document review. Particularly valuable for remote hiring workflows where in-person document inspection is impractical.
+
+### Avoid If
+
+Non-US organizations or companies needing a general-purpose identity verification platform covering KYC/AML, fraud prevention, or multi-jurisdiction compliance requirements. ZipID's I-9 specialization is a strength for its target use case and a limitation outside it.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✗ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — The product appears to be a standalone application rather than an API-first platform. Integration with HR systems (ATS, HRIS) likely requires custom work or file-based data exchange. Buyers should confirm API availability and HRIS integration connectors during evaluation.
+
+### Pricing Analysis
+
+ZipID lists a Starter plan at $7.50/month — unusually low for an enterprise identity verification product. This likely reflects either a per-seat model (per HR user, not per verification) or a minimum tier for small employers. At scale, organizations hiring hundreds of employees per month will need to understand per-verification costs or volume licensing terms.
+
+US employers should compare ZipID's total cost against the risk exposure of inadequate I-9 compliance. USCIS fines for I-9 violations range from $281 to $2,789 per paperwork violation as of 2026, making even a modestly priced product cost-effective if it substantially reduces compliance risk.
+
+## FAQ
+
+**What is I-9 verification and why does it require specialized software?**
+Form I-9 is the US federal document that verifies employment eligibility. Employers must verify both identity and work authorization documents for every new hire. Traditional I-9 processes rely on manual document inspection, which is prone to fraud — ZipID adds NIST-validated facial biometrics to confirm the person presenting documents matches the identity documents provided.
+
+**Is ZipID approved for E-Verify integration?**
+E-Verify is a separate DHS system for confirming employment eligibility. Buyers should confirm whether ZipID's output is compatible with E-Verify submission requirements, as E-Verify mandates specific data formats and timing requirements.
+
+**What NIST standard does ZipID's facial recognition meet?**
+ZipID claims NIST-validated 1:1 facial recognition at 99.8% accuracy. Buyers should request the specific NIST FRVT submission reference to verify the benchmark conditions are representative of real-world I-9 use cases.
+
+**Does ZipID work for remote I-9 completion?**
+The product is positioned for remote hiring workflows, where traditional in-person I-9 document inspection is impractical. Confirm with the vendor whether the remote completion process satisfies DHS remote I-9 authorization requirements.
+
+**What happens if a verification fails or is inconclusive?**
+Buyers should understand the exception workflow: what happens when facial recognition cannot confirm identity? A clear human review escalation path is essential for compliance — rejecting all inconclusive results would create disparate impact risk.

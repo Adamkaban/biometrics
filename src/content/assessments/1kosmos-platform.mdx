@@ -1,0 +1,58 @@
+---
+vendor: 1kosmos-platform
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Enterprises replacing passwords with biometric-based workforce and customer identity using decentralized, blockchain-anchored credentials
+avoidIf: Organizations needing basic document KYC only — 1Kosmos is over-engineered for simple onboarding without CIAM or workforce identity requirements
+integrationComplexity: Medium
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+1Kosmos differentiates on architecture: it is one of the few identity platforms that combines biometric authentication, identity proofing, and decentralized identity (W3C DID standard) in a single platform, anchoring credentials to a private blockchain to eliminate centralized credential stores as an attack surface. This is a meaningful technical distinction for enterprise security teams concerned with credential theft and phishing. Founded in 2018 and holding a 4.8 Gartner rating (albeit from a small base of 15 reviews), 1Kosmos primarily targets workforce identity (CIAM and workforce IAM) rather than customer KYC pipelines.
+
+### Best For
+
+Mid-market and enterprise organizations replacing legacy password infrastructure with phishing-resistant biometric MFA — particularly those with compliance mandates (NIST AAL2/AAL3) that require both high-assurance authentication and auditable identity proofing for workforce or customer accounts.
+
+### Avoid If
+
+Companies whose primary need is high-volume automated document KYC for consumer onboarding. 1Kosmos is built for identity assurance and authentication continuity, not commodity ID verification pipelines.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✗ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — The platform offers API access and SDKs, but the decentralized identity architecture adds conceptual and implementation complexity compared to standard REST + webhook KYC vendors. Integration timelines vary depending on whether you're replacing an existing IAM system; expect 4-8 weeks for a production deployment with IT involvement.
+
+### Pricing Analysis
+
+1Kosmos uses a contact-for-pricing model with no published tiers. The company has raised $1.3M listed (though Series B funding suggests more recent raises may not be reflected in the data), indicating it is a growth-stage vendor. Pricing is likely per-user/per-month for workforce IAM deployments, with separate rates for customer identity volume.
+
+Buyers evaluating 1Kosmos should negotiate early on data residency commitments and ask specifically about blockchain infrastructure hosting — whether it runs on the vendor's infrastructure or can be deployed in your own cloud environment. Given the early stage, flexibility on contract length and proof-of-concept terms should be achievable.
+
+## FAQ
+
+**How does 1Kosmos use blockchain for identity?**
+1Kosmos anchors identity attributes (document scans, biometric templates, verified credentials) to a private, permissioned blockchain. This means no central credential database exists that can be breached — each user's identity data is distributed and verifiable without a centralized store.
+
+**Does 1Kosmos replace existing IAM systems like Okta or Azure AD?**
+1Kosmos is designed to integrate with, not replace, existing IAM platforms. It adds biometric identity proofing and phishing-resistant authentication as a layer that works alongside Okta, Azure AD, and similar systems via SAML/OIDC/SCIM.
+
+**What is BlockID and how does it relate to the 1Kosmos Platform?**
+BlockID is 1Kosmos's branded authentication product within the broader 1Kosmos Platform. It handles the biometric authentication and decentralized credential storage components of the platform.
+
+**Is 1Kosmos suitable for NIST AAL2 and AAL3 compliance?**
+Yes. 1Kosmos is designed to meet NIST SP 800-63-3 authenticator assurance levels, which is relevant for US federal contractors, healthcare organizations, and any enterprise with formal identity assurance requirements.
+
+**What biometrics does 1Kosmos support?**
+1Kosmos supports facial biometrics, fingerprint (on supported devices), and device biometrics (Face ID, Touch ID, Windows Hello) — enabling passwordless login anchored to a verified identity rather than just a device.

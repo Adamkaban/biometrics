@@ -1,0 +1,58 @@
+---
+vendor: fingera
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: SMBs and enterprises in Central/Eastern Europe needing biometric attendance, access control, and meal management in one system
+avoidIf: Organizations requiring customer-facing KYC or identity verification — Fingera is an HR/workforce management tool, not a KYC platform
+integrationComplexity: Medium
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Fingera is a Bratislava-based biometric workforce management platform founded in 2003, targeting operational HR use cases rather than customer-facing identity verification. The system combines facial recognition and fingerprint scanning with liveness detection for employee attendance tracking, access control, and meal management — a tightly integrated operational bundle that competes less with KYC vendors and more with traditional time-and-attendance hardware providers. Early-stage vendor with no published reviews; evaluation should include a hands-on pilot. Its long operating history (founded 2003) and Central European base give it established deployment experience in mid-market manufacturing, logistics, and service organizations.
+
+### Best For
+
+Mid-market companies in Europe — particularly manufacturing, logistics, healthcare facilities, and service businesses — that need to replace legacy card-swipe or PIN-based attendance systems with biometric verification, and want a single platform managing clocking, leave requests, access control, and meal entitlements.
+
+### Avoid If
+
+Organizations whose primary requirement is customer identity verification, KYC onboarding, or fraud prevention. Fingera is an internal workforce management tool — it is not designed for external customer-facing identity verification workflows. Also avoid if CCPA or HIPAA compliance is required, as Fingera's listed certifications do not include these standards.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — Website data was sparse; no SDK or API documentation was publicly confirmed during data collection. The platform appears to operate primarily through its own hardware-software stack. Organizations requiring API integration with existing HRMS, ERP, or payroll systems should confirm integration capabilities during the evaluation process.
+
+### Pricing Analysis
+
+Fingera uses tiered pricing denominated in euros, with a Starter plan at €10/month for basic verification (up to 100 verifications), a Pro plan at €25/month (up to 1,000 verifications with analytics), and custom Enterprise pricing for unlimited use. For small businesses with under 50 employees, the €10-€25/month range is highly competitive for biometric attendance. The 1,000-verification cap on the Pro plan may be limiting for businesses with high-frequency access control (multiple entries/exits per day per employee).
+
+Enterprise pricing requires a sales conversation, but the Central European company origin and SMB-oriented tier structure suggest more flexible negotiation than multinational vendors. Organizations replacing legacy attendance hardware should factor in hardware costs (biometric terminals) alongside the software subscription.
+
+## FAQ
+
+**Does Fingera use facial recognition, fingerprints, or both?**
+Fingera supports both facial recognition and fingerprint scanning with liveness detection, giving organizations flexibility to deploy the biometric modality that best fits their physical environment — facial recognition for hygiene-sensitive settings (food production, healthcare) and fingerprint where camera-based systems are impractical.
+
+**How does Fingera handle the GDPR implications of collecting employee biometric data?**
+Collecting employee biometric data is a high-risk processing activity under GDPR (Article 9). Fingera's GDPR compliance certification addresses the baseline requirement, but organizations must also establish legitimate legal basis (typically explicit consent or collective agreement depending on jurisdiction), conduct a Data Protection Impact Assessment, and implement appropriate retention and deletion policies. Confirm these procedural requirements with Fingera's data processing agreement.
+
+**Can employees use the mobile app for clocking in and out?**
+Mobile accessibility is listed as a feature. Employees can clock in/out and request leave via the platform, with managers approving requests in real time. The degree of mobile biometric authentication (vs. PIN-based access) on the mobile app should be confirmed during evaluation.
+
+**What happens if an employee's facial biometrics change significantly — after an injury, significant weight change, or medical procedure?**
+Biometric re-enrollment processes are standard operational requirements for attendance systems. Confirm with Fingera what the re-enrollment workflow involves and whether it can be managed by HR staff without vendor intervention.
+
+**Is Fingera available in English, or primarily Slovak/Czech?**
+Fingera is headquartered in Bratislava, Slovakia. Interface language availability beyond Slovak and Czech should be confirmed for international or multilingual workforces — this is a practical deployment consideration for companies operating across European markets.

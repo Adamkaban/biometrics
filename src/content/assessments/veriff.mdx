@@ -1,0 +1,58 @@
+---
+vendor: veriff
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Growth-stage fintechs and global platforms needing 99.6% decision accuracy across 230+ countries with transparent per-verification pricing
+avoidIf: Enterprises requiring on-premise deployment or custom decision logic without dedicated account management — that requires Enterprise tier negotiation
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Veriff is the market benchmark for accuracy in automated identity verification, with a published 99.6% decision rate and 6-second average decision time — figures it backs with ISO/IEC 30107-3 Level 1 and Level 2 PAD certifications and iBeta independent testing. Its 15-day free trial with no credit card requirement and published per-verification pricing (starting at $0.80) makes it the most accessible enterprise-grade IDV platform for growth-stage companies, setting it apart from AU10TIX (opaque pricing) and Entrust IDV (sales-only). With $1.5B in total funding, Veriff has the runway to sustain its global document database and fraud intelligence network at a scale that smaller competitors cannot replicate.
+
+### Best For
+
+Growth-stage fintechs, digital banks, crypto exchanges, and global consumer platforms that need global document coverage (230+ countries), industry-leading accuracy, and a transparent pricing model that scales from $49/month minimums up to custom enterprise contracts — particularly teams that want to go live quickly using Veriff's hosted verification page without writing custom UI.
+
+### Avoid If
+
+Teams building highly customized verification flows from day one who expect full workflow configurability at the Essential tier ($0.80/verification). Session deletion for GDPR compliance, bulk export, and custom branding are gated behind Premium ($1.89/verification) or Enterprise. Very high-volume enterprises (millions of verifications/year) should negotiate Enterprise pricing early to avoid overpaying on per-verification rates.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✓ |
+
+### Integration Complexity
+
+**Low** — REST API, Web SDK, Mobile SDK (iOS/Android), webhooks, and a hosted no-code verification page. Sandbox environment available for testing. Veriff's developer documentation is among the most comprehensive in the IDV market, and the hosted page allows sub-day go-live without any frontend development.
+
+### Pricing Analysis
+
+Veriff's published pricing tiers provide unusual transparency for an enterprise IDV vendor. Essential ($0.80/verification, $49/month minimum) covers automated AI decisions with biometric liveness checks — sufficient for most standard KYC onboarding. The jump to Plus ($1.39) adds human review specialists and enhanced fraud signals (FaceBlock, CrossLinks, Risk Insights), which matters for platforms with elevated fraud exposure. Premium ($1.89) unlocks GDPR-critical features like session deletion and bulk data export.
+
+For companies doing fewer than 1,000 verifications/month, the Essential tier's $49 minimum is cost-effective. At 5,000+ verifications/month, the per-verification rate dominates and Enterprise volume pricing becomes the primary lever — expect to negotiate 30-50% discounts off published rates at meaningful scale. The Plus tier's human review layer is worth the $0.59 premium for platforms in crypto or fintech where borderline cases need a specialist decision to avoid false declines that lose customers.
+
+## FAQ
+
+**How does Veriff's 99.6% decision rate compare to competitors?**
+Veriff's 99.6% automated decision rate means fewer than 0.4% of sessions are returned for manual review or fail to produce a decision. Comparable published figures: Sumsub claims 99.5% profile completion rate, AU10TIX claims 99% pass rate. These metrics measure slightly different things, but Veriff's iBeta-certified testing provides independent validation that competitor claims typically lack.
+
+**What is Veriff's FaceBlock and how does it prevent repeat fraud?**
+FaceBlock is a network-level fraud detection feature (available in Plus and above) that identifies when the same biometric face is used to attempt verification under multiple identities — effectively flagging fraudsters who reuse their face across multiple fake identities. CrossLinks adds graph-based analysis to detect coordinated fraud rings.
+
+**Does Veriff support video recording for verification sessions?**
+Yes, from the Plus tier upward. Session video recording allows compliance teams to review borderline cases with full context and provides audit-trail evidence for regulatory exams. This is a differentiator versus competitors that only store static images.
+
+**What does the 15-day free trial include?**
+Veriff's free trial provides access to the full verification flow including AI decisions, biometric checks, and the hosted verification page. No credit card is required. Production volume limits and human review access during the trial period should be confirmed at signup.
+
+**How does Veriff handle data residency for EU-based companies?**
+Veriff is GDPR-compliant with session deletion available via API (Premium and above) to satisfy data minimization and right-to-erasure requirements. EU customers should confirm data processing agreement terms and confirm whether EU data residency options are available for their deployment — this is a negotiable point at Enterprise tier.

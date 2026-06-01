@@ -1,0 +1,58 @@
+---
+vendor: alice-biometrics
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: European fintechs, gaming platforms, and telecoms needing rapid automated KYC onboarding with a 99% verification rate claim
+avoidIf: Organizations needing SOC 2 or HIPAA compliance — Alice Biometrics only holds GDPR and ISO 27001 certifications
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Alice Biometrics is a Spanish identity verification specialist founded in 2011 and backed by Series A funding, positioning itself in the European mid-market with a strong emphasis on automated, AI-driven onboarding. The platform's headline claim of 99% verification in under 30 seconds distinguishes it from enterprise-heavy competitors that prioritize compliance depth over speed. The inclusion of AML database checks alongside facial recognition and document verification means Alice Biometrics can cover the full KYC+AML requirement in a single integration — a practical advantage for regulated sectors that would otherwise need a separate AML screening vendor.
+
+### Best For
+
+European fintech startups and scale-ups, online gaming platforms with age verification requirements, and telecoms needing fast, automated KYC onboarding with AML checks bundled in — particularly organizations where user experience and conversion rate on the onboarding funnel are as important as compliance depth.
+
+### Avoid If
+
+Organizations that require SOC 2 Type II certification, HIPAA compliance, or CCPA compliance for their jurisdiction — Alice Biometrics' compliance certifications are limited to GDPR, ISO 27001, and PCI DSS. US-based buyers or healthcare organizations will find compliance gaps.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — REST API, Web SDK, and Mobile SDK (iOS/Android) are all available. The platform is cloud-based with on-premise options noted, which is relevant for European financial institutions with data residency requirements. API documentation and integration quality are consistent with a maturing Series A product.
+
+### Pricing Analysis
+
+Alice Biometrics uses custom/enterprise pricing with no published tiers — all plans require a sales contact. This is standard for a company in their stage targeting regulated industries, but it adds friction for developers and smaller teams doing rapid vendor evaluation. Given the Series A funding stage and European market focus, pricing is likely more flexible than Experian or LexisNexis, but less transparent than global pure-plays like iDenfy.
+
+Buyers doing under 5,000 verifications/month should explicitly negotiate a startup or low-volume tier during initial discussions. The inclusion of AML database checks in the platform means the total cost of ownership may be lower than vendors requiring separate AML screening subscriptions, so model full compliance stack costs when comparing.
+
+## FAQ
+
+**Does Alice Biometrics include AML screening alongside KYC verification?**
+Yes — AML Databases is listed as a product within the Alice Biometrics platform. This means organizations can run identity document verification, facial biometrics, and AML watchlist screening within a single vendor relationship, rather than managing separate KYC and AML tools.
+
+**What is the claimed verification accuracy and how should buyers validate it?**
+Alice Biometrics claims a 99% verification rate in under 30 seconds. Buyers should validate this claim in a proof-of-concept using their actual user demographics and target document types — accuracy rates can vary significantly between populations and document quality conditions.
+
+**Is Alice Biometrics suitable for GDPR-regulated identity workflows?**
+Yes — GDPR compliance is explicitly certified, and the company is headquartered in Spain (EU), which means data processing agreements will align with EU data protection requirements. Buyers should confirm data residency options and sub-processor arrangements during due diligence.
+
+**Does the platform support age verification for gaming compliance?**
+Yes — age verification is listed as a use case and gaming is a target industry. European online gaming regulation (notably UK Gambling Commission and similar EU bodies) requires identity and age verification; Alice Biometrics covers both in a single flow.
+
+**What is the onboarding experience like for end users — does it require active liveness checks?**
+The platform emphasizes automation and low-friction onboarding. Specific liveness detection methodology (active vs. passive) is not detailed in public documentation — buyers should request a demo flow to evaluate UX before committing.

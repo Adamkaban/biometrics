@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://primebiometry.com" },
+    { "@type": "ListItem", position: 2, name: "Contact", item: "https://primebiometry.com/contact" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Contact PrimeBiometry"
+  description="Get in touch with the PrimeBiometry team. Questions about vendor assessments, partnership inquiries, or editorial feedback."
+  canonicalUrl="https://primebiometry.com/contact"
+  schema={schema}
+>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-10" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500">
+        <li><a href="/" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-600 dark:text-zinc-300" aria-current="page">Contact</li>
+      </ol>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+      Contact Us
+    </h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-2">
+      Use the form below or email us directly at{" "}
+      <a href="mailto:support@primebiometry.com" class="text-blue-600 dark:text-blue-400 hover:underline">
+        support@primebiometry.com
+      </a>.
+    </p>
+    <p class="text-sm text-zinc-500 dark:text-zinc-500 mb-10">
+      Typical response time: 1-2 business days.
+    </p>
+
+    <!-- Tally embed -->
+    <div class="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden">
+      <iframe
+        data-tally-src="https://tally.so/embed/A7yjXW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        width="100%"
+        height="400"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Contact form"
+        class="block"
+        style="min-height: 400px;"
+      ></iframe>
+    </div>
+
+    <!-- What to expect section -->
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {[
+        { label: "Vendor submissions", text: "Suggest a vendor we should cover" },
+        { label: "Corrections", text: "Report outdated pricing or specs" },
+        { label: "Partnerships", text: "Affiliate and featured placement inquiries" },
+      ].map((item) => (
+        <div class="rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
+          <p class="text-xs uppercase tracking-wide text-zinc-400 dark:text-zinc-500 mb-1">{item.label}</p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400">{item.text}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+vendor: enqualify
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Mobile-first businesses needing on-device AI identity verification completing in under 5 seconds without server roundtrips
+avoidIf: Organizations requiring a vendor website, published pricing, or documented compliance certifications before procurement
+integrationComplexity: High
+hasFreeTrialVerified: false
+---
+
+## PrimeBiometry Assessment
+
+EnQualify's technical premise is "AI on Mobile" -- performing identity verification on-device in under 5 seconds rather than relying on server-side processing. This architecture has genuine privacy and latency advantages: biometric data doesn't leave the user's device for the verification decision, which is meaningful for GDPR Article 5 data minimization compliance in principle. However, EnQualify has no published vendor website, no pricing information, zero published reviews, and limited public documentation. This makes it one of the highest-friction vendors to evaluate in this comparison set. Early-stage vendor with limited published reviews.
+
+### Best For
+
+Mobile application developers and digital identity teams at fintech or government agencies that specifically need on-device liveness + facial recognition to minimize latency and server-side data exposure, and are willing to invest in vendor outreach to surface technical and commercial details.
+
+### Avoid If
+
+Any organization that requires a functional vendor website, published pricing, compliance certifications, or third-party reviews as baseline procurement criteria. The absence of a vendor website alone disqualifies EnQualify from most formal vendor evaluation processes.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✗ |
+| CCPA | ✗ |
+| SOC 2 | ✗ |
+| ISO 27001 | ✗ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**High** — With no vendor website, no public API documentation, and no self-serve trial, any integration requires direct vendor engagement. The on-device AI architecture likely involves a mobile SDK rather than a REST API, which increases integration complexity relative to cloud-based verification services.
+
+### Pricing Analysis
+
+No pricing information is available. EnQualify's Capterra listing shows "Get Price" as the only pricing signal, with no tiers, no per-verification rates, and no contract minimums published anywhere. This is the least pricing-transparent vendor in this assessment batch.
+
+Seed-stage funding of $18M for a 51-200 person company (founded 2014) suggests a modest but operating business. Pricing, when obtained, will likely be custom-negotiated based on monthly verification volume and deployment model (cloud-assisted vs. fully on-device). Do not invest engineering resources in evaluating this vendor until a commercial proposal with SLAs and compliance documentation is in hand.
+
+## FAQ
+
+**What does "AI on Mobile" mean in EnQualify's context?**
+EnQualify processes facial recognition and liveness detection on the end user's mobile device rather than sending biometric data to a cloud server for analysis. This approach reduces verification latency and limits server-side biometric data exposure.
+
+**How fast is EnQualify's identity verification process?**
+EnQualify claims verification completion in under 5 seconds, driven by on-device processing eliminating server roundtrip latency. This claim has not been independently benchmarked.
+
+**Does EnQualify have a working vendor website?**
+As of June 2026, EnQualify does not have a publicly accessible vendor website listed in major review platforms. Procurement teams should reach out via their Capterra listing or direct outreach channels.
+
+**Is on-device biometric processing more GDPR-compliant than cloud processing?**
+On-device processing can support GDPR Article 5 data minimization principles by avoiding transmission of biometric data to third-party servers. However, GDPR compliance depends on the full data lifecycle, including enrollment data storage and audit log management -- verify these specifics with the vendor.
+
+**How does EnQualify compare to cloud-based IDV vendors on accuracy?**
+On-device AI models typically trade some accuracy against the latency and privacy benefits of local processing. Request accuracy benchmarks (true acceptance rate, false acceptance rate) for your target device range and demographic population before committing.

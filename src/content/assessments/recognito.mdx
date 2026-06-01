@@ -1,0 +1,58 @@
+---
+vendor: recognito
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Security-critical applications (government, healthcare, banking) requiring NIST FRVT Top 1-ranked face recognition accuracy
+avoidIf: Teams needing a SaaS-only, no-infrastructure solution — Recognito's SDK model requires developer integration effort
+integrationComplexity: Medium
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Recognito is one of the few commercial vendors that can legitimately claim NIST FRVT (Face Recognition Vendor Testing) Top 1 accuracy — an independent benchmark that is the gold standard for face biometric performance evaluation. Founded in 2020 and based in Abu Dhabi, Recognito distributes primarily through an SDK licensing model (FaceSDK, Liveness Detection SDK, Document Verification SDK) rather than a managed cloud service, which means it targets developers and system integrators building biometric capabilities into their own applications. With 23 Capterra reviews averaging 4.9/5.0, it has built more validated social proof than most competitors at its stage.
+
+### Best For
+
+Security-critical environments — government identity management, healthcare patient authentication, banking fraud prevention — where face recognition accuracy is the non-negotiable requirement, and where the buyer has developer resources to integrate an SDK into their existing application stack rather than deploying a turnkey SaaS product.
+
+### Avoid If
+
+Organizations without software development resources or those seeking a managed, no-code identity verification workflow. Recognito's SDK model requires active integration work; it is not a plug-and-play onboarding portal. Teams expecting a Veriff-style hosted verification flow will find a different product category.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✓ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Medium** — User-friendly APIs, REST API, Web SDK, and Mobile SDK (iOS/Android) are available. However, the SDK-first model means integration requires meaningful development effort compared to hosted verification services. On-premise deployment is supported, which requires infrastructure setup. The 15-day free trial with complete SDK access is a genuine evaluation path for developers.
+
+### Pricing Analysis
+
+Recognito offers a 15-day free trial with full feature access — unusually transparent for this market — followed by a Lifetime License model (one-time payment) or monthly plans reportedly starting at $20/month for 1,000 verifications. The Lifetime License option is distinctive: it offers permanent use rights with ongoing updates, which is attractive for on-premise deployments where ongoing SaaS costs are a concern.
+
+For organizations doing 5,000+ verifications/month, the Pro Plan at $50/month (5,000 verifications) is competitive per-unit pricing compared to enterprise-only vendors. Enterprise custom pricing is available for unlimited verification volumes. The SDK licensing model and on-premise option also mean buyers can negotiate deployment-based pricing rather than per-verification fees, which may be more economical for high-frequency authentication scenarios like physical access control.
+
+## FAQ
+
+**What does "NIST FRVT Top 1" mean and how does it affect buying decisions?**
+The NIST Face Recognition Vendor Testing program independently evaluates face recognition algorithms across a range of scenarios. "Top 1" ranking means Recognito's algorithm achieved the highest accuracy in its testing category — a government-validated benchmark that carries significant weight for security procurement, particularly in government and healthcare where false-match rates have direct safety implications.
+
+**What is 3D passive liveness detection and how does Recognito implement it?**
+Recognito's Face Liveness Detection SDK uses passive 3D analysis — meaning the system determines whether the camera sees a live face versus a photo, video, or 3D mask without requiring the user to perform any action. This preserves user experience while maintaining high anti-spoofing resistance, certified by iBeta PAD testing.
+
+**Can Recognito operate fully offline without cloud connectivity?**
+Yes — on-premise deployment with offline operation capability is explicitly listed. This is critical for air-gapped environments, low-connectivity field deployments, or any application where data cannot leave the local network.
+
+**What is the Lifetime License model and is it suitable for enterprise buyers?**
+The Lifetime License is a one-time payment for permanent SDK use rights with ongoing updates and free support. This model favors buyers who want predictable cost structures and do not want ongoing SaaS dependencies — particularly relevant for government contracts or on-premise enterprise deployments where long-term maintenance budgeting is required.
+
+**Does Recognito support 1:N identification (matching against a database) or only 1:1 verification?**
+Both 1:1 face verification (confirming "this person is who they claim to be") and 1:N identification (finding a match across a database of enrolled faces) are supported — the latter is particularly relevant for physical access control, law enforcement, and large-scale attendance management systems.

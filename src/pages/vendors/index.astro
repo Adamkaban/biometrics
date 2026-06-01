@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import VendorCard from "../../components/catalog/VendorCard.astro";
+import VendorFilters from "../../components/catalog/VendorFilters";
+import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
+import { vendors, categories } from "../../lib/vendors";
+
+// Server-side sort: featured first (by rating desc), then non-featured (by rating desc)
+const sortedVendors = [...vendors].sort((a, b) => {
+  if (a.featured && !b.featured) return -1;
+  if (!a.featured && b.featured) return 1;
+  return b.rating - a.rating;
+});
+
+// ItemList schema
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Biometric Authentication and Identity Verification Software",
+  numberOfItems: sortedVendors.length,
+  itemListElement: sortedVendors.map((v, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: v.name,
+    url: `https://primebiometry.com/vendors/${v.slug}`,
+  })),
+};
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Vendors", url: "/vendors" },
+];
+---
+
+<BaseLayout
+  title="Compare Biometric Authentication Software 2026"
+  description="Compare 68+ identity verification and biometric authentication vendors. Pricing, ratings, and expert analysis."
+  canonicalUrl="https://primebiometry.com/vendors"
+  schema={itemListSchema}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+    <div class="mb-6">
+      <BreadcrumbSchema items={breadcrumbItems} />
+    </div>
+
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Compare Biometric Software
+      </h1>
+      <p class="mt-3 text-base text-zinc-600 dark:text-zinc-400 max-w-[65ch]">
+        {vendors.length} vendors across identity verification, KYC compliance, and biometric authentication.
+      </p>
+    </div>
+
+    <div class="flex gap-8 items-start">
+      <aside class="w-64 shrink-0">
+        <div class="sticky top-8">
+          <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Filters</h2>
+          <VendorFilters
+            categories={categories}
+            initialParams={Astro.url.search}
+            client:load
+          />
+        </div>
+      </aside>
+
+      <main class="flex-1 min-w-0">
+        <div data-vendor-grid class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {sortedVendors.map(v => <VendorCard vendor={v} />)}
+        </div>
+      </main>
+    </div>
+  </div>
+</BaseLayout>

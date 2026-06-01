@@ -1,0 +1,58 @@
+---
+vendor: baf
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Mid-market fintechs needing NIST-ranked facial biometrics with deepfake detection for eKYC and fraud prevention
+avoidIf: Organizations needing HIPAA or CCPA compliance — BAF's certifications do not cover these standards
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Biometric Anti-Fraud (BAF) by 3DiVi distinguishes itself through a combination of NIST FRVT-ranked facial biometrics and active deepfake detection — a capability that has become increasingly critical as generative AI lowers the barrier for synthetic identity attacks. The flat annual pricing model at $5,000/year provides predictable costs for organizations with moderate verification volumes, unlike per-verification pricing that penalizes growth. BAF has no published reviews on major platforms, which is a notable data gap for a fraud prevention product where real-world accuracy under adversarial conditions matters most.
+
+### Best For
+
+Fintech, crypto, and digital banking platforms building eKYC onboarding that need proven anti-deepfake defenses alongside standard liveness detection. The flat annual license benefits teams with predictable monthly verification volumes who want to avoid per-check cost creep.
+
+### Avoid If
+
+Organizations that need HIPAA, CCPA, or regional compliance certifications beyond GDPR, SOC 2, and ISO 27001. Healthcare platforms and California-focused consumer services will find the compliance coverage insufficient without additional contractual safeguards.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — BAF is marketed as an API-accessible platform supporting digital onboarding flows. The SOC 2 and ISO 27001 certifications imply structured integration documentation and security review processes are available.
+
+### Pricing Analysis
+
+BAF's $5,000/year flat rate is competitively positioned for mid-market buyers who would otherwise pay $0.50–$1.50 per verification with volume-priced competitors. At 500 verifications/month, BAF costs approximately $0.83/check — roughly comparable to market rates. Above 5,000 verifications/month, BAF's flat rate becomes highly advantageous.
+
+The single published price point ($5,000/year Standard) suggests this may be a floor rather than a ceiling. Organizations with complex requirements or very high volumes should initiate a direct conversation about custom tiers. The flat annual structure also makes budget forecasting straightforward for finance teams evaluating total cost of ownership.
+
+## FAQ
+
+**What is deepfake detection and why does it matter for KYC?**
+Deepfake attacks use AI-generated synthetic video or images to impersonate real individuals during identity verification. As deepfake quality improves, standard liveness detection that looks for blink or movement is increasingly insufficient. BAF's deepfake detection layer specifically evaluates whether facial footage has been artificially generated.
+
+**What NIST FRVT ranking has BAF's facial recognition achieved?**
+3DiVi (the company behind BAF) has participated in NIST FRVT evaluations. Buyers should request the specific FRVT benchmark report reference and validate that the evaluated algorithm matches the version deployed in BAF's production system.
+
+**Does BAF include user session monitoring beyond the initial verification?**
+Yes. BAF incorporates session data monitoring alongside facial biometrics, which enables continuous authentication patterns rather than a single point-in-time verification event.
+
+**What is the $5,000/year pricing based on — users, verifications, or API calls?**
+The Standard pricing is listed as a flat $5,000/year, but the basis unit (verifications, seats, or usage volume) is not specified. Clarify with the vendor before purchase to understand what happens if your volume exceeds the assumed baseline.
+
+**Does BAF support on-premises deployment?**
+3DiVi offers on-premise deployment options for some products. Confirm with the vendor whether BAF specifically can be deployed on-premise, as this is a differentiating factor for organizations with strict data residency requirements.

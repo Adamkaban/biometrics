@@ -1,0 +1,58 @@
+---
+vendor: ultrapass
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: Privacy-first use cases (healthcare, public sector, crypto) needing passwordless biometric auth without storing facial images on-server
+avoidIf: Teams needing a proven, reviewed vendor — UltraPass has 0 published reviews and is an early-stage product
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+UltraPass, built on the PrivateID platform, takes a technically distinct approach to biometric authentication: it uses homomorphic tokenization to authenticate users without retaining actual facial images on any server. Processing happens on-device, meaning biometric data never leaves the user's hardware in a recoverable form. This architecture is architecturally aligned with the strictest interpretations of GDPR biometric data provisions (Article 9) and US state biometric privacy laws like Illinois BIPA — a meaningful differentiator for healthcare, public sector, and financial services buyers facing data minimization mandates. With $350M in funding (Series B) and NIST 800-63 IAL2/AAL2 certification, the technical credibility is real, but the 0 published reviews mean buyer-facing validation is limited.
+
+### Best For
+
+Healthcare organizations, public sector agencies, and crypto/fintech platforms subject to strict biometric privacy regulations where storing facial biometrics creates legal liability — UltraPass's on-device processing and no-image-retention architecture directly addresses this compliance risk.
+
+### Avoid If
+
+Organizations prioritizing peer-validated vendor selection or needing an established support track record — UltraPass has zero published reviews and is an early-stage product despite its technical depth and funding. Conservative IT procurement teams will find the absence of customer references a significant barrier.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✓ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✓ |
+
+### Integration Complexity
+
+**Low** — Extensive SDK ecosystem including Web SDK, Mobile SDK (iOS/Android), Python SDK, Swift SDK, and Kotlin SDK alongside REST API. The breadth of SDK options is above-average for this market, reflecting a developer-first approach. On-device processing may require more careful mobile app architecture than server-side biometric solutions.
+
+### Pricing Analysis
+
+UltraPass pricing is entirely custom — no verified published tiers exist despite some scraped reference points ($29/month Basic, $99/month Pro). Given the Series B funding stage and enterprise orientation, actual contract pricing will be negotiated based on deployment scale, industry vertical, and support requirements.
+
+The on-device processing architecture has cost implications: server-side computation costs are lower compared to cloud-heavy competitors, which may translate to more favorable per-verification economics at scale. Buyers in healthcare or government with 50K+ monthly authentications should model total cost including the privacy compliance value (reduced legal exposure from not storing biometrics) alongside raw per-unit pricing.
+
+## FAQ
+
+**What is homomorphic tokenization and why does it matter for biometric privacy?**
+Homomorphic tokenization converts biometric data into an encrypted mathematical token that can be used for matching without decryption. The critical difference from standard biometric systems is that the original facial image is never reconstructed at any point — even a full server breach cannot expose users' facial data. This directly addresses liability under BIPA (Illinois Biometric Information Privacy Act) and GDPR Article 9.
+
+**What does NIST 800-63 IAL2/AAL2 certification mean in practice?**
+NIST 800-63 is the US federal digital identity standard. IAL2 (Identity Assurance Level 2) confirms the system can verify real-world identity with moderate confidence; AAL2 (Authenticator Assurance Level 2) confirms the authentication mechanism meets two-factor requirements. Together, these are required for many US federal, state, and healthcare applications.
+
+**Does UltraPass work offline or require internet connectivity for authentication?**
+On-device processing means the biometric matching step does not require a server round-trip. However, initial enrollment and credential management may require connectivity. This is particularly relevant for field applications in healthcare or public safety.
+
+**Is UltraPass the same product as PrivateID?**
+UltraPass (FIDO2 Ultrapass) is a product within the PrivateID platform by Private Identity LLC. PrivateID is the parent platform; UltraPass is specifically the FIDO2-certified passwordless authentication module.
+
+**What is the iBeta PAD certification and does UltraPass have it?**
+iBeta Presentation Attack Detection (PAD) testing is the industry standard for liveness detection quality. UltraPass holds iBeta PAD certification, confirming the system can reliably distinguish live users from photos, videos, and 3D masks.

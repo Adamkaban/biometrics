@@ -1,0 +1,58 @@
+---
+vendor: data-zoo-flow
+lastUpdated: 2026-06-01
+author: Alex Morgan
+bestFor: APAC-headquartered companies or Australian businesses needing global KYC coverage via a single API with smart data source sequencing
+avoidIf: Organizations needing deep biometric liveness detection — Data Zoo Flow is primarily a data-matching orchestration platform, not a document + selfie KYC product
+integrationComplexity: Low
+hasFreeTrialVerified: true
+---
+
+## PrimeBiometry Assessment
+
+Data Zoo Flow takes a different architectural approach than biometric-first identity verification vendors: it is a data orchestration platform that routes identity attribute verification through multiple data sources in real time, using smart sequencing to find the most accurate match with the fewest API calls. This makes it particularly strong for markets where data source coverage (credit bureaus, telco records, government databases) is the primary verification mechanism rather than document scanning. Founded in 2011 and based in Australia with Series B funding ($23.2M), Data Zoo Flow has a credible foundation for APAC expansion while offering global coverage through a single API integration.
+
+### Best For
+
+Australian and APAC-headquartered businesses, or global platforms with meaningful APAC user bases, that need high-pass-rate identity verification through data-source matching — particularly in markets where government database access improves accuracy beyond document-only verification.
+
+### Avoid If
+
+Organizations whose primary fraud risk involves document forgery or synthetic identity creation based on real identity data. Data Zoo Flow's strength is data matching, not document forensics or biometric liveness — a different threat model than what a Veriff or Onfido addresses.
+
+### Compliance Coverage
+
+| Standard | Status |
+|----------|--------|
+| GDPR | ✗ |
+| CCPA | ✗ |
+| SOC 2 | ✓ |
+| ISO 27001 | ✓ |
+| HIPAA | ✗ |
+
+### Integration Complexity
+
+**Low** — Data Zoo Flow provides a single global API with real-time responses. One integration point covers all data source routing, which significantly simplifies the developer experience compared to managing multiple data provider APIs. Standard integration typically completes in 1-2 weeks.
+
+### Pricing Analysis
+
+Data Zoo Flow is one of the few identity verification vendors with published pricing tiers, which is an unusual degree of transparency in this market. The Basic Plan at $99/month covers up to 1,000 verifications — suitable for early-stage companies or low-volume use cases. The Pro Plan at $249/month extends to 5,000 verifications with priority support.
+
+The published tiers make initial budgeting straightforward, but high-growth companies should model the transition to the Enterprise (contact sales) tier carefully. At $0.10-$0.25 per verification in the lower tiers, costs can scale quickly with volume. The Enterprise plan's unlimited verifications and custom pricing typically become economical above 10,000-15,000 verifications/month — negotiate the transition threshold and custom rate early before hitting the tier limit.
+
+## FAQ
+
+**What is "smart source sequencing" in Data Zoo Flow?**
+Smart source sequencing is Data Zoo Flow's core differentiation: rather than checking every available data source for every verification, the platform intelligently routes each request through the most likely data sources first, then falls back to alternatives only if needed. This reduces latency, cost per verification, and unnecessary data queries.
+
+**What does "attribute-level verification" mean?**
+Data Zoo Flow can verify individual identity attributes (name, address, date of birth, phone number) separately against different data sources, rather than treating identity verification as a binary pass/fail. This is useful for enriching customer profiles or building scored identity assessments rather than simple pass/fail gates.
+
+**Is Data Zoo Flow suitable for Australian AML compliance?**
+Data Zoo's Australian origins and data source access make it well-suited for Australian AML/CTF compliance. However, buyers should confirm specific AUSTRAC-relevant data source coverage and whether verification outputs satisfy AML program documentation requirements.
+
+**Does Data Zoo Flow support document verification and biometrics?**
+Data Zoo Flow primarily focuses on database-driven identity verification rather than document scanning or biometric matching. For use cases requiring document verification, evaluate whether a data-first or document-first approach better fits your risk profile, or whether a hybrid approach is needed.
+
+**How does CSA STAR certification affect cloud security posture?**
+CSA STAR (Cloud Security Alliance Security, Trust, Assurance and Risk) is a cloud-specific security certification that complements ISO 27001. It indicates Data Zoo has undergone formal assessment of its cloud security controls — relevant for enterprise security teams conducting vendor risk assessments.
