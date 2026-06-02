@@ -38,8 +38,10 @@ src/lib/calculator.ts                        — pure pricing parse + calculatio
 interface VendorPricingInput {
   slug: string
   name: string
+  logo_url?: string        // Google favicon URL (available for 60/68 vendors)
   featured: boolean
   has_assessment: boolean
+  has_free_trial: boolean  // true for 19/24 KYC vendors — show badge in row
   vendor_website: string
   affiliate_url?: string
   plans: Array<{ name: string; price: string }>
@@ -93,7 +95,13 @@ Sort order:
 Featured vendors: `border-blue-200 bg-blue-50/50` highlight (existing catalog style), no position change in sort order.
 
 ### VendorRow
-Columns: Vendor name | Estimated monthly | Per verification | Action button
+Columns: [Logo] Vendor name | Estimated monthly | Per verification | Badges | Action button
+
+**Logo:** `logo_url` → `<img>` 20×20, fallback to vendor initial letter in zinc-200 circle if missing.
+
+**Badges (after vendor name):**
+- `has_free_trial: true` → emerald badge "Free Trial"
+- `featured: true` → blue badge "Featured"
 
 Action button logic:
 - `has_assessment: true` → `[View Review]` → `/vendors/[slug]`
