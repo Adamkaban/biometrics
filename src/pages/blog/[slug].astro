@@ -1,0 +1,161 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const pubDateStr = post.data.pubDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const updatedDateStr = (post.data.updatedDate ?? post.data.pubDate).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const canonicalUrl = `https://primebiometry.com/blog/${post.slug}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  author: {
+    "@type": "Person",
+    name: "James Whitfield",
+    jobTitle: "KYC & Identity Verification Analyst",
+    url: "https://primebiometry.com/about",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "PrimeBiometry",
+    url: "https://primebiometry.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://primebiometry.com/favicon.svg",
+    },
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://primebiometry.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://primebiometry.com/blog" },
+    { "@type": "ListItem", position: 3, name: post.data.title, item: canonicalUrl },
+  ],
+};
+
+const schemas: Record<string, unknown>[] = [articleSchema, breadcrumbSchema];
+
+if (post.data.faqItems && post.data.faqItems.length > 0) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.data.faqItems.map((item: { q: string; a: string }) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  });
+}
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonicalUrl={canonicalUrl}
+  schema={schemas}
+>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+
+    <nav class="mb-10" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500">
+        <li><a href="/" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/blog" class="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Blog</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-600 dark:text-zinc-300 truncate max-w-[24ch]" aria-current="page">{post.data.title}</li>
+      </ol>
+    </nav>
+
+    <header class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="rounded-full border border-zinc-200 dark:border-zinc-700 px-3 py-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+          {post.data.category}
+        </span>
+        <time
+          datetime={post.data.pubDate.toISOString().slice(0, 10)}
+          class="text-xs font-mono text-zinc-400 dark:text-zinc-500"
+        >
+          {pubDateStr}
+        </time>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6 leading-tight">
+        {post.data.title}
+      </h1>
+
+      <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 max-w-[65ch]">
+        {post.data.description}
+      </p>
+
+      <div class="flex flex-wrap items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400 mb-8">
+        <span>By <strong class="font-medium text-zinc-700 dark:text-zinc-300">James Whitfield</strong></span>
+        <span aria-hidden="true">·</span>
+        <span>Updated {updatedDateStr}</span>
+      </div>
+
+      <p class="text-xs text-zinc-500 dark:text-zinc-400 border-l-2 border-amber-400 pl-3 py-1">
+        Some links in this article may be affiliate links. PrimeBiometry earns a commission at no extra cost to you. This does not influence our editorial ratings or recommendations.
+      </p>
+    </header>
+
+    <div class="prose prose-zinc dark:prose-invert prose-lg max-w-none">
+      <Content />
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+      <div class="flex flex-col gap-3">
+        <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">James Whitfield</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">KYC &amp; Identity Verification Analyst · PrimeBiometry</p>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
+          James Whitfield founded PrimeBiometry to help compliance managers and IT teams cut through vendor marketing. He has evaluated 60+ identity verification platforms across fintech, banking, and crypto verticals.
+        </p>
+        <a href="/methodology" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+          Our evaluation methodology →
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-4 mt-8">
+        <a
+          href="/vendors"
+          class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+        >
+          Browse KYC software →
+        </a>
+        <a
+          href="/blog"
+          class="rounded-md border border-zinc-200 dark:border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+        >
+          Back to Blog
+        </a>
+      </div>
+    </footer>
+
+  </article>
+</BaseLayout>
