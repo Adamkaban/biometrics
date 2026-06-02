@@ -90,3 +90,96 @@ export function parsePrice(raw: string): ParsedPrice {
 
   return { type: "custom", label: "Contact Sales" };
 }
+
+export interface VendorPricingInput {
+  slug: string;
+  name: string;
+  logo_url: string;
+  featured: boolean;
+  has_assessment: boolean;
+  has_free_trial: boolean;
+  vendor_website: string;
+  affiliate_url: string | null;
+  plans: Array<{ name: string; price: string }>;
+}
+
+export type PricingResult =
+  | { type: "calculated"; monthlyUSD: number; perVerification?: number; hasMinimum?: number; approx?: true }
+  | { type: "flat"; usd: number; label?: string }
+  | { type: "free" }
+  | { type: "custom"; label: string };
+
+export interface VendorResult extends VendorPricingInput {
+  pricing: PricingResult;
+}
+
+export function calculateMonthlyCost(vendor: VendorPricingInput, volume: number): VendorResult {
+  if (vendor.plans.length === 0) {
+    return { ...vendor, pricing: { type: "custom", label: "Contact Sales" } };
+  }
+
+  const parsed = vendor.plans.map((p) => parsePrice(p.price));
+
+  // Free tier — any free plan
+  if (parsed.some((p) => p.type === "free")) {
+    return { ...vendor, pricing: { type: "free" } };
+  }
+
+  // Per-check plans — pick cheapest for given volume
+  const perCheckPlans = parsed.filter(
+    (p): p is Extract<ParsedPrice, { type: "per-check" }> => p.type === "per-check"
+  );
+  if (perCheckPlans.length > 0) {
+    const best = perCheckPlans.reduce((acc, p) => {
+      const cost = Math.max(p.usd * volume, p.monthlyMin ?? 0);
+      const accCost = Math.max(acc.usd * volume, acc.monthlyMin ?? 0);
+      return cost < accCost ? p : acc;
+    });
+    const rawCost = best.usd * volume;
+    const monthlyUSD = best.monthlyMin ? Math.max(rawCost, best.monthlyMin) : rawCost;
+    return {
+      ...vendor,
+      pricing: {
+        type: "calculated",
+        monthlyUSD,
+        perVerification: best.usd,
+        ...(best.monthlyMin ? { hasMinimum: best.monthlyMin } : {}),
+        ...(best.approx ? { approx: true } : {}),
+      },
+    };
+  }
+
+  // Flat plans — pick cheapest
+  const flatPlans = parsed.filter(
+    (p): p is Extract<ParsedPrice, { type: "flat" }> => p.type === "flat"
+  );
+  if (flatPlans.length > 0) {
+    const best = flatPlans.reduce((acc, p) => (p.usd < acc.usd ? p : acc));
+    return { ...vendor, pricing: best };
+  }
+
+  // All custom
+  return { ...vendor, pricing: { type: "custom", label: "Contact Sales" } };
+}
+
+export function sortVendorResults(results: VendorResult[]): VendorResult[] {
+  // free=0, priced (calculated+flat)=1, custom=2
+  const bucket = (r: VendorResult): number => {
+    if (r.pricing.type === "free") return 0;
+    if (r.pricing.type === "custom") return 2;
+    return 1; // calculated + flat sorted together by USD
+  };
+
+  const cost = (r: VendorResult): number => {
+    if (r.pricing.type === "calculated") return r.pricing.monthlyUSD;
+    if (r.pricing.type === "flat") return r.pricing.usd;
+    return 0;
+  };
+
+  return [...results].sort((a, b) => {
+    const ba = bucket(a);
+    const bb = bucket(b);
+    if (ba !== bb) return ba - bb;
+    return cost(a) - cost(b);
+  });
+}
