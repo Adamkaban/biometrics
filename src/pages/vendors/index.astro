@@ -4,6 +4,7 @@ import VendorCard from "../../components/catalog/VendorCard.astro";
 import VendorFilters from "../../components/catalog/VendorFilters";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
 import { vendors, categories } from "../../lib/vendors";
+import { getCollection } from "astro:content";
 
 // Server-side sort: featured first (by rating desc), then non-featured (by rating desc)
 const sortedVendors = [...vendors].sort((a, b) => {
@@ -30,6 +31,11 @@ const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Vendors", url: "/vendors" },
 ];
+
+const allPosts = await getCollection("blog");
+const latestPosts = allPosts
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 3);
 ---
 
 <BaseLayout
@@ -71,4 +77,34 @@ const breadcrumbItems = [
       </main>
     </div>
   </div>
+
+  {latestPosts.length > 0 && (
+    <div class="border-t border-zinc-200 dark:border-zinc-700 mt-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">Analysis & Guides</h2>
+          <a href="/blog" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">View all</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {latestPosts.map((post) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="group flex flex-col gap-2 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-5 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+            >
+              <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {post.data.title}
+              </p>
+              <p class="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+                {new Date(post.data.pubDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
 </BaseLayout>

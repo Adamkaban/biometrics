@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
-import { getVendorBySlug, getCategorySlug } from "../../lib/vendors";
+import { getVendorBySlug, getCategorySlug, getVendorsByCategory } from "../../lib/vendors";
 import type { Vendor } from "../../lib/vendors";
 import siteConfig from "../../../site.config";
 
@@ -77,6 +77,41 @@ const breadcrumbItems = [
 ];
 
 const pricingPlans = vendor.website_data?.pricing_plans ?? [];
+
+// Blog posts relevant to vendor categories
+const VENDOR_CAT_BLOG_SLUGS: Record<string, string[]> = {
+  "KYC Compliance": [
+    "best-kyc-aml-software-2026",
+    "kyc-pricing-guide-2026",
+    "veriff-vs-jumio-2026",
+  ],
+  "AML": [
+    "kyc-aml-compliance-checklist-fintech-2026",
+    "best-kyc-aml-software-2026",
+  ],
+  "Identity Verification": [
+    "veriff-vs-jumio-2026",
+    "best-kyc-aml-software-2026",
+  ],
+};
+
+const allBlogPosts = await getCollection("blog");
+const relevantSlugs = vendor.categories.flatMap(
+  (cat) => VENDOR_CAT_BLOG_SLUGS[cat] ?? []
+);
+const uniqueSlugs = [...new Set(relevantSlugs)];
+const relatedPosts = allBlogPosts
+  .filter((p) => uniqueSlugs.includes(p.slug))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 3);
+
+// Alternatives: top 3 other vendors from same primary category
+const alternatives = primaryCategory
+  ? getVendorsByCategory(primaryCategory)
+      .filter((v) => v.slug !== vendor.slug)
+      .sort((a, b) => b.rating - a.rating)
+      .slice(0, 3)
+  : [];
 
 // Auto-generate FAQPage from existing assessment + vendor data — no MDX changes needed
 const autoFaqItems = [
@@ -172,6 +207,60 @@ const faqSchema = {
             </section>
           )
         }
+        <!-- Related blog posts -->
+        {relatedPosts.length > 0 && (
+          <section class="mt-10">
+            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              Related Guides
+            </h2>
+            <div class="flex flex-col gap-3">
+              {relatedPosts.map((post) => (
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="group flex flex-col gap-1 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+                >
+                  <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {post.data.title}
+                  </p>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400">{post.data.description.slice(0, 100)}…</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Compare alternatives -->
+        {alternatives.length > 0 && (
+          <section class="mt-10">
+            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+              Compare Alternatives
+            </h2>
+            <div class="flex flex-col gap-3">
+              {alternatives.map((alt) => (
+                <a
+                  href={`/vendors/${alt.slug}`}
+                  class="group flex items-center justify-between gap-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+                >
+                  <div class="min-w-0">
+                    <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      {alt.name}
+                    </p>
+                    <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">{alt.pricing}</p>
+                  </div>
+                  <span class="shrink-0 text-sm font-mono font-semibold text-zinc-700 dark:text-zinc-300">
+                    {alt.rating.toFixed(1)}
+                  </span>
+                </a>
+              ))}
+            </div>
+            <a
+              href={`/categories/${categorySlug}`}
+              class="mt-4 inline-block text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              See all {primaryCategory} vendors →
+            </a>
+          </section>
+        )}
       </div>
 
       <!-- Right 30% sticky sidebar -->

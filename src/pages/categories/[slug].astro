@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import VendorCard from "../../components/catalog/VendorCard.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
 import { CATEGORY_SLUGS, getVendorsByCategory } from "../../lib/vendors";
+import { getCollection } from "astro:content";
 import siteConfig from "../../../site.config";
 
 export function getStaticPaths() {
@@ -29,8 +30,31 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
     "Fraud prevention platforms combine device fingerprinting, behavioral analytics, and machine learning to detect account takeover, synthetic identity fraud, and payment fraud in real time.",
 };
 
+// Blog posts relevant to each category (update as new posts are added)
+const CATEGORY_BLOG_SLUGS: Record<string, string[]> = {
+  "KYC Compliance": [
+    "best-kyc-aml-software-2026",
+    "kyc-pricing-guide-2026",
+    "veriff-vs-jumio-2026",
+  ],
+  "AML": [
+    "kyc-aml-compliance-checklist-fintech-2026",
+    "best-kyc-aml-software-2026",
+  ],
+  "Identity Verification": [
+    "veriff-vs-jumio-2026",
+    "best-kyc-aml-software-2026",
+  ],
+};
+
 const { categoryName } = Astro.props;
 const { slug } = Astro.params;
+
+const allPosts = await getCollection("blog");
+const relatedPosts = allPosts
+  .filter((p) => (CATEGORY_BLOG_SLUGS[categoryName] ?? []).includes(p.slug))
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 3);
 
 const vendors = getVendorsByCategory(categoryName);
 const description = CATEGORY_DESCRIPTIONS[categoryName] ?? "";
@@ -84,6 +108,38 @@ const breadcrumbItems = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {vendors.map((v) => <VendorCard vendor={v} />)}
     </div>
+
+    {relatedPosts.length > 0 && (
+      <section class="mt-12 border-t border-zinc-200 dark:border-zinc-700 pt-10">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+            Analysis & Guides
+          </h2>
+          <a href="/blog" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+            View all
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {relatedPosts.map((post) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="group flex flex-col gap-2 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-5 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+            >
+              <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                {post.data.title}
+              </p>
+              <p class="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+                {new Date(post.data.pubDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     {slug === "kyc-compliance" && (
       <div class="mt-12 p-6 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-700">
