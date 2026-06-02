@@ -1,0 +1,314 @@
+---
+title: "KYC/AML Compliance Checklist for Fintech Companies (2026)"
+description: "Complete KYC/AML compliance checklist for fintech startups and scale-ups. Covers CDD, EDD, transaction monitoring, sanctions screening, and software selection. Updated for AMLD6 and FinCEN 2024."
+author: "James Whitfield"
+pubDate: 2026-06-02
+updatedDate: 2026-06-02
+category: "KYC Compliance"
+featured: false
+faqItems:
+  - q: "What is a KYC compliance program?"
+    a: "A KYC (Know Your Customer) compliance program is a set of policies and procedures that financial institutions use to verify customer identities, assess risk, and prevent money laundering and fraud. It typically includes Customer Identification Program (CIP), Customer Due Diligence (CDD), Enhanced Due Diligence (EDD) for high-risk customers, and ongoing transaction monitoring."
+  - q: "What software is used for KYC compliance?"
+    a: "Common KYC compliance software includes Sumsub, Veriff, iDenfy, ComplyCube, Jumio, and Ondato. These platforms automate identity document verification, biometric liveness checks, AML screening against sanctions lists, and PEP database checks. The best choice depends on your geography, transaction volume, and regulatory requirements."
+  - q: "What are KYC requirements for fintech companies?"
+    a: "Fintech KYC requirements vary by jurisdiction. In the US (FinCEN), fintechs must implement a Customer Identification Program (CIP) under the Bank Secrecy Act. In the EU, AMLD6 requires CDD, EDD for high-risk customers, and beneficial ownership verification. UK fintechs follow FCA guidelines. At minimum, fintechs must collect name, date of birth, address, and a government-issued ID, then verify these against authoritative sources."
+  - q: "What is the difference between KYC and AML?"
+    a: "KYC (Know Your Customer) is the process of verifying who your customers are — collecting and authenticating identity documents, performing liveness checks, and assessing initial risk. AML (Anti-Money Laundering) is the broader framework of controls to detect and prevent money laundering, which includes KYC as its foundation plus transaction monitoring, suspicious activity reporting (SAR/STR), and sanctions screening. KYC happens at onboarding; AML monitoring is ongoing."
+  - q: "How often should KYC be refreshed for existing customers?"
+    a: "KYC refresh frequency depends on customer risk tier. Standard risk customers typically require re-verification every 2–3 years. High-risk customers and PEPs (Politically Exposed Persons) require annual re-verification. EDD customers under enhanced monitoring may require more frequent review. Your risk-based approach (RBA) documentation should specify the refresh schedule per tier."
+---
+
+**TL;DR**
+
+- This checklist covers the eight core components of a KYC/AML program: CIP, CDD, EDD, transaction monitoring, SAR reporting, record keeping, staff training, and technology requirements.
+- Regulatory frameworks addressed: FinCEN/Bank Secrecy Act (US), FCA/MLR 2017 (UK), EBA/AMLD6 (EU), and MAS PSN01/PSN02 (Singapore).
+- KYC and AML are distinct processes that operate in sequence: KYC establishes identity at onboarding; AML monitoring runs continuously against established baselines. Conflating them leads to gaps in both.
+- For software selection guidance, see our [full KYC/AML software comparison](/blog/best-kyc-aml-software-2026).
+
+---
+
+## KYC vs AML: Key Differences
+
+Compliance teams frequently treat KYC and AML as interchangeable terms. They are not, and conflating them creates real program gaps.
+
+**KYC (Know Your Customer)** is the identity verification layer. It answers the question: who is this person? KYC covers document collection and authentication, biometric liveness verification, and the initial risk classification of the customer. It happens primarily at onboarding, with periodic refresh cycles thereafter.
+
+**AML (Anti-Money Laundering)** is the broader control framework designed to detect and prevent financial crime. KYC is its foundation, but AML extends into ongoing transaction monitoring, suspicious activity reporting, sanctions screening against continuously updated lists, and the overall governance program. AML runs continuously across the entire customer lifecycle.
+
+Every major regulator requires both, but they sit in different operational workflows. KYC outputs feed your AML program. A customer who passes KYC onboarding enters your transaction monitoring perimeter. When monitoring flags anomalous behavior, your AML escalation procedures take over. Running KYC without an AML program is a common gap in early-stage fintechs and a standard examination finding.
+
+A practical way to distinguish them: if your KYC platform is down, you cannot onboard new customers. If your AML monitoring is down, you cannot detect suspicious activity in existing accounts. Both are critical; neither substitutes for the other.
+
+---
+
+## KYC/AML Regulatory Requirements for Fintech in 2026
+
+### FinCEN Requirements (US)
+
+The **Bank Secrecy Act (BSA)** is the statutory foundation for US AML obligations. FinCEN administers BSA compliance and issues binding regulations under Title 31 of the US Code of Federal Regulations.
+
+For customer identification, the core rule is the **Customer Identification Program (CIP) at 31 CFR 1020.220**. CIP requires financial institutions to collect, verify, and record four minimum data elements for every individual customer: full legal name, date of birth, address (residential for individuals, principal place of business for entities), and an identification number (SSN for US persons; passport number, alien identification card number, or another government-issued document number for non-US persons).
+
+The **FinCEN Customer Due Diligence Final Rule**, with compliance deadlines extending through 2024, added a fifth pillar to the AML program framework: beneficial ownership verification for legal entity customers. Under this rule, covered institutions must identify and verify the identity of all individuals who own 25% or more of a legal entity customer, plus one individual who controls the entity (the "control prong" has no ownership threshold). This requirement applies to each new account opening by a legal entity customer, not just new customer relationships.
+
+For **Suspicious Activity Reports (SARs)**: the mandatory filing threshold is $5,000 for transactions involving a known or suspected criminal violation where the institution is involved. For other suspicious activity where the suspect is unknown, the threshold rises to $25,000. Filing must occur within 30 calendar days of the date of initial detection. If the subject is initially unknown, a 60-day extension is available. FinCEN requires a 5-year retention period for SAR filings and the documentation supporting the filing decision.
+
+**Recordkeeping** under BSA requires 5-year retention from the end of the business relationship for CIP records and supporting verification documents. The 5-year clock runs from the date the account is closed, not from when the record was created.
+
+The **FinCEN identifier** system, introduced under the CDD Final Rule, allows beneficial owners who appear across multiple legal entity customer accounts to register a FinCEN ID. Institutions may collect the FinCEN ID in lieu of collecting identifying information directly, provided they confirm the information has not changed. This simplifies high-volume B2B onboarding programs but requires a process to validate ID currency.
+
+### FCA Requirements (UK)
+
+UK fintech AML obligations are governed by the **Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017 (MLR 2017)**, as subsequently amended. The FCA's **Financial Crime Guide (FCG)** provides supervisory expectations and is updated periodically; the most recent substantial revision incorporated proliferation financing controls.
+
+The foundational UK principle is the **risk-based approach (RBA)**. MLR 2017 Regulation 18 requires firms to carry out and document a written firm-wide risk assessment, and Regulation 28 requires customer risk assessments. The RBA means that the intensity of due diligence is proportionate to assessed risk, but regulators are explicit: proportionality does not mean minimal. A risk-based approach must be demonstrably reasoned, documented, and reviewed.
+
+**Enhanced Due Diligence (EDD)** is mandatory under MLR 2017 in several circumstances: business relationships with persons established in **FCA high-risk third countries** (the FCA publishes this list and updates it to mirror FATF designations); transactions involving a customer who is a **Politically Exposed Person (PEP)**; situations where the transaction is complex, unusually large, or follows an unusual pattern; and any other situation where there is a higher risk of money laundering or terrorist financing.
+
+**Proliferation financing** controls were added to MLR 2017 requirements in 2022 following FATF guidance. UK firms must now include proliferation financing within their firm-wide risk assessment and apply sanctions screening against proliferation financing designations specifically. This is operationally distinct from standard sanctions screening and requires coordination with OFSI (Office of Financial Sanctions Implementation).
+
+Post-Brexit, UK regulations mirror AMLD4/5 in substance but diverge in implementation detail. UK fintechs with EU customers must track both UK and EU requirements separately, particularly around beneficial ownership registers, which the UK has maintained under the Register of Overseas Entities regime following AMLD5.
+
+### EBA/AMLD6 Requirements (EU)
+
+The **6th Anti-Money Laundering Directive (AMLD6)** expanded the EU's predicate offence framework to 22 categories of criminal activity that can underpin a money laundering charge. The additions most relevant to fintech include cybercrime, environmental crime, and tax crimes in specific circumstances. The practical impact: your AML monitoring typologies and SAR narratives must account for a broader range of predicate conduct, not just drug trafficking and fraud.
+
+AMLD6 also introduced **corporate liability** provisions, making it possible to hold legal entities criminally liable for money laundering offences. This increases accountability for compliance failures at the institutional level and heightens board-level scrutiny of compliance programs.
+
+The **EBA's Risk Factors Guidelines (December 2021)** are the primary technical standard for how EU firms should assess ML/TF risk across customer types, products, distribution channels, and geographies. The Guidelines are not legally binding but FCA and national competent authorities expect firms to comply or explain. The 2021 update specifically addressed virtual asset risk and digital onboarding risk, both directly relevant to most fintechs.
+
+**Beneficial ownership registers** under AMLD5 required EU member states to maintain central registers of beneficial ownership for legal entities and to provide access to obliged entities for due diligence purposes. Implementation quality varies significantly by member state. In practice, fintech compliance teams cannot rely solely on registry data and must verify beneficial ownership directly.
+
+**Crypto asset service providers (CASPs)** are now subject to full AML/KYC under the **Markets in Crypto Assets Regulation (MiCA)**, fully effective December 2024. MiCA applies the same CDD and EDD obligations as traditional financial institutions to exchanges, custodians, and issuers operating in the EU. CASPs must register with competent authorities and implement compliant KYC programs before transacting with EU residents.
+
+**FATF high-risk countries**: the EU automatically applies EDD requirements to customers and transactions linked to countries on the FATF grey list and black list. This list changes following FATF plenary sessions (typically February, June, and October). Your sanctions and PEP screening vendor must track this list independently.
+
+### MAS Requirements (Singapore)
+
+The **Monetary Authority of Singapore (MAS)** governs AML/CFT obligations under the Payment Services Act 2019 (PSA) for digital payment token services, with requirements specified in **MAS Notice PSN01** (for standard payment institutions) and **PSN02** (for major payment institutions). The license class determines the thresholds at which CDD requirements apply and the scope of AML reporting obligations.
+
+For **digital payment token (DPT) services** (cryptocurrency exchanges and custodians), MAS applies requirements substantially equivalent to those for traditional financial institutions: full CDD for all customers, EDD for high-risk customers, and ongoing transaction monitoring. Singapore has been ahead of most jurisdictions in extending financial crime controls to crypto.
+
+The **Travel Rule** for virtual asset transfers applies in Singapore for transfers above **SGD 1,500**. Your DPT platform must be able to transmit and receive originator and beneficiary information for transfers above this threshold, and must implement a process to handle transactions from non-compliant virtual asset service providers.
+
+**Perpetual KYC (pKYC)** has emerged as a regulatory expectation within Singapore's financial sector. MAS guidance increasingly emphasizes continuous, event-driven customer review over fixed periodic cycles. Rather than rescreening a customer on a fixed 12-month or 24-month schedule, pKYC systems trigger re-verification based on transaction anomalies, adverse media hits, or changes in risk signals. If you are building a compliance program for the Singapore market, design your re-verification workflow to accommodate event-driven triggers, not just calendar-based schedules.
+
+---
+
+## The Complete KYC/AML Compliance Checklist
+
+This checklist is a framework. Your **risk-based approach (RBA) document** must tailor specific thresholds, triggers, and timing to your business model, customer base, and jurisdictional obligations. What is appropriate for a consumer payments app with low-value transactions differs substantially from a B2B platform handling cross-border transfers. Use this checklist to verify coverage, then document your specific calibration decisions in writing.
+
+### 1. Customer Identification Program (CIP)
+
+☐ **Acceptable identity documents defined per jurisdiction.** Passports are universally accepted. Driver's licenses are accepted in the US, UK, and most EU member states. National identity cards are acceptable in EU/EEA countries. Your CIP policy must specify which documents are acceptable for each market you serve, and this list must be reviewed annually as jurisdictions update their document standards.
+
+☐ **Minimum data fields collected and recorded.** For individuals: full legal name (matching ID document), date of birth, residential address, and government-issued identification number. For legal entities: registered name, principal place of business, registration number, and jurisdiction of formation. Do not accept customer-declared data as verified data. Verification against authoritative sources is required.
+
+☐ **Document authenticity checks implemented.** At minimum, your automated process should include **MRZ (Machine Readable Zone) validation** for passports and travel documents, NFC chip reading for e-passports where technically feasible, and security feature verification (hologram detection, font consistency, expiry date validation). Manual review workflows for documents that fail automated checks must be defined.
+
+☐ **Biometric liveness check meets minimum standard.** **ISO 30107-3 iBeta Level 1** is the minimum acceptable certification for liveness detection. Level 2 passive liveness is recommended for higher-risk onboarding channels (remote, high-value, anonymized). Verify your vendor's current certification status: iBeta certifications expire and must be renewed. A vendor that passed Level 2 testing two years ago may not hold a current certification.
+
+☐ **Data retention schedule documented.** Minimum 5 years from end of business relationship across US, EU, and UK. Some jurisdictions extend this to 6 or 7 years. Your retention schedule must be explicit and enforced in your data management policy. Do not conflate retention with accessibility: records must be retrievable, not just stored.
+
+☐ **Written CIP policy in place.** The CIP policy must be documented, reviewed and approved by senior management or the board annually, and version-controlled. A verbal understanding of CIP requirements does not satisfy regulatory expectations. Examiners will ask for the written policy.
+
+☐ **Identity verification at relationship initiation, not post-hoc.** CIP requires verification before an account is used for transactions, not after the first transaction. If your onboarding flow allows any transaction before verification is complete, document the specific controls in place and ensure this is permitted under your regulatory framework. Most regulators allow a narrow exception with controls.
+
+☐ **Verification failure procedures documented.** What happens when a customer fails identity verification? Your CIP policy must define the process: can they submit alternative documents? Is there a manual review path? At what point is the application rejected and the relationship terminated? These procedures must be written, not improvised by operations staff.
+
+### 2. Customer Due Diligence (CDD)
+
+☐ **Risk scoring methodology defined with specific criteria.** Define your risk tiers, at minimum low/standard/high. For each tier, document the specific criteria that place a customer in that tier: geographic risk factors, product risk factors, customer type (individual vs. entity, PEP status), transaction behavior patterns. Regulators will expect to see a methodology that explains your categorization decisions, not just the categories themselves.
+
+☐ **Sanctions screening against all required lists, with daily update frequency.** Mandatory lists for most fintechs: OFAC Specially Designated Nationals (SDN) list, EU Consolidated Financial Sanctions list, UN Consolidated Sanctions list, and HM Treasury UK Financial Sanctions list (for UK customers). OFAC updates the SDN list multiple times per week. Daily automated rescreening of your customer base is the operational standard, not a best practice.
+
+☐ **PEP screening covers all PEP categories and their associates.** PEP coverage must include domestic PEPs (senior government officials, judiciary, military, state-owned enterprise executives in your jurisdiction), foreign PEPs (the same categories in other countries), international organization PEPs (senior officials of international bodies), and close associates and family members of all PEP categories. Screening only the named individual without their immediate family is a common gap.
+
+☐ **Adverse media screening implemented.** Negative news searches for financial crime, fraud, corruption, and related conduct should be part of your CDD workflow. Adverse media is not a substitute for sanctions screening: a person can have significant adverse media coverage without being on a sanctions list, and vice versa. Both are required.
+
+☐ **Beneficial ownership verified for all legal entity customers.** For legal entity customers, identify and verify the identity of all ultimate beneficial owners (UBOs) at the 25%+ ownership threshold (US, EU, UK standard; some EU member states apply a lower threshold). Verification means checking the UBO's identity against authoritative sources, not just collecting a self-declaration. Beneficial ownership verification must be repeated at account refresh and when material changes in ownership are reported.
+
+☐ **Due diligence on introduced or referred business.** If customers are introduced through intermediaries (brokers, agents, introducers), your CDD must cover both the end customer and the introducing party. Reliance on an introducer's KYC is permitted in some jurisdictions under strict conditions: the introducer must be a regulated entity in an equivalent jurisdiction, and you must be able to obtain their underlying CDD documentation on request.
+
+☐ **Written rationale for each risk classification decision.** Every risk score must have a documented rationale. A customer classified as low-risk because they are a domestic individual with small transaction volumes should have that reasoning recorded. During an examination, regulators will sample customer files and expect to find the rationale, not just the score.
+
+☐ **CDD refresh cycle defined and enforced.** Standard-risk customers: re-verify every 2 to 3 years. High-risk customers: annually. EDD-tier customers: as specified in your EDD policy, typically more frequent. The refresh schedule must be documented in your AML policy and enforced through your case management or compliance platform.
+
+### 3. Enhanced Due Diligence (EDD)
+
+☐ **EDD triggers explicitly defined in written policy.** Mandatory EDD triggers include: PEP status (any tier), customers from FATF high-risk or monitored jurisdictions, high-value transactions above your defined threshold, complex corporate structures with multiple layers of beneficial ownership, adverse media hits on financial crime or corruption, and unusual transaction patterns inconsistent with stated business purpose. Your policy must specify which triggers are automatic (no discretion) and which require compliance officer judgment.
+
+☐ **Source of funds (SOF) documentation obtained and verified.** Source of funds refers to how the specific funds in the transaction were generated: salary, sale of property, business proceeds, inheritance. SOF documentation means obtaining evidence, not self-declaration. Bank statements, payslips, business accounts, and transaction histories are standard evidence. "The customer said they earned it from their business" is not SOF documentation.
+
+☐ **Source of wealth (SOW) verification completed for high-risk individuals.** Source of wealth is distinct from source of funds: it covers how the individual accumulated their overall net worth. For PEPs, high-net-worth individuals, and EDD-tier customers, SOW verification is required. SOW evidence typically includes tax returns, corporate filings, inheritance documentation, or professional fee records. For PEPs, SOW must be reconciled against their known official salary history.
+
+☐ **Senior management approval documented before EDD-tier onboarding.** Written approval from a senior compliance officer or designated senior management is required before establishing a business relationship with any EDD-tier customer. The approval must reference the specific risk factors, the EDD documentation obtained, and the mitigating controls in place. Post-hoc approval of existing relationships does not satisfy this requirement.
+
+☐ **Ongoing monitoring frequency specified per EDD tier.** EDD customers require more frequent monitoring than standard-risk customers. Quarterly review is the minimum for EDD-tier customers. Monthly review for PEPs is standard practice in most compliance programs. Your monitoring frequency must be documented and enforced through your compliance calendar or case management system.
+
+☐ **EDD documentation standard defined and applied consistently.** EDD files must contain substantially more documentation than CDD files: the initial risk assessment, all documents obtained, the evidence trail for SOF/SOW verification, the senior management approval, any adverse media findings with dates, and all subsequent review notes. Define the minimum documentation standard in writing and apply it consistently across all EDD customers.
+
+☐ **Re-screening triggers defined for EDD customers.** Events that should trigger a fresh EDD review include: material changes in transaction volume or pattern, adverse media hits post-onboarding, changes in the customer's corporate structure or beneficial ownership, entry of the customer's jurisdiction onto a FATF or FCA high-risk list, and expiry of any time-limited EDD mitigating factor. Your compliance system should generate automated alerts for these events.
+
+### 4. Transaction Monitoring
+
+☐ **Rule-based alert scenarios implemented and documented.** Your transaction monitoring system must have defined rule scenarios, not just a general monitoring capability. Standard scenarios include velocity rules (number of transactions within a defined period exceeding a threshold), amount-based rules (single transactions or aggregated amounts above specified thresholds), geographic rules (transactions to or from high-risk jurisdictions), structuring detection (multiple transactions just below reporting thresholds), and unusual pattern detection (transactions inconsistent with stated business purpose or historical behavior).
+
+☐ **Customer behavior baselines established per segment.** Effective transaction monitoring requires a baseline of normal behavior for each customer segment. A retail consumer and a business account should not be evaluated against the same behavioral baseline. Establish segment baselines in your monitoring configuration and document how deviations are calculated and weighted.
+
+☐ **Alert thresholds documented in your AML policy.** Specific threshold values must be documented in your AML policy, not held informally by the compliance team or configured only in the monitoring tool. If a regulator asks why a specific threshold is set where it is, you need a written answer. Thresholds should reflect your actual customer risk profile, not vendor defaults.
+
+☐ **Alert review responsibilities assigned with escalation path.** Each alert must have a designated reviewer and a documented escalation path. Who receives a Level 1 alert? Who makes the SAR decision? Who approves closure of a high-value alert without SAR filing? These roles and the escalation workflow must be defined in your AML policy and reflected in your case management system permissions.
+
+☐ **All alerts documented as cleared or escalated, with no unreviewed backlog.** Every alert generated by your transaction monitoring system must be documented as either cleared (with written reason for clearance) or escalated to SAR consideration. An unreviewed alert backlog is an examination finding. Your compliance management system should make alert age visible, and your AML policy should specify maximum review timelines.
+
+☐ **Alert threshold calibration reviewed quarterly.** Transaction monitoring calibration is not a set-and-forget process. Too many false positives create alert fatigue, which causes genuine suspicious activity to be missed. Too few alerts create gaps. Review your alert volume, false-positive rate, and SAR conversion rate quarterly. Document the calibration review and any threshold adjustments made.
+
+### 5. SAR/STR Reporting
+
+☐ **Internal escalation path defined and tested.** The path from front-line transaction flag to compliance officer SAR decision must be written, trained, and tested. Who can generate an internal suspicious activity report? What is the review timeline? Who makes the final SAR/no-SAR decision? Testing the escalation path at least annually (through tabletop exercises or process audits) is advisable.
+
+☐ **Filing timelines documented per jurisdiction.** FinCEN: 30 calendar days from initial detection, 60 days if the subject is initially unknown. FCA: no mandatory filing deadline, but FCA's FCG emphasizes "prompt" reporting. AUSTRAC (Australia): 3 business days for threshold transaction reports, 24 hours for suspicious matter reports involving terrorism financing. Singapore: no fixed timeline, but "as soon as practicable." Your AML policy must specify the applicable timelines for each jurisdiction where you operate.
+
+☐ **Tipping-off prohibition addressed in staff training.** Once a SAR or STR has been filed, informing the subject or any third party that a report has been made is a criminal offence in most jurisdictions. This prohibition must be covered in all staff AML training and must apply to front-line staff who may have direct customer contact during or after the reporting period.
+
+☐ **SAR register maintained.** An internal SAR register recording filing dates, FinCEN/FCA reference numbers, subject identifiers (using coded references), and the disposition of any follow-up regulatory inquiry is required. The register is a critical audit document and must be accessible to the MLRO and senior compliance officers.
+
+☐ **SAR narrative quality standards defined.** FinCEN publishes patterns for rejected SARs: vague narratives ("customer conducted suspicious transactions"), missing transaction details, incorrect form versions, and unclear timelines. Your internal SAR review process should include a narrative quality check before filing. The SAR must answer: who, what, when, where, and why the activity is suspicious. Include specific dates, transaction reference numbers, and amounts.
+
+### 6. Record Keeping and Audit Trail
+
+☐ **Retention periods defined per jurisdiction and applied to all record types.** Standard minimum: 5 years from end of the business relationship. This applies to CIP records, CDD documentation, EDD files, transaction records, SAR files, and training records. Some jurisdictions (including certain EU member states) extend this to 6 or 7 years. Your data retention policy must specify the retention period for each record category.
+
+☐ **Regulatory retrieval capability confirmed.** Regulators can request records within defined timeframes: typically 5 business days for standard requests. Test your ability to retrieve a complete customer compliance file, including all KYC documents, risk assessments, monitoring history, and SAR records, within the required timeframe. If your records are distributed across multiple systems, the retrieval process must be documented.
+
+☐ **Immutable audit log in place for all compliance decisions.** Every compliance decision must be logged with a timestamp, the identity of the decision-maker, and the rationale. No compliance record should be editable or deletable after creation. Your compliance platform must enforce immutability; if it does not, supplement with an external audit log. Regulators have become increasingly focused on audit trail integrity.
+
+☐ **Data residency requirements identified and met.** EU GDPR restricts transfer of personal data outside the EEA unless specific safeguards are in place. Singapore PDPA has similar transfer restrictions. If your KYC vendor stores records in a jurisdiction outside the customer's home region, you need data transfer mechanisms in place: SCCs for EU customers, or approved binding corporate rules. Verify your vendors' data residency arrangements before signing contracts.
+
+☐ **Data processing agreements executed with all KYC and AML vendors.** GDPR Article 28 requires a written data processing agreement (DPA) with every data processor handling EU personal data. UK GDPR applies the same requirement. Your DPA must specify: the subject matter and duration of processing, the nature and purpose, the type of personal data, the categories of data subjects, and the obligations and rights of the controller. Generic vendor ToS language does not satisfy Article 28.
+
+### 7. Staff Training
+
+☐ **Annual AML training mandatory for all relevant staff.** "Relevant staff" means any employee with customer contact, compliance responsibilities, or access to customer data, plus senior management and board members with governance responsibility for the AML program. Annual mandatory training is a regulatory minimum; for higher-risk functions or where regulatory requirements have changed, additional training should be triggered.
+
+☐ **Role-specific training content in place.** Generic AML awareness training does not satisfy regulatory expectations for a fintech compliance program. Front-line staff (onboarding, customer support) need training on red flag recognition and escalation procedures specific to your products. Compliance officers need deeper regulatory content covering your specific obligations. Senior management needs training on governance responsibilities and reporting obligations.
+
+☐ **Training records maintained and accessible.** Completion dates, content covered, and assessment results must be recorded for every training instance. Regulators routinely request training records during examinations. If a staff member cannot demonstrate completion of current AML training, they should not be in a customer-facing role. Digital training platforms with automatic recordkeeping simplify this considerably.
+
+☐ **Training covers your specific business risk typologies.** Generic training on what money laundering is does not meet regulatory standards. Your training must address the specific risk typologies relevant to your business model: if you operate a crypto exchange, training must address crypto-specific typologies (chain-hopping, mixer use, darknet market proceeds). If you serve high-risk geographies, training must address the specific risk indicators for those markets. Generic training is consistently cited as insufficient during FCA and FinCEN examinations.
+
+☐ **Knowledge assessment included.** Training must include a knowledge assessment component with passing criteria. A completion checkbox without an assessment does not demonstrate that learning occurred. Assessment results, including failures and retakes, must be recorded.
+
+### 8. Technology and Software Requirements
+
+☐ **Core IDV platform is ISO 30107-3 certified at the appropriate level.** Your identity document verification platform must hold current iBeta certification for liveness detection at the level appropriate to your risk profile. Verify the certification is current (not expired) and covers the liveness detection technology actually deployed in your integration.
+
+☐ **AML screening databases updated daily at minimum.** Sanctions lists (OFAC SDN, EU, UN, HM Treasury), PEP databases, and adverse media feeds must be updated daily. OFAC updates multiple times per week. A monthly database update is not compliant. When evaluating vendors, request documentation of update frequency as part of due diligence.
+
+☐ **Webhook and API integration supports real-time compliance decisions.** Regulatory compliance decisions require precise timestamps. Batch processing that generates decisions hours after the triggering event creates gaps in your audit trail and can delay required reporting. Your integration architecture should capture compliance decision timestamps at the point of determination.
+
+☐ **Audit log export tested and confirmed.** Before signing a contract with any KYC or AML platform, test the audit log export functionality. Can you export a complete, time-stamped log of all decisions for a given customer? Is the export format readable by your compliance team without vendor assistance? Can you retrieve records for customers whose accounts have been closed for 4 years? These are the retrieval scenarios regulators will test.
+
+☐ **Business continuity procedures documented for KYC/AML vendor outages.** If your primary KYC vendor experiences an outage, your compliance program cannot simply pause. Document your backup procedures: manual review processes, temporary onboarding holds, and the conditions under which you will activate manual review. Test these procedures at least annually.
+
+☐ **Data processing agreements executed before go-live.** Article 28 GDPR (and equivalent UK GDPR) DPAs must be in place before any EU or UK personal data is processed by your vendor. This is a contractual requirement, not an onboarding task to handle later. "We'll sort the DPA after launch" has been cited in regulatory enforcement actions.
+
+---
+
+## How to Choose KYC/AML Software for Compliance
+
+Software selection for compliance programs differs from standard software procurement. The compliance team, not just IT or product, must drive the evaluation. Five criteria matter most:
+
+**1. Compliance certifications: verify, do not trust claims.** Ask for current ISO 27001 certificates, SOC 2 Type II reports, and GDPR compliance documentation. "We are ISO 27001 compliant" without a current certificate from an accredited certification body is a marketing claim, not a compliance fact. SOC 2 Type II reports should be recent (within the last 12 months) and cover the specific services you will use.
+
+**2. Sanctions and PEP database coverage relevant to your jurisdictions.** Not all AML screening vendors cover the same lists. If you serve Singapore customers, does the vendor include MAS Terrorism designation lists? If you serve Latin American markets, is regional PEP coverage adequate? Request a complete list of databases covered, update frequencies, and coverage for your specific geographies before committing.
+
+**3. Audit trail quality.** Schedule a demonstration focused specifically on audit log export. Can the vendor produce a compliance decision log for a specific customer that includes every decision made, who made it, when, and on what data? This is what regulators examine. If the vendor struggles to demonstrate this, that is a meaningful signal.
+
+**4. Integration with your AML transaction monitoring.** Many KYC vendors provide identity verification without transaction monitoring. Many AML monitoring tools require you to bring your own KYC data. Understand where the boundary sits in each vendor's product, and design your integration to pass verified customer data and risk scores into your monitoring layer without manual intervention.
+
+**5. Regulatory reporting support.** Can the vendor support your SAR workflow? Some platforms generate case management tools that facilitate SAR documentation. Others provide only the underlying data and leave reporting to you. For smaller compliance teams, integrated SAR workflow support materially reduces reporting errors.
+
+Four platforms consistently satisfy the above criteria for fintech compliance programs:
+
+- [Sumsub](/vendors/sumsub) is the strongest all-in-one option, bundling KYC, AML screening, and transaction monitoring in a single platform. It reduces integration complexity for teams that want a single compliance workflow.
+- [Veriff](/vendors/veriff) leads on compliance certifications and accuracy rates. It is the preferred choice when your primary concern is demonstrating to regulators that your verification process meets the highest available standard.
+- [iDenfy](/vendors/idenfy) offers transparent per-verification pricing that is accessible for growing fintechs. It covers the core KYC requirements without bundling services you may not need.
+- [ComplyCube](/vendors/complycube) has the strongest AML database coverage of the four, particularly for PEP and adverse media depth in non-English-language markets.
+
+For a detailed feature and pricing comparison, see our [full KYC/AML software comparison](/blog/best-kyc-aml-software-2026). If you are evaluating cost structures for different volume levels, the [KYC pricing guide 2026](/blog/kyc-pricing-guide-2026) covers per-verification economics in detail.
+
+---
+
+## Common KYC Compliance Mistakes (and How to Avoid Them)
+
+### 1. Treating KYC as a one-time onboarding check
+
+The single most common compliance gap in fintech programs: the team builds a rigorous onboarding flow and then considers KYC "done." A customer who passed KYC in 2022 may be on an OFAC sanctions list today. Their beneficial ownership structure may have changed. They may have become a PEP through appointment to a government position.
+
+Your KYC program requires two re-verification mechanisms: calendar-based refresh (every 2 to 3 years for standard risk, annually for high risk) and event-driven re-screening triggered by sanctions list updates, adverse media alerts, or material changes in account behavior. Both are necessary. Calendar-based rescreening alone misses the customer who was sanctioned 18 months into a 24-month cycle.
+
+### 2. Using infrequently-updated PEP and sanctions databases
+
+OFAC updates the SDN list multiple times per week. EU and UN lists update monthly or faster. A PEP database that was last refreshed 30 days ago may not contain a government official appointed 3 weeks ago. When a regulator asks what sanctions list you screened against on a specific date, you need to know the exact database version.
+
+When evaluating vendors, require documentation of update frequency as a contractual term, not a marketing claim. "Real-time" and "continuously updated" are common vendor claims; the definition of real-time varies from minutes to days. Request a service level agreement that specifies maximum hours between source list update and database refresh.
+
+### 3. No documented risk-based approach
+
+Regulators do not simply want to see that you have controls in place. They want to see your methodology. During an FCA or FinCEN examination, examiners will ask why a specific customer risk threshold is set where it is, why a particular country is treated as elevated risk, and how you determined that a specific product poses medium rather than high ML/TF risk.
+
+If the answer is "that is what the vendor default was" or "our compliance officer decided," you have a documentation problem. Your RBA document must explain the reasoning behind every material threshold and classification decision. An RBA document that describes categories without explaining how they were calibrated to your specific business is inadequate.
+
+### 4. Missing beneficial ownership verification for business customers
+
+Fintechs that serve both consumers and businesses frequently implement robust individual KYC and then apply minimal due diligence to legal entity customers. The account opener at a business is identified; the ultimate beneficial owners at 25%+ are not.
+
+Beneficial ownership verification is a top finding in FinCEN examinations and is increasingly common in FCA supervisory reviews. If your platform serves businesses, your CDD workflow must collect and verify UBO information for every legal entity customer, not just the authorized signatory. This applies at account opening and must be refreshed when material changes in ownership are reported.
+
+### 5. Inadequate audit trail for compliance decisions
+
+If a regulator presents you with a customer account and asks why that customer was approved, why a specific transaction was cleared rather than escalated, and who reviewed the adverse media hit from 14 months ago, your compliance system must be able to answer all three questions from its audit log.
+
+Many fintechs make compliance decisions verbally, in Slack threads, or through informal email review. None of these create an adequate compliance audit trail. Every material compliance decision must be logged in a system that records the decision, the data available at the time of the decision, the rule or judgment applied, and the identity of the decision-maker. Reconstruct-ability is not a nice-to-have; it is the foundation of a regulatory examination.
+
+---
+
+## FAQ
+
+### What is a KYC compliance program?
+
+A KYC compliance program is the formal, documented set of policies and procedures your organization uses to verify customer identities, assess customer risk, and contribute to broader anti-money laundering controls. A complete program covers at minimum four components: the Customer Identification Program (CIP), which establishes who your customers are; Customer Due Diligence (CDD), which assesses and documents customer risk; Enhanced Due Diligence (EDD) applied to high-risk customers including PEPs; and ongoing monitoring to detect changes in risk status after initial onboarding. The program must be written, approved by senior management, reviewed annually, and tested against actual customer files to verify it functions as designed.
+
+### What software is used for KYC compliance?
+
+The core category of software used for KYC compliance is identity verification (IDV) platforms, which automate document verification, biometric liveness detection, and initial AML screening. Leading platforms in this space include [Sumsub](/vendors/sumsub), which combines IDV with ongoing AML monitoring in a single workflow; [Veriff](/vendors/veriff), which is preferred where compliance certification standards are a primary requirement; [iDenfy](/vendors/idenfy), which offers straightforward per-verification pricing suited to growing fintech companies; and [ComplyCube](/vendors/complycube), which is differentiated by its AML database depth, particularly for PEP and adverse media coverage in non-English markets. Most fintechs require both an IDV platform and a transaction monitoring tool. Some vendors bundle both; others provide only the identity verification layer. Your software selection should start with mapping your specific jurisdictional requirements to each vendor's certified capabilities.
+
+### What are KYC requirements for fintech companies?
+
+KYC requirements for fintech companies are jurisdiction-specific and license-class-specific, but the common baseline across US, EU, UK, and Singapore is: collect and verify full legal name, date of birth, residential address, and a government-issued identification number for every individual customer. Verification must be against authoritative sources, not self-declaration alone. For legal entity customers, verification must extend to ultimate beneficial owners at the applicable ownership threshold (25% in most jurisdictions). All requirements must be documented in a written Customer Identification Program or equivalent policy. Fintechs operating across multiple jurisdictions face overlapping requirements and must maintain clarity about which rule applies to which customer population.
+
+### What is the difference between KYC and AML?
+
+KYC is the identity verification and initial risk assessment process that occurs at customer onboarding. It answers the question: who is this person, and what is their initial risk profile? AML is the broader program of controls that continues throughout the customer lifecycle. AML includes KYC as its foundation, but extends into ongoing transaction monitoring (is this person doing anything suspicious?), sanctions rescreening (are they now on a restricted list?), suspicious activity reporting, and the governance framework that ties these controls together under a documented risk-based approach. In operational terms: KYC happens when a customer applies; AML monitoring runs continuously after they are approved. Both are required by all major financial regulators, and both must be documented, tested, and audited.
+
+### How often should KYC be refreshed for existing customers?
+
+KYC refresh frequency is governed by your risk-based approach document and should be calibrated to your customer risk tiers. The standard pattern across major regulatory frameworks: standard-risk customers require re-verification every 2 to 3 years; high-risk customers require annual re-verification; EDD-tier customers and PEPs require re-verification at least annually and often more frequently based on their specific risk profile. These are calendar-based minimums. Your program should also implement event-driven re-verification triggers that can initiate a review outside the standard cycle: sanctions list hits, adverse media alerts, material changes in transaction behavior, or changes in beneficial ownership. A program relying solely on calendar-based rescreening will miss risk changes that occur mid-cycle.
+
+---
+
+## Bottom Line
+
+A KYC/AML compliance program is not a checklist you complete and file. It is a living program that must be documented, calibrated to your specific business risk, tested against real customer files, and reviewed annually as regulatory requirements and your own risk profile evolve. The checklist above covers the eight core components that regulators across FinCEN, FCA, EBA, and MAS expect to find in any fintech compliance program. Your job is to tailor each component to your business model, document your calibration decisions, and build operational workflows that enforce the policies you have written.
+
+The practical starting point is your risk-based approach document. Until that document exists in written form, approved by senior management, every other compliance decision lacks its foundation. Build the RBA document first, use it to calibrate the checklist elements above, and then select technology that enforces the controls you have designed rather than substituting for the design process.
+
+For software selection guidance, see our [KYC/AML software comparison](/blog/best-kyc-aml-software-2026). For the full directory of vendors covering KYC compliance, sanctions screening, and identity verification, see the [KYC compliance vendor directory](/categories/kyc-compliance).
+
+---
+
+**James Whitfield** is a compliance consultant with experience advising fintech companies through FCA authorization, FinCEN examination preparation, and AML program builds. He has worked across payments, crypto asset services, and lending platforms at the growth stage.

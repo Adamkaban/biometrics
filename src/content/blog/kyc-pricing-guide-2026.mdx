@@ -1,0 +1,335 @@
+---
+title: "KYC Software Pricing Guide 2026: Veriff, Jumio, Sumsub & More"
+description: "How much does KYC software actually cost in 2026? Real pricing data for Veriff, Jumio, Sumsub, iDenfy, Ondato, and 4 more vendors. Per-verification costs, monthly plans, hidden fees, and how to calculate your true cost."
+author: "James Whitfield"
+pubDate: 2026-06-02
+updatedDate: 2026-06-02
+category: "Pricing"
+featured: false
+faqItems:
+  - q: "How much does Veriff cost?"
+    a: "Veriff pricing starts at $0.80 per verification on the Essential plan, with a $49/month minimum. The Plus plan costs $1.39 per verification ($99/month minimum) and adds human verification specialists and fraud detection tools. The Premium plan is $1.89 per verification ($209/month minimum) and includes branding customization and bulk export. Enterprise pricing is available for high-volume customers."
+  - q: "Is there free KYC software?"
+    a: "Shufti Pro offers a free tier for low-volume use. Sumsub and Veriff both offer free trials for testing. For production, all full-featured KYC platforms charge per verification or via subscription. Jumio has a listed Starter plan at $0, but this appears to be a sandbox/testing tier rather than a production plan."
+  - q: "What is a typical KYC cost per verification?"
+    a: "A typical KYC verification costs between $0.50 and $2.00 for standard identity checks. Simple document verification starts around $0.50–$0.80. Full KYC with liveness detection and AML screening typically costs $1.00–$2.00 per check. Enterprise platforms with high volumes can negotiate lower rates. iDenfy is distinctive in charging only for successful verifications, which can reduce effective cost by 20–40%."
+  - q: "How much does Jumio pricing cost?"
+    a: "Jumio's public pricing shows a Starter plan at $0 (likely a testing tier), Pro at $199/month, and Enterprise at custom pricing. In practice, Jumio is an enterprise platform and most production customers are on negotiated annual contracts. If you are getting a quote from Jumio, expect custom pricing based on verification volume and geography."
+  - q: "What hidden costs should I expect from KYC vendors?"
+    a: "Common hidden KYC costs include: implementation/setup fees ($500–$5,000 for complex integrations), support tier upgrades (priority support often costs extra), overage fees if you exceed your monthly verification cap, additional fees for AML screening on top of basic ID verification, compliance report exports, and data storage fees for audit logs. Always ask vendors about these costs explicitly before signing."
+---
+
+**TL;DR**
+
+- KYC verification costs range from **$0.05** (document scan only, not compliant) to **$1.89+** per check for full KYC with human review
+- **Ondato** ($49/month flat) is the most affordable entry point for EU-focused teams with predictable volume
+- **Jumio** is the most expensive in practice: enterprise-only pricing with opaque annual contracts
+- AML screening is almost never included in base IDV pricing, adding $0.50–$1.50 per check to your real cost
+
+---
+
+## KYC Pricing Models Explained
+
+### Per-Verification Pricing (Pay-As-You-Go)
+
+Per-verification pricing charges you for each identity check processed. The exact trigger varies by vendor: some charge per attempt (including failed checks), while others charge only per successful verification.
+
+This model works well for companies with unpredictable or seasonal verification volume: a crypto exchange seeing 10x volume during a bull run, an insurance platform with enrollment spikes at renewal periods, or a startup that doesn't yet know its steady-state throughput. The upside is direct cost proportionality. The risk is budget unpredictability at scale.
+
+**The attempt-vs-success distinction matters more than most buyers realize.** [iDenfy](/vendors/idenfy) charges $1.35 per successful verification. If 1,000 people attempt verification and 850 succeed, you pay for 850. [Veriff](/vendors/veriff) (on most plans) charges per attempt. At a 15% failure rate and 1,000 attempts, Veriff charges for 1,000; iDenfy charges for 850. For use cases with high rejection rates, such as crypto exchanges onboarding unverified retail users, this distinction can shift which vendor is actually cheaper despite iDenfy's higher list price.
+
+### Monthly Subscription Tiers
+
+Subscription tiers offer a flat monthly fee for access to a defined verification quota, sometimes with a per-verification component for overages. This model suits teams that can forecast their monthly verification volume reasonably well and want predictable line-item costs for budgeting.
+
+**Ondato** at $49/month Basic and **ComplyCube** at $99/month Starter are the clearest examples of this model at the entry level. The catch: most platforms that advertise "subscription pricing" still include per-verification charges above a threshold. Read the plan details carefully. A $49/month plan with a 500-verification cap that charges $0.20 per verification above that cap looks cheap on the homepage but becomes expensive fast if volume grows.
+
+Subscription tiers also tend to include locked-in feature sets. Moving from Ondato's Basic to Pro tier isn't just about volume, it unlocks fraud detection capabilities. Factor that into your comparison, not just the headline price.
+
+### Enterprise Custom Pricing
+
+Custom pricing is negotiated annually based on committed verification volume, geographic mix, and product bundle. Every vendor in this market offers custom pricing at some threshold. For most, that threshold is 5,000–10,000 verifications per month.
+
+You're ready to enter enterprise negotiations when you can demonstrate: current verified monthly volume (not projections), willingness to sign a 12- or 24-month contract, and interest in bundling products (IDV plus AML plus transaction monitoring from one vendor). Enterprise pricing can be 30–60% below published list prices for high-volume commitments.
+
+If you're under 1,000 verifications per month, don't waste time in enterprise sales cycles. Use self-serve plans, get real production data, then renegotiate.
+
+### Hidden Costs to Watch For
+
+Listed pricing rarely captures your true monthly spend. Before signing, get explicit written answers on all of the following:
+
+1. **Implementation and setup fees:** Simple hosted-page integrations (Veriff Essential's drop-in SDK) are near-zero setup cost. Custom API integrations with complex conditional flows can run $500–$5,000 in professional services. Ask whether this is included or invoiced separately.
+
+2. **AML screening add-on:** This is the most commonly missed cost. Veriff's core product is identity verification, not AML. If you need sanctions screening, PEP checks, or adverse media monitoring, that's either a separate product or a separate vendor. Standalone AML screening costs $0.50–$1.50 per check. [Sumsub](/vendors/sumsub)'s Compliance tier bundles both at $1.85, which is competitive once you add AML to a separate IDV tool's cost.
+
+3. **Support tier upgrades:** Email-only support is often the default at entry-level plans. A dedicated customer success manager or 4-hour SLA response typically costs extra on enterprise contracts. If you're in a regulated industry with audit pressure, budget for this.
+
+4. **Overage fees:** Exceeding your monthly verification cap is usually charged at a higher per-unit rate than your plan's base rate. Ask specifically: "What is the overage rate, and does it apply per check or per tier breach?"
+
+5. **Compliance report exports:** Some platforms charge for bulk exports of verification records. Relevant if you need to produce audit logs for a regulator or internal compliance team on demand.
+
+6. **Geographic surcharges:** Certain markets carry higher costs due to document complexity or fraud risk: Southeast Asia, West Africa, and some Latin American markets often carry 20–50% surcharges over standard rates. If you operate globally, get per-region pricing in writing.
+
+7. **Currency exposure:** Several EU-headquartered vendors bill in EUR. If your reporting currency is USD, factor in FX volatility across a 12-month contract.
+
+---
+
+## KYC Software Pricing Comparison Table
+
+| Vendor | Model | Starting Price | Per-Verification | AML Included | Free Trial |
+|---|---|---|---|---|---|
+| [Veriff](/vendors/veriff) | Hybrid | $49/month | $0.80–$1.89 | ✗ | ✓ |
+| [iDenfy](/vendors/idenfy) | Per-success | $0 minimum | $1.30–$1.35 | ✗ | ✓ |
+| [Sumsub](/vendors/sumsub) | Per-verification | $0 minimum | $0.05–$1.85 | ✓ (Compliance tier) | ✓ |
+| [Ondato](/vendors/ondato) | Subscription | $49/month | Included in plan | ✗ | ✗ |
+| [Jumio](/vendors/jumio) | Enterprise | $199/month (Pro) | Custom | ✗ | ✓ (sandbox) |
+| [ComplyCube](/vendors/complycube) | Subscription | $99/month | Custom above cap | ✓ | ✗ |
+| [Entrust IDV](/vendors/entrust-idv-formerly-onfido) | Hybrid | ~$29/month | Custom | ✗ | ✓ |
+| [Persona](/vendors/persona) | Custom | Custom only | Custom | ✗ | ✓ |
+
+---
+
+## Individual Vendor Pricing Breakdowns
+
+### Veriff Pricing 2026
+
+**Veriff** publishes three self-serve tiers with transparent per-verification pricing, which is unusual in this market.
+
+- **Essential:** $0.80/verification, $49/month minimum. Automated verification only, no human review specialists.
+- **Plus:** $1.39/verification, $99/month minimum. Adds Veriff's human specialists for edge cases, Risk Insights fraud signals, and video recording of sessions.
+- **Premium:** $1.89/verification, $209/month minimum. Adds custom branding on the verification flow, bulk export, and session deletion API for GDPR right-to-erasure workflows.
+
+The decision between Essential and Plus depends on your document mix. If most of your users present standard passports and national IDs from major markets, automated-only (Essential) works well. If you're onboarding users across emerging markets with worn documents, inconsistent lighting, or unusual ID formats, the 5–10% of edge cases that fall through automated review become a customer service problem. Plus resolves those with human specialists.
+
+**Volume math:** At 200 verifications/month with a 5% specialist-review rate (10 checks): Essential = $49 + (200 x $0.80) = $209/month. Plus = $99 + (200 x $1.39) = $377/month. The specialist coverage adds $168/month for that scenario. That may or may not be worth it depending on how much a stalled onboarding is worth in lost revenue.
+
+**Minimum spend consideration:** A company doing 50 verifications/month on Essential pays $49 minimum but only generates $40 in per-verification fees. Effective rate: $0.98/check, not $0.80. At low volumes, minimums inflate your real per-verification cost.
+
+See the full [Veriff vendor profile](/vendors/veriff) for integration details and compliance certifications.
+
+### iDenfy Pricing 2026
+
+**iDenfy**'s pricing structure is built around a principle most KYC vendors don't offer: you pay only for verifications that succeed.
+
+- **Basic:** $1.35/verification (successful only)
+- **Premium:** $1.30/verification (volume discount, thresholds not publicly listed)
+- **Enterprise:** Custom
+
+At first glance, $1.35 looks expensive against Veriff's $0.80. The math gets complicated once you factor in your pass rate.
+
+**The break-even calculation:** At 1,000 attempts/month:
+- 20% failure rate (800 successful): Veriff Essential = $849, iDenfy Basic = $1,080. Veriff wins.
+- 40% failure rate (600 successful): Veriff Essential = $849, iDenfy Basic = $810. iDenfy wins.
+- 50% failure rate (500 successful): Veriff Essential = $849, iDenfy Basic = $675. iDenfy wins by 20%.
+
+Failure rates correlate strongly with use case. Consumer banking apps onboarding users who expect the flow typically see 10–15% failure. Crypto exchanges onboarding retail users unfamiliar with document photography, or high-fraud-risk markets, often see 30–50% failure rates. The higher your failure rate, the more iDenfy's model saves.
+
+If you're in a category with significant fraud attempts (deliberate failures from fraudsters), iDenfy's model is particularly attractive since fraud attempts are failed verifications and you don't pay for them.
+
+See the full [iDenfy vendor profile](/vendors/idenfy) for integration documentation and supported document types.
+
+### Sumsub Pricing 2026
+
+**Sumsub** uses a tiered per-verification model where the tier determines what's included in the check:
+
+- **Basic doc scan:** $0.05/verification (document extraction only, no liveness, not suitable for KYC compliance)
+- **Standard KYC:** $1.35/verification (document verification + liveness detection)
+- **Compliance KYC + AML:** $1.85/verification (full KYC plus sanctions, PEP, and adverse media screening)
+
+The $0.05 tier exists for document data extraction use cases, such as pre-filling forms from a passport scan. It is not a compliant KYC check and should not be counted as one in your regulatory documentation.
+
+**The AML bundling advantage:** If you need both identity verification and AML screening (mandatory for most regulated financial services), Sumsub's $1.85 Compliance tier is worth comparing against the total cost of a separate IDV platform plus a separate AML tool. A typical combination: Veriff Essential at $0.80 plus a standalone AML tool at $0.60–$1.00 per check = $1.40–$1.80 total. Sumsub at $1.85 is slightly higher but offers a single vendor, single integration, and unified audit trail, which has real operational value at audit time.
+
+For fintech teams under MiCA, PSD2, or 6AMLD requirements that need both KYC and AML in one platform, Sumsub's compliance tier is frequently the better total-cost choice.
+
+See the full [Sumsub vendor profile](/vendors/sumsub) for workflow builder capabilities and supported jurisdictions.
+
+### Entrust IDV (formerly Onfido) Pricing 2026
+
+**Entrust IDV** is the product formerly known as Onfido, rebranded following Entrust's 2024 acquisition. If your engineering team references "Onfido pricing" or "Onfido API," they mean the same product.
+
+Public pricing shows a Basic plan from approximately $29/month, suggesting a low-volume entry point. Production pricing beyond Basic requires direct contact with sales. Historically, Onfido was competitive in UK and EU markets and had strong developer adoption due to early SDK quality.
+
+The rebranding creates some short-term confusion in procurement: you may find Onfido listed in compliance-approved vendor lists but need to confirm that Entrust IDV (the current legal entity) meets your vendor approval criteria. For regulated firms with formal vendor due diligence processes, this is worth flagging to your legal team.
+
+For technical teams, SDK documentation is now under the Entrust domain. Existing Onfido API integrations continue to work, but new integrations should reference Entrust IDV documentation.
+
+See the full [Entrust IDV profile](/vendors/entrust-idv-formerly-onfido) for current integration documentation.
+
+### Jumio Pricing 2026
+
+**Jumio** targets enterprise buyers and their pricing reflects that positioning.
+
+Public data shows: Starter at $0, Pro at $199/month, Enterprise at custom pricing. The $0 Starter and $199 Pro tiers are testing and limited production tiers, not enterprise production pricing. Any company processing meaningful verification volume is on a negotiated annual contract.
+
+If you're receiving a Jumio quote, expect: a minimum annual commitment, pricing structured around contracted volume bands (you commit to X verifications/year and pay a blended rate), and geographic modifiers for high-complexity markets. Jumio's pricing conversations typically involve their enterprise sales team and a formal security review.
+
+**Practical guidance:** If you're processing fewer than 5,000 verifications/month, Jumio's sales process will take longer than it's worth and you won't get pricing competitive with Veriff or iDenfy. Jumio's value proposition is global document coverage breadth (they support 5,000+ document types from 200+ countries) and enterprise SLAs. If those aren't your primary requirements, other vendors offer better pricing transparency.
+
+See the full [Jumio vendor profile](/vendors/jumio) for enterprise-tier capabilities and compliance certifications.
+
+### ComplyCube Pricing 2026
+
+**ComplyCube**'s Starter plan at $99/month is one of the cleaner entry points in the market for AML-first buyers.
+
+ComplyCube's product philosophy differs from Veriff or iDenfy: it leads with AML database coverage (sanctions lists, PEP databases, adverse media) and adds identity verification on top, rather than the reverse. If your primary compliance concern is sanctions screening depth rather than high-volume biometric identity verification, this positioning matters.
+
+The $99 Starter tier includes access to their core AML screening and identity check capabilities. Pro and Enterprise require a sales conversation but are described as competitively priced relative to combining separate IDV and AML tools.
+
+For EU-regulated firms needing breadth of sanctions list coverage or complex PEP screening workflows, ComplyCube is worth a direct quote conversation. For high-volume biometric IDV use cases where AML is secondary, Veriff or iDenfy will likely come in cheaper.
+
+See the full [ComplyCube vendor profile](/vendors/complycube) for AML database coverage details.
+
+### Ondato Pricing 2026
+
+**Ondato** offers the lowest published entry price in this comparison at $49/month for the Basic tier.
+
+Ondato is EU-headquartered and built primarily for EU regulatory requirements: GDPR-native architecture, MiCA-relevant workflows, and document coverage optimized for European ID types. The $49/month Basic and $99/month Pro tiers are genuine production plans, not sandbox pricing.
+
+This makes Ondato particularly relevant for: EU-licensed fintechs, crypto exchanges applying for MiCA compliance, and companies with predictable moderate verification volumes (several hundred per month) that don't justify enterprise pricing negotiations.
+
+The Pro tier at $99/month adds fraud detection features beyond basic document verification. Enterprise uses custom pricing based on volume.
+
+**Limitation to note:** Ondato's non-EU document coverage is less comprehensive than Jumio or Veriff. If you're onboarding users from emerging markets globally, validate document coverage for your specific user geography before committing.
+
+See the full [Ondato vendor profile](/vendors/ondato) for EU compliance certifications and document support lists.
+
+### Persona Pricing 2026
+
+**Persona** operates on all-custom pricing with no published tiers. This reflects their product positioning as a KYC workflow builder rather than a pure identity verification platform.
+
+Where Veriff sells a vertical verification product (you send a user through their flow, you get a result), Persona sells a horizontal toolset: you configure which verification steps apply to which user segments, with conditional logic and ongoing monitoring. That flexibility has a cost: you're paying for workflow complexity, not just verification volume.
+
+If you're getting a Persona quote, come prepared with: monthly verification volume by product line, the percentage of users requiring each verification step (basic ID vs enhanced due diligence vs ongoing monitoring), and your timeline for going live. Persona's pricing is meaningfully shaped by workflow complexity, so a clear scope reduces back-and-forth.
+
+Persona is most relevant for US fintechs that need granular control over KYC risk tiers: different verification requirements for different account types, ongoing monitoring for existing customers, and programmatic review triggering.
+
+---
+
+## How to Calculate Your True KYC Cost Per Verification
+
+The listed per-verification price is not your actual cost. Here's the formula and three worked examples.
+
+**Formula:**
+
+True monthly cost = Subscription fee + (verification charges based on vendor's billing model)
+
+Where verification charges = attempts x rate (per-attempt vendors) OR successful checks x rate (per-success vendors)
+
+True cost per successful verification = Total monthly cost / successful verifications
+
+---
+
+**Scenario 1: 200 verifications/month, 85% pass rate (170 successful)**
+
+This is a seed-stage fintech or a niche professional services platform.
+
+| Vendor | Calculation | Monthly Cost | Cost per Success |
+|---|---|---|---|
+| Veriff Essential | $49 + (200 x $0.80) | $209 | $1.23 |
+| iDenfy Basic | 170 x $1.35 | $229.50 | $1.35 |
+| Ondato Basic | $49 flat | $49 | $0.29* |
+| Sumsub Standard | 200 x $1.35 | $270 | $1.59 |
+
+*Assumes 200 verifications fall within Ondato Basic plan quota. Verify the included verification count with Ondato directly.
+
+**Winner at this volume:** Ondato, if verification count fits within the plan quota. If quota is tight, Veriff Essential.
+
+---
+
+**Scenario 2: 1,000 verifications/month, 80% pass rate (800 successful)**
+
+A Series A fintech or a mid-market insurance platform at steady state.
+
+| Vendor | Calculation | Monthly Cost | Cost per Success |
+|---|---|---|---|
+| Veriff Essential | $49 + (1,000 x $0.80) | $849 | $1.06 |
+| iDenfy Basic | 800 x $1.35 | $1,080 | $1.35 |
+| Sumsub Standard | 1,000 x $1.35 | $1,350 | $1.69 |
+| Sumsub Compliance | 1,000 x $1.85 | $1,850 | $2.31* |
+
+*Sumsub Compliance includes AML screening. If you need AML, compare this against Veriff Essential ($849) plus a standalone AML tool ($600+). Total: $1,449+, still lower than Sumsub Compliance at this volume.
+
+**Winner at this volume:** Veriff Essential if AML is not required. Evaluate Sumsub Compliance if you need bundled AML.
+
+---
+
+**Scenario 3: 10,000 verifications/month, 70% pass rate (7,000 successful)**
+
+A crypto exchange or a high-volume lending platform. 70% pass rate reflects the higher fraud and document quality issues typical in consumer crypto onboarding.
+
+| Vendor | Calculation | Monthly Cost | Cost per Success |
+|---|---|---|---|
+| Veriff Essential | $49 + (10,000 x $0.80) | $8,049 | $1.15 |
+| iDenfy Basic | 7,000 x $1.35 | $9,450 | $1.35 |
+| Sumsub Compliance | 10,000 x $1.85 | $18,500 | $2.64 (AML included) |
+
+At this volume, all three vendors will offer meaningful discounts from list price. Use these numbers as your negotiation floor.
+
+**Winner at this volume:** Use these calculations to set your opening position in enterprise negotiations. Both Veriff and Sumsub will discount 20–40% from list at 10,000+ verifications/month with a 12-month commitment.
+
+---
+
+## When to Negotiate (and How)
+
+### Three Signals You're Ready to Negotiate
+
+**Volume:** 1,000+ verifications/month means you have some leverage. 10,000+ means significant leverage. Bring actual production data, not projections. Vendors price risk, and demonstrated volume is lower risk than a forecast.
+
+**Contract commitment:** Offering a 12- or 24-month contract term in exchange for a lower per-verification rate is the most direct negotiation lever. Most vendors will reduce per-verification pricing by 15–30% for a 24-month annual prepaid commitment versus month-to-month.
+
+**Product bundling:** If you need IDV plus AML plus transaction monitoring, committing all three to one vendor reduces their customer acquisition cost and justifies a combined pricing discount. Get pricing for each product separately first, then ask for a bundle rate.
+
+### How to Run the Negotiation
+
+Get competing quotes from two or three vendors before calling any of them back. Reference competitor pricing explicitly in the conversation: "I have a quote from [Vendor X] at $Y per verification. What can you do?" This is standard procurement practice and every KYC vendor sales team expects it.
+
+Ask specifically about: volume discount tiers (at what monthly volume does pricing change?), minimum monthly spend reduction, AML screening bundle discount, and implementation fee waivers for annual commitments.
+
+Sandbox before negotiating. Most vendors offer free sandbox environments for integration testing. Complete your technical evaluation, confirm the integration works, and then negotiate production pricing. A vendor who knows you've already built the integration has less leverage to hold firm on price.
+
+On payment terms: annual prepayment often unlocks an additional 10–15% discount compared to monthly billing. If your finance team can handle annual invoicing, ask for this.
+
+---
+
+## FAQ
+
+### How much does Veriff cost?
+
+Veriff pricing starts at **$0.80 per verification** on the Essential plan, with a $49/month minimum spend. The Plus plan costs $1.39 per verification ($99/month minimum) and adds human verification specialists and Veriff's Risk Insights fraud detection signals. The Premium plan is $1.89 per verification ($209/month minimum) and includes custom branding on the verification UI, bulk export capabilities, and a session deletion API for GDPR right-to-erasure compliance. Enterprise pricing is available for customers above the self-serve volume threshold. See the [Veriff vendor profile](/vendors/veriff) for current details.
+
+### Is there free KYC software?
+
+[Shufti Pro](/vendors/shufti-pro) offers a free tier for low-volume use. [Sumsub](/vendors/sumsub) and [Veriff](/vendors/veriff) both provide free sandbox environments for integration testing. For production use, all full-featured KYC platforms charge per verification or via subscription. [Jumio](/vendors/jumio) lists a Starter plan at $0, but this is a testing tier rather than a production plan. If you are evaluating vendors, use sandbox environments for technical testing, then budget for production costs separately.
+
+### What is a typical KYC cost per verification?
+
+A typical KYC verification costs between **$0.50 and $2.00** for standard identity checks. Document scan only (not compliant KYC) starts around $0.05. Full KYC with liveness detection runs $0.80–$1.89 on published pricing. Full KYC with AML bundled ranges from $1.85–$2.00+. Enterprise customers with committed volume can negotiate significantly below these list prices. The most distinctive pricing structure is [iDenfy](/vendors/idenfy)'s charge-on-success model, which changes the effective per-verification cost significantly for use cases with high rejection or fraud rates.
+
+### How much does Jumio pricing cost?
+
+[Jumio](/vendors/jumio)'s public pricing lists a Starter plan at $0 (a testing tier), Pro at $199/month (limited production use), and Enterprise at custom pricing. In practice, Jumio is positioned as an enterprise platform and production customers are on negotiated annual contracts with pricing tied to committed volume bands. If you are receiving a Jumio quote, expect custom pricing based on monthly verification volume, geographic mix, and contract length. Companies processing under 5,000 verifications/month will typically find better pricing transparency and value with [Veriff](/vendors/veriff), [Sumsub](/vendors/sumsub), or [iDenfy](/vendors/idenfy).
+
+### What hidden costs should I expect from KYC vendors?
+
+The most common hidden cost is **AML screening**, which is not included in most base IDV pricing. Adding standalone AML to an IDV platform adds $0.50–$1.50 per check. Beyond that: implementation fees ($500–$5,000 for complex integrations), support tier upgrades for priority SLAs, overage fees above monthly verification caps (often at a higher per-unit rate than base pricing), compliance report export fees for bulk audit log extraction, and geographic surcharges for high-complexity markets in Southeast Asia, West Africa, and parts of Latin America. Request a written cost breakdown for all of these from any vendor before signing.
+
+---
+
+## Bottom Line
+
+For most buyers starting out, **Veriff Essential at $0.80 per verification** is the strongest combination of price, document coverage, and integration quality at self-serve scale. The $49 minimum monthly spend is manageable and the published pricing is transparent.
+
+**iDenfy** is the better choice if your rejection rate exceeds 35–40%, which is common for crypto exchanges, peer-to-peer lending platforms, or any product onboarding users unfamiliar with document photography workflows.
+
+**Sumsub's $1.85 Compliance tier** is cost-competitive the moment you need both identity verification and AML screening. Buying them separately from different vendors typically costs the same or more once you account for two integrations and two audit trails.
+
+For enterprise buyers: use **Ondato's $49/month** as your floor when negotiating with larger vendors. It demonstrates that production-grade KYC is available at that price point and gives you a concrete reference in pricing conversations.
+
+For further comparison, see the [full KYC software comparison for 2026](/blog/best-kyc-aml-software-2026) and the [Veriff vs Jumio head-to-head breakdown](/blog/veriff-vs-jumio-2026).
+
+Compare all vendors in one place: [KYC Compliance software directory](/categories/kyc-compliance).
+
+---
+
+**About the author:** James Whitfield is a Senior Compliance Technology Analyst at PrimeBiometry with experience evaluating identity verification and AML platforms for regulated financial services firms. He focuses on cost modeling, integration complexity, and compliance coverage across the KYC vendor landscape.
