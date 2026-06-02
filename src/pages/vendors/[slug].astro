@@ -42,6 +42,11 @@ const metaDescription = trimToWordBoundary(vendor.description, 160);
 const canonicalUrl = `${siteConfig.seo.siteUrl}/vendors/${vendor.slug}`;
 
 // Schema
+const schemaDescription = [
+  entry.data.bestFor ? `Best for: ${entry.data.bestFor}.` : "",
+  entry.data.avoidIf ? `Avoid if: ${entry.data.avoidIf}.` : "",
+].filter(Boolean).join(" ") || vendor.description.slice(0, 200);
+
 const softwareAppSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -49,7 +54,7 @@ const softwareAppSchema = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   url: canonicalUrl,
-  description: vendor.description.slice(0, 200),
+  description: schemaDescription,
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: vendor.rating,
@@ -72,13 +77,43 @@ const breadcrumbItems = [
 ];
 
 const pricingPlans = vendor.website_data?.pricing_plans ?? [];
+
+// Auto-generate FAQPage from existing assessment + vendor data — no MDX changes needed
+const autoFaqItems = [
+  {
+    q: `How much does ${vendor.name} cost?`,
+    a: `${vendor.name} pricing: ${vendor.pricing}.${pricingPlans.length > 0 ? ` Plans available: ${pricingPlans.map((p) => `${p.name} at ${p.price}`).join(", ")}.` : ""}`,
+  },
+  {
+    q: `Who is ${vendor.name} best for?`,
+    a: entry.data.bestFor,
+  },
+  {
+    q: `How difficult is ${vendor.name} to integrate?`,
+    a: `${vendor.name} has ${entry.data.integrationComplexity.toLowerCase()} integration complexity.`,
+  },
+  ...(entry.data.avoidIf
+    ? [{ q: `What are the limitations of ${vendor.name}?`, a: entry.data.avoidIf }]
+    : []),
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: autoFaqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 ---
 
 <BaseLayout
   title={pageTitle}
   description={metaDescription}
   canonicalUrl={canonicalUrl}
-  schema={softwareAppSchema}
+  schema={[softwareAppSchema, faqSchema]}
+  includeTally={vendor.featured && !!siteConfig.monetization.tallyFormId}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
     <!-- Breadcrumb -->

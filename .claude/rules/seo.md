@@ -41,12 +41,13 @@ and transactional intent instead.
 - Verify both redirects resolve with 301 (not 302)
 
 ### Meta Tags
-- **Title:** max 44 characters WITHOUT spaces
+- **Title:** max 60 characters total (including spaces and " | PrimeBiometry" suffix)
   - Format: `[Vendor/Topic] [Action/Year] | PrimeBiometry`
-  - Example: `Veriff Review 2026 | PrimeBiometry` (34 without spaces ✓)
-  - Example: `Best KYC Software 2026 | PrimeBiometry` (34 without spaces ✓)
-- **Description:** max 220 characters
-  - Include primary keyword naturally in first 120 chars
+  - Example: `Veriff Review 2026 | PrimeBiometry` (35 chars ✓)
+  - Example: `Best KYC Software 2026 | PrimeBiometry` (38 chars ✓)
+  - Suffix " | PrimeBiometry" = 16 chars — leaves ~44 chars for the topic portion
+- **Description:** max 155 characters
+  - Include primary keyword naturally in first 100 chars
   - Include a benefit or differentiator
   - No clickbait
 
@@ -68,20 +69,26 @@ Use JSON-LD format everywhere. Never microdata.
 |-----------------|----------------------------------------------------------------------------------|
 | Homepage        | `Organization` + `WebSite` + `SiteLinksSearchBox`                               |
 | Vendor page     | `SoftwareApplication` + `AggregateRating` + `FAQPage` + `BreadcrumbList`        |
+| Vendor index    | `ItemList` + `BreadcrumbList`                                                    |
 | Category page   | `ItemList` + `BreadcrumbList`                                                    |
-| Blog post       | `Article` + `Person` (author) + `BreadcrumbList`                                |
+| Blog post       | `Article` + `Person` (author) + `BreadcrumbList` + `FAQPage` (if FAQ section)   |
+| Blog index      | `BreadcrumbList`                                                                 |
 | Methodology     | `Article` + `BreadcrumbList`                                                     |
 | All pages       | `BreadcrumbList` (also render physically at top of page, not just in schema)     |
 
-**Author schema** (`Person`) on blog posts:
+**Vendor page FAQPage** — not yet implemented in `src/pages/vendors/[slug].astro`.
+FAQs live in assessment MDX files. Need to extract and inject into vendor page schema.
+
+**Author schema** (`Person`) on blog posts — site has single author, no `/authors/` pages exist:
 ```json
 {
   "@type": "Person",
   "name": "[Author Name]",
   "jobTitle": "Senior Security Analyst",
-  "url": "https://primebiometry.com/authors/[slug]"
+  "url": "https://primebiometry.com/about"
 }
 ```
+If multiple authors added later: create `/authors/[slug]` pages and update `url` accordingly.
 
 **Organization schema** on homepage:
 ```json
@@ -102,6 +109,7 @@ Every page footer must link to:
 - `/methodology` — How we evaluate vendors (E-E-A-T signal)
 - `/contact` — Contact form or email
 - `/privacy` — Privacy Policy (required for GDPR compliance + AdSense/affiliate)
+- `/terms` — Terms of Service (required for affiliate disclosures)
 - `/blog` — Blog index
 
 ---
@@ -145,10 +153,12 @@ Category pages must link to blog posts. Do not break this internal link architec
 ## URL Structure
 
 ```
-/vendors/[slug]           → lowercase, hyphens, no special chars
-/categories/[slug]        → kyc-compliance, identity-verification, biometric-authentication
-/blog/[slug]              → descriptive, keyword-rich, year when relevant
-/go/[slug]                → noindex, nofollow, excluded from sitemap
+/vendors/             → vendor directory index
+/vendors/[slug]       → lowercase, hyphens, no special chars
+/categories/[slug]    → kyc-compliance, identity-verification, biometric-authentication
+/blog/                → blog index
+/blog/[slug]          → descriptive, keyword-rich, year when relevant
+/go/[slug]            → noindex, nofollow, excluded from sitemap
 ```
 
 Never change URLs after publish — redirects lose link equity.

@@ -31,6 +31,9 @@ const articleSchema = {
   "@type": "Article",
   headline: post.data.title,
   description: post.data.description,
+  image: post.data.ogImage
+    ? `https://primebiometry.com${post.data.ogImage}`
+    : "https://primebiometry.com/picture.png",
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   author: {
@@ -45,7 +48,9 @@ const articleSchema = {
     url: "https://primebiometry.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://primebiometry.com/favicon.svg",
+      url: "https://primebiometry.com/icon-192.png",
+      width: 192,
+      height: 192,
     },
   },
 };

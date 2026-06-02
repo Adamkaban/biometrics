@@ -12,7 +12,10 @@ export interface Props {
   ogImage?: string;
   noindex?: boolean;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+  includeTally?: boolean;
 }
+
+const { includeTally = false, ...seoProps } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +23,7 @@ export interface Props {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <SEOHead {...Astro.props} />
+    <SEOHead {...seoProps} />
   </head>
   <body>
     <SiteHeader />
@@ -29,6 +32,6 @@ export interface Props {
     </main>
     <SiteFooter />
     <CookieBanner />
-    <script is:inline async src="https://tally.so/widgets/embed.js"></script>
+    {includeTally && <script is:inline async src="https://tally.so/widgets/embed.js"></script>}
   </body>
 </html>

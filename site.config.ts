@@ -12,7 +12,7 @@ const siteConfig = {
     titleTemplate: "%s | PrimeBiometry",
     defaultDescription:
       "Compare 68+ biometric authentication and identity verification vendors. Pricing, reviews, and expert analysis for B2B buyers.",
-    ogImage: "/images/og-default.webp",
+    ogImage: "/ogImage.webp",
   },
 
   theme: {
