@@ -1,10 +1,53 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { FacebookLogo, XLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { LinkedinLogoIcon, XLogoIcon, ArrowRightIcon } from "@phosphor-icons/react";
+
+const stats = [
+  { value: "69+", label: "Vendors tracked" },
+  { value: "5", label: "Categories covered" },
+  { value: "200+", label: "Assessments reviewed" },
+  { value: "2025", label: "Founded" },
+];
+
+const personas = [
+  {
+    title: "IT Directors and CISOs",
+    detail:
+      "Evaluating identity infrastructure: MFA, SSO, biometric authentication, PAM. We map vendor compliance posture to your regulatory environment so you can shortlist without three sales calls.",
+  },
+  {
+    title: "Compliance and Legal Teams",
+    detail:
+      "Selecting KYC and AML vendors under GDPR, CCPA, MiCA, or sector rules (banking, healthcare, crypto). We audit each vendor's compliance coverage and surface gaps before you sign a DPA.",
+  },
+  {
+    title: "Fintech and Crypto Product Teams",
+    detail:
+      "Building onboarding flows that need KYC at scale without breaking conversion. We compare verification speed, rejection rates, and per-check pricing across 30+ KYC providers.",
+  },
+  {
+    title: "Security Engineers",
+    detail:
+      "Integrating biometric or identity APIs into existing stacks. We rate API quality, SDK availability (iOS, Android, Web), webhook reliability, and sandbox access before you write a line of code.",
+  },
+];
 
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      name: "PrimeBiometry",
+      url: "https://primebiometry.com",
+      description:
+        "Independent comparison of biometric authentication and identity verification software for IT directors, security officers, and compliance teams.",
+      foundingDate: "2025",
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "support@primebiometry.com",
+        contactType: "editorial",
+      },
+    },
     {
       "@type": "Person",
       name: "James Whitfield",
@@ -14,6 +57,19 @@ const schema = {
       sameAs: [
         "https://www.linkedin.com/in/james-whitfield",
         "https://x.com/jwhitfield",
+      ],
+      knowsAbout: [
+        "Identity Verification",
+        "KYC Compliance",
+        "AML",
+        "Biometric Authentication",
+        "GDPR",
+        "IAM",
+        "Fraud Prevention",
+      ],
+      hasCredential: [
+        { "@type": "EducationalOccupationalCredential", name: "CISSP" },
+        { "@type": "EducationalOccupationalCredential", name: "CIAM" },
       ],
       worksFor: {
         "@type": "Organization",
@@ -33,8 +89,8 @@ const schema = {
 ---
 
 <BaseLayout
-  title="About PrimeBiometry"
-  description="PrimeBiometry is an independent research platform comparing biometric authentication and identity verification vendors for IT and security teams."
+  title="About PrimeBiometry | Biometric Software Research"
+  description="Independent platform comparing 69+ biometric authentication and identity verification vendors. Built for IT directors, security officers, and compliance teams making high-stakes software decisions."
   canonicalUrl="https://primebiometry.com/about"
   schema={schema}
 >
@@ -49,31 +105,122 @@ const schema = {
       </ol>
     </nav>
 
-    <!-- Mission -->
-    <section class="mb-16">
+    <!-- H1 + intro -->
+    <section class="mb-12">
       <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6">
         About PrimeBiometry
       </h1>
-      <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
-        PrimeBiometry is an independent research platform helping IT directors, security officers, and compliance teams evaluate biometric authentication and identity verification software. We cover 69+ vendors across KYC compliance, fraud prevention, AML, and biometric authentication.
+      <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
+        PrimeBiometry is an independent research platform for evaluating biometric authentication and
+        identity verification software. We exist because the vendor landscape is opaque: pricing is hidden
+        behind sales calls, compliance claims are unverified, and most comparison sites are thinly veiled
+        affiliate directories with no original analysis.
       </p>
       <p class="mt-4 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
-        Every vendor assessment is written from scratch based on direct research: vendor documentation, pricing pages, API evaluation, and aggregated user reviews. We do not republish G2 summaries or vendor-supplied copy.
+        We built this for IT directors, security officers, and compliance teams that need honest, structured
+        analysis before committing to a six-figure identity stack.
       </p>
+      <p class="mt-3 text-xs text-zinc-400 dark:text-zinc-500">Last reviewed: June 2026</p>
     </section>
 
-    <!-- Author -->
-    <section class="border-t border-zinc-200 dark:border-zinc-800 pt-16">
+    <!-- Stats strip -->
+    <div class="mb-16 grid grid-cols-2 sm:grid-cols-4 gap-px bg-zinc-200 dark:bg-zinc-700 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-700">
+      {stats.map((stat) => (
+        <div class="bg-zinc-50 dark:bg-zinc-900 px-5 py-4 text-center">
+          <p class="text-2xl font-semibold font-mono text-zinc-900 dark:text-zinc-100">{stat.value}</p>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Why we built this -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+        Why We Built This
+      </h2>
+      <div class="space-y-4 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
+        <p>
+          Identity verification procurement is broken. Vendors gate pricing behind demos. Review sites
+          aggregate star ratings without ever auditing compliance documents. Analyst reports cost $4,000
+          and go stale in six months.
+        </p>
+        <p>
+          PrimeBiometry started as an internal research project: evaluating KYC vendors for a regulated
+          fintech during an FCA authorization process. After spending 300+ hours building comparison
+          frameworks for internal use, it became clear the gap was industry-wide, not just one company's
+          problem.
+        </p>
+        <p>
+          We now track <a href="/vendors" class="text-blue-600 dark:text-blue-400 hover:underline">69+ vendors</a> across five categories: <a href="/categories/kyc-compliance" class="text-blue-600 dark:text-blue-400 hover:underline">KYC Compliance</a>, <a href="/categories/identity-verification" class="text-blue-600 dark:text-blue-400 hover:underline">Identity Verification</a>, <a href="/categories/biometric-authentication" class="text-blue-600 dark:text-blue-400 hover:underline">Biometric Authentication</a>, AML, and Fraud Prevention.
+          Every assessment is written against a documented methodology and updated when vendors change
+          pricing or compliance coverage.
+        </p>
+      </div>
+    </section>
+
+    <!-- How we evaluate -->
+    <section class="mb-16 rounded-lg border border-zinc-200 dark:border-zinc-800 p-6">
+      <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">How We Evaluate Vendors</h2>
+      <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5">
+        Each vendor is scored against five weighted criteria: Compliance Coverage (25%), Integration Depth
+        (25%), Pricing Transparency (20%), Market Coverage (20%), and User Sentiment (10%). No editorial
+        shortcuts.
+      </p>
+      <ul class="space-y-2.5 text-sm text-zinc-600 dark:text-zinc-400 mb-5">
+        <li class="flex items-start gap-2.5">
+          <span class="mt-0.5 text-blue-600 dark:text-blue-400 shrink-0 font-semibold">+</span>
+          <span>We read vendor documentation and API references, not marketing pages</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="mt-0.5 text-blue-600 dark:text-blue-400 shrink-0 font-semibold">+</span>
+          <span>Compliance is verified against public certificates and DPA templates, not self-attestation</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="mt-0.5 text-blue-600 dark:text-blue-400 shrink-0 font-semibold">+</span>
+          <span>Every assessment includes "Avoid If" with honest limitations, not just feature lists</span>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <span class="mt-0.5 text-blue-600 dark:text-blue-400 shrink-0 font-semibold">+</span>
+          <span>Assessments are dated; pricing is reviewed quarterly, compliance certificates semi-annually</span>
+        </li>
+      </ul>
+      <a
+        href="/methodology"
+        class="inline-flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium"
+      >
+        Read the full evaluation methodology
+        <ArrowRightIcon size={14} weight="bold" client:load />
+      </a>
+    </section>
+
+    <!-- Who this is for -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-2">
+        Who Uses PrimeBiometry
+      </h2>
+      <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-7">
+        Research built for B2B buyers in regulated industries with real procurement stakes.
+      </p>
+      <div class="space-y-5">
+        {personas.map((p) => (
+          <div class="border-l-2 border-zinc-200 dark:border-zinc-700 pl-4">
+            <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-1">{p.title}</p>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{p.detail}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Lead Analyst -->
+    <section class="border-t border-zinc-200 dark:border-zinc-800 pt-14 mb-16">
       <h2 class="text-xs uppercase tracking-wide text-zinc-400 dark:text-zinc-500 mb-8">Lead Analyst</h2>
 
       <div class="flex flex-col sm:flex-row gap-8 items-start">
-
-        <!-- Photo -->
         <div class="shrink-0">
           <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800">
             <img
               src="/images/authors/author.webp"
-              alt="James Whitfield"
+              alt="James Whitfield, Senior Identity Verification Analyst at PrimeBiometry"
               width="96"
               height="96"
               class="w-full h-full object-cover"
@@ -83,77 +230,121 @@ const schema = {
           </div>
         </div>
 
-        <!-- Info -->
         <div class="flex-1">
           <h3 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">James Whitfield</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">Senior Identity Verification Analyst</p>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
+            Senior Identity Verification Analyst · CISSP, CIAM
+          </p>
 
-          <!-- Social links -->
           <div class="flex gap-3 mt-3">
             <a
               href="https://www.linkedin.com/in/james-whitfield"
               rel="noopener noreferrer"
               target="_blank"
               class="text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              aria-label="LinkedIn"
+              aria-label="James Whitfield on LinkedIn"
             >
-              <LinkedinLogo size={18} weight="fill" />
+              <LinkedinLogoIcon size={18} weight="fill" client:load />
             </a>
             <a
               href="https://x.com/jwhitfield"
               rel="noopener noreferrer"
               target="_blank"
               class="text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-              aria-label="X (Twitter)"
+              aria-label="James Whitfield on X"
             >
-              <XLogo size={18} weight="fill" />
-            </a>
-            <a
-              href="https://www.facebook.com/james.whitfield"
-              rel="noopener noreferrer"
-              target="_blank"
-              class="text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              aria-label="Facebook"
-            >
-              <FacebookLogo size={18} weight="fill" />
+              <XLogoIcon size={18} weight="fill" client:load />
             </a>
           </div>
 
-          <!-- Bio -->
           <div class="mt-5 space-y-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[60ch]">
             <p>
-              James has spent 10+ years evaluating identity verification and access management systems for financial services, fintech, and healthcare organizations. Prior to PrimeBiometry, he worked as a compliance consultant helping regulated firms implement KYC and AML workflows.
+              James has 10+ years evaluating identity verification and access management systems for
+              financial services, fintech, and healthcare organizations. Before founding PrimeBiometry, he
+              worked as a compliance consultant helping regulated firms implement KYC and AML workflows
+              under FCA, MAS, and GDPR frameworks, including several firms through FCA authorization.
             </p>
             <p>
-              He holds CISSP and CIAM certifications and has evaluated over 200 vendors across identity verification, biometric authentication, and fraud prevention categories.
+              He holds CISSP and CIAM certifications and has personally evaluated over 200 vendors across
+              identity verification, biometric authentication, and fraud prevention. His assessments focus
+              on what procurement teams actually need: compliance coverage gaps, real pricing at scale, and
+              integration realities that vendor sales decks omit.
+            </p>
+            <p>
+              His particular focus is the gap between what vendors claim in marketing materials and what
+              their APIs and compliance documents actually show.
             </p>
           </div>
 
-          <!-- Expertise tags -->
           <div class="mt-5 flex flex-wrap gap-2">
-            {["KYC Compliance", "AML", "Biometric Auth", "Identity Verification", "GDPR", "IAM"].map((tag) => (
+            {["KYC Compliance", "AML", "Biometric Auth", "Identity Verification", "GDPR", "IAM", "Fraud Prevention"].map((tag) => (
               <span class="rounded-full border border-zinc-200 dark:border-zinc-700 px-3 py-1 text-xs text-zinc-500 dark:text-zinc-400">
                 {tag}
               </span>
             ))}
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Editorial independence note -->
-    <section class="mt-16 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50 p-6">
+    <!-- Editorial Independence -->
+    <section class="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50 p-6 mb-10">
       <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-2">Editorial Independence</h2>
       <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-        PrimeBiometry earns revenue through affiliate links and featured vendor placements. Featured placements are labeled. Affiliate relationships do not influence editorial scoring or assessments. We evaluate all vendors against the same criteria documented in our <a href="/methodology" class="text-blue-600 dark:text-blue-400 hover:underline">methodology</a>.
+        PrimeBiometry earns revenue through affiliate links and featured vendor placements. Featured
+        placements are labeled on every page they appear. Affiliate relationships do not influence editorial
+        scoring, assessment content, or category rankings. We evaluate all vendors against the same five
+        criteria documented in our{" "}
+        <a href="/methodology" class="text-blue-600 dark:text-blue-400 hover:underline">
+          evaluation methodology
+        </a>. Vendors cannot pay to improve their scores.
       </p>
     </section>
 
-    <!-- Contact CTA -->
-    <div class="mt-10 text-sm text-zinc-500 dark:text-zinc-400">
-      Questions or vendor submissions: <a href="mailto:support@primebiometry.com" class="text-blue-600 dark:text-blue-400 hover:underline">support@primebiometry.com</a>
-    </div>
+    <!-- Contact -->
+    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-12">
+      Questions, vendor submissions, or corrections:{" "}
+      <a href="mailto:support@primebiometry.com" class="text-blue-600 dark:text-blue-400 hover:underline">
+        support@primebiometry.com
+      </a>
+    </p>
+
+    <!-- Internal navigation -->
+    <nav aria-label="Explore the site" class="border-t border-zinc-200 dark:border-zinc-800 pt-10">
+      <p class="text-xs uppercase tracking-wide text-zinc-400 dark:text-zinc-500 mb-4">Explore vendors</p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/vendors"
+          class="rounded-md border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 text-xs text-zinc-600 dark:text-zinc-300 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+        >
+          All vendors
+        </a>
+        <a
+          href="/categories/identity-verification"
+          class="rounded-md border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 text-xs text-zinc-600 dark:text-zinc-300 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+        >
+          Identity Verification
+        </a>
+        <a
+          href="/categories/kyc-compliance"
+          class="rounded-md border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 text-xs text-zinc-600 dark:text-zinc-300 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+        >
+          KYC Compliance
+        </a>
+        <a
+          href="/categories/biometric-authentication"
+          class="rounded-md border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 text-xs text-zinc-600 dark:text-zinc-300 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+        >
+          Biometric Authentication
+        </a>
+        <a
+          href="/methodology"
+          class="rounded-md border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 text-xs text-zinc-600 dark:text-zinc-300 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+        >
+          Our methodology
+        </a>
+      </div>
+    </nav>
 
   </div>
 </BaseLayout>

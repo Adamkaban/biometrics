@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -X POST https://api.dataforseo.com/v3/dataforseo_labs/google/keyword_ideas/live -H 'Authorization: Basic bGlvdGFyMjAzMUBnbWFpbC5jb206OTMwOTc1YzZlZjg4ZTUyMA==' -H 'Content-Type: application/json' -d '[{ *)",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}
