@@ -56,6 +56,24 @@ const schema = {
         style="min-height: 400px;"
       ></iframe>
     </div>
+    <script>
+      (function(d, w) {
+        var loader = function() {
+          var s = d.createElement("script");
+          s.src = "https://tally.so/widgets/embed.js";
+          s.async = true;
+          d.head.appendChild(s);
+        };
+        if (typeof w.Tally !== "undefined") {
+          w.Tally.loadEmbeds();
+        } else if (d.readyState === "complete") {
+          loader();
+        } else {
+          w.addEventListener("DOMContentLoaded", loader);
+          w.addEventListener("load", loader);
+        }
+      })(document, window);
+    </script>
 
     <!-- What to expect section -->
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">

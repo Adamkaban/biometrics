@@ -120,14 +120,9 @@ export function calculateMonthlyCost(vendor: VendorPricingInput, volume: number)
 
   const parsed = vendor.plans.map((p) => parsePrice(p.price));
 
-  // Free tier — any free plan
-  if (parsed.some((p) => p.type === "free")) {
-    return { ...vendor, pricing: { type: "free" } };
-  }
-
-  // Per-check plans — pick cheapest for given volume
+  // Per-check plans — paid only (usd > 0), pick cheapest for given volume
   const perCheckPlans = parsed.filter(
-    (p): p is Extract<ParsedPrice, { type: "per-check" }> => p.type === "per-check"
+    (p): p is Extract<ParsedPrice, { type: "per-check" }> => p.type === "per-check" && p.usd > 0
   );
   if (perCheckPlans.length > 0) {
     const best = perCheckPlans.reduce((acc, p) => {
@@ -149,13 +144,18 @@ export function calculateMonthlyCost(vendor: VendorPricingInput, volume: number)
     };
   }
 
-  // Flat plans — pick cheapest
+  // Flat plans — paid only (usd > 0), pick cheapest
   const flatPlans = parsed.filter(
-    (p): p is Extract<ParsedPrice, { type: "flat" }> => p.type === "flat"
+    (p): p is Extract<ParsedPrice, { type: "flat" }> => p.type === "flat" && p.usd > 0
   );
   if (flatPlans.length > 0) {
     const best = flatPlans.reduce((acc, p) => (p.usd < acc.usd ? p : acc));
     return { ...vendor, pricing: best };
+  }
+
+  // No paid plans — genuinely free if any free plan exists
+  if (parsed.some((p) => p.type === "free")) {
+    return { ...vendor, pricing: { type: "free" } };
   }
 
   // All custom

@@ -11,7 +11,8 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const tocHeadings = headings.filter((h) => h.depth === 2);
 
 const BLOG_CAT_CTA: Record<string, { href: string; label: string }> = {
   "KYC Software":    { href: "/categories/kyc-compliance", label: "Compare KYC vendors" },
@@ -138,6 +139,34 @@ if (post.data.faqItems && post.data.faqItems.length > 0) {
         Some links in this article may be affiliate links. PrimeBiometry earns a commission at no extra cost to you. This does not influence our editorial ratings or recommendations.
       </p>
     </header>
+
+    {post.data.ogImage && (
+      <div class="mb-12 -mx-4 sm:-mx-6">
+        <img
+          src={post.data.ogImage}
+          alt={post.data.title}
+          width="1200"
+          height="630"
+          loading="eager"
+          decoding="async"
+          class="w-full rounded-lg object-cover aspect-[1200/630]"
+        />
+      </div>
+    )}
+
+    {tocHeadings.length >= 3 && (
+      <nav class="mb-10 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 p-5" aria-label="Table of contents">
+        <p class="text-xs uppercase tracking-wide text-zinc-400 dark:text-zinc-500 mb-3">Contents</p>
+        <ol class="space-y-1.5">
+          {tocHeadings.map((h, i) => (
+            <li class="flex gap-2.5 text-sm">
+              <span class="font-mono text-zinc-400 dark:text-zinc-600 select-none tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+              <a href={`#${h.slug}`} class="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors leading-snug">{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
 
     <div class="prose prose-zinc dark:prose-invert prose-lg max-w-none">
       <Content />

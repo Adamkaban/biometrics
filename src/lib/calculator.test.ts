@@ -180,6 +180,28 @@ describe("calculateMonthlyCost", () => {
     expect(result.pricing).toMatchObject({ type: "calculated", perVerification: 0.55 });
   });
 
+  it("ignores free tier when paid per-check plans exist", () => {
+    const vendor = makeVendor({
+      plans: [
+        { name: "Free Forever", price: "$0 / per check" },
+        { name: "Essentials", price: "$0.95 / per check" },
+      ],
+    });
+    const result = calculateMonthlyCost(vendor, 10000);
+    expect(result.pricing).toMatchObject({ type: "calculated", monthlyUSD: 9500, perVerification: 0.95 });
+  });
+
+  it("ignores free tier when paid flat plans exist", () => {
+    const vendor = makeVendor({
+      plans: [
+        { name: "Starter", price: "$0" },
+        { name: "Pro", price: "$199/month" },
+      ],
+    });
+    const result = calculateMonthlyCost(vendor, 10000);
+    expect(result.pricing).toEqual({ type: "flat", usd: 199 });
+  });
+
   it("no plans returns custom", () => {
     const vendor = makeVendor({ plans: [] });
     const result = calculateMonthlyCost(vendor, 10000);
