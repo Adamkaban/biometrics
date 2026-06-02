@@ -1,0 +1,352 @@
+---
+title: "Best KYC Software for Crypto Exchanges 2026: Top 6 Compared"
+description: "Which KYC solution works best for crypto exchanges, NFT platforms, and DeFi? Compare the top 6 tools on VASP compliance, Travel Rule support, sanctions screening, speed, and cost. Updated June 2026."
+author: "James Whitfield"
+pubDate: 2026-06-02
+updatedDate: 2026-06-02
+category: "Crypto KYC"
+featured: false
+faqItems:
+  - q: "Do DeFi platforms need KYC?"
+    a: "As of 2026, fully decentralized DeFi protocols without a central operator are generally not required to perform KYC under most jurisdictions. However, front-end interfaces with identifiable operators, DeFi platforms that custody funds, and protocols with governance token structures that could be considered securities may face KYC requirements. The EU's MiCA regulation (fully effective December 2024) applies KYC requirements to crypto asset service providers (CASPs), which may include DeFi front-ends. US platforms serving US users should consult legal counsel — FinCEN guidance is evolving."
+  - q: "What is the best KYC software for a new crypto exchange?"
+    a: "For a new crypto exchange, Sumsub is the top recommendation in 2026. It offers a dedicated crypto/Web3 compliance product, covers VASP requirements, and includes AML screening and transaction monitoring in one platform. For budget-conscious exchanges, iDenfy offers the most cost-effective per-verification pricing with no charges for failed attempts. EU-licensed exchanges should also evaluate Ondato, which is purpose-built for European regulatory frameworks."
+  - q: "How much does crypto KYC cost?"
+    a: "Crypto KYC costs depend on volume and required checks. Basic identity verification runs $0.80–$1.89 per check (Veriff) or $1.35 per verified check (iDenfy). Sumsub's compliance-grade KYC including AML screening costs $1.85/verification. At 1,000 verifications/month, expect $850–$2,000/month depending on the platform. Enterprise exchanges with 100,000+ verifications/month typically negotiate custom rates significantly below these figures."
+  - q: "What is the FATF Travel Rule and which KYC vendors support it?"
+    a: "The FATF Travel Rule (Recommendation 16) requires Virtual Asset Service Providers (VASPs) to collect and transmit originator and beneficiary information for crypto transactions above certain thresholds ($1,000 in the US under FinCEN; generally 1,000 EUR in EU). Travel Rule compliance requires both KYC software for customer verification AND a separate Travel Rule solution for inter-VASP data sharing. Sumsub partners with Travel Rule providers. Veriff focuses on the KYC layer. Most KYC vendors do not handle inter-VASP messaging directly — that requires tools like Notabene, Sygna, or TRP Network."
+  - q: "What are VASP registration requirements for crypto KYC?"
+    a: "VASP (Virtual Asset Service Provider) registration requirements vary by jurisdiction. In the EU (MiCA), CASPs must register with their national competent authority and implement full AML/KYC programs including CDD, EDD, transaction monitoring, and Travel Rule compliance. In the US, crypto exchanges must register as Money Services Businesses (MSBs) with FinCEN. In the UK, VASPs register with the FCA. All require a documented AML program, compliance officer appointment, and ongoing customer verification. KYC software is a mandatory component of all these programs."
+---
+
+**TL;DR**
+
+- **Top pick:** Sumsub is the strongest all-in-one choice for crypto exchanges in 2026, with a purpose-built VASP compliance product, bundled AML screening, and reusable KYC.
+- **Regulatory context:** MiCA is fully effective as of December 2024 and FATF Travel Rule enforcement is active across G20 jurisdictions. You need both a KYC platform and a separate Travel Rule solution.
+- **Cost range:** Expect $1.35–$1.85 per verification at scale. At 1,000 verifications/month, budget $850–$2,000/month before AML screening costs.
+
+---
+
+## KYC Requirements for Crypto Exchanges in 2026
+
+The regulatory baseline for crypto KYC has consolidated in 2026. MiCA is live across the EU, FinCEN continues to enforce Bank Secrecy Act requirements on US-nexus exchanges, and FATF member states have committed to Travel Rule implementation. If you are running a centralized exchange, a custodial wallet, or a DeFi front-end with an identifiable operator, you are operating inside this regulatory perimeter.
+
+The KYC software market has responded: the platforms most commonly evaluated by compliance teams now include crypto-specific compliance products rather than generic IDV tools with a "crypto" landing page. That distinction matters when your regulator audits your CDD records.
+
+### FATF Travel Rule Compliance
+
+FATF Recommendation 16, the **Travel Rule**, requires VASPs to collect and transmit originator and beneficiary information on virtual asset transfers above threshold amounts. In the US, FinCEN proposed a $3,000 threshold (consistent with the wire transfer rule); in the EU under AMLD5 and now MiCA, the threshold is 1,000 EUR. UK FCA aligns at 1,000 GBP.
+
+The critical operational point: **KYC software and Travel Rule solutions are distinct categories.** Your KYC platform verifies customer identity during onboarding. The Travel Rule layer handles inter-VASP messaging: when your exchange sends funds to another VASP, you need to transmit originator data; when you receive funds, you need to receive and screen beneficiary data. These are separate data flows.
+
+KYC vendors do not provide inter-VASP messaging. That requires dedicated Travel Rule solutions: Notabene, Sygna Bridge, TRP Network, 21 Analytics, or similar. Sumsub partners with several Travel Rule providers and can help connect the two, but the Travel Rule solution itself is a separate procurement. Build both into your compliance stack before you apply for VASP/CASP registration.
+
+### VASP Registration Requirements
+
+The global registration landscape in 2026:
+
+**EU (MiCA):** All CASPs must register with their national competent authority. Full AML/KYC program is mandatory: CDD for all customers, EDD for high-risk customers and PEPs, transaction monitoring, Travel Rule compliance, and a documented compliance officer. Passporting across EU member states is available post-registration.
+
+**US:** Crypto exchanges are classified as money transmitters under the Bank Secrecy Act and must register as MSBs with FinCEN. State-level licensing applies separately: New York's BitLicense remains the most burdensome, with roughly 30+ additional states requiring money transmitter licenses for exchanges with users in those states.
+
+**UK:** FCA VASP registration. ML/TF risk assessment is a core documentation requirement. Ongoing monitoring and SAR filing obligations apply.
+
+**Singapore:** MAS Payment Services Act 2019. Exchanges processing above SGD 3M/month require a Major Payment Institution license. Smaller operators can use the Standard Payment Institution license with lower capital requirements.
+
+**UAE (Dubai):** VARA licensing required since 2022. Dubai has become a significant crypto regulatory hub, with VARA actively granting and monitoring licenses for exchanges serving the region.
+
+### Sanctions Screening Mandates
+
+OFAC SDN list screening is mandatory for all US-nexus transactions and counterparties. The EU consolidated sanctions list and UN sanctions lists apply for EU-licensed operations. The enforcement boundary has expanded: in 2022 OFAC added specific crypto wallet addresses to the SDN list (the Tornado Cash designation), establishing that wallet addresses themselves are sanctioned property.
+
+**Compliance stack clarity:** Your KYC vendor handles customer identity screening against sanctions lists during onboarding and ongoing monitoring. Blockchain analytics tools, specifically Chainalysis, TRM Labs, and Elliptic, handle wallet address screening for transaction-level risk. Both are required components of a complete crypto compliance program. They do not substitute for each other.
+
+When evaluating KYC vendors, verify which sanctions lists are covered (OFAC only, or OFAC + EU + UN + local lists) and whether PEP screening is included or an add-on.
+
+### Jurisdictional Differences
+
+| Jurisdiction | Regulator | Registration | KYC Threshold | Travel Rule Threshold |
+|---|---|---|---|---|
+| US | FinCEN | MSB registration | $3,000 CIP, $10,000 CTR | $3,000 (FinCEN proposed) |
+| EU | National NCAs (MiCA) | CASP registration | At onboarding | 1,000 EUR |
+| UK | FCA | VASP registration | At onboarding | 1,000 GBP |
+| Singapore | MAS | MPI license | At onboarding | SGD 1,500 |
+| UAE (Dubai) | VARA | VARA license | At onboarding | Local regulations |
+
+---
+
+## What to Look for in Crypto KYC Software
+
+Generic IDV platforms built for fintech onboarding do not always translate well to crypto exchange compliance requirements. Use this checklist when evaluating platforms:
+
+☐ **VASP-ready flows:** Pre-built onboarding flows designed for crypto exchange use cases, not just generic IDV. The difference is whether the vendor has VASP-specific configuration templates and whether their team can advise on CASP registration documentation.
+
+☐ **24/7 automated processing:** Crypto markets operate continuously. Your verification platform needs to process at any hour, including weekends and public holidays. Check SLA for automated processing time, not just manual review queues.
+
+☐ **High-risk country screening:** FATF grey list and black list countries require EDD. Your platform should flag these automatically at the point of document submission and trigger an EDD workflow rather than requiring a manual compliance team intervention.
+
+☐ **Sanctions screening included:** Verify that sanctions screening (OFAC, EU, UN) is included in base pricing. Several IDV platforms charge separately for PEP and sanctions screening. Factor this into your total cost per verification.
+
+☐ **Webhook/API speed:** Account activation should happen within seconds of verification completion. Real-time webhook delivery matters for trading platforms: a user who passes KYC and then waits 10 minutes to trade is a user likely to abandon.
+
+☐ **Reusable KYC:** If you plan multiple products (spot trading, derivatives, staking, earn), a verify-once architecture saves costs and reduces friction. Users who have to re-verify for each product churn at high rates.
+
+☐ **Audit log for regulatory examination:** Your regulator will want to see complete decision logs during examination, including rejection reasons, retry counts, and manual review actions. Confirm the platform can export a complete, timestamped audit trail in a format your compliance team can present.
+
+☐ **ISO 27001 and SOC 2 certified:** Certification is expected by regulators and enterprise exchange operators. Some regulatory applications (FCA, MAS) benefit from being able to demonstrate your KYC vendor holds these certifications.
+
+☐ **Blockchain analytics integration or partnership:** For complete compliance, wallet screening alongside identity verification is required. Ask about partnerships with Chainalysis, TRM Labs, Elliptic, or similar analytics providers.
+
+---
+
+## Best KYC Software for Crypto Exchanges 2026
+
+[Compare all KYC compliance vendors](/categories/kyc-compliance) across the full directory. The six platforms below represent the strongest options for crypto-specific use cases.
+
+### 1. Sumsub — Best Overall for Crypto
+
+**Rating:** 4.6/5 (112 reviews)
+
+[Sumsub](/vendors/sumsub) is the top pick for most crypto exchanges in 2026 because it is one of the few platforms with a dedicated VASP compliance product that was built for crypto rather than retrofitted from fintech IDV. Sumsub serves major crypto exchanges globally, including high-volume platforms that have gone through multiple regulatory examinations. The platform's compliance pedigree holds up under real-world regulatory scrutiny.
+
+**Best for:** All crypto exchanges, from new platforms working through their first CASP/MSB registration to established high-volume exchanges managing 100,000+ verifications per month.
+
+The clearest Sumsub advantage for crypto is the bundled compliance stack. At the $1.85/verification compliance tier, you get KYC plus AML screening in a single platform with a single audit log. For exchanges that would otherwise purchase separate KYC and AML screening tools, the bundled approach reduces integration complexity and eliminates the operational risk of two separate vendors with separate failure modes.
+
+**Why Sumsub wins for crypto specifically:**
+- Dedicated VASP compliance product with pre-built flows for crypto onboarding, not a generic KYC platform with a crypto marketing page
+- AML screening bundled at the $1.85/verification compliance tier, which eliminates the need for a separate AML screening contract in most cases
+- **Reusable KYC:** once a user is verified on one product, that verification applies across other products on the same platform; no re-verification required for derivatives, staking, or earn products
+- Transaction monitoring module available at higher tiers, covering on-chain and off-chain activity
+- Travel Rule provider partnerships, meaning your compliance team has a clear path to Travel Rule coverage without building custom integrations
+- Geographic coverage across 220+ countries with specific configuration support for high-risk jurisdictions
+
+**Pros:**
+- All-in-one KYC, AML, and transaction monitoring reduces vendor count
+- Crypto-specific compliance workflows reduce configuration time
+- High-volume infrastructure proven at scale with major exchanges
+- Strong geographic coverage including emerging markets
+
+**Cons:**
+- Enterprise pricing is not published; large-volume negotiations can be slow
+- Advanced configurations (custom risk scoring, multi-tier EDD flows) require implementation effort
+- The basic $1.35/verification plan does not include AML screening; the compliance tier at $1.85 is the appropriate choice for regulated exchanges
+
+**Pricing:** Standard $1.35/verification (KYC only), Compliance $1.85/verification (KYC plus AML screening)
+
+---
+
+### 2. Veriff — Best for Regulated Exchanges
+
+**Rating:** 4.4/5 (60 reviews)
+
+[Veriff](/vendors/veriff) is the strongest choice for exchanges where the quality of fraud controls is a material factor in regulatory applications or ongoing licensing. Veriff holds iBeta Level 2 liveness certification, ISO 27001, SOC 2 Type II, and eIDAS certifications: the strongest published certification stack among commercial KYC vendors in 2026.
+
+**Best for:** Exchanges applying for or already holding FCA, MAS, VARA, or similar licenses where demonstrating best-in-class fraud controls to regulators is an explicit requirement.
+
+**Why iBeta Level 2 matters specifically for crypto:** Crypto exchanges face a disproportionate rate of sophisticated fraud attempts compared to traditional fintech onboarding. Organized fraud rings use synthetic identities, high-resolution printed photos mounted on flat surfaces, and 3D-printed silicone masks to pass liveness detection at exchanges. These are not theoretical attack vectors: they are documented in fraud operations targeting crypto exchanges in Southeast Asia and Eastern Europe. iBeta Level 2 certification means Veriff's liveness detection was independently tested against these advanced presentation attacks under controlled laboratory conditions. No other commercial KYC vendor holds this certification as of 2026.
+
+For an exchange making a regulatory application, being able to cite iBeta Level 2 certification in your compliance documentation is a concrete differentiator. Some compliance teams at regulated exchanges require it as a vendor qualification criterion.
+
+**Pros:**
+- iBeta Level 2 liveness: strongest anti-fraud certification commercially available
+- ISO 27001, SOC 2 Type II, and eIDAS for comprehensive compliance documentation
+- Coverage of 10,000+ document types across 230+ countries
+- Strong European document coverage and EU regulatory familiarity
+
+**Cons:**
+- No bundled AML screening: a separate AML tool is required for full VASP compliance
+- Premium pricing versus budget alternatives, with a minimum monthly commitment
+- Not crypto-specific in its compliance workflows: configuration work is required to build crypto-appropriate CDD flows
+
+**Pricing:** Essential $0.80/verification ($49/month minimum), Plus $1.39/verification, Premium $1.89/verification
+
+---
+
+### 3. Shufti Pro — Best for Emerging Market Coverage
+
+**Rating:** 4.5/5 (56 reviews)
+
+[Shufti Pro](/vendors/shufti) is the most capable platform for exchanges targeting user bases in Southeast Asia, the Middle East, Sub-Saharan Africa, and Latin America, specifically markets where the document landscape is complex and mainstream IDV platforms with a North America and Europe focus perform inconsistently.
+
+**Best for:** Global exchanges targeting Southeast Asia, Middle East, and Africa, where document type support and local verification accuracy are more important than certification depth.
+
+A meaningful share of global crypto volume originates from users in markets like Nigeria, Vietnam, Turkey, the Philippines, Indonesia, and the UAE. These markets include document types: national identity cards with non-Latin scripts, voter cards, residence permits, and local driving license formats that some Western IDV vendors have not invested in covering at the same accuracy level as European and North American documents. Shufti Pro's 200+ country coverage reflects specific investment in these document libraries, which translates to higher auto-approval rates and lower manual review rates for users from these regions.
+
+**Free tier consideration:** The free tier is appropriate for development and testing. Production exchanges need the paid plans: the free tier has volume caps and feature limitations that are not compatible with a regulated compliance program.
+
+**Pros:**
+- Broadest geographic coverage at 200+ countries, with specific investment in emerging market document accuracy
+- 24/7 automated verification processing
+- Free tier available for testing integration before committing to paid volume
+- Competitive pricing for high-volume global operations
+
+**Cons:**
+- User interface quality is less polished than Veriff or Sumsub, which can affect end-user conversion
+- Support response quality varies by region and tier
+- AML screening is less comprehensive than Sumsub's compliance product
+
+---
+
+### 4. iDenfy — Best Value for Smaller Exchanges
+
+**Rating:** 4.9/5 (216 reviews, highest in our dataset)
+
+[iDenfy](/vendors/idenfy) holds the highest user satisfaction rating of any KYC vendor in the PrimeBiometry directory: 4.9/5 from 216 reviews. For a new or growing exchange managing cost per verified user carefully, iDenfy's pricing model has a specific structural advantage in crypto.
+
+**Best for:** New and growing exchanges under 5,000 verifications per month, where total cost per verified user is a primary selection criterion.
+
+**The failed-verification cost advantage for crypto:** Crypto exchanges see materially higher KYC failure rates than most fintech onboarding scenarios. Contributing factors include fraud attempts, users submitting expired or poor-quality documents, users from high-rejection jurisdictions, and users unfamiliar with the document capture process. Failure rates of 25 to 40 percent are not unusual for new exchanges without optimized onboarding flows.
+
+iDenfy charges only for successful verifications. At a 30 percent failure rate and 1,000 monthly verification attempts, you pay for 700 successes at $1.35 each, totaling $945. A per-attempt platform charging for all 1,000 attempts at the same rate would charge $1,350. The gap widens as your failure rate increases, which is particularly relevant during initial months when your onboarding flow has not yet been optimized for document capture quality.
+
+**Pros:**
+- Highest user satisfaction rating (4.9/5) based on the largest review sample in our dataset
+- No failed verification charges: significant structural advantage at typical crypto exchange failure rates
+- Published, transparent pricing with no hidden minimums
+- Strong liveness detection without the iBeta Level 2 certification premium
+
+**Cons:**
+- AML screening is an add-on, not bundled: factor in additional cost for full VASP compliance
+- Less crypto-specific than Sumsub: no dedicated VASP compliance module
+- Smaller integration partner ecosystem than larger platforms
+
+**Pricing:** Basic $1.35/verification (successful only), Premium $1.30/verification (successful only)
+
+---
+
+### 5. Ondato — Best for EU-Licensed Exchanges
+
+**Rating:** 4.8/5 (80 reviews)
+
+[Ondato](/vendors/ondato) is the purpose-built choice for exchanges operating under the EU regulatory framework, specifically those working through MiCA CASP registration or already holding national VASP registration in an EU member state.
+
+**Best for:** Exchanges applying for or operating under EU MiCA CASP licensing, where demonstrating EU-specific regulatory alignment has practical value in the registration process.
+
+Ondato was built for the European compliance framework from the ground up, rather than adapting a global KYC platform to EU requirements. Their compliance product tracks EBA guidelines and EU-level regulatory updates. The platform comes pre-configured for AMLD6 requirements: CDD workflows, EDD trigger logic for high-risk customers and PEPs, and documentation structures aligned with what EU national competent authorities expect during CASP registration review.
+
+For an exchange that will be dealing with a national competent authority in Germany, France, the Netherlands, or another EU member state, there is practical value in being able to demonstrate that your KYC vendor is purpose-built for the EU framework rather than a US or global platform with EU certification bolted on.
+
+The $49/month Basic entry point also makes Ondato accessible during the pre-revenue or early-revenue phase when exchanges are building their compliance infrastructure before launch.
+
+**Pros:**
+- Purpose-built for EU AMLD6 and MiCA compliance requirements, not adapted from a non-EU platform
+- Low-cost entry point at $49/month makes compliance infrastructure accessible during pre-launch
+- Strong EU document type coverage
+- Dedicated EU compliance support team with current knowledge of national competent authority requirements
+
+**Cons:**
+- Coverage for non-EU documents and markets is limited compared to Sumsub or Shufti Pro: not the right choice for exchanges with significant user bases outside Europe
+- Less proven at high volumes: large exchanges should verify infrastructure capacity before committing
+- Compliance tier functionality for full VASP requirements may require the Pro or Enterprise plan rather than Basic
+
+**Pricing:** Basic $49/month, Pro $99/month, Enterprise custom
+
+---
+
+### 6. Stripe Identity — For Web3 SaaS and Payment Apps
+
+Stripe Identity is Stripe's built-in identity verification product, not a standalone KYC platform. It is worth addressing directly because many Web3 builders ask about it during early compliance planning.
+
+Stripe Identity makes sense for Web3 payment applications or SaaS tools already deeply integrated with Stripe for payment processing, where the near-zero marginal integration cost is a significant factor and the compliance requirements are limited to basic identity verification for fraud reduction rather than VASP-grade KYC.
+
+For a regulated crypto exchange, Stripe Identity is not sufficient. Its document coverage is concentrated in the US and EU, it does not include AML or sanctions screening, and it was not designed for the high-fraud-risk onboarding environment of a crypto exchange. It will not satisfy VASP registration documentation requirements. Do not use Stripe Identity as your primary KYC solution for any exchange that needs to demonstrate VASP compliance to a regulator.
+
+---
+
+## Crypto KYC Pricing Comparison
+
+| Vendor | Per Verification | Monthly Min | AML Included | Free Trial |
+|--------|-----------------|-------------|--------------|------------|
+| Sumsub (Compliance) | $1.85 | None listed | Yes | Yes |
+| Sumsub (Standard) | $1.35 | None listed | No | Yes |
+| Veriff Essential | $0.80 | $49 | No | Yes |
+| iDenfy Basic | $1.35 (successful only) | None | No | Yes |
+| Shufti Pro | Contact sales | None | Varies by plan | Yes |
+| Ondato Basic | Included in plan | $49/month | Partial | Yes |
+
+**AML screening is a separate cost consideration.** For complete VASP compliance, you either need a bundled platform (Sumsub Compliance tier) or a KYC platform plus a standalone AML screening tool. When comparing costs, add the AML screening line item to platforms that do not bundle it.
+
+For a full breakdown of KYC pricing models, see the [KYC pricing guide 2026](/blog/kyc-pricing-guide-2026).
+
+---
+
+## How to Implement Crypto KYC Without Killing Conversion
+
+Compliance and conversion are in tension at the onboarding stage. These eight tactics reduce that tension without compromising verification quality.
+
+**1. Progressive verification.** Do not require full KYC at account creation. Collect email at sign-up. Trigger KYC only when the user wants to trade, withdraw, or access functionality above your minimum threshold. Users browse before committing. Interrupting that browsing with a full document scan drives abandonment before you have demonstrated product value.
+
+**2. Use passive liveness, not active liveness.** Active liveness detection requires the user to blink, turn their head, or follow on-screen prompts. On mobile, especially on mid-range Android devices, these prompts create friction and generate failures when the camera tracking is imprecise. Passive liveness requires only that the user look at the camera. Veriff and Sumsub both support passive liveness. Make this an explicit requirement in your vendor evaluation.
+
+**3. Add a document guidance screen.** Before the user scans their ID, show a clear example of what a successful capture looks like: well-lit, full document in frame, no glare across the surface. This single screen reduces document failure rates by 15 to 25 percent in industry data. Each failure generates a retry loop, and each retry loop increases abandonment probability.
+
+**4. Use real-time failure messaging.** When a document scan fails, tell the user specifically why. "Image too blurry: try in better lighting" is materially more useful than "Verification failed." Users who understand why they failed and what to do differently will retry successfully. Users who receive a generic failure message churn. Veriff and Sumsub both support configurable failure messaging text.
+
+**5. Test on mid-range Android hardware.** More than 65 percent of crypto exchange users who complete KYC do so on a mobile device. Of that group, a significant share are on mid-range or budget Android hardware with cameras that produce lower image quality than current flagship devices. Test your document capture flow on a device in the $150 to $250 price range. Document capture failures on budget hardware are where most real-world failure rates come from, not the iPhone 15 Pro you used for internal testing.
+
+**6. Configure retry logic.** Allow two to three capture attempts before routing to manual review. A single failed photo attempt due to lighting or framing should not fail the entire verification session. Most KYC platforms support configurable retry counts. Verify yours is configured to allow retries, and confirm what happens to the user when manual review is triggered: ideally an asynchronous notification once review is complete rather than a blocking screen.
+
+**7. Implement reusable KYC from day one.** If your product roadmap includes multiple user-facing products (spot trading, derivatives, staking, earn, lending), build reusable KYC into your architecture before launch. The cost of retrofitting reusable KYC after launch, including re-verification campaigns and user communication, is significantly higher than building it in from the start. Sumsub's Reusable KYC module is the most mature implementation available.
+
+**8. Set time expectations before the flow starts.** Adding a single line before the verification flow starts, something like "This takes under 90 seconds for most users," reduces abandonment rates. Users who know what to expect before starting are significantly less likely to abandon mid-flow than users who encounter each step without context. Most KYC platforms allow customization of the intro screen: use it.
+
+---
+
+## FAQ
+
+### Do DeFi platforms need KYC?
+
+As of 2026, fully decentralized DeFi protocols without an identifiable central operator are generally outside the KYC requirement perimeter in most jurisdictions. The regulatory logic is that KYC obligations attach to the entity performing the service, and a protocol with no controlling entity has no one to be regulated.
+
+However, that boundary is narrowing. DeFi front-ends with identifiable operators, platforms that take custody of user funds at any point in the flow, and protocols with governance token structures that regulators argue constitute securities may face KYC obligations. Under MiCA, the CASP definition is broad enough to capture DeFi front-end operators in many cases. FinCEN's evolving guidance on DeFi is explicitly unresolved. US platforms serving US users should obtain current legal counsel rather than relying on analysis from 2023 or earlier.
+
+### What is the best KYC software for a new crypto exchange?
+
+For a new crypto exchange in 2026, Sumsub is the strongest overall recommendation. The dedicated VASP compliance product, bundled AML screening at the compliance tier, and reusable KYC architecture cover the compliance requirements for most jurisdictions in a single platform. The $1.35/verification standard tier is usable for basic KYC; the $1.85/verification compliance tier is the appropriate choice for any exchange that needs to demonstrate VASP compliance to a regulator.
+
+For budget-constrained exchanges where cost per verified user is the primary constraint, iDenfy's no-failed-check pricing model offers the most favorable economics at typical crypto exchange failure rates. EU exchanges working through MiCA CASP registration should also evaluate Ondato, particularly for its EU-specific compliance documentation and the low $49/month entry point during pre-launch.
+
+### How much does crypto KYC cost?
+
+At standard per-verification pricing, expect $0.80 to $1.89 per check depending on the platform and tier. iDenfy's effective cost is $1.35 per successful verification with no charge for failures, which at a 30 percent failure rate is equivalent to roughly $0.95 per attempt. Sumsub's compliance tier at $1.85/verification includes AML screening, which is an important total-cost consideration.
+
+At 1,000 verifications per month, budget $850 to $2,000 per month before AML screening costs on platforms that do not bundle it. High-volume exchanges processing 100,000 or more verifications per month typically negotiate custom rates through enterprise contracts that are not published.
+
+Factor in the full compliance stack cost when comparing vendors: a platform at $0.80/verification that requires separate AML screening at $0.50/check may total more than a $1.85/verification bundled platform.
+
+### What is the FATF Travel Rule and which KYC vendors support it?
+
+The FATF Travel Rule (Recommendation 16) requires VASPs to collect and transmit originator and beneficiary information on virtual asset transfers above threshold amounts. The US FinCEN threshold is $3,000 (proposed); the EU threshold is 1,000 EUR under MiCA; the UK threshold is 1,000 GBP.
+
+The critical operational distinction: **KYC platforms and Travel Rule solutions are separate categories.** Your KYC vendor verifies customer identity. A Travel Rule solution handles inter-VASP messaging: the transmission of originator and beneficiary data between your platform and the receiving VASP. These are distinct data flows requiring distinct tools.
+
+KYC vendors do not provide inter-VASP messaging. Dedicated Travel Rule solutions include Notabene, Sygna Bridge, TRP Network, and 21 Analytics. Sumsub partners with Travel Rule providers and can facilitate the connection, but the Travel Rule solution is a separate procurement. Budget for both when building your compliance stack.
+
+### What are VASP registration requirements for crypto KYC?
+
+VASP registration requirements vary by jurisdiction. In the EU under MiCA, CASPs must register with their national competent authority and demonstrate a full AML/KYC program: CDD for all customers, EDD for high-risk customers and PEPs, transaction monitoring, Travel Rule compliance, a documented AML policy, and an appointed compliance officer. MiCA passporting allows EU-registered CASPs to operate across member states after initial registration.
+
+In the US, crypto exchanges are money transmitters under the Bank Secrecy Act and must register as MSBs with FinCEN. State-level licensing is separate: New York's BitLicense and 30+ other state money transmitter licenses may apply depending on where your users are located.
+
+In the UK, FCA VASP registration requires a documented ML/TF risk assessment, an AML program, and ongoing SAR filing obligations. In Singapore, exchanges above SGD 3M/month volume require an MPI license from MAS. KYC software is a documented, mandatory component of all these registration applications. The quality and certification depth of your KYC vendor can be a factor in the regulator's assessment of your application.
+
+---
+
+## Bottom Line
+
+For most crypto exchanges in 2026, [Sumsub](/vendors/sumsub) is the appropriate starting point. The dedicated VASP compliance product, bundled AML at the compliance tier, and reusable KYC architecture cover the compliance surface area of the majority of exchange use cases without requiring a multi-vendor stack.
+
+[Veriff](/vendors/veriff) is the right choice when the quality of fraud controls is a direct factor in regulatory applications or licensing decisions: the iBeta Level 2 liveness certification and ISO 27001/SOC 2 stack are the strongest published credentials available from a commercial KYC vendor.
+
+[iDenfy](/vendors/idenfy) is the strongest option for new and growing exchanges where cost per verified user is the binding constraint, particularly given the no-failed-check pricing model that translates directly into savings at typical crypto exchange rejection rates.
+
+[Ondato](/vendors/ondato) is the purpose-built choice for EU-licensed exchanges working through MiCA CASP registration. [Shufti Pro](/vendors/shufti) is the right call for exchanges with significant user bases in Southeast Asia, the Middle East, or Africa.
+
+For the full compliance picture beyond KYC platform selection, see [Best KYC and AML Software 2026](/blog/best-kyc-aml-software-2026) and the [KYC/AML Compliance Checklist for Fintech and Crypto](/blog/kyc-aml-compliance-checklist-fintech-2026).
+
+---
+
+**About the Author**
+
+James Whitfield is a Senior Compliance Analyst at PrimeBiometry, specializing in KYC/AML technology evaluation for regulated financial services and crypto asset service providers. He covers VASP compliance requirements, identity verification platform selection, and regulatory technology for B2B compliance teams across North America and Europe.
