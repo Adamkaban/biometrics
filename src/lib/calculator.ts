@@ -30,7 +30,7 @@ export function parsePrice(raw: string): ParsedPrice {
     /custom/i,
     /request\s+pricing/i,
     /usage\s+based/i,
-    /let.s\s+(chat|talk)/i,
+    /let\.s\s+(chat|talk)/i,
   ];
   if (customPatterns.some((p) => p.test(s))) {
     return { type: "custom", label: "Contact Sales" };
