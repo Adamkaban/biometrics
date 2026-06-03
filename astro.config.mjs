@@ -7,6 +7,8 @@ import siteConfig from "./site.config";
 
 export default defineConfig({
   output: "static",
+  trailingSlash: "never",
+  build: { format: "file" },
   site: siteConfig.seo.siteUrl,
   integrations: [
     mdx(),

@@ -21,11 +21,7 @@ const {
 
 const fullTitle = siteConfig.seo.titleTemplate.replace("%s", title);
 
-const pathname = Astro.url.pathname.endsWith("/")
-  ? Astro.url.pathname
-  : Astro.url.pathname + "/";
-const canonical =
-  canonicalUrl ?? new URL(pathname, siteConfig.seo.siteUrl).toString();
+const canonical = canonicalUrl ?? new URL(Astro.url.pathname, siteConfig.seo.siteUrl).toString();
 
 const ogImageUrl = ogImage.startsWith("http")
   ? ogImage

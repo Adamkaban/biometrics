@@ -1,34 +1,28 @@
-# Trailing Slash — Project Rule
+# Trailing Slash — Project State
 
-## Decision: No trailing slash
+## Current state (2026-06-03) — RESOLVED
 
-Canonical URLs on this site have NO trailing slash:
-- ✓ `https://primebiometry.com/vendors`
-- ✗ `https://primebiometry.com/vendors/`
+`trailingSlash: "never"` is active in `astro.config.mjs`.
 
-## What to do at project start (Astro + Cloudflare Pages)
+Astro generates flat files (`vendors/veriff.html`) instead of directory-based (`vendors/veriff/index.html`).
+CF Pages serves `/vendors/veriff` → **200** directly. No CF internal 307 redirects.
 
-1. Set in `astro.config.mjs`:
-   ```js
-   trailingSlash: "never"
-   ```
+All canonical URLs and internal hrefs use **no trailing slash** throughout the codebase.
 
-2. All hardcoded `canonicalUrl` values — no trailing slash.
+`public/_redirects` handles inbound trailing-slash URLs from old indexed pages:
+```
+/vendors/:slug/ → /vendors/:slug  (301)
+/blog/:slug/ → /blog/:slug        (301)
+... etc.
+```
 
-3. All dynamic canonicals built from `Astro.url.pathname` or `siteConfig.seo.siteUrl` — verify no trailing slash appended.
+No redirect loops — loops only occurred when `index.html` files existed (CF 307 no-slash→slash).
+With flat files, CF has no reason to add trailing slash, so `_redirects` is safe.
 
-4. Before first deploy — check with Detailed Chrome extension (`detailed.com/extension`) on `localhost:4321`. Canonical must be green (not "Canonicalised").
+## Do NOT revert to directory-based output
 
-## Do NOT add `_redirects` to fix this on Cloudflare Pages
-
-Cloudflare Pages redirects `/vendors` → `/vendors/` internally. Adding `_redirects` with `/vendors/` → `/vendors` creates an infinite redirect loop (`ERR_TOO_MANY_REDIRECTS`).
-
-## Current state of this project
-
-Canonicals use trailing slash — matches what CF Pages serves at HTTP 200.
-
-SEO audit (2026-06-03) showed all 80+ pages marked non-indexable because canonical pointed
-to no-slash URLs that CF Pages 307-redirects. Canonical → 307 = broken canonical chain.
-
-Fixed by updating all `canonicalUrl` values to use trailing slash (e.g. `/vendors/veriff/`).
-Homepage `https://primebiometry.com` exempt — root URL is correct without slash.
+If `trailingSlash` is removed or set to `"always"/"ignore"`:
+1. Astro goes back to `slug/index.html` output
+2. CF internal 307 returns for all no-slash requests
+3. `_redirects` `/x/` → `/x` would create infinite loops — must delete `_redirects` first
+4. All canonical and href changes must be reverted to trailing-slash variants
