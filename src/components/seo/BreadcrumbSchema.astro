@@ -12,10 +12,11 @@ export interface Props {
 
 const { items } = Astro.props;
 
+const withSlash = (s: string) => (s.endsWith("/") ? s : s + "/");
 const toAbsolute = (url: string) =>
   url.startsWith("http")
-    ? url
-    : new URL(url, siteConfig.seo.siteUrl).toString();
+    ? withSlash(url)
+    : withSlash(new URL(url, siteConfig.seo.siteUrl).toString());
 
 const schema = {
   "@context": "https://schema.org",

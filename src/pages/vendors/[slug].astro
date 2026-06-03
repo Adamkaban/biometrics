@@ -39,7 +39,7 @@ function trimToWordBoundary(text: string, maxLen: number): string {
 }
 
 const metaDescription = trimToWordBoundary(vendor.description, 160);
-const canonicalUrl = `${siteConfig.seo.siteUrl}/vendors/${vendor.slug}`;
+const canonicalUrl = `${siteConfig.seo.siteUrl}/vendors/${vendor.slug}/`;
 
 // Schema
 const schemaDescription = [
