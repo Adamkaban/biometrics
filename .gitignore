@@ -34,3 +34,7 @@ __pycache__/
 
 # Embedded repos (not submodules)
 seomachine/
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
