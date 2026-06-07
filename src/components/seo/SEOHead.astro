@@ -32,6 +32,14 @@ const ogImageUrl = ogImage.startsWith("http")
 const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 ---
 
+<link
+  rel="preload"
+  href="/_astro/geist-latin-wght-normal.BgDaEnEv.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin="anonymous"
+/>
+<link rel="preconnect" href="https://www.google.com" crossorigin />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -48,6 +56,9 @@ const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/webp" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />

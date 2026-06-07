@@ -65,7 +65,7 @@ const latestPosts = allPosts
           <VendorFilters
             categories={categories}
             initialParams={Astro.url.search}
-            client:load
+            client:visible
           />
         </div>
       </aside>
