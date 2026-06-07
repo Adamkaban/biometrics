@@ -38,7 +38,11 @@ function trimToWordBoundary(text: string, maxLen: number): string {
   return lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed;
 }
 
-const metaDescription = trimToWordBoundary(vendor.description, 160);
+const metaDescription = entry.data.metaDescription
+  ?? trimToWordBoundary(
+      `${vendor.name}: ${entry.data.bestFor}. Rating: ${vendor.rating}/5. ${vendor.pricing}.`,
+      155
+    );
 const canonicalUrl = `${siteConfig.seo.siteUrl}/vendors/${vendor.slug}`;
 
 // Schema

@@ -6,6 +6,7 @@ const assessments = defineCollection({
     vendor: z.string(),
     lastUpdated: z.date(),
     author: z.string(),
+    metaDescription: z.string().optional(),
     bestFor: z.string(),
     avoidIf: z.string(),
     integrationComplexity: z.enum(["Low", "Medium", "High"]),
