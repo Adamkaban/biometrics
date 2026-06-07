@@ -29,7 +29,7 @@ const { entry, vendor } = Astro.props;
 const { Content } = await entry.render();
 
 // SEO
-const pageTitle = `${vendor.name} Review 2026: Pricing, Features & Alternatives`;
+const pageTitle = `${vendor.name} Review 2026`;
 
 function trimToWordBoundary(text: string, maxLen: number): string {
   if (text.length <= maxLen) return text;
@@ -164,7 +164,7 @@ const faqSchema = {
         <h1
           class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-2"
         >
-          {vendor.name} Review 2026
+          {vendor.name} Review 2026: Pricing, Features & Alternatives
         </h1>
 
         <!-- Last updated -->
