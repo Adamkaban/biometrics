@@ -15,13 +15,13 @@ const { Content, headings } = await render(post);
 const tocHeadings = headings.filter((h) => h.depth === 2);
 
 const BLOG_CAT_CTA: Record<string, { href: string; label: string }> = {
-  "KYC Software":    { href: "/categories/kyc-compliance/", label: "Compare KYC vendors" },
-  "KYC Compliance":  { href: "/categories/kyc-compliance/", label: "Compare KYC vendors" },
-  "Crypto KYC":      { href: "/categories/kyc-compliance/", label: "Compare KYC vendors" },
-  "Comparison":      { href: "/categories/kyc-compliance/", label: "Compare KYC vendors" },
-  "Pricing":         { href: "/categories/kyc-compliance/", label: "Compare KYC pricing" },
+  "KYC Software":    { href: "/categories/kyc-compliance", label: "Compare KYC vendors" },
+  "KYC Compliance":  { href: "/categories/kyc-compliance", label: "Compare KYC vendors" },
+  "Crypto KYC":      { href: "/categories/kyc-compliance", label: "Compare KYC vendors" },
+  "Comparison":      { href: "/categories/kyc-compliance", label: "Compare KYC vendors" },
+  "Pricing":         { href: "/categories/kyc-compliance", label: "Compare KYC pricing" },
 };
-const cta = BLOG_CAT_CTA[post.data.category] ?? { href: "/vendors/", label: "Browse all vendors" };
+const cta = BLOG_CAT_CTA[post.data.category] ?? { href: "/vendors", label: "Browse all vendors" };
 
 const pubDateStr = post.data.pubDate.toLocaleDateString("en-US", {
   year: "numeric",
@@ -95,6 +95,7 @@ if (post.data.faqItems && post.data.faqItems.length > 0) {
   description={post.data.description}
   canonicalUrl={canonicalUrl}
   ogImage={post.data.ogImage ? `https://primebiometry.com${post.data.ogImage}` : undefined}
+  ogType="article"
   schema={schemas}
 >
   <article class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24">

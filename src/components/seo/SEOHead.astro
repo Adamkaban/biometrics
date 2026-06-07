@@ -6,6 +6,7 @@ export interface Props {
   description?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  ogType?: string;
   noindex?: boolean;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
@@ -15,6 +16,7 @@ const {
   description = siteConfig.seo.defaultDescription,
   canonicalUrl,
   ogImage = siteConfig.seo.ogImage,
+  ogType = "website",
   noindex = false,
   schema,
 } = Astro.props;
@@ -40,7 +42,7 @@ const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 <link rel="canonical" href={canonical} />
 <meta name="robots" content={robotsContent} />
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={siteConfig.brand.name} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
