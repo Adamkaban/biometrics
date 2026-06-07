@@ -43,6 +43,14 @@ const latestPosts = allPosts
   )
   .slice(0, 3);
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://primebiometry.com" },
+  ],
+};
+
 // Homepage schema: Organization + WebSite with SiteLinksSearchBox
 const schema = {
   "@context": "https://schema.org",
@@ -53,6 +61,12 @@ const schema = {
       url: "https://primebiometry.com",
       description:
         "Independent comparison of biometric authentication and identity verification software",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://primebiometry.com/icon-192.png",
+        width: 192,
+        height: 192,
+      },
     },
     {
       "@type": "WebSite",
@@ -76,7 +90,7 @@ const schema = {
   title="Compare Biometric Authentication Software 2026"
   description="Independent analysis of 69+ biometric authentication, identity verification, and KYC vendors. Expert reviews, pricing, and comparisons for IT and security teams."
   canonicalUrl="https://primebiometry.com"
-  schema={schema}
+  schema={[schema, breadcrumbSchema]}
 >
 
   <!-- 1. Hero ---------------------------------------------------------------->
