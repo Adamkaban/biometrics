@@ -15,6 +15,18 @@ export default defineConfig({
     react(),
     sitemap({
       filter: (page) => !page.includes("/go/"),
+      serialize(item) {
+        if (item.url.includes("/vendors/")) {
+          item.lastmod = "2026-06-01";
+        } else if (item.url.includes("/blog/")) {
+          item.lastmod = "2026-06-02";
+        } else if (item.url.includes("/categories/")) {
+          item.lastmod = "2026-06-01";
+        } else {
+          item.lastmod = new Date().toISOString().slice(0, 10);
+        }
+        return item;
+      },
     }),
   ],
   vite: {
