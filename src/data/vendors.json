@@ -2621,7 +2621,7 @@
         "funding_display": true
       },
       "slug": "jumio",
-      "featured": false,
+      "featured": true,
       "affiliate_url": null,
       "has_free_trial": true
     },
@@ -4799,7 +4799,7 @@
         "funding_display": false
       },
       "slug": "veriff",
-      "featured": false,
+      "featured": true,
       "affiliate_url": null,
       "has_free_trial": true
     },
@@ -5327,7 +5327,7 @@
         "funding_display": true
       },
       "slug": "sumsub",
-      "featured": false,
+      "featured": true,
       "affiliate_url": null,
       "has_free_trial": true
     },
