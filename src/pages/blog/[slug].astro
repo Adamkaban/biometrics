@@ -43,7 +43,7 @@ const articleSchema = {
   description: post.data.description,
   image: post.data.ogImage
     ? `https://primebiometry.com${post.data.ogImage}`
-    : "https://primebiometry.com/picture.png",
+    : "https://primebiometry.com/ogImage.webp",
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   author: {
@@ -94,6 +94,7 @@ if (post.data.faqItems && post.data.faqItems.length > 0) {
   title={post.data.title}
   description={post.data.description}
   canonicalUrl={canonicalUrl}
+  ogImage={post.data.ogImage ? `https://primebiometry.com${post.data.ogImage}` : undefined}
   schema={schemas}
 >
   <article class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24">
@@ -148,6 +149,7 @@ if (post.data.faqItems && post.data.faqItems.length > 0) {
           width="1200"
           height="630"
           loading="eager"
+          fetchpriority="high"
           decoding="async"
           class="w-full rounded-lg object-cover aspect-[1200/630]"
         />
