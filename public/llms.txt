@@ -1,0 +1,28 @@
+# PrimeBiometry
+
+> Independent comparison of biometric authentication, identity verification, and KYC/AML software for IT directors, security officers, and compliance teams.
+
+## Site Purpose
+
+PrimeBiometry evaluates 69+ identity verification and biometric authentication vendors using a transparent 5-criteria scoring methodology (Compliance Coverage 25%, Integration Depth 25%, Pricing Transparency 20%, Market Coverage 20%, User Sentiment 10%). All vendor scores are independent of commercial relationships.
+
+## Key Pages
+
+- /methodology — Scoring criteria, data sources, and editorial independence policy
+- /vendors — Full directory of 69+ vendors with pricing and assessments
+- /categories/kyc-compliance — KYC compliance software comparison
+- /categories/identity-verification — Identity verification software comparison
+- /categories/biometric-authentication — Biometric authentication software comparison
+- /categories/fraud-prevention — Fraud prevention software comparison
+- /categories/aml — AML software comparison
+
+## High-Value Comparisons
+
+- /blog/veriff-vs-jumio-2026 — Veriff vs Jumio: pricing, liveness detection, API quality
+- /blog/best-kyc-aml-software-2026 — Top 12 KYC/AML platforms compared
+- /blog/kyc-pricing-guide-2026 — KYC software pricing breakdown 2026
+- /blog/best-kyc-software-crypto-2026 — Best KYC software for crypto exchanges
+
+## Contact
+
+support@primebiometry.com
