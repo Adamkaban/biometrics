@@ -27,6 +27,9 @@ function applyFilters(): void {
   const categoryParam = params.get("category") ?? "";
   const ratingParam = params.get("rating") ?? "";
   const trialParam = params.get("trial") ?? "";
+  const soc2Param = params.get("soc2") ?? "";
+  const livenessParam = params.get("liveness") ?? "";
+  const amlParam = params.get("aml") ?? "";
   const searchParam = (params.get("search") ?? "").trim().toLowerCase();
 
   const selectedSlugs = categoryParam
@@ -37,6 +40,9 @@ function applyFilters(): void {
     .filter(Boolean);
   const minRating = ratingParam ? parseFloat(ratingParam) : null;
   const trialOnly = trialParam === "true";
+  const soc2Only = soc2Param === "true";
+  const livenessOnly = livenessParam === "true";
+  const amlOnly = amlParam === "true";
 
   const cards = document.querySelectorAll<HTMLElement>("[data-vendor]");
   cards.forEach((card) => {
@@ -68,6 +74,21 @@ function applyFilters(): void {
     // Trial filter
     if (visible && trialOnly) {
       if (card.dataset.trial !== "true") visible = false;
+    }
+
+    // SOC 2 filter
+    if (visible && soc2Only) {
+      if (card.dataset.soc2 !== "true") visible = false;
+    }
+
+    // Liveness detection filter
+    if (visible && livenessOnly) {
+      if (card.dataset.liveness !== "true") visible = false;
+    }
+
+    // AML filter
+    if (visible && amlOnly) {
+      if (card.dataset.aml !== "true") visible = false;
     }
 
     card.classList.toggle("hidden", !visible);
@@ -113,6 +134,9 @@ function isAnyFilterActive(params: URLSearchParams): boolean {
     !!params.get("category") ||
     !!params.get("rating") ||
     params.get("trial") === "true" ||
+    params.get("soc2") === "true" ||
+    params.get("liveness") === "true" ||
+    params.get("aml") === "true" ||
     !!params.get("search") ||
     (!!params.get("sort") && params.get("sort") !== "rating")
   );

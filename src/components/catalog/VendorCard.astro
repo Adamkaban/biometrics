@@ -22,6 +22,9 @@ const cardClass = vendor.featured
   data-name={vendor.name}
   data-reviews={vendor.reviews_count}
   data-featured={vendor.featured}
+  data-soc2={vendor.compliance_flags?.soc2_type2 ?? false}
+  data-liveness={vendor.feature_flags?.liveness_detection ?? false}
+  data-aml={vendor.categories.includes("AML")}
   class={`flex flex-col gap-4 rounded-lg p-5 hover:shadow-md transition-shadow no-underline ${cardClass}`}
 >
   <!-- Logo row -->
@@ -81,6 +84,22 @@ const cardClass = vendor.featured
   <p class="text-sm text-zinc-600 dark:text-zinc-400 font-mono truncate">
     {vendor.pricing}
   </p>
+
+  <!-- Free trial badge -->
+  {vendor.has_free_trial && (
+    <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400">
+      Free trial
+    </span>
+  )}
+
+  <!-- Top compliance badges (max 3) -->
+  {vendor.compliance_flags && (
+    <div class="mt-2 flex flex-wrap gap-1">
+      {vendor.compliance_flags.soc2_type2 && <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">SOC 2</span>}
+      {vendor.compliance_flags.iso27001 && <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">ISO 27001</span>}
+      {vendor.compliance_flags.gdpr && <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">GDPR</span>}
+    </div>
+  )}
 
   <!-- CTA button -->
   {vendor.featured ? (
