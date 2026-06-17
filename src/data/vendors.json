@@ -90,7 +90,31 @@
       "slug": "lexisnexis-idverse",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 195
     },
     {
       "name": "Digital Onboarding",
@@ -203,7 +227,31 @@
       "slug": "digital-onboarding",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 195
     },
     {
       "name": "Experian Identity proofing",
@@ -343,7 +391,31 @@
       "slug": "experian-identity-proofing",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "per_check",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "UltraPass",
@@ -555,7 +627,31 @@
       "slug": "ultrapass",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "Alice Biometrics",
@@ -668,7 +764,31 @@
       "slug": "alice-biometrics",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 195
     },
     {
       "name": "Recognito",
@@ -827,7 +947,31 @@
       "slug": "recognito",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "RegTechONE",
@@ -1032,7 +1176,32 @@
       "slug": "regtechone",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api",
+        "no_code"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": false,
+        "has_liveness": false,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "Fingera",
@@ -1122,7 +1291,26 @@
       "slug": "fingera",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": false,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Zunoy Authenticator",
@@ -1288,7 +1476,31 @@
       "slug": "zunoy-authenticator",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": false,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 195
     },
     {
       "name": "Meon eKYC",
@@ -1452,7 +1664,31 @@
       "slug": "meon-ekyc",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "Persona",
@@ -1580,7 +1816,31 @@
       "slug": "persona",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": true,
+        "has_kyb": true,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 200
     },
     {
       "name": "IDnow Platform",
@@ -1702,7 +1962,31 @@
       "slug": "idnow-platform",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "xProof",
@@ -1816,7 +2100,31 @@
       "slug": "xproof",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 195
     },
     {
       "name": "1Kosmos Platform",
@@ -1866,7 +2174,26 @@
       "slug": "1kosmos-platform",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Ping Identity Platform",
@@ -1938,7 +2265,26 @@
       "slug": "ping-identity-platform",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Trust Swiftly",
@@ -2014,7 +2360,26 @@
       "slug": "trust-swiftly",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Identity Verification Platform",
@@ -2061,7 +2426,26 @@
       "slug": "identity-verification-platform",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "AuthenticID Identity Proofing",
@@ -2120,7 +2504,26 @@
       "slug": "authenticid-identity-proofing",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Data Zoo Flow",
@@ -2210,7 +2613,26 @@
       "slug": "data-zoo-flow",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Digidentity",
@@ -2303,7 +2725,26 @@
       "slug": "digidentity",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Real ID",
@@ -2343,7 +2784,26 @@
       "slug": "real-id",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Faceki",
@@ -2392,7 +2852,26 @@
       "slug": "faceki",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Biometric Agreement",
@@ -2485,7 +2964,26 @@
       "slug": "biometric-agreement",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "eFACiLiTY Time and Attendance System",
@@ -2532,7 +3030,26 @@
       "slug": "efacility-time-and-attendance-system",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Jumio",
@@ -2623,7 +3140,26 @@
       "slug": "jumio",
       "featured": true,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Biometric.Vision",
@@ -2712,7 +3248,26 @@
       "slug": "biometric-vision",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Folio3 AI Face Recognition",
@@ -2801,7 +3356,26 @@
       "slug": "folio3-ai-face-recognition",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Oz Liveness",
@@ -2874,7 +3448,26 @@
       "slug": "oz-liveness",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": true,
+        "iso27001": false,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Mity",
@@ -2964,7 +3557,26 @@
       "slug": "mity",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "EnQualify",
@@ -3003,7 +3615,26 @@
       "slug": "enqualify",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Face Match",
@@ -3059,7 +3690,26 @@
       "slug": "face-match",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": false,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "PXL Ident",
@@ -3105,7 +3755,26 @@
       "slug": "pxl-ident",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "FacePlugin",
@@ -3145,7 +3814,26 @@
       "slug": "faceplugin",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Edureg",
@@ -3236,7 +3924,26 @@
       "slug": "edureg",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Face Recognition API",
@@ -3328,7 +4035,26 @@
       "slug": "face-recognition-api",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Biometric Security",
@@ -3419,7 +4145,26 @@
       "slug": "biometric-security",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "ZipID",
@@ -3467,7 +4212,26 @@
       "slug": "zipid",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "BAF",
@@ -3536,7 +4300,26 @@
       "slug": "baf",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": true,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "azakaw",
@@ -3623,7 +4406,26 @@
       "slug": "azakaw",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": false,
+        "has_liveness": false,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Tecalis Authentication",
@@ -3691,7 +4493,26 @@
       "slug": "tecalis-authentication",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": true,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Biometric Attendance System",
@@ -3783,7 +4604,26 @@
       "slug": "biometric-attendance-system",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "per_check",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "iDenfy",
@@ -3942,7 +4782,33 @@
       "slug": "idenfy",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "flutter",
+        "react_native",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": true,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 200
     },
     {
       "name": "ComplyCube",
@@ -4204,7 +5070,32 @@
       "slug": "complycube",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api",
+        "no_code"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 220
     },
     {
       "name": "Mitek Systems",
@@ -4312,7 +5203,31 @@
       "slug": "mitek-systems",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "AU10TIX",
@@ -4582,7 +5497,31 @@
       "slug": "au10tix",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": true,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "Veriff",
@@ -4801,7 +5740,31 @@
       "slug": "veriff",
       "featured": true,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "per_check",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": true,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": true,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 230
     },
     {
       "name": "Ondato",
@@ -4992,7 +5955,31 @@
       "slug": "ondato",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": true,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "Entrust IDV, formerly Onfido",
@@ -5164,7 +6151,31 @@
       "slug": "entrust-idv-formerly-onfido",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 195
     },
     {
       "name": "Sumsub",
@@ -5329,7 +6340,31 @@
       "slug": "sumsub",
       "featured": true,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "per_check",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": true,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "Luxand FaceSDK",
@@ -5519,7 +6554,31 @@
       "slug": "luxand-facesdk",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "Veridium",
@@ -5707,7 +6766,31 @@
       "slug": "veridium",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "FaceOnLive Identity Verification Software",
@@ -5894,7 +6977,31 @@
       "slug": "faceonlive-identity-verification-software",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "Biometric Time Attendance System",
@@ -6052,7 +7159,31 @@
       "slug": "biometric-time-attendance-system",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "SentiVeillance Cluster",
@@ -6235,7 +7366,31 @@
       "slug": "sentiveillance-cluster",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "Regula",
@@ -6378,7 +7533,31 @@
       "slug": "regula",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 254
     },
     {
       "name": "Incode",
@@ -6475,7 +7654,26 @@
       "slug": "incode",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": false
+      "has_free_trial": false,
+      "pricing_model_type": "custom",
+      "sdk_types": [],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "Shufti",
@@ -6722,7 +7920,32 @@
       "slug": "shufti",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "per_check",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api",
+        "no_code"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 200
     },
     {
       "name": "Amiqus",
@@ -6979,7 +8202,31 @@
       "slug": "amiqus",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "FaceTec 3D Face Authentication",
@@ -7112,7 +8359,31 @@
       "slug": "facetec-3d-face-authentication",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 180
     },
     {
       "name": "Identomat",
@@ -7378,7 +8649,31 @@
       "slug": "identomat",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": true,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": true,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 193
     },
     {
       "name": "TalnFlo",
@@ -7518,7 +8813,30 @@
       "slug": "talnflo",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": false,
+        "soc2_type2": false,
+        "iso27001": false,
+        "gdpr": false,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": null
     },
     {
       "name": "CORE Identity Verification Solutions",
@@ -7694,7 +9012,31 @@
       "slug": "core-identity-verification-solutions",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": true,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": true,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": 195
     },
     {
       "name": "Imageware Authenticate",
@@ -7884,7 +9226,31 @@
       "slug": "imageware-authenticate",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "Video KYC Identity Verification Software",
@@ -8080,7 +9446,31 @@
       "slug": "video-kyc-identity-verification-software",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "deepidv",
@@ -8271,7 +9661,31 @@
       "slug": "deepidv",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "KYC Solution",
@@ -8459,7 +9873,31 @@
       "slug": "kyc-solution",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "SwiftDil",
@@ -8618,7 +10056,31 @@
       "slug": "swiftdil",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "flat_rate",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": true,
+        "ibeta": true,
+        "pci_dss": true
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": true,
+        "has_aml": true,
+        "has_kyb": false,
+        "has_transaction_monitoring": true
+      },
+      "countries_count": null
     },
     {
       "name": "Entrust Identity Verification",
@@ -8733,7 +10195,31 @@
       "slug": "entrust-identity-verification",
       "featured": false,
       "affiliate_url": null,
-      "has_free_trial": true
+      "has_free_trial": true,
+      "pricing_model_type": "custom",
+      "sdk_types": [
+        "web_sdk",
+        "ios_sdk",
+        "android_sdk",
+        "rest_api"
+      ],
+      "compliance_flags": {
+        "soc2": true,
+        "soc2_type2": false,
+        "iso27001": true,
+        "gdpr": true,
+        "hipaa": false,
+        "ibeta": false,
+        "pci_dss": false
+      },
+      "feature_flags": {
+        "has_id_verification": true,
+        "has_liveness": false,
+        "has_aml": false,
+        "has_kyb": false,
+        "has_transaction_monitoring": false
+      },
+      "countries_count": 150
     }
   ]
 }
