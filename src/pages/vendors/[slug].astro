@@ -82,6 +82,16 @@ const breadcrumbItems = [
 
 const pricingPlans = vendor.website_data?.pricing_plans ?? [];
 
+const SDK_LABELS: Record<string, string> = {
+  web_sdk: "Web SDK",
+  ios_sdk: "iOS SDK",
+  android_sdk: "Android SDK",
+  flutter: "Flutter",
+  react_native: "React Native",
+  rest_api: "REST API",
+  no_code: "No-Code",
+};
+
 // Blog posts relevant to vendor categories
 const VENDOR_CAT_BLOG_SLUGS: Record<string, string[]> = {
   "KYC Compliance": [
@@ -233,7 +243,7 @@ const faqSchema = {
             <div class="mt-3 flex flex-wrap gap-2">
               {vendor.sdk_types.map(sdk => (
                 <span class="rounded-md bg-blue-50 px-3 py-1 text-sm text-blue-700 dark:bg-blue-950/30 dark:text-blue-400">
-                  {sdk.replace(/_/g, " ").replace(/sdk/gi, "SDK").replace(/api/gi, "API")}
+                  {SDK_LABELS[sdk] ?? sdk.replace(/_/g, " ")}
                 </span>
               ))}
             </div>
@@ -360,7 +370,7 @@ const faqSchema = {
                 {vendor.company_data?.funding_display && vendor.company_data?.total_funding && (
                   <p>💰 {vendor.company_data.total_funding} {vendor.company_data.funding_stage}</p>
                 )}
-                {vendor.countries_count && <p>🌍 {vendor.countries_count}+ countries</p>}
+                {vendor.countries_count != null && <p>🌍 {vendor.countries_count}+ countries</p>}
               </div>
             )}
 

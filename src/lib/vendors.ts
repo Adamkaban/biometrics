@@ -56,6 +56,8 @@ export type Vendor = {
     supported_countries?: string;
     headquarters?: string;
     founded_year?: number;
+    use_cases?: string[];
+    products?: string[];
   };
   company_data?: {
     employee_count_range?: string;
