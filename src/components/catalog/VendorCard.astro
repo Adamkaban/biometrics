@@ -23,8 +23,8 @@ const cardClass = vendor.featured
   data-reviews={vendor.reviews_count}
   data-featured={vendor.featured}
   data-soc2={vendor.compliance_flags?.soc2_type2 ?? false}
-  data-liveness={vendor.feature_flags?.liveness_detection ?? false}
-  data-aml={vendor.categories.includes("AML")}
+  data-liveness={vendor.feature_flags?.has_liveness ?? false}
+  data-aml={vendor.feature_flags?.has_aml ?? false}
   class={`flex flex-col gap-4 rounded-lg p-5 hover:shadow-md transition-shadow no-underline ${cardClass}`}
 >
   <!-- Logo row -->
