@@ -21,7 +21,7 @@ Biometric software comparison site at primebiometry.com. Vendor directory + edit
 npm run dev
 npm run build
 npm run preview
-npx wrangler pages deploy dist --project-name primebiometry
+npx wrangler deploy   # manual deploy (fallback only — CF Pages auto-deploys on push)
 ```
 
 ## Key Files
@@ -51,6 +51,6 @@ npx wrangler pages deploy dist --project-name primebiometry
 - Content/blog → `.claude/rules/content.md`
 - Vendors/data → `.claude/rules/vendors.md`
 - Dev issues, npm installs → `.claude/rules/dev.md`
-- Deploy → agent `deployer` | Audit → agent `reviewer` | Write content → agent `writer`
+- Deploy → `.claude/rules/deploy.md` | Audit → agent `reviewer` | Write content → agent `writer`
 - Never re-read `astro.config.mjs`, `site.config.ts` more than once per session
 - Run `npm run build` at end of task, not mid-task

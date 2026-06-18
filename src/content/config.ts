@@ -6,11 +6,24 @@ const assessments = defineCollection({
     vendor: z.string(),
     lastUpdated: z.date(),
     author: z.string(),
+    metaTitle: z.string().optional(),
     metaDescription: z.string().optional(),
     bestFor: z.string(),
     avoidIf: z.string(),
     integrationComplexity: z.enum(["Low", "Medium", "High"]),
     hasFreeTrialVerified: z.boolean().optional(),
+    scoreBreakdown: z
+      .object({
+        compliance: z.number().min(0).max(20),
+        integration: z.number().min(0).max(25),
+        marketCoverage: z.number().min(0).max(25),
+        pricingTransparency: z.number().min(0).max(15),
+        userSentiment: z.number().min(0).max(15),
+        total: z.number().min(0).max(100),
+        scoredAt: z.date(),
+        methodologyVersion: z.literal("2.0"),
+      })
+      .optional(),
   }),
 });
 

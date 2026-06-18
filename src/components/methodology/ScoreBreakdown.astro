@@ -1,0 +1,77 @@
+---
+interface Props {
+  compliance: number;
+  integration: number;
+  marketCoverage: number;
+  pricingTransparency: number;
+  userSentiment: number;
+  total: number;
+  scoredAt: Date;
+  methodologyVersion: string;
+}
+
+const {
+  compliance,
+  integration,
+  marketCoverage,
+  pricingTransparency,
+  userSentiment,
+  total,
+  scoredAt,
+  methodologyVersion,
+} = Astro.props;
+
+const rows = [
+  { label: "Compliance Coverage", score: compliance, max: 20 },
+  { label: "Integration Depth", score: integration, max: 25 },
+  { label: "Market Coverage", score: marketCoverage, max: 25 },
+  { label: "Pricing Transparency", score: pricingTransparency, max: 15 },
+  { label: "User Sentiment", score: userSentiment, max: 15 },
+];
+
+const scoredAtFormatted = scoredAt.toISOString().slice(0, 10);
+---
+
+<section
+  class="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 mb-8"
+  aria-label="PrimeBiometry score breakdown"
+>
+  <div class="flex items-baseline justify-between mb-5">
+    <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">PrimeBiometry Score</h2>
+    <div class="flex items-baseline gap-1.5">
+      <span class="font-mono text-2xl font-semibold text-blue-600 dark:text-blue-400 tabular-nums">{total}</span>
+      <span class="font-mono text-xs text-zinc-400 dark:text-zinc-500">/ 100</span>
+    </div>
+  </div>
+
+  <div class="space-y-2.5">
+    {rows.map((row) => {
+      const pct = Math.round((row.score / row.max) * 100);
+      return (
+        <div>
+          <div class="flex items-baseline justify-between mb-1 text-xs">
+            <span class="text-zinc-700 dark:text-zinc-300">{row.label}</span>
+            <span class="font-mono text-zinc-500 dark:text-zinc-400 tabular-nums">
+              {row.score} / {row.max}
+            </span>
+          </div>
+          <div class="h-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+            <div
+              class="h-full bg-blue-600 dark:bg-blue-500 rounded-full"
+              style={`width: ${pct}%;`}
+              role="progressbar"
+              aria-valuenow={row.score}
+              aria-valuemin="0"
+              aria-valuemax={row.max}
+              aria-label={`${row.label}: ${row.score} of ${row.max}`}
+            />
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <p class="mt-5 text-xs text-zinc-400 dark:text-zinc-500">
+    Scored against <a href="/methodology#changelog" class="text-blue-600 dark:text-blue-400 hover:underline">methodology v{methodologyVersion}</a> on <time datetime={scoredAtFormatted} class="font-mono tabular-nums">{scoredAtFormatted}</time>.
+  </p>
+</section>

@@ -1,11 +1,8 @@
 # SEO Rules — PrimeBiometry
 
-## Google 2026 Context
+## Context
 
-HCU (Helpful Content Update) actively penalizes thin aggregator sites that republish
-data from G2/Gartner/Capterra without original value. Every page must add genuine analysis
-on top of scraped data. AI Overviews dominate informational queries — target comparison
-and transactional intent instead.
+HCU penalizes thin aggregator sites republishing G2/Gartner/Capterra without original value. AI Overviews dominate informational queries — target comparison and transactional intent.
 
 ---
 
@@ -13,48 +10,37 @@ and transactional intent instead.
 
 ### Performance
 - **PageSpeed Insights 90+** on all pages
-- Astro static + Cloudflare CDN = strong baseline; don't break it with heavy client JS
-- Hero images: use Astro `<Image>` component with `loading="eager"` for LCP
+- Hero images: `<Image loading="eager">` for LCP
 - All other images: `loading="lazy"` + `decoding="async"`
-- **Raster images (photos, screenshots, OG images) → WebP** — Astro `<Image>` converts automatically
-- **Logos, icons, illustrations → SVG** preferred (scalable, no quality loss, small file size)
-- **PNG** allowed when transparency needed and SVG not available (e.g. vendor logos without SVG source)
-- Never ship unoptimized JPEG for photos
-- `will-change: transform` only on elements that actually animate
+
+### Image Alt Text (required on every `<img>` and `<Image>`)
+- **Never omit `alt`** — empty `alt=""` only for purely decorative images (icons with adjacent text label)
+- **Descriptive + keyword-rich:** what image shows + primary keyword for the page
+  - Vendor logo: `alt="Veriff logo — identity verification software"`
+  - Screenshot: `alt="Veriff dashboard showing liveness detection result"`
+  - Blog image: `alt="KYC compliance checklist for fintech startups 2026"`
+  - Category page: `alt="Best KYC software comparison table 2026"`
+- **Max ~125 characters** — no "image of" / "photo of" prefixes — no keyword stuffing
 
 ### Indexability
-- **Default robots meta on every page:** `<meta name="robots" content="index, follow">`
-- Exception: `/go/[slug]` pages get `<meta name="robots" content="noindex, nofollow">`
+- **Default robots meta:** `<meta name="robots" content="index, follow">`
+- `/go/[slug]` pages: `<meta name="robots" content="noindex, nofollow">`
 - `robots.txt` — `Disallow: /go/`
-- `HTML lang="en"` on `<html>` — site is English-only, targeting global English-speaking B2B market
-- **Canonical tags** — always HTTPS, always present. Required on vendor pages that appear in multiple categories.
-  Format: `<link rel="canonical" href="https://primebiometry.com/vendors/[slug]">`
+- `HTML lang="en"` on `<html>`
+- **Canonical tags** — always HTTPS. Vendor pages: `<link rel="canonical" href="https://primebiometry.com/vendors/[slug]">`
 
 ### Sitemap
-- `@astrojs/sitemap` — auto-generate `sitemap.xml`
-- Include: all pages EXCEPT `/go/*`
-- Submit to Google Search Console after deploy
-
-### Redirects
-- www → non-www: configured in Cloudflare Pages settings
-- HTTP → HTTPS: enforced by Cloudflare automatically
-- Verify both redirects resolve with 301 (not 302)
+- `@astrojs/sitemap` — auto-generate. Exclude `/go/*`. Submit to GSC after deploy.
 
 ### Meta Tags
-- **Title:** max 60 characters total (including spaces and " | PrimeBiometry" suffix)
-  - Format: `[Vendor/Topic] [Action/Year] | PrimeBiometry`
-  - Example: `Veriff Review 2026 | PrimeBiometry` (35 chars ✓)
-  - Example: `Best KYC Software 2026 | PrimeBiometry` (38 chars ✓)
-  - Suffix " | PrimeBiometry" = 16 chars — leaves ~44 chars for the topic portion
-- **Description:** max 155 characters
-  - Include primary keyword naturally in first 100 chars
-  - Include a benefit or differentiator
-  - No clickbait
+- **Title:** max 60 chars total. Format: `[Vendor/Topic] [Action/Year] | PrimeBiometry`
+  - Suffix `" | PrimeBiometry"` = 16 chars → ~44 chars for topic
+  - Example: `Veriff Review 2026 | PrimeBiometry` (35 ✓)
+- **Description:** max 155 chars. Primary keyword in first 100 chars. Benefit or differentiator. No clickbait.
 
 ### Heading Structure
-- **H1: exactly one per page**
-- H2–H6: nested correctly, no skipping levels (no H2 → H4)
-- H1 = primary keyword target for the page
+- **H1: exactly one per page** = primary keyword
+- H2–H6: no skipping levels
 - Vendor page H1: `[Vendor Name] Review 2026: Pricing, Features & Alternatives`
 - Category page H1: `Best [Category] Software 2026: Compare [N] Tools`
 - Blog post H1: matches title tag
@@ -63,89 +49,54 @@ and transactional intent instead.
 
 ## Schema Requirements
 
-Use JSON-LD format everywhere. Never microdata.
+JSON-LD only. Never microdata.
 
-| Page type       | Required schema                                                                  |
-|-----------------|----------------------------------------------------------------------------------|
-| Homepage        | `Organization` + `WebSite` + `SiteLinksSearchBox`                               |
-| Vendor page     | `SoftwareApplication` + `AggregateRating` + `FAQPage` + `BreadcrumbList`        |
-| Vendor index    | `ItemList` + `BreadcrumbList`                                                    |
-| Category page   | `ItemList` + `BreadcrumbList`                                                    |
-| Blog post       | `Article` + `Person` (author) + `BreadcrumbList` + `FAQPage` (if FAQ section)   |
-| Blog index      | `BreadcrumbList`                                                                 |
-| Methodology     | `Article` + `BreadcrumbList`                                                     |
-| All pages       | `BreadcrumbList` (also render physically at top of page, not just in schema)     |
+| Page type    | Required schema                                                               |
+|--------------|-------------------------------------------------------------------------------|
+| Homepage     | `Organization` + `WebSite` + `SiteLinksSearchBox`                            |
+| Vendor page  | `SoftwareApplication` + `AggregateRating` + `FAQPage` + `BreadcrumbList`     |
+| Vendor index | `ItemList` + `BreadcrumbList`                                                 |
+| Category     | `ItemList` + `BreadcrumbList`                                                 |
+| Blog post    | `Article` + `Person` (author) + `BreadcrumbList` + `FAQPage` (if FAQ exists) |
+| Blog index   | `BreadcrumbList`                                                              |
+| Methodology  | `Article` + `BreadcrumbList`                                                  |
+| All pages    | `BreadcrumbList` — render physically on page, not just in schema              |
 
-**Vendor page FAQPage** — not yet implemented in `src/pages/vendors/[slug].astro`.
-FAQs live in assessment MDX files. Need to extract and inject into vendor page schema.
-
-**Author schema** (`Person`) on blog posts — site has single author, no `/authors/` pages exist:
-```json
-{
-  "@type": "Person",
-  "name": "[Author Name]",
-  "jobTitle": "Senior Security Analyst",
-  "url": "https://primebiometry.com/about"
-}
-```
-If multiple authors added later: create `/authors/[slug]` pages and update `url` accordingly.
-
-**Organization schema** on homepage:
-```json
-{
-  "@type": "Organization",
-  "name": "PrimeBiometry",
-  "url": "https://primebiometry.com",
-  "description": "Independent comparison of biometric authentication and identity verification software"
-}
-```
+Author `Person` url: `https://primebiometry.com/about`. If `/authors/[slug]` pages added later, update accordingly.
 
 ---
 
 ## Footer Required Pages
 
-Every page footer must link to:
-- `/about` — About PrimeBiometry + team
-- `/methodology` — How we evaluate vendors (E-E-A-T signal)
-- `/contact` — Contact form or email
-- `/privacy` — Privacy Policy (required for GDPR compliance + AdSense/affiliate)
-- `/terms` — Terms of Service (required for affiliate disclosures)
-- `/blog` — Blog index
+`/about` · `/methodology` · `/contact` · `/privacy` · `/terms` · `/blog`
 
 ---
 
 ## Target Keyword Types (priority order)
 
 1. **Comparison** — `veriff vs jumio`, `idenfy vs onfido 2026`
-2. **Transactional** — `best KYC solution for crypto exchange`, `biometric auth for healthcare`
+2. **Transactional** — `best KYC solution for crypto exchange`
 3. **Pricing** — `idenfy pricing 2026`, `veriff cost per verification`
 4. **Compliance** — `biometric authentication HIPAA compliant`, `KYC AML software GDPR`
 5. **Feature-specific** — `passive liveness detection software`, `face recognition API`
 
-Avoid broad informational queries (`what is biometric authentication`) — AI Overviews own these.
+Avoid broad informational queries — AI Overviews own them.
 
 ---
 
 ## Topical Authority Clusters
 
-Each cluster = pillar category page + vendor pages + 1-2 blog posts.
+Clusters: Identity Verification · KYC Compliance · Biometric Authentication · AML / Fraud Prevention
 
-Clusters from the data:
-- Identity Verification
-- KYC Compliance
-- Biometric Authentication
-- AML / Fraud Prevention
-
-Blog posts must link to relevant vendor pages and category pages.
-Category pages must link to blog posts. Do not break this internal link architecture.
+Each cluster = category page + vendor pages + 1-2 blog posts. Blog posts link to vendor + category pages. Category pages link back to blog posts.
 
 ---
 
 ## Internal Linking Rules
 
-- Every vendor page → link to its primary category page
-- Every category page → link to 2-3 related blog posts
-- Every blog post → link to 3-5 relevant vendor pages + 1 category page
+- Every vendor page → primary category page
+- Every category page → 2-3 related blog posts
+- Every blog post → 3-5 vendor pages + 1 category page
 - Homepage → featured vendors + latest blog posts + all categories
 
 ---
@@ -153,12 +104,10 @@ Category pages must link to blog posts. Do not break this internal link architec
 ## URL Structure
 
 ```
-/vendors/             → vendor directory index
-/vendors/[slug]       → lowercase, hyphens, no special chars
-/categories/[slug]    → kyc-compliance, identity-verification, biometric-authentication
-/blog/                → blog index
-/blog/[slug]          → descriptive, keyword-rich, year when relevant
-/go/[slug]            → noindex, nofollow, excluded from sitemap
+/vendors/[slug]      lowercase, hyphens, no special chars
+/categories/[slug]   kyc-compliance, identity-verification, biometric-authentication
+/blog/[slug]         descriptive, keyword-rich, year when relevant
+/go/[slug]           noindex, nofollow, excluded from sitemap
 ```
 
 Never change URLs after publish — redirects lose link equity.

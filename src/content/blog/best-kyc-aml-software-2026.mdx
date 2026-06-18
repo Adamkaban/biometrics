@@ -1,6 +1,6 @@
 ---
-title: "Best KYC & AML Software 2026: 12 Tools Compared"
-description: "Compare the top 12 KYC and AML software platforms for 2026. Side-by-side feature tables, real pricing data, pros and cons, and use cases for fintech, banks, and crypto exchanges. Updated June 2026."
+title: "KYC + AML Architecture 2026: Stack Guide"
+description: "Inside modern KYC/AML stacks: SDK layers, sanctions screening pipelines, decisioning engines, orchestration. Engineering reference for 2026 vendor selection."
 author: "James Whitfield"
 pubDate: 2026-06-02
 updatedDate: 2026-06-02
@@ -10,21 +10,29 @@ ogImage: /images/blog/best-kyc-aml-software-2026.webp
 faqItems:
   - q: "What is KYC/AML software?"
     a: "KYC/AML software automates the process of verifying customer identities (Know Your Customer) and screening them for money laundering risk (Anti-Money Laundering). It combines ID document verification, biometric liveness detection, PEP and sanctions screening, and ongoing transaction monitoring into a single platform or API. Fintechs, banks, crypto exchanges, and other regulated businesses use it to meet regulatory requirements and reduce fraud."
-  - q: "What is the best KYC software for fintech?"
-    a: "Sumsub is the top overall choice for fintech in 2026, offering automated KYC/AML in a single SDK with strong document coverage (6,500+ document types) and built-in AML screening. For high-accuracy identity verification with strong compliance certifications, Veriff is the leading alternative. Budget-conscious startups should consider iDenfy, which charges only for successful verifications."
+  - q: "Which KYC/AML stack architecture suits fintech best?"
+    a: "Most fintech teams pick one of two architectures: an all-in-one SDK that bundles document capture, liveness, AML screening, and case management in a single contract (Sumsub, ComplyCube, iDenfy follow this pattern), or an orchestration layer that routes to specialist downstream providers based on user risk and jurisdiction (Persona and Entrust IDV lead here). All-in-one wins on integration speed; orchestration wins on long-term flexibility and per-region accuracy. For a ranked vendor shortlist, see our AML category page."
   - q: "How much does KYC software cost?"
     a: "KYC software pricing typically ranges from $0.50–$2.00 per verification for pay-as-you-go plans, or $49–$500/month for subscription tiers. iDenfy starts at $1.35 per verified check. Veriff charges $0.80–$1.89 per verification with a minimum monthly spend. Enterprise platforms like Jumio and Persona use custom pricing. See our full KYC pricing guide for a detailed breakdown."
   - q: "Is there a free KYC solution?"
     a: "Shufti Pro offers a free tier for low-volume testing. Sumsub and Veriff offer free trials. For production use, all enterprise KYC platforms charge per verification or via subscription. Stripe Identity (Stripe's built-in solution) is effectively free if you're already using Stripe for payments, but is limited to US/EU documents and lacks full AML screening."
-  - q: "What KYC software is best for banks?"
-    a: "Jumio is the leading enterprise KYC platform for banks, serving major financial institutions with its high-volume processing and deep compliance certifications (ISO 27001, SOC 2, GDPR). For mid-market banks, Veriff and Sumsub offer a better balance of enterprise features and accessible pricing."
+  - q: "Which architecture patterns do enterprise banks deploy?"
+    a: "Enterprise banks typically run a dual-layer architecture: a primary IDV provider with FedRAMP or eIDAS attestation handling the regulated path (Jumio, Entrust IDV, and Persona dominate this tier), plus a separate AML and transaction-monitoring platform sharing case data via webhook or message bus. The two systems exchange a common customer-risk score so the AML platform can trigger re-verification when behavioural signals shift. Single-vendor enterprise contracts exist but are rarer at top-tier institutions."
 ---
 
-**TL;DR: Quick picks for 2026**
+<div class="my-6 flex flex-col gap-3 rounded-lg border border-blue-200 bg-blue-50/50 p-5 dark:border-blue-600/30 dark:bg-blue-950/10 sm:flex-row sm:items-center sm:justify-between">
+  <div class="flex flex-col gap-1">
+    <p class="text-sm font-semibold text-blue-900 dark:text-blue-300">Looking for the best AML software in 2026?</p>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300">This article covers the technology stack. For ranked vendor picks and pricing, see the commercial guide.</p>
+  </div>
+  <a href="/categories/aml" class="inline-flex shrink-0 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400">Compare AML Vendors</a>
+</div>
 
-- **Best Overall:** [Sumsub](/vendors/sumsub) -- all-in-one KYC + AML + transaction monitoring in a single SDK, best for fintech at any stage
-- **Best for Enterprise:** [Jumio](/vendors/jumio) -- enterprise SLAs, FedRAMP compliance, dedicated account management for banks and large institutions
-- **Best Value:** [iDenfy](/vendors/idenfy) -- highest user satisfaction score in category (4.9/5), transparent pricing, and no charges for failed verifications
+**Architecture overview**
+
+- **Capture layer:** mobile and web SDKs that handle document scanning, selfie liveness, and on-device tamper signals before any data leaves the client
+- **Decisioning layer:** sanctions, PEP, and adverse-media screening pipelines fused with a risk score that drives accept, reject, or step-up paths
+- **Orchestration layer:** workflow engine that routes between downstream IDV, KYT, and case-management providers based on jurisdiction and risk
 
 ---
 

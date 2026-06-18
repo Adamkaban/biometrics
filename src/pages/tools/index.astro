@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Free KYC & Biometric Tools (2026)";
+const description =
+  "Free B2B tools: KYC cost calculator (24 vendors), pricing comparators, compliance gap finder. No signup, no email wall. Built for procurement teams.";
+const canonicalUrl = "https://primebiometry.com/tools";
+
+const tools = [
+  {
+    href: "/tools/kyc-cost-calculator",
+    name: "KYC Cost Calculator 2026",
+    description:
+      "Estimate monthly KYC verification cost across 24 vendors. Toggle ID, liveness, and AML add-ons. Real pricing with vendor minimum commitments and flat-plan caps applied.",
+  },
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://primebiometry.com" },
+      { "@type": "ListItem", position: 2, name: "Tools" },
+    ],
+  },
+];
+---
+
+<BaseLayout {title} {description} {canonicalUrl} {schema}>
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
+      <ol class="flex items-center gap-2">
+        <li><a href="/" class="hover:text-zinc-700 dark:hover:text-zinc-200">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-900 dark:text-zinc-100">Tools</li>
+      </ol>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+      Free Biometric & KYC Tools
+    </h1>
+    <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch] mb-10">
+      Free interactive tools for biometric and identity verification buyers. Built on the same
+      vendor dataset that powers our reviews and comparisons.
+    </p>
+
+    <ul class="space-y-4">
+      {
+        tools.map((t) => (
+          <li>
+            <a
+              href={t.href}
+              class="block p-6 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 hover:border-blue-600 transition-colors"
+            >
+              <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2">{t.name}</h2>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{t.description}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

@@ -1,0 +1,110 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import VendorCard from "../../../components/catalog/VendorCard.astro";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema.astro";
+import {
+  vendors,
+  INDUSTRY_BUCKETS,
+  buildItemListSchema,
+  getVendorIndustries,
+  type IndustryBucketKey,
+} from "../../../lib/vendors";
+import siteConfig from "../../../../site.config";
+
+export async function getStaticPaths() {
+  return (Object.keys(INDUSTRY_BUCKETS) as IndustryBucketKey[]).map((key) => ({
+    params: { industry: key },
+    props: { industryKey: key },
+  }));
+}
+
+interface Props {
+  industryKey: IndustryBucketKey;
+}
+
+const { industryKey } = Astro.props;
+const bucket = INDUSTRY_BUCKETS[industryKey];
+
+const matched = vendors
+  .filter((v) => getVendorIndustries(v).includes(industryKey))
+  .sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return b.rating - a.rating;
+  });
+
+const INTRO: Record<IndustryBucketKey, string> = {
+  banking: `KYC, AML, and identity verification platforms purpose-built for retail and commercial banks. Compliance-first vendors that meet ISO 27001, SOC 2, and Tier-1 regulator expectations.`,
+  fintech: `Identity verification and KYC tools optimized for fintech onboarding velocity — fast SDK integration, per-check pricing, and global document coverage.`,
+  crypto: `Travel Rule, KYT, and identity verification vendors used by exchanges, wallets, and Web3 platforms. Covers FATF compliance and wallet-screening capabilities.`,
+  igaming: `Age verification, source-of-funds, and KYC platforms tuned for licensed online gambling, sportsbooks, and iGaming operators across UKGC, MGA, and Curaçao jurisdictions.`,
+  healthcare: `Identity assurance and patient verification platforms compliant with HIPAA and capable of supporting telehealth, e-prescribing, and provider credentialing workflows.`,
+  ecommerce: `Verification, age-gating, and fraud-prevention platforms optimized for high-volume e-commerce and marketplace onboarding with low friction at checkout.`,
+};
+
+const intro = INTRO[industryKey];
+
+// Short labels for <title> to stay ≤60 chars after " | PrimeBiometry" suffix
+const SHORT_LABEL: Record<IndustryBucketKey, string> = {
+  banking: "Banking",
+  fintech: "Fintech",
+  crypto: "Crypto",
+  igaming: "iGaming",
+  healthcare: "Healthcare",
+  ecommerce: "E-commerce",
+};
+
+const title = `Best Biometric Vendors for ${SHORT_LABEL[industryKey]} 2026`;
+const description = `Compare ${matched.length} identity verification and biometric authentication vendors built for ${bucket.label.toLowerCase()}. Pricing, compliance, and integration options.`;
+const canonicalUrl = `https://primebiometry.com/vendors/for/${industryKey}`;
+
+const itemListSchema = buildItemListSchema(
+  matched,
+  `Biometric and Identity Verification Vendors for ${bucket.label}`,
+  siteConfig.seo.siteUrl,
+);
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Vendors", url: "/vendors" },
+  { name: bucket.label, url: `/vendors/for/${industryKey}` },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  schema={itemListSchema}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+    <div class="mb-6">
+      <BreadcrumbSchema items={breadcrumbItems} />
+    </div>
+
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Best Biometric Vendors for {bucket.label} 2026
+      </h1>
+      <p class="mt-3 text-base text-zinc-600 dark:text-zinc-400 max-w-[65ch] leading-relaxed">
+        {intro}
+      </p>
+      <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-500">
+        {matched.length} {matched.length === 1 ? "vendor" : "vendors"} matched ·
+        <a class="text-blue-600 dark:text-blue-400 hover:underline" href={`/vendors?industry=${industryKey}`}>
+          Refine with more filters →
+        </a>
+      </p>
+    </div>
+
+    {matched.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 [&>a]:min-w-0">
+        {matched.map((v) => <VendorCard vendor={v} />)}
+      </div>
+    ) : (
+      <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        No vendors currently tagged for this industry. <a class="text-blue-600 dark:text-blue-400 hover:underline" href="/vendors">Browse all vendors →</a>
+      </p>
+    )}
+  </div>
+</BaseLayout>

@@ -1,30 +1,34 @@
 const GBP_TO_USD = 1.27;
 
+export const LIVENESS_SURCHARGE_USD = 0.30;
+export const AML_SURCHARGE_USD = 0.10;
+
+export interface Addons {
+  liveness: boolean;
+  aml: boolean;
+}
+
 export type ParsedPrice =
   | { type: "per-check"; usd: number; monthlyMin?: number; approx?: true }
-  | { type: "flat"; usd: number; label?: string }
+  | { type: "flat"; usd: number; label?: string; cap?: number; overage?: number }
   | { type: "free" }
   | { type: "custom"; label: string };
 
 export function parsePrice(raw: string): ParsedPrice {
   const s = (raw ?? "").trim();
 
-  // Sentinel / unknown data values → custom (no pricing info)
   if (!s || s === "null" || s === "N/A") {
     return { type: "custom", label: "Contact Sales" };
   }
 
-  // Free / $0
   if (s === "Free" || s === "$0") {
     return { type: "free" };
   }
 
-  // $0 / per check
   if (/^\$0\s*\/\s*per\s+check$/i.test(s)) {
     return { type: "free" };
   }
 
-  // Custom / contact variants
   const customPatterns = [
     /contact/i,
     /custom/i,
@@ -36,7 +40,6 @@ export function parsePrice(raw: string): ParsedPrice {
     return { type: "custom", label: "Contact Sales" };
   }
 
-  // GBP per candidate/client/check
   const gbpPerCheck = s.match(/£([\d.]+)\s+per\s+\w+/i);
   if (gbpPerCheck) {
     return {
@@ -46,7 +49,6 @@ export function parsePrice(raw: string): ParsedPrice {
     };
   }
 
-  // Per-check with monthly minimum: "$0.80 per verification / $49 month min"
   const perCheckWithMin = s.match(
     /\$([\d.]+)\s*(?:per\s+verification|\/\s*per\s+check|\/\s*verification)\s*\/\s*\$([\d.]+)\s+month/i
   );
@@ -58,7 +60,6 @@ export function parsePrice(raw: string): ParsedPrice {
     };
   }
 
-  // Per-check without minimum
   const perCheck = s.match(
     /\$([\d.]+)\s*(?:per\s+(?:verification|check)|\/\s*(?:per\s+check|verification))/i
   );
@@ -68,19 +69,16 @@ export function parsePrice(raw: string): ParsedPrice {
     return { type: "per-check", usd };
   }
 
-  // Per-user monthly
   const perUser = s.match(/\$([\d.]+)\s*\/\s*user\s*\/\s*mo/i);
   if (perUser) {
     return { type: "flat", usd: parseFloat(perUser[1]), label: "/user/month" };
   }
 
-  // Flat monthly — /month, /mo, or standalone / mo
   const flatMonthly = s.match(/\$([\d.]+)\s*(?:\/\s*mo(?:nth)?|\/?\s*mo\b)/i);
   if (flatMonthly) {
     return { type: "flat", usd: parseFloat(flatMonthly[1]) };
   }
 
-  // Bare dollar amount (e.g. "$19.99", "$49.99")
   const bareDollar = s.match(/^\$([\d.]+)$/);
   if (bareDollar) {
     const usd = parseFloat(bareDollar[1]);
@@ -89,6 +87,13 @@ export function parsePrice(raw: string): ParsedPrice {
   }
 
   return { type: "custom", label: "Contact Sales" };
+}
+
+export interface PlanInput {
+  name: string;
+  price: string;
+  monthly_cap?: number;
+  overage_rate?: number;
 }
 
 export interface VendorPricingInput {
@@ -100,11 +105,25 @@ export interface VendorPricingInput {
   has_free_trial: boolean;
   vendor_website: string;
   affiliate_url: string | null;
-  plans: Array<{ name: string; price: string }>;
+  plans: PlanInput[];
+  min_monthly_commitment?: number | null;
+  pricing_source?: "official" | "estimated";
+  has_liveness?: boolean;
+  has_aml?: boolean;
 }
 
 export type PricingResult =
-  | { type: "calculated"; monthlyUSD: number; perVerification?: number; hasMinimum?: number; approx?: true }
+  | {
+      type: "calculated";
+      monthlyUSD: number;
+      perVerification?: number;
+      hasMinimum?: number;
+      approx?: true;
+      cap?: number;
+      overage?: number;
+      overflowVolume?: number;
+      addonSurcharge?: number;
+    }
   | { type: "flat"; usd: number; label?: string }
   | { type: "free" }
   | { type: "custom"; label: string };
@@ -113,61 +132,130 @@ export interface VendorResult extends VendorPricingInput {
   pricing: PricingResult;
 }
 
-export function calculateMonthlyCost(vendor: VendorPricingInput, volume: number): VendorResult {
+function effectivePerCheck(
+  basePerCheck: number,
+  addons: Addons,
+  vendor: VendorPricingInput
+): { perCheck: number; surcharge: number } {
+  let surcharge = 0;
+  if (addons.liveness && vendor.has_liveness !== false) surcharge += LIVENESS_SURCHARGE_USD;
+  if (addons.aml && vendor.has_aml !== false) surcharge += AML_SURCHARGE_USD;
+  return { perCheck: basePerCheck + surcharge, surcharge };
+}
+
+function addonsRequireUnsupportedFeature(addons: Addons, vendor: VendorPricingInput): string | null {
+  if (addons.liveness && vendor.has_liveness === false) return "Liveness not supported";
+  if (addons.aml && vendor.has_aml === false) return "AML not supported";
+  return null;
+}
+
+export function calculateMonthlyCost(
+  vendor: VendorPricingInput,
+  volume: number,
+  addons: Addons = { liveness: false, aml: false }
+): VendorResult {
   if (vendor.plans.length === 0) {
     return { ...vendor, pricing: { type: "custom", label: "Contact Sales" } };
   }
 
-  const parsed = vendor.plans.map((p) => parsePrice(p.price));
+  const unsupported = addonsRequireUnsupportedFeature(addons, vendor);
+  if (unsupported) {
+    return { ...vendor, pricing: { type: "custom", label: unsupported } };
+  }
 
-  // Per-check plans — paid only (usd > 0), pick cheapest for given volume
+  const parsed = vendor.plans.map((p) => {
+    const base = parsePrice(p.price);
+    if (base.type === "flat" && (p.monthly_cap !== undefined || p.overage_rate !== undefined)) {
+      return { ...base, cap: p.monthly_cap, overage: p.overage_rate };
+    }
+    return base;
+  });
+
   const perCheckPlans = parsed.filter(
     (p): p is Extract<ParsedPrice, { type: "per-check" }> => p.type === "per-check" && p.usd > 0
   );
+
   if (perCheckPlans.length > 0) {
-    const best = perCheckPlans.reduce((acc, p) => {
-      const cost = Math.max(p.usd * volume, p.monthlyMin ?? 0);
-      const accCost = Math.max(acc.usd * volume, acc.monthlyMin ?? 0);
-      return cost < accCost ? p : acc;
-    });
-    const rawCost = best.usd * volume;
-    const monthlyUSD = best.monthlyMin ? Math.max(rawCost, best.monthlyMin) : rawCost;
+    const evaluate = (p: Extract<ParsedPrice, { type: "per-check" }>) => {
+      const { perCheck, surcharge } = effectivePerCheck(p.usd, addons, vendor);
+      const floor = vendor.min_monthly_commitment ?? p.monthlyMin ?? 0;
+      const monthly = Math.max(perCheck * volume, floor);
+      return { plan: p, perCheck, surcharge, floor, monthly };
+    };
+
+    const best = perCheckPlans.map(evaluate).reduce((acc, cur) => (cur.monthly < acc.monthly ? cur : acc));
+    const hasMinimum = vendor.min_monthly_commitment ?? best.plan.monthlyMin;
+
     return {
       ...vendor,
       pricing: {
         type: "calculated",
-        monthlyUSD,
-        perVerification: best.usd,
-        ...(best.monthlyMin ? { hasMinimum: best.monthlyMin } : {}),
-        ...(best.approx ? { approx: true } : {}),
+        monthlyUSD: best.monthly,
+        perVerification: best.perCheck,
+        ...(hasMinimum ? { hasMinimum } : {}),
+        ...(best.plan.approx ? { approx: true as const } : {}),
+        ...(best.surcharge > 0 ? { addonSurcharge: best.surcharge } : {}),
       },
     };
   }
 
-  // Flat plans — paid only (usd > 0), pick cheapest
   const flatPlans = parsed.filter(
     (p): p is Extract<ParsedPrice, { type: "flat" }> => p.type === "flat" && p.usd > 0
   );
+
   if (flatPlans.length > 0) {
-    const best = flatPlans.reduce((acc, p) => (p.usd < acc.usd ? p : acc));
-    return { ...vendor, pricing: best };
+    const evaluate = (p: Extract<ParsedPrice, { type: "flat" }>) => {
+      if (p.cap !== undefined && volume > p.cap) {
+        if (p.overage === undefined || p.overage <= 0) {
+          return { plan: p, monthly: Number.POSITIVE_INFINITY, exceeded: true };
+        }
+        return {
+          plan: p,
+          monthly: p.usd + (volume - p.cap) * p.overage,
+          exceeded: false,
+        };
+      }
+      return { plan: p, monthly: p.usd, exceeded: false };
+    };
+
+    const evaluated = flatPlans.map(evaluate);
+    const reachable = evaluated.filter((e) => !e.exceeded);
+
+    if (reachable.length === 0) {
+      return { ...vendor, pricing: { type: "custom", label: "Plan cap exceeded" } };
+    }
+
+    const best = reachable.reduce((acc, cur) => (cur.monthly < acc.monthly ? cur : acc));
+    const p = best.plan;
+
+    if (p.cap !== undefined && p.overage !== undefined && volume > p.cap) {
+      return {
+        ...vendor,
+        pricing: {
+          type: "calculated",
+          monthlyUSD: best.monthly,
+          cap: p.cap,
+          overage: p.overage,
+          overflowVolume: volume - p.cap,
+        },
+      };
+    }
+
+    return { ...vendor, pricing: { type: "flat", usd: p.usd, ...(p.label ? { label: p.label } : {}) } };
   }
 
-  // No paid plans — genuinely free if any free plan exists
   if (parsed.some((p) => p.type === "free")) {
     return { ...vendor, pricing: { type: "free" } };
   }
 
-  // All custom
   return { ...vendor, pricing: { type: "custom", label: "Contact Sales" } };
 }
 
 export function sortVendorResults(results: VendorResult[]): VendorResult[] {
-  // free=0, priced (calculated+flat)=1, custom=2
   const bucket = (r: VendorResult): number => {
     if (r.pricing.type === "free") return 0;
     if (r.pricing.type === "custom") return 2;
-    return 1; // calculated + flat sorted together by USD
+    return 1;
   };
 
   const cost = (r: VendorResult): number => {

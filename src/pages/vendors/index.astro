@@ -3,7 +3,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import VendorCard from "../../components/catalog/VendorCard.astro";
 import VendorFilters from "../../components/catalog/VendorFilters";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
-import { vendors, categories } from "../../lib/vendors";
+import {
+  vendors,
+  categories,
+  SDK_FILTER_LABELS,
+  FILTERABLE_COMPLIANCE,
+  INDUSTRY_BUCKETS,
+  buildItemListSchema,
+  getVendorIndustries,
+  type IndustryBucketKey,
+} from "../../lib/vendors";
+import siteConfig from "../../../site.config";
 import { getCollection } from "astro:content";
 
 // Server-side sort: featured first (by rating desc), then non-featured (by rating desc)
@@ -13,19 +23,34 @@ const sortedVendors = [...vendors].sort((a, b) => {
   return b.rating - a.rating;
 });
 
-// ItemList schema
-const itemListSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Biometric Authentication and Identity Verification Software",
-  numberOfItems: sortedVendors.length,
-  itemListElement: sortedVendors.map((v, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    name: v.name,
-    url: `https://primebiometry.com/vendors/${v.slug}`,
-  })),
+// Facet counts — total vendor matches per option (not intersection with active filters)
+const counts = {
+  sdk: Object.fromEntries(
+    Object.keys(SDK_FILTER_LABELS).map((k) => [
+      k,
+      vendors.filter((v) => v.sdk_types?.includes(k)).length,
+    ])
+  ),
+  compliance: Object.fromEntries(
+    FILTERABLE_COMPLIANCE.map((k) => [
+      k,
+      vendors.filter((v) => v.compliance_flags?.[k]).length,
+    ])
+  ),
+  industry: Object.fromEntries(
+    (Object.keys(INDUSTRY_BUCKETS) as IndustryBucketKey[]).map((k) => [
+      k,
+      vendors.filter((v) => getVendorIndustries(v).includes(k)).length,
+    ])
+  ),
 };
+
+// ItemList schema — each ListItem wraps a SoftwareApplication with AggregateRating
+const itemListSchema = buildItemListSchema(
+  sortedVendors,
+  "Biometric Authentication and Identity Verification Software",
+  siteConfig.seo.siteUrl,
+);
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
@@ -39,8 +64,8 @@ const latestPosts = allPosts
 ---
 
 <BaseLayout
-  title="Biometric Vendor Directory 2026: Compare 69+ Tools"
-  description="Compare 68+ identity verification and biometric authentication vendors. Pricing, ratings, and expert analysis."
+  title="Biometric Vendor Directory: 69 Tools 2026"
+  description="69 identity verification and biometric vendors ranked by price, accuracy, and SDK coverage. Filter by compliance (SOC2, GDPR, ISO 27001). Updated weekly."
   canonicalUrl="https://primebiometry.com/vendors"
   schema={itemListSchema}
 >
@@ -60,18 +85,20 @@ const latestPosts = allPosts
 
     <div class="flex flex-col lg:flex-row gap-8 items-start">
       <aside class="w-full lg:w-64 shrink-0">
-        <div class="sticky top-8">
+        <div class="sticky top-[72px]">
           <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Filters</h2>
           <VendorFilters
             categories={categories}
             initialParams={Astro.url.search}
-            client:visible
+            counts={counts}
+            client:load
           />
         </div>
       </aside>
 
       <main class="flex-1 min-w-0">
-        <div data-vendor-grid class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div data-dedicated-page-slot></div>
+        <div data-vendor-grid class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 [&>a]:min-w-0">
           {sortedVendors.map(v => <VendorCard vendor={v} />)}
         </div>
       </main>

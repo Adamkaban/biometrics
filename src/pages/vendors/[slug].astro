@@ -3,7 +3,21 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
-import { getVendorBySlug, getCategorySlug, getVendorsByCategory } from "../../lib/vendors";
+import ScoreBreakdown from "../../components/methodology/ScoreBreakdown.astro";
+import MapPin from "phosphor-astro/MapPin.astro";
+import CalendarBlank from "phosphor-astro/CalendarBlank.astro";
+import Money from "phosphor-astro/Money.astro";
+import Globe from "phosphor-astro/Globe.astro";
+import Translate from "phosphor-astro/Translate.astro";
+import Files from "phosphor-astro/Files.astro";
+import {
+  getVendorBySlug,
+  getCategorySlug,
+  getVendorsByCategory,
+  pickComplianceFlags,
+  COMPLIANCE_LABELS,
+  PROFILE_COMPLIANCE_ORDER,
+} from "../../lib/vendors";
 import type { Vendor } from "../../lib/vendors";
 import siteConfig from "../../../site.config";
 
@@ -29,7 +43,7 @@ const { entry, vendor } = Astro.props;
 const { Content } = await entry.render();
 
 // SEO
-const pageTitle = `${vendor.name} Review 2026`;
+const pageTitle = entry.data.metaTitle ?? `${vendor.name} Review 2026`;
 
 function trimToWordBoundary(text: string, maxLen: number): string {
   if (text.length <= maxLen) return text;
@@ -38,9 +52,20 @@ function trimToWordBoundary(text: string, maxLen: number): string {
   return lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed;
 }
 
+function pricingSummary(v: Vendor): string {
+  const raw = (v.pricing ?? "").toLowerCase();
+  if (raw.includes("free trial")) return "offers a free trial";
+  if (raw === "free") return "is free to use";
+  if (raw.startsWith("starting at") || raw.startsWith("from")) {
+    return `pricing ${v.pricing!.toLowerCase()}`;
+  }
+  if (raw.includes("contact")) return "uses contact-based enterprise pricing";
+  return v.pricing ? `pricing: ${v.pricing}` : "pricing on request";
+}
+
 const metaDescription = entry.data.metaDescription
   ?? trimToWordBoundary(
-      `${vendor.name}: ${entry.data.bestFor}. Rating: ${vendor.rating}/5. ${vendor.pricing}.`,
+      `${vendor.name} ${pricingSummary(vendor)}. ${entry.data.bestFor}. See alternatives and full breakdown.`,
       155
     );
 const canonicalUrl = `${siteConfig.seo.siteUrl}/vendors/${vendor.slug}`;
@@ -91,6 +116,11 @@ const SDK_LABELS: Record<string, string> = {
   rest_api: "REST API",
   no_code: "No-Code",
 };
+
+const activeComplianceFlags = pickComplianceFlags(vendor, PROFILE_COMPLIANCE_ORDER);
+const integrationLabels = vendor.integration_methods?.length
+  ? vendor.integration_methods
+  : (vendor.sdk_types ?? []).map((s) => SDK_LABELS[s] ?? s.replace(/_/g, " "));
 
 // Blog posts relevant to vendor categories
 const VENDOR_CAT_BLOG_SLUGS: Record<string, string[]> = {
@@ -186,6 +216,20 @@ const faqSchema = {
           &middot; by {entry.data.author}
         </p>
 
+        <!-- PrimeBiometry Score (v2.0 methodology) — only when scoreBreakdown is present in frontmatter -->
+        {entry.data.scoreBreakdown && (
+          <ScoreBreakdown
+            compliance={entry.data.scoreBreakdown.compliance}
+            integration={entry.data.scoreBreakdown.integration}
+            marketCoverage={entry.data.scoreBreakdown.marketCoverage}
+            pricingTransparency={entry.data.scoreBreakdown.pricingTransparency}
+            userSentiment={entry.data.scoreBreakdown.userSentiment}
+            total={entry.data.scoreBreakdown.total}
+            scoredAt={entry.data.scoreBreakdown.scoredAt}
+            methodologyVersion={entry.data.scoreBreakdown.methodologyVersion}
+          />
+        )}
+
         <!-- Assessment MDX content -->
         <div class="prose prose-zinc dark:prose-invert max-w-none">
           <Content />
@@ -221,29 +265,56 @@ const faqSchema = {
             </section>
           )
         }
-        <!-- Compliance & Certifications -->
-        {vendor.compliance_flags && (
+        <!-- Verification capabilities -->
+        {vendor.verification_types && vendor.verification_types.length > 0 && (
           <section class="mt-8">
-            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">Compliance & Certifications</h2>
+            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">Verification Capabilities</h2>
             <div class="mt-3 flex flex-wrap gap-2">
-              {vendor.compliance_flags.soc2_type2 && <span class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-700">SOC 2 Type II</span>}
-              {vendor.compliance_flags.iso27001 && <span class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-700">ISO 27001</span>}
-              {vendor.compliance_flags.gdpr && <span class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-700">GDPR</span>}
-              {vendor.compliance_flags.hipaa && <span class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-700">HIPAA</span>}
-              {vendor.compliance_flags.ibeta && <span class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-700">iBeta PAD Level 2</span>}
-              {vendor.compliance_flags.pci_dss && <span class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-700">PCI DSS</span>}
+              {vendor.verification_types.map(vt => (
+                <span class="rounded-md bg-amber-50 px-3 py-1 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-400">
+                  {vt}
+                </span>
+              ))}
             </div>
           </section>
         )}
 
+        <!-- Compliance & Certifications -->
+        {(activeComplianceFlags.length > 0 || (vendor.compliance_certifications_other?.length ?? 0) > 0) && (
+          <section class="mt-8">
+            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">Compliance & Certifications</h2>
+            {activeComplianceFlags.length > 0 && (
+              <div class="mt-3 flex flex-wrap gap-2">
+                {activeComplianceFlags.map(k => (
+                  <span class="rounded-md border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-700">
+                    {COMPLIANCE_LABELS[k]}
+                  </span>
+                ))}
+              </div>
+            )}
+            {vendor.compliance_certifications_other?.length > 0 && (
+              <>
+                <p class="mt-4 text-xs uppercase tracking-wide text-zinc-500">Additional certifications</p>
+                <div class="mt-2 flex flex-wrap gap-2">
+                  {vendor.compliance_certifications_other.map(c => (
+                    <span class="rounded-md border border-dashed border-zinc-200 px-3 py-1 text-xs text-zinc-500 dark:border-zinc-700">
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+          </section>
+        )}
+
         <!-- SDK & Integration -->
-        {vendor.sdk_types && vendor.sdk_types.length > 0 && (
+        {integrationLabels.length > 0 && (
           <section class="mt-8">
             <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">Integration</h2>
             <div class="mt-3 flex flex-wrap gap-2">
-              {vendor.sdk_types.map(sdk => (
+              {integrationLabels.map(label => (
                 <span class="rounded-md bg-blue-50 px-3 py-1 text-sm text-blue-700 dark:bg-blue-950/30 dark:text-blue-400">
-                  {SDK_LABELS[sdk] ?? sdk.replace(/_/g, " ")}
+                  {label}
                 </span>
               ))}
             </div>
@@ -308,7 +379,7 @@ const faqSchema = {
 
       <!-- Right 30% sticky sidebar -->
       <aside class="lg:w-80 shrink-0">
-        <div class="sticky top-8">
+        <div class="sticky top-[72px]">
           <div
             class="rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-6 space-y-5"
           >
@@ -363,14 +434,49 @@ const faqSchema = {
             )}
 
             <!-- Company info -->
-            {(vendor.website_data?.headquarters || vendor.website_data?.founded_year || vendor.company_data?.total_funding) && (
+            {(vendor.website_data?.headquarters || vendor.website_data?.founded_year || vendor.company_data?.total_funding || vendor.countries_count != null || vendor.global_claim) && (
               <div class="mt-6 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                {vendor.website_data?.headquarters && <p>📍 {vendor.website_data.headquarters}</p>}
-                {vendor.website_data?.founded_year && <p>🗓 Founded {vendor.website_data.founded_year}</p>}
-                {vendor.company_data?.funding_display && vendor.company_data?.total_funding && (
-                  <p>💰 {vendor.company_data.total_funding} {vendor.company_data.funding_stage}</p>
+                {vendor.website_data?.headquarters && (
+                  <p class="flex items-center gap-1.5">
+                    <MapPin width={14} height={14} class="shrink-0" aria-hidden="true" />
+                    {vendor.website_data.headquarters}
+                  </p>
                 )}
-                {vendor.countries_count != null && <p>🌍 {vendor.countries_count}+ countries</p>}
+                {vendor.website_data?.founded_year && (
+                  <p class="flex items-center gap-1.5">
+                    <CalendarBlank width={14} height={14} class="shrink-0" aria-hidden="true" />
+                    Founded {vendor.website_data.founded_year}
+                  </p>
+                )}
+                {vendor.company_data?.funding_display && vendor.company_data?.total_funding && (
+                  <p class="flex items-center gap-1.5">
+                    <Money width={14} height={14} class="shrink-0" aria-hidden="true" />
+                    {vendor.company_data.total_funding} {vendor.company_data.funding_stage}
+                  </p>
+                )}
+                {vendor.countries_count != null ? (
+                  <p class="flex items-center gap-1.5">
+                    <Globe width={14} height={14} class="shrink-0" aria-hidden="true" />
+                    {vendor.countries_count}+ countries
+                  </p>
+                ) : vendor.global_claim ? (
+                  <p class="flex items-center gap-1.5">
+                    <Globe width={14} height={14} class="shrink-0" aria-hidden="true" />
+                    Global coverage
+                  </p>
+                ) : null}
+                {vendor.languages_count != null && (
+                  <p class="flex items-center gap-1.5">
+                    <Translate width={14} height={14} class="shrink-0" aria-hidden="true" />
+                    {vendor.languages_count}+ languages
+                  </p>
+                )}
+                {vendor.documents_count != null && (
+                  <p class="flex items-center gap-1.5">
+                    <Files width={14} height={14} class="shrink-0" aria-hidden="true" />
+                    {vendor.documents_count}+ document types
+                  </p>
+                )}
               </div>
             )}
 
@@ -379,9 +485,29 @@ const faqSchema = {
               <p class="text-xs uppercase tracking-wide text-zinc-500 mb-1">
                 Pricing
               </p>
-              <p class="text-sm font-mono text-zinc-700 dark:text-zinc-300">
-                {vendor.pricing}
+              <p class="text-lg font-mono font-semibold text-zinc-900 dark:text-zinc-100">
+                {vendor.pricing_summary || vendor.pricing}
               </p>
+              {vendor.starting_price?.raw && vendor.starting_price.raw !== vendor.pricing_summary && (
+                <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                  Source: <span class="font-mono">{vendor.starting_price.raw}</span>
+                </p>
+              )}
+              {vendor.min_monthly_commitment && (
+                <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                  Min commitment: <span class="font-mono">${vendor.min_monthly_commitment.amount}/mo</span>
+                </p>
+              )}
+              {vendor.free_trial && (
+                <p class="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
+                  Free trial{vendor.free_trial.days ? ` (${vendor.free_trial.days} days)` : ""}
+                </p>
+              )}
+              {vendor.free_tier && (
+                <p class="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
+                  Free tier{vendor.free_tier.amount ? ` (${vendor.free_tier.amount} ${vendor.free_tier.unit ?? ""})` : ""}
+                </p>
+              )}
             </div>
 
             <!-- Integration complexity -->

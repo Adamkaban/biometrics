@@ -1,5 +1,17 @@
 ---
-import type { Vendor } from "../../lib/vendors";
+import {
+  CARD_COMPLIANCE_ORDER,
+  COMPLIANCE_LABELS,
+  getActiveComplianceFlags,
+  getCapabilityLabels,
+  getCoverageLabel,
+  getSourceAttribution,
+  getValueTierLabel,
+  getVendorIndustries,
+  hasRatingData,
+  pickComplianceFlags,
+  type Vendor,
+} from "../../lib/vendors";
 
 interface Props {
   vendor: Vendor;
@@ -7,10 +19,20 @@ interface Props {
 
 const { vendor } = Astro.props;
 
-const primaryCategory = vendor.categories[0] ?? "";
+const primaryCategory = vendor.primary_category ?? vendor.categories[0] ?? "";
 const cardClass = vendor.featured
   ? "border border-blue-200 bg-blue-50/50 dark:border-blue-600/30 dark:bg-blue-950/10"
   : "border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900";
+const topCompliance = pickComplianceFlags(vendor, CARD_COMPLIANCE_ORDER, 3);
+const pricingLabel = vendor.pricing_summary || vendor.pricing;
+const capabilities = getCapabilityLabels(vendor, 3);
+const coverage = getCoverageLabel(vendor);
+const valueTier = getValueTierLabel(vendor);
+const showRating = hasRatingData(vendor);
+const sourceAttribution = getSourceAttribution(vendor);
+const sdkTokens = (vendor.sdk_types ?? []).join(",");
+const complianceTokens = getActiveComplianceFlags(vendor).join(",");
+const industryTokens = getVendorIndustries(vendor).join(",");
 ---
 
 <a
@@ -20,14 +42,16 @@ const cardClass = vendor.featured
   data-rating={vendor.rating}
   data-trial={vendor.has_free_trial}
   data-name={vendor.name}
-  data-reviews={vendor.reviews_count}
   data-featured={vendor.featured}
-  data-soc2={vendor.compliance_flags?.soc2_type2 ?? false}
-  data-liveness={vendor.feature_flags?.has_liveness ?? false}
-  data-aml={vendor.feature_flags?.has_aml ?? false}
-  class={`flex flex-col gap-4 rounded-lg p-5 hover:shadow-md transition-shadow no-underline ${cardClass}`}
+  data-pricing-model={vendor.pricing_model}
+  data-value-tier={vendor.value_tier ?? ""}
+  data-region={vendor.region ?? ""}
+  data-sdks={sdkTokens}
+  data-compliance={complianceTokens}
+  data-industries={industryTokens}
+  class={`flex flex-col gap-3 rounded-lg p-5 min-h-[420px] hover:shadow-md transition-shadow no-underline ${cardClass}`}
 >
-  <!-- Logo row -->
+  <!-- Logo + name + Featured pill -->
   <div class="flex items-center justify-between gap-3">
     <div class="flex items-center gap-3 min-w-0">
       <div class="shrink-0 w-8 h-8">
@@ -52,6 +76,33 @@ const cardClass = vendor.featured
     )}
   </div>
 
+  <!-- Rating row — source-attributed, hover tooltip -->
+  {showRating && (
+    <div class="flex items-baseline gap-1.5">
+      <span
+        class="group relative inline-flex items-baseline gap-1 cursor-help"
+        title={sourceAttribution}
+      >
+        <span class="text-sm font-mono font-semibold text-zinc-900 dark:text-zinc-100">
+          {vendor.rating.toFixed(1)}
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+             class="w-3.5 h-3.5 text-amber-500" aria-hidden="true">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+        <span
+          role="tooltip"
+          class="pointer-events-none absolute left-0 -top-8 z-10 whitespace-nowrap rounded-md bg-zinc-900 px-2 py-1 text-xs font-normal text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 dark:bg-zinc-100 dark:text-zinc-900"
+        >
+          {sourceAttribution}
+        </span>
+      </span>
+      <span class="text-xs text-zinc-500">
+        ({vendor.reviews_count.toLocaleString()} {vendor.reviews_count === 1 ? "review" : "reviews"})
+      </span>
+    </div>
+  )}
+
   <!-- Category badge -->
   {primaryCategory && (
     <div>
@@ -61,47 +112,73 @@ const cardClass = vendor.featured
     </div>
   )}
 
-  <!-- Rating row -->
-  <div class="flex items-baseline gap-2">
-    <span class="text-2xl font-mono font-semibold text-zinc-900 dark:text-zinc-100">
-      {vendor.rating.toFixed(1)}
-    </span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      class="w-4 h-4 text-amber-500 shrink-0"
-      aria-hidden="true"
-    >
-      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-    </svg>
-    <span class="text-sm text-zinc-500">
-      {vendor.reviews_count.toLocaleString()} reviews
-    </span>
+  <!-- Description excerpt — prefers short B2B tagline, falls back to scraped description -->
+  {(vendor.tagline || vendor.description) && (
+    <p class="line-clamp-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+      {vendor.tagline ?? vendor.description}
+    </p>
+  )}
+
+  <!-- Capability chips (verification_types || feature_flags) -->
+  {capabilities.length > 0 && (
+    <div class="flex flex-wrap gap-1">
+      {capabilities.map(label => (
+        <span class="rounded-md bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-xs text-zinc-700 dark:text-zinc-300">
+          {label}
+        </span>
+      ))}
+    </div>
+  )}
+
+  <!-- Compliance pills — blue trust signal, shield icon (max 3, prestige-ordered) -->
+  {topCompliance.length > 0 && (
+    <div class="flex flex-wrap gap-1">
+      {topCompliance.map(k => (
+        <span class="inline-flex items-center gap-1 rounded-full border border-blue-100 bg-blue-50 px-2 py-0.5 text-xs text-blue-700 dark:border-blue-900/40 dark:bg-blue-950/20 dark:text-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+            <path d="M208 40H48a16 16 0 0 0-16 16v58.7c0 89.4 75.8 119.1 91 124.1a15.3 15.3 0 0 0 10 0c15.2-5 91-34.7 91-124.1V56a16 16 0 0 0-16-16Zm-30.3 78.7-56 56a8 8 0 0 1-11.4 0l-24-24a8 8 0 0 1 11.4-11.4L116 157.7l50.3-50.4a8 8 0 0 1 11.4 11.4Z"/>
+          </svg>
+          {COMPLIANCE_LABELS[k]}
+        </span>
+      ))}
+    </div>
+  )}
+
+  <!-- Coverage line — text + globe icon, no pill -->
+  {coverage && (
+    <p class="inline-flex items-center gap-1 text-xs text-zinc-500 dark:text-zinc-400">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" aria-hidden="true">
+        <circle cx="128" cy="128" r="96"/>
+        <ellipse cx="128" cy="128" rx="40" ry="96"/>
+        <line x1="32" y1="128" x2="224" y2="128"/>
+      </svg>
+      {coverage}
+    </p>
+  )}
+
+  <!-- Pricing + value tier -->
+  <div class="flex items-center justify-between gap-2">
+    <p class="text-sm text-zinc-700 dark:text-zinc-300 font-mono truncate">
+      {pricingLabel}
+    </p>
+    {valueTier && (
+      <span class="shrink-0 text-xs rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-zinc-600 dark:text-zinc-400">
+        {valueTier}
+      </span>
+    )}
   </div>
 
-  <!-- Pricing -->
-  <p class="text-sm text-zinc-600 dark:text-zinc-400 font-mono truncate">
-    {vendor.pricing}
-  </p>
-
-  <!-- Free trial badge -->
+  <!-- Free trial pill — emerald, check icon (distinguishes from compliance pills) -->
   {vendor.has_free_trial && (
-    <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400">
+    <span class="inline-flex w-fit items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+        <path d="m229.66 77.66-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69 218.34 66.34a8 8 0 0 1 11.32 11.32Z"/>
+      </svg>
       Free trial
     </span>
   )}
 
-  <!-- Top compliance badges (max 3) -->
-  {vendor.compliance_flags && (
-    <div class="mt-2 flex flex-wrap gap-1">
-      {vendor.compliance_flags.soc2_type2 && <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">SOC 2</span>}
-      {vendor.compliance_flags.iso27001 && <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">ISO 27001</span>}
-      {vendor.compliance_flags.gdpr && <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">GDPR</span>}
-    </div>
-  )}
-
-  <!-- CTA button -->
+  <!-- CTA -->
   {vendor.featured ? (
     <span class="w-full bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-colors text-center block mt-auto">
       Get Quote

@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import VendorCard from "../../../components/catalog/VendorCard.astro";
+import BreadcrumbSchema from "../../../components/seo/BreadcrumbSchema.astro";
+import {
+  vendors,
+  SDK_FILTER_LABELS,
+  buildItemListSchema,
+  type SdkFilterKey,
+} from "../../../lib/vendors";
+import siteConfig from "../../../../site.config";
+
+// URL slug ↔ sdk_types key
+const CAPABILITY_MAP: Record<string, SdkFilterKey> = {
+  "web-sdk": "web_sdk",
+  "ios-sdk": "ios_sdk",
+  "android-sdk": "android_sdk",
+  "rest-api": "rest_api",
+  "no-code": "no_code",
+};
+
+export async function getStaticPaths() {
+  return [
+    { params: { capability: "web-sdk" } },
+    { params: { capability: "ios-sdk" } },
+    { params: { capability: "android-sdk" } },
+    { params: { capability: "rest-api" } },
+    { params: { capability: "no-code" } },
+  ];
+}
+
+const { capability } = Astro.params;
+const sdkKey = CAPABILITY_MAP[capability as string];
+const label = SDK_FILTER_LABELS[sdkKey];
+
+const matched = vendors
+  .filter((v) => v.sdk_types?.includes(sdkKey))
+  .sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return b.rating - a.rating;
+  });
+
+const INTRO: Record<string, string> = {
+  "web-sdk": `Biometric and identity verification vendors that ship a browser-side Web SDK — drop-in JavaScript widgets for liveness, document capture, and onboarding flows.`,
+  "ios-sdk": `Biometric and KYC vendors with native iOS SDKs — Swift / Objective-C support for liveness detection, document scanning, and identity verification inside iPhone and iPad apps.`,
+  "android-sdk": `Biometric and KYC vendors with native Android SDKs — Kotlin / Java integrations for liveness, document capture, and on-device verification.`,
+  "rest-api": `Identity verification and biometric vendors exposing a REST API for server-to-server verification, webhook callbacks, and asynchronous workflows.`,
+  "no-code": `Vendors offering a no-code workflow builder for identity verification — visual flow design, conditional logic, and zero-engineering deployment for ops and compliance teams.`,
+};
+
+const SHORT_LABEL: Record<string, string> = {
+  "web-sdk": "Web SDK",
+  "ios-sdk": "iOS SDK",
+  "android-sdk": "Android SDK",
+  "rest-api": "REST API",
+  "no-code": "No-Code",
+};
+
+const intro = INTRO[capability as string];
+const title = `Biometric Vendors with ${SHORT_LABEL[capability as string]} 2026`;
+const description = `Compare ${matched.length} identity verification and biometric vendors that ship a ${label}. Pricing, ratings, and compliance side-by-side.`;
+const canonicalUrl = `https://primebiometry.com/vendors/with/${capability}`;
+
+const itemListSchema = buildItemListSchema(
+  matched,
+  `Biometric and Identity Verification Vendors with ${label}`,
+  siteConfig.seo.siteUrl,
+);
+
+const breadcrumbItems = [
+  { name: "Home", url: "/" },
+  { name: "Vendors", url: "/vendors" },
+  { name: label, url: `/vendors/with/${capability}` },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  schema={itemListSchema}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+    <div class="mb-6">
+      <BreadcrumbSchema items={breadcrumbItems} />
+    </div>
+
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Biometric Vendors with {label} 2026
+      </h1>
+      <p class="mt-3 text-base text-zinc-600 dark:text-zinc-400 max-w-[65ch] leading-relaxed">
+        {intro}
+      </p>
+      <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-500">
+        {matched.length} {matched.length === 1 ? "vendor" : "vendors"} matched ·
+        <a class="text-blue-600 dark:text-blue-400 hover:underline" href={`/vendors?sdk=${sdkKey}`}>
+          Refine with more filters →
+        </a>
+      </p>
+    </div>
+
+    {matched.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 [&>a]:min-w-0">
+        {matched.map((v) => <VendorCard vendor={v} />)}
+      </div>
+    ) : (
+      <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        No vendors currently match this capability. <a class="text-blue-600 dark:text-blue-400 hover:underline" href="/vendors">Browse all vendors →</a>
+      </p>
+    )}
+  </div>
+</BaseLayout>

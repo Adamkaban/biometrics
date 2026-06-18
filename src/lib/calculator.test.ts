@@ -207,6 +207,100 @@ describe("calculateMonthlyCost", () => {
     const result = calculateMonthlyCost(vendor, 10000);
     expect(result.pricing).toEqual({ type: "custom", label: "Contact Sales" });
   });
+
+  it("applies vendor min_monthly_commitment to per-check plans", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Basic", price: "$0.05 per verification" }],
+      min_monthly_commitment: 149,
+    });
+    const result = calculateMonthlyCost(vendor, 166);
+    expect(result.pricing).toMatchObject({
+      type: "calculated",
+      monthlyUSD: 149,
+      hasMinimum: 149,
+    });
+  });
+
+  it("uses volume cost when above vendor min_monthly_commitment", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Basic", price: "$0.05 per verification" }],
+      min_monthly_commitment: 149,
+    });
+    const result = calculateMonthlyCost(vendor, 10000);
+    expect(result.pricing).toMatchObject({
+      type: "calculated",
+      monthlyUSD: 500,
+      hasMinimum: 149,
+    });
+  });
+
+  it("applies flat plan cap + overage at high volume", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Basic", price: "$10/mo", monthly_cap: 50, overage_rate: 1.5 }],
+    });
+    const result = calculateMonthlyCost(vendor, 200);
+    expect(result.pricing).toMatchObject({
+      type: "calculated",
+      monthlyUSD: 10 + 150 * 1.5,
+      cap: 50,
+      overage: 1.5,
+      overflowVolume: 150,
+    });
+  });
+
+  it("returns Plan cap exceeded when flat plan has cap but no overage rate", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Tiny", price: "$7.50/mo", monthly_cap: 10 }],
+    });
+    const result = calculateMonthlyCost(vendor, 1000);
+    expect(result.pricing).toEqual({ type: "custom", label: "Plan cap exceeded" });
+  });
+
+  it("keeps flat plan price when volume is within cap", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Basic", price: "$10/mo", monthly_cap: 50, overage_rate: 1.5 }],
+    });
+    const result = calculateMonthlyCost(vendor, 40);
+    expect(result.pricing).toEqual({ type: "flat", usd: 10 });
+  });
+
+  it("adds liveness surcharge to per-check vendors that support liveness", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Basic", price: "$0.05 per verification" }],
+      has_liveness: true,
+    });
+    const result = calculateMonthlyCost(vendor, 1000, { liveness: true, aml: false });
+    expect(result.pricing).toMatchObject({
+      type: "calculated",
+      perVerification: 0.35,
+      monthlyUSD: 350,
+      addonSurcharge: 0.30,
+    });
+  });
+
+  it("adds combined liveness + AML surcharge", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Basic", price: "$0.50 per verification" }],
+      has_liveness: true,
+      has_aml: true,
+    });
+    const result = calculateMonthlyCost(vendor, 1000, { liveness: true, aml: true });
+    expect(result.pricing).toMatchObject({
+      type: "calculated",
+      perVerification: 0.90,
+      monthlyUSD: 900,
+      addonSurcharge: 0.40,
+    });
+  });
+
+  it("marks vendor unsupported when addon required but capability missing", () => {
+    const vendor = makeVendor({
+      plans: [{ name: "Basic", price: "$0.50 per verification" }],
+      has_liveness: false,
+    });
+    const result = calculateMonthlyCost(vendor, 1000, { liveness: true, aml: false });
+    expect(result.pricing).toEqual({ type: "custom", label: "Liveness not supported" });
+  });
 });
 
 describe("sortVendorResults", () => {

@@ -21,22 +21,59 @@ const calculatorVendors: VendorPricingInput[] = kycVendors.map((v) => ({
   plans: (v.website_data?.pricing_plans ?? []).map((p) => ({
     name: p.name,
     price: p.price,
+    monthly_cap: p.monthly_cap,
+    overage_rate: p.overage_rate,
   })),
+  min_monthly_commitment: v.min_monthly_commitment?.amount ?? null,
+  pricing_source: v.pricing_source ?? "estimated",
+  has_liveness: v.feature_flags?.has_liveness,
+  has_aml: v.feature_flags?.has_aml,
 }));
 
-const title = "KYC Cost Calculator 2026";
+const title = "KYC Cost Calculator 2026: 24 Vendors";
 const description =
-  "Compare monthly KYC verification costs across 24 vendors. Enter your verification volume and see real pricing from iDenfy, Veriff, Jumio and more.";
+  "Real KYC pricing for 24 vendors: per-check rates, monthly minimums, liveness and AML add-ons applied. Get your true monthly cost in 30 seconds.";
 const canonicalUrl = "https://primebiometry.com/tools/kyc-cost-calculator";
+const lastUpdated = "2026-06-18";
+
+const faq = [
+  {
+    q: "How much does KYC verification cost per check in 2026?",
+    a: "Per-verification pricing for KYC vendors ranges from about $0.05 at enterprise tier (Sumsub, Persona) up to $3–$5 per check at low volume on starter plans. Most mid-market vendors land between $0.55 and $1.50 per ID verification, with biometric liveness adding roughly $0.30 and AML/PEP screening adding $0.10 per check.",
+  },
+  {
+    q: "What is a typical KYC monthly minimum commitment?",
+    a: "Enterprise-grade KYC vendors usually require a monthly floor between $49 and $500 even on per-check plans. Sumsub's published minimum is $149/mo, iDenfy's is $135/mo, and ComplyCube's starter sits at $49/mo. The calculator applies these floors automatically so low-volume estimates stay realistic.",
+  },
+  {
+    q: "Do KYC vendors charge extra for liveness or AML screening?",
+    a: "Yes. Document-only verification is the cheapest tier. Adding biometric liveness (passive or active) typically adds $0.20–$0.40 per check, and AML/PEP watchlist screening adds $0.05–$0.15 per check. The calculator surfaces this via add-on toggles applied to per-check vendors with the relevant capability.",
+  },
+  {
+    q: "Is per-check or flat-rate KYC pricing cheaper?",
+    a: "Flat-rate micro plans (under $20/mo) only stay cheap inside their bundled volume cap — usually 5–50 verifications. Above that cap they switch to per-check overage rates of $1.50–$2.00 and become more expensive than purpose-built per-check vendors at scale. Per-check pricing is almost always cheaper above ~500 monthly verifications.",
+  },
+  {
+    q: "Which KYC providers offer free tiers or trials?",
+    a: "Sumsub, iDenfy, Veriff, ComplyCube, and Ondato all offer free trials (typically 14–30 days). Free production tiers are rare for KYC because each verification carries real compliance cost — providers either gate them at a few checks per month or require a paid commitment.",
+  },
+];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "KYC Verification Cost Calculator",
+    name: "KYC & AML Verification Cost Calculator",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
+    url: canonicalUrl,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    author: {
+      "@type": "Organization",
+      name: "PrimeBiometry",
+      url: "https://primebiometry.com/about",
+    },
+    dateModified: lastUpdated,
   },
   {
     "@context": "https://schema.org",
@@ -46,6 +83,15 @@ const schema = [
       { "@type": "ListItem", position: 2, name: "Tools", item: "https://primebiometry.com/tools" },
       { "@type": "ListItem", position: 3, name: "KYC Cost Calculator" },
     ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   },
 ];
 ---
@@ -57,43 +103,154 @@ const schema = [
       <ol class="flex items-center gap-2">
         <li><a href="/" class="hover:text-zinc-700 dark:hover:text-zinc-200">Home</a></li>
         <li aria-hidden="true">/</li>
-        <li>Tools</li>
+        <li><a href="/tools" class="hover:text-zinc-700 dark:hover:text-zinc-200">Tools</a></li>
         <li aria-hidden="true">/</li>
         <li class="text-zinc-900 dark:text-zinc-100">KYC Cost Calculator</li>
       </ol>
     </nav>
 
-    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
-      KYC Verification Cost Calculator 2026
+    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-3">
+      KYC & AML Verification Cost Calculator 2026
     </h1>
+    <p class="text-xs uppercase tracking-wide text-zinc-500 dark:text-zinc-400 mb-4">
+      Last updated <time datetime={lastUpdated}>June 18, 2026</time>
+    </p>
     <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch] mb-8">
-      Enter your expected monthly verification volume to compare estimated costs across
-      {calculatorVendors.length} KYC vendors. Prices are sourced from published pricing pages
-      and updated June 2026.
+      Most KYC and AML providers hide their pricing behind "Book a Demo" buttons. This independent
+      tool calculates and compares estimated monthly costs for {calculatorVendors.length}+ top
+      vendors based on your volume — enter monthly verifications, toggle liveness and AML add-ons,
+      and see real numbers.
     </p>
 
-    <KYCCalculator vendors={calculatorVendors} client:load />
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+        How KYC pricing works
+      </h2>
+      <div class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-3 max-w-[65ch]">
+        <p>
+          Most modern <a href="/categories/kyc-compliance" class="text-blue-600 hover:underline">KYC compliance</a>
+          and <a href="/categories/identity-verification" class="text-blue-600 hover:underline">identity verification</a>
+          vendors price one of two ways: <strong class="text-zinc-900 dark:text-zinc-100">per verification</strong>
+          (you pay a few cents to a few dollars for every ID checked) or
+          <strong class="text-zinc-900 dark:text-zinc-100">flat monthly</strong> (a bundle that
+          covers a fixed cap of checks).
+        </p>
+        <p>
+          Per-check vendors like <a href="/vendors/sumsub" class="text-blue-600 hover:underline">Sumsub</a>,
+          <a href="/vendors/idenfy" class="text-blue-600 hover:underline">iDenfy</a>, and
+          <a href="/vendors/veriff" class="text-blue-600 hover:underline">Veriff</a> typically
+          enforce a minimum monthly commitment so spend never drops below $49–$499. Flat micro
+          plans look cheap until volume exceeds their bundled cap, at which point overage rates of
+          $1.50–$2.00 per extra check kick in. At low volume (under 500/mo), per-check rates
+          typically run $0.55–$1.50; at enterprise scale (50,000+/mo), rates compress to
+          $0.05–$0.15.
+        </p>
+        <p>
+          The biggest cost driver after volume is which checks you run. Document-only verification
+          is the floor; layering biometric liveness adds ~$0.30 per check, AML/PEP screening adds
+          ~$0.10 per check. Toggle the components below to see how your stack changes the bill —
+          see our <a href="/methodology" class="text-blue-600 hover:underline">methodology</a> for
+          how these estimates are derived.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+        Calculate your monthly KYC cost
+      </h2>
+      <KYCCalculator vendors={calculatorVendors} client:load />
+    </section>
 
     <section class="mt-12 space-y-4">
-      <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+      <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
         How to read these estimates
       </h2>
       <div class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-2 max-w-[65ch]">
         <p>
           <strong class="text-zinc-900 dark:text-zinc-100">Per-verification pricing</strong> scales with
-          your volume. Some vendors set a monthly minimum even on per-check plans.
+          volume. The calculator applies each vendor's monthly minimum commitment when your volume
+          would otherwise sit below the floor.
         </p>
         <p>
-          <strong class="text-zinc-900 dark:text-zinc-100">Flat-rate pricing</strong> does not change
-          with volume. Better for high-throughput scenarios where you can predict monthly usage.
+          <strong class="text-zinc-900 dark:text-zinc-100">Flat-rate pricing</strong> uses the
+          plan's bundled cap. Once volume exceeds the cap, the calculator adds the published
+          overage rate or shows "Plan cap exceeded" when no overage is offered.
         </p>
         <p>
-          <strong class="text-zinc-900 dark:text-zinc-100">GBP prices</strong> are converted at
-          approximately 1 GBP = $1.27 USD and marked as approximate.
+          <strong class="text-zinc-900 dark:text-zinc-100">Add-on surcharges</strong> are industry
+          averages: liveness +$0.30/check, AML +$0.10/check. Vendors that lack a capability are
+          marked as unsupported rather than forced into a misleading number.
+        </p>
+        <p>
+          <strong class="text-zinc-900 dark:text-zinc-100">Official vs Estimate badges</strong>
+          mark whether a vendor publishes prices openly or whether the figure is a market estimate
+          drawn from public quotes and aggregated sources.
         </p>
         <p class="text-xs text-zinc-400 mt-4">
-          Estimates based on published pricing. Actual costs may vary. Last updated June 2026.
+          Estimates only. Actual contract pricing depends on volume tiers, region, and product mix.
+          Last updated June 2026.
         </p>
+      </div>
+    </section>
+
+    <section class="mt-12 space-y-4">
+      <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+        The hidden costs of identity verification software
+      </h2>
+      <div class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-5 max-w-[65ch]">
+        <p>
+          Per-check rates are the visible part of the bill. Three cost categories consistently
+          surprise buyers after contracts are signed.
+        </p>
+        <div>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">Integration & setup fees</h3>
+          <p>
+            Modern REST-based vendors (Sumsub, iDenfy, Veriff) waive setup fees on self-serve
+            plans. Enterprise legacy systems are different — multi-region contracts frequently
+            include professional services line items of $2,000–$5,000 that never appear in
+            per-check pricing sheets. Always ask for the full statement of work before signing.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">Re-try charges</h3>
+          <p>
+            Most per-check vendors bill for every API call, including failed attempts. A user
+            submitting a blurry photo, retrying a liveness check, or failing document parsing each
+            count as separate billable events. At scale this silently adds 10–20% to your nominal
+            per-check cost. Some vendors offer a retry-free window (one free retry per session) —
+            it's worth asking explicitly during procurement.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">AML re-screening costs</h3>
+          <p>
+            Initial AML/PEP screening at onboarding ($0.05–$0.15/check) is one-time. Ongoing
+            automated re-screening — required by FATF guidance for high-risk customers — typically
+            runs $0.05–$0.10 per customer per month as a recurring line item. For a 10,000-customer
+            base, that's $500–$1,000/month that does not appear in the calculator above, because
+            vendors quote it separately from transaction-level KYC pricing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12 space-y-4">
+      <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+        Frequently asked KYC pricing questions
+      </h2>
+      <div class="space-y-4 max-w-[65ch]">
+        {
+          faq.map((item) => (
+            <details class="group rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4 open:bg-zinc-50 dark:open:bg-zinc-900/80">
+              <summary class="cursor-pointer text-sm font-medium text-zinc-900 dark:text-zinc-100 list-none flex items-start justify-between gap-3">
+                <span>{item.q}</span>
+                <span class="text-zinc-400 group-open:rotate-45 transition-transform shrink-0">+</span>
+              </summary>
+              <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{item.a}</p>
+            </details>
+          ))
+        }
       </div>
     </section>
 

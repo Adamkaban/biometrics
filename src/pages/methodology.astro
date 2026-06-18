@@ -15,8 +15,8 @@ const faqs = [
     a: "Yes. Vendors can submit documentation updates to support@primebiometry.com. We review submissions and update assessments if the data changes a sub-criterion score. Editorial conclusions are not adjusted on request.",
   },
   {
-    q: "How is the 25% compliance weight calculated?",
-    a: "Compliance Coverage is scored out of 25 points using five sub-criteria (GDPR, SOC 2, ISO 27001, CCPA, HIPAA) worth 5 points each. The final percentage score is then weighted at 25% of the overall vendor score.",
+    q: "How is the 20% compliance weight calculated?",
+    a: "Compliance Coverage is scored out of 20 points using five sub-criteria (GDPR, SOC 2, ISO 27001, CCPA, HIPAA) worth 4 points each. The final percentage score is then weighted at 20% of the overall vendor score.",
   },
   {
     q: "Does PrimeBiometry accept payment for assessments?",
@@ -26,20 +26,24 @@ const faqs = [
     q: "How do I report incorrect vendor information?",
     a: "Email support@primebiometry.com with the vendor name, the incorrect field, and a source link. We investigate and update within 5 business days.",
   },
+  {
+    q: "Why did weights change in 2026?",
+    a: "We updated methodology to v2.0 in June 2026 to add iBeta PAD certification as a Market Coverage sub-criterion, introduce a graduated Liveness detection scale (basic active through iBeta L2), expand the User Sentiment scale to differentiate vendors between 4.0 and 4.9 ratings, and reduce Pricing Transparency weight from 20% to 15% so that enterprise vendors who quote custom pricing on request are not penalized. See changelog at the bottom of this page.",
+  },
 ];
 
 const criteria = [
   {
-    weight: "25%",
-    pts: "25 pts",
+    weight: "20%",
+    pts: "20 pts",
     name: "Compliance Coverage",
     description: "Verified against public compliance documents, not vendor self-attestation.",
     subcriteria: [
-      { label: "GDPR", detail: "Valid DPA template on vendor website or available on request", pts: 5 },
-      { label: "SOC 2 Type II", detail: "Public audit report URL or third-party attestation dated within 24 months", pts: 5 },
-      { label: "ISO 27001", detail: "Certificate with scope statement, dated within 3 years", pts: 5 },
-      { label: "CCPA", detail: "Data processing addendum or explicit CCPA statement in privacy policy", pts: 5 },
-      { label: "HIPAA", detail: "BAA availability plus at least one documented healthcare customer reference", pts: 5 },
+      { label: "GDPR", detail: "Valid DPA template on vendor website or available on request", pts: 4 },
+      { label: "SOC 2 Type II", detail: "Public audit report URL or third-party attestation dated within 24 months", pts: 4 },
+      { label: "ISO 27001", detail: "Certificate with scope statement, dated within 3 years", pts: 4 },
+      { label: "CCPA", detail: "Data processing addendum or explicit CCPA statement in privacy policy", pts: 4 },
+      { label: "HIPAA", detail: "BAA availability plus at least one documented healthcare customer reference", pts: 4 },
     ],
   },
   {
@@ -56,39 +60,40 @@ const criteria = [
     ],
   },
   {
-    weight: "20%",
-    pts: "20 pts",
+    weight: "25%",
+    pts: "25 pts",
+    name: "Market Coverage",
+    description: "Geographic reach, document types, liveness detection capability, and biometric PAD certification.",
+    subcriteria: [
+      { label: "Geographic reach", detail: "Documented coverage of 50+ countries", pts: 5 },
+      { label: "Document types", detail: "Supports passports, national IDs, and driver's licenses at minimum", pts: 5 },
+      { label: "Language support", detail: "SDK or interface available in 3+ languages", pts: 5 },
+      { label: "Liveness detection", detail: "Graduated scale: basic active (selfie blink or turn checks) 1 pt, passive (no user action required) 3 pts, iBeta PAD L1 certified 4 pts, iBeta PAD L2 or ISO/IEC 30107-3 compliant 5 pts.", pts: 5 },
+      { label: "iBeta PAD certification", detail: "iBeta PAD Level 1 (active or passive PAD validated) 3 pts, iBeta PAD Level 2 (covers L1 attacks plus advanced presentation attacks) 5 pts. No certification scores 0 pts.", pts: 5 },
+    ],
+  },
+  {
+    weight: "15%",
+    pts: "15 pts",
     name: "Pricing Transparency",
     description: "Published or directly quoted pricing only. No confidential enterprise figures.",
     subcriteria: [
       { label: "Published tiers", detail: "Pricing page with at least one publicly listed tier", pts: 5 },
       { label: "Per-verification pricing", detail: "Cost-per-check model or volume pricing table visible", pts: 5 },
       { label: "Free tier or trial", detail: "Sandbox access, free verification quota, or no-commitment trial", pts: 5 },
-      { label: "Minimum commitment", detail: "Contract term or minimum spend disclosed, or explicitly stated as none", pts: 5 },
     ],
   },
   {
-    weight: "20%",
-    pts: "20 pts",
-    name: "Market Coverage",
-    description: "Geographic reach, document types supported, and liveness detection capabilities.",
-    subcriteria: [
-      { label: "Geographic reach", detail: "Documented coverage of 50+ countries", pts: 5 },
-      { label: "Document types", detail: "Supports passports, national IDs, and driver's licenses at minimum", pts: 5 },
-      { label: "Language support", detail: "SDK or interface available in 3+ languages", pts: 5 },
-      { label: "Liveness detection", detail: "At least one active or passive liveness method documented", pts: 5 },
-    ],
-  },
-  {
-    weight: "10%",
-    pts: "10 pts",
+    weight: "15%",
+    pts: "15 pts",
     name: "User Sentiment",
     description: "Aggregated from G2, Gartner Peer Insights, and Capterra. Minimum 10 reviews required.",
     subcriteria: [
-      { label: "Rating 4.0 or above", detail: "Full 10 pts", pts: 10 },
-      { label: "Rating 3.5 to 3.9", detail: "7 pts", pts: 7 },
-      { label: "Rating 3.0 to 3.4", detail: "4 pts", pts: 4 },
-      { label: "Rating below 3.0", detail: "1 pt", pts: 1 },
+      { label: "Rating 4.7 or above", detail: "Full 15 pts", pts: 15 },
+      { label: "Rating 4.4 to 4.6", detail: "12 pts", pts: 12 },
+      { label: "Rating 4.0 to 4.3", detail: "9 pts", pts: 9 },
+      { label: "Rating 3.5 to 3.9", detail: "5 pts", pts: 5 },
+      { label: "Rating below 3.5", detail: "1 pt", pts: 1 },
     ],
   },
 ];
@@ -193,7 +198,7 @@ const schema = {
         "Our scoring methodology for biometric authentication and identity verification vendors: five weighted criteria, data sources, and evaluation process.",
       url: "https://primebiometry.com/methodology",
       datePublished: "2026-01-15",
-      dateModified: "2026-06-01",
+      dateModified: "2026-06-18",
       author: {
         "@type": "Person",
         name: "James Whitfield",
@@ -235,8 +240,8 @@ const schema = {
 ---
 
 <BaseLayout
-  title="How We Evaluate Vendors 2026"
-  description="Our scoring methodology for biometric authentication and identity verification vendors: five weighted criteria, data sources, and evaluation process."
+  title="How We Score Vendors: 5 Criteria, 100 Pts"
+  description="Scoring model: 5 weighted criteria (compliance, integration, market, pricing, sentiment), public sources only, no vendor self-attestation. Read the rubric."
   canonicalUrl="https://primebiometry.com/methodology"
   schema={schema}
 >
@@ -258,7 +263,7 @@ const schema = {
     <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mb-6 text-xs text-zinc-400 dark:text-zinc-500">
       <span>By <a href="/about" class="text-zinc-600 dark:text-zinc-300 hover:underline">James Whitfield</a>, Senior Identity Verification Analyst</span>
       <span>Published January 2026</span>
-      <span>Updated June 2026</span>
+      <span>Updated 2026-06-18 (v2.0)</span>
     </div>
     <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch] mb-12">
       This page documents how PrimeBiometry scores biometric authentication and identity verification vendors. All vendors are evaluated against the same five weighted criteria. Featured placements do not affect scores.
@@ -380,6 +385,33 @@ const schema = {
             <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{faq.a}</p>
           </div>
         ))}
+      </div>
+    </section>
+
+    <!-- Methodology Changelog -->
+    <section id="changelog" class="mb-14 scroll-mt-20">
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-6">Methodology Changelog</h2>
+      <div class="space-y-6">
+        <div class="rounded-lg border border-zinc-200 dark:border-zinc-800 p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-mono text-sm font-semibold text-blue-600 dark:text-blue-400">v2.0</span>
+            <span class="text-xs text-zinc-400 dark:text-zinc-500">2026-06-18</span>
+          </div>
+          <ul class="space-y-1.5 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed list-disc pl-5">
+            <li>Compliance Coverage weight: 25% to 20%. Each sub-criterion 5 pts to 4 pts.</li>
+            <li>Market Coverage weight: 20% to 25%. Added iBeta PAD certification as a fifth sub-criterion.</li>
+            <li>Pricing Transparency weight: 20% to 15%. Removed "Minimum commitment" sub-criterion. Reduces penalty on enterprise vendors with custom pricing.</li>
+            <li>User Sentiment weight: 10% to 15%. Replaced 4-tier rating scale with a graduated 5-tier scale (4.7+ / 4.4 to 4.6 / 4.0 to 4.3 / 3.5 to 3.9 / below 3.5) so vendors with 4.0 and 4.8 ratings are no longer scored identically.</li>
+            <li>Liveness detection: replaced binary "documented" check with a graduated scale (basic active / passive / iBeta PAD L1 / iBeta PAD L2 or ISO/IEC 30107-3).</li>
+          </ul>
+        </div>
+        <div class="rounded-lg border border-zinc-200 dark:border-zinc-800 p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-mono text-sm font-semibold text-blue-600 dark:text-blue-400">v1.0</span>
+            <span class="text-xs text-zinc-400 dark:text-zinc-500">2026-01-15</span>
+          </div>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">Initial publication. Five-criterion weighted scoring system (Compliance 25 / Integration 25 / Pricing 20 / Market Coverage 20 / User Sentiment 10).</p>
+        </div>
       </div>
     </section>
 
