@@ -8,12 +8,25 @@ function formatCost(pricing: PricingResult): { primary: string; secondary?: stri
       const usd = pricing.monthlyUSD;
       const primary =
         usd >= 1000
-          ? `$${(usd / 1000).toFixed(1)}K/mo`
+          ? `$${(usd / 1000).toFixed(usd >= 10_000 ? 0 : 1)}K/mo`
           : `$${usd.toLocaleString("en-US", { maximumFractionDigits: 0 })}/mo`;
-      const secondary = pricing.perVerification
-        ? `$${pricing.perVerification}/check${pricing.approx ? " (~USD)" : ""}`
-        : undefined;
-      return { primary, secondary };
+
+      const parts: string[] = [];
+      if (pricing.perVerification !== undefined) {
+        parts.push(`$${pricing.perVerification.toFixed(2)}/check${pricing.approx ? " (~USD)" : ""}`);
+      }
+      if (pricing.addonSurcharge && pricing.addonSurcharge > 0) {
+        parts.push(`incl. +$${pricing.addonSurcharge.toFixed(2)} add-ons`);
+      }
+      if (pricing.hasMinimum && pricing.monthlyUSD === pricing.hasMinimum) {
+        parts.push(`min. $${pricing.hasMinimum}/mo applies`);
+      }
+      if (pricing.cap !== undefined && pricing.overage !== undefined && pricing.overflowVolume) {
+        parts.push(
+          `${pricing.overflowVolume.toLocaleString("en-US")} over ${pricing.cap.toLocaleString("en-US")} cap @ $${pricing.overage.toFixed(2)}`
+        );
+      }
+      return { primary, secondary: parts.length > 0 ? parts.join(" · ") : undefined };
     }
     case "flat": {
       const label = pricing.label ?? "/mo";
@@ -41,6 +54,9 @@ export function VendorRow({ result }: Props) {
 
   const actionLabel = result.has_assessment ? "View Review" : "Visit Website";
   const isExternal = !result.has_assessment;
+
+  const source = result.pricing_source ?? "estimated";
+  const showSourceBadge = result.pricing.type === "calculated" || result.pricing.type === "flat";
 
   return (
     <div
@@ -75,6 +91,22 @@ export function VendorRow({ result }: Props) {
           {result.featured && (
             <span className="rounded-full bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 text-xs px-2 py-0.5">
               Featured
+            </span>
+          )}
+          {showSourceBadge && (
+            <span
+              title={
+                source === "official"
+                  ? "Pricing taken from vendor's public pricing page"
+                  : "Market estimate based on aggregated sources"
+              }
+              className={`rounded-full text-xs px-2 py-0.5 ${
+                source === "official"
+                  ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300"
+                  : "bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-300"
+              }`}
+            >
+              {source === "official" ? "Official" : "Estimate"}
             </span>
           )}
         </div>
