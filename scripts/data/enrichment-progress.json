@@ -1,0 +1,215 @@
+{
+  "lexisnexis-idverse": {
+    "done": true
+  },
+  "digital-onboarding": {
+    "done": true
+  },
+  "experian-identity-proofing": {
+    "done": true
+  },
+  "ultrapass": {
+    "done": true
+  },
+  "alice-biometrics": {
+    "done": true
+  },
+  "recognito": {
+    "done": true
+  },
+  "regtechone": {
+    "done": true
+  },
+  "fingera": {
+    "done": true
+  },
+  "zunoy-authenticator": {
+    "done": true
+  },
+  "meon-ekyc": {
+    "done": true
+  },
+  "persona": {
+    "done": true,
+    "skipped": "no_content"
+  },
+  "idnow-platform": {
+    "done": true
+  },
+  "xproof": {
+    "done": true
+  },
+  "1kosmos-platform": {
+    "done": true
+  },
+  "ping-identity-platform": {
+    "done": true
+  },
+  "trust-swiftly": {
+    "done": true
+  },
+  "identity-verification-platform": {
+    "done": true
+  },
+  "authenticid-identity-proofing": {
+    "done": true
+  },
+  "data-zoo-flow": {
+    "done": true
+  },
+  "digidentity": {
+    "done": true
+  },
+  "real-id": {
+    "done": true
+  },
+  "faceki": {
+    "done": true,
+    "skipped": "no_content"
+  },
+  "biometric-agreement": {
+    "done": true
+  },
+  "efacility-time-and-attendance-system": {
+    "done": true,
+    "skipped": "no_content"
+  },
+  "jumio": {
+    "done": true
+  },
+  "biometricvision": {
+    "done": true
+  },
+  "folio3-ai-face-recognition": {
+    "done": true
+  },
+  "oz-liveness": {
+    "done": true
+  },
+  "mity": {
+    "done": true,
+    "skipped": "no_content"
+  },
+  "enqualify": {
+    "done": true,
+    "skipped": "no_url"
+  },
+  "face-match": {
+    "done": true
+  },
+  "pxl-ident": {
+    "done": true
+  },
+  "faceplugin": {
+    "done": true,
+    "skipped": "no_content"
+  },
+  "edureg": {
+    "done": true
+  },
+  "face-recognition-api": {
+    "done": true
+  },
+  "biometric-security": {
+    "done": true
+  },
+  "zipid": {
+    "done": true
+  },
+  "baf": {
+    "done": true
+  },
+  "azakaw": {
+    "done": true
+  },
+  "tecalis-authentication": {
+    "done": true
+  },
+  "biometric-attendance-system": {
+    "done": true
+  },
+  "idenfy": {
+    "done": true
+  },
+  "complycube": {
+    "done": true
+  },
+  "mitek-systems": {
+    "done": true
+  },
+  "au10tix": {
+    "done": true
+  },
+  "veriff": {
+    "done": true
+  },
+  "ondato": {
+    "done": true
+  },
+  "entrust-idv-formerly-onfido": {
+    "done": true,
+    "skipped": "no_content"
+  },
+  "sumsub": {
+    "done": true
+  },
+  "luxand-facesdk": {
+    "done": true
+  },
+  "veridium": {
+    "done": true
+  },
+  "faceonlive-identity-verification-software": {
+    "done": true
+  },
+  "biometric-time-attendance-system": {
+    "done": true
+  },
+  "sentiveillance-cluster": {
+    "done": true
+  },
+  "regula": {
+    "done": true
+  },
+  "incode": {
+    "done": true
+  },
+  "shufti": {
+    "done": true
+  },
+  "amiqus": {
+    "done": true
+  },
+  "facetec-3d-face-authentication": {
+    "done": true
+  },
+  "identomat": {
+    "done": true
+  },
+  "talnflo": {
+    "done": true
+  },
+  "core-identity-verification-solutions": {
+    "done": true
+  },
+  "imageware-authenticate": {
+    "done": true
+  },
+  "video-kyc-identity-verification-software": {
+    "done": true
+  },
+  "deepidv": {
+    "done": true,
+    "skipped": "no_content"
+  },
+  "kyc-solution": {
+    "done": true
+  },
+  "swiftdil": {
+    "done": true
+  },
+  "entrust-identity-verification": {
+    "done": true,
+    "skipped": "no_content"
+  }
+}

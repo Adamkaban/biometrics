@@ -69,7 +69,7 @@ export function VendorRow({ result }: Props) {
       {/* Logo */}
       <div className="shrink-0 w-6 h-6 rounded overflow-hidden flex items-center justify-center bg-zinc-100 dark:bg-zinc-800">
         {result.logo_url ? (
-          <img src={result.logo_url} alt="" width={20} height={20} className="w-5 h-5 object-contain" />
+          <img src={result.logo_url} alt={`${result.name} logo`} width={20} height={20} className="w-5 h-5 object-contain" />
         ) : (
           <span className="text-xs font-semibold text-zinc-500 uppercase">
             {result.name.charAt(0)}
