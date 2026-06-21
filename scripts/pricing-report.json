@@ -1,0 +1,942 @@
+[
+  {
+    "name": "LexisNexis IDVerse",
+    "website": "https://risk.lexisnexis.com",
+    "existing_plans": [],
+    "status": "found",
+    "scraped_url": "https://risk.lexisnexis.com",
+    "scraped_data": [
+      "Firco Compliance Link | Online Compliance | Financial Crime Compliance | Small and Mid-Sized Business Risk | Financial Crime Compliance | Small and Mid-Sized Business Risk | Business Risk Assessment | Compliance | Collections Compliance | Fraud prevention, identity verification, due diligence, compliance, PEP and watchlist screening, credit risk assessment, know your customer, big data solutions. | Insurance risk solutions that strengthen customer relationships, gain operational efficiencies & future-proof your organization using data & advanced analytics. | Business Overview | We collaborate with resellers and integrators to help solve business challenges. | Powerful data fusion and analytics solutions to make business much more efficient. | Business Services | Financial Crime Compliance | Explore Business Services | Business Services | Financial Crime Compliance | Explore Business Services | Business Overview"
+    ],
+    "note": null
+  },
+  {
+    "name": "Digital Onboarding",
+    "website": "https://www.aiprise.com",
+    "existing_plans": [
+      "Basic Plan: Contact for pricing",
+      "Enterprise Plan: Contact for pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.aiprise.com",
+    "scraped_data": [
+      "Linkedin set this cookie for storing visitor's consent regarding using cookies for non-essential purposes. | Business Verification | Realtime compliance for Stablecoin companies | Streamlined compliance for lending companies | Business Verification | Realtime compliance for Stablecoin companies | Streamlined compliance for lending companies | Compliance Platform | Mitigate risk, prevent fraud, and ensure compliance with AI and global data, all in one platform. | Trusted by 200+ leading compliance teams worldwide | were the deciding factors for us. They’ve made our onboarding smoother and compliance decisions more confident at scale, allowing us to notch | modern compliance | Free up to 80% of Analyst Hours | real compliance | One place to pull risk, compliance and fraud signals from hundreds of sources worldwide. | Website and social signals for additional context on each business | One unified AI risk score for every user and business | Head of Compliance | Meet your compliance operating system | Review every business and user detail in one window, with risk, status, and next steps in a single view | See your full compliance picture in one place | Business Verification | Compliance Co-pilot | Compliance Co-pilot | Compliance Co-pilot"
+    ],
+    "note": null
+  },
+  {
+    "name": "Experian Identity proofing",
+    "website": "https://www.experian.com",
+    "existing_plans": [
+      "Basic: $500/month",
+      "Premium: $1500/month",
+      "Basic Plan: $10 per verification",
+      "Pro Plan: $100 per month"
+    ],
+    "status": "already_verified",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "verified in previous session"
+  },
+  {
+    "name": "UltraPass",
+    "website": "https://privateid.com/",
+    "existing_plans": [
+      "Basic Plan: Contact for pricing",
+      "Pro Plan: Contact for pricing",
+      "Enterprise Plan: Contact for pricing",
+      "Basic: $29/month",
+      "Pro: $99/month",
+      "Enterprise: Custom pricing",
+      "Standard: Contact for pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://privateid.com",
+    "scraped_data": [
+      "Mitigate data breach risks and does not incur GDPR, CCPA, BIPA, and HIPAA privacy law obligations. Certifed compliant to IEEE 2410 Standard for Biometric Privacy. | Instantly identify, track, age-verify faces and detect deepfakes in video streams to enhance trust, meet compliance, and increase security. | Certified to NIST 800-63 Identity Assurance Level 2 (IAL2) to meet your regulatory and compliance requirements | The premier age verification platform designed for simplicity, privacy, and compliance. | Customizable background and configurations to met any orginization’s credentialing standard | Get a turnkey solution for your business"
+    ],
+    "note": null
+  },
+  {
+    "name": "Alice Biometrics",
+    "website": "http://www.alicebiometrics.com",
+    "existing_plans": [
+      "Basic: Contact for pricing",
+      "Premium: Contact for pricing"
+    ],
+    "status": "found",
+    "scraped_url": "http://www.alicebiometrics.com",
+    "scraped_data": [
+      "GDPR Cookie Compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "Recognito",
+    "website": "https://recognito.vision/",
+    "existing_plans": [
+      "Free Trial: Free",
+      "Lifetime License: One Time Payment",
+      "Basic Plan: $20/month",
+      "Pro Plan: $50/month",
+      "Enterprise Plan: Custom pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://recognito.vision",
+    "scraped_data": [
+      "Advanced | Offer 15-day free trial and life time license | Free Support, Update | RECOGNITO’s facial recognition technology reaches the top 1 global ranking according to the assessment by the U.S National Institute of Standard and Technology - NIST FRVT 1:1 VISA BORDER | Their advanced face recognition solutions ensure high accuracy and security, complemented by robust DeepFake detection technology to prevent fraud. | Its tools for facial recognition, liveness detection, and ID card recognition provide accurate and fast identity verification by leveraging advanced AI algorithms. | Their solutions are known for accuracy, speed, and reliability, making them ideal for industries like banking, healthcare, and government where secure identity verification is essential. | Free Trial License | Include Free Support and Update | Do you want to start a free trial? | for Regulatory Compliance | Your Business Email"
+    ],
+    "note": null
+  },
+  {
+    "name": "RegTechONE",
+    "website": "http://www.amlpartners.com",
+    "existing_plans": [
+      "RegTechONE Basic: Contact for pricing",
+      "RegTechONE Pro: Contact for pricing",
+      "RegTechONE Enterprise: Contact for pricing",
+      "Basic: Contact for pricing",
+      "Professional: Contact for pricing",
+      "RegTechONE Modules: Contact for pricing"
+    ],
+    "status": "found",
+    "scraped_url": "http://www.amlpartners.com",
+    "scraped_data": [
+      "Start achieving more today. | We are so confident in the power of RegTechONE to transform your AML Compliance software and GRC efforts that we will demonstrate it to you with a Proof of Concept. Contact us today to experience all the ways that RegTechONE is The Power of Everything in AML software, KYC software and GRC RegTech. | Request a Demo"
+    ],
+    "note": null
+  },
+  {
+    "name": "Fingera",
+    "website": "http://www.fingera.com",
+    "existing_plans": [
+      "Starter: €10/month",
+      "Pro: €25/month",
+      "Enterprise: Contact sales"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "Meon eKYC",
+    "website": "https://meon.co.in",
+    "existing_plans": [
+      "Basic Plan: Free",
+      "Pro Plan: Custom Pricing",
+      "Enterprise Plan: Custom pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://meon.co.in",
+    "scraped_data": [
+      "WhatsApp Business | Simplify Updates, Maintain Compliance | Industries drive growth by embracing digital transformation, automating workflows, and delivering secure, seamless customer experiences. | Compliance-Ready, Effortless Onboarding | WhatsApp Business | Simplify Updates, Maintain Compliance | Compliance-Ready, Effortless Onboarding | Try eSign for Free | 90% Faster Onboarding — Eliminate Manual Steps, Accelerate Growth | Advanced Facial Authentication with Real-Time Geolocation | Advanced Facial Analysis to Detect Spoofing and Obstructions\n                            (Masks, Sunglasses, etc.) | Digitise Customer Onboarding with Full Regulatory Compliance. | Get Your First eSign for Free – Trusted, Secure, and Fast! | Get started for free"
+    ],
+    "note": null
+  },
+  {
+    "name": "Persona",
+    "website": "https://withpersona.com",
+    "existing_plans": [
+      "Basic Plan: Custom",
+      "Pro Plan: Custom",
+      "Enterprise Plan: Custom"
+    ],
+    "status": "found",
+    "scraped_url": "https://withpersona.com/pricing/",
+    "scraped_data": [
+      "You may close this banner to continue with only essential cookies. | Reject Non-Essential | Plans to meet any business challenge | Essential | Access to templated and pre-configured industry-standard identity services | Platform features to automate business logic and streamline team productivity | Hosting on secure, enterprise-grade SOC 2 Type 2 infrastructure | Starting at $250/month (minimum contract term of 12 months) | Growth | Everything in Essential, plus | Access to Graph,  3rd-party Marketplace Apps, and other advanced products | Advanced security configuration (redaction, permissions) | Enterprise | Everything in Growth, plus | Custom multi-organization partitioning, access controls, and support | Get more with custom multi-product pricing structures | Work at a startup or small business? 🌱 | Essential | Growth | Enterprise | Business registry (US) | Business website | Business registry (non-US) | Advanced verification services | Business watchlist and sanctions | Business adverse media | Business classification (industry) | Business associated persons | Business online credibility | Advanced enrichments"
+    ],
+    "note": null
+  },
+  {
+    "name": "IDnow Platform",
+    "website": "https://idnow.io",
+    "existing_plans": [
+      "Basic Plan: Contact for pricing",
+      "Professional Plan: Contact for pricing",
+      "Enterprise Plan: Contact for pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://idnow.io",
+    "scraped_data": [
+      "AES (Advanced Electronic Signatures) | Regulatory Compliance | Move beyond Know Your Customer (KYC) to Trust Your Customer (TYC) with IDnow’s scalable identity platform, combining adaptive compliance, real-time fraud prevention and end-to-end trust. | Advanced Electronic Signatures (AES) | Growth. | At the heart of every interaction is trust and we help you build it. From stopping identity fraud to simplifying compliance, we turn identity from a checkpoint into a competitive edge. | Regulatory Compliance | Future-proof your business and stay ahead of the rapidly evolving regulatory landscape, be it AMLR, BaFIN, eIDAS 2.0 or PSD3. Adaptive, seamless compliance to keep you one-step ahead. | Fewer drop-offs, faster onboarding, and a seamless UX. We make identity a growth lever, not a bottleneck. | Standard of | We power the world’s most demanding industries, where identity, compliance and security can’t fail. | We’re built for industries where trust, compliance and speed are non-negotiable like Financial Services, Telco and Gaming – but our impact reaches far beyond. | , Sr Director Business Development at Docusign | , Head of Business Development Sales Germany at Audi AG | EU AMLR 2027: The Compliance Clock Is Ticking. Here’s What the Next 18 Months Mean for Your Identity Stack | AMLR 2027 - Compliance Map | Business Hours"
+    ],
+    "note": null
+  },
+  {
+    "name": "xProof",
+    "website": "https://www.daon.com",
+    "existing_plans": [
+      "Standard Plan: Contact for pricing",
+      "Enterprise Plan: Contact for pricing"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "1Kosmos Platform",
+    "website": "https://docs.1kosmos.com",
+    "existing_plans": [],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "Ping Identity Platform",
+    "website": "https://www.pingidentity.com",
+    "existing_plans": [
+      "Contact Sales: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.pingidentity.com/pricing",
+    "scraped_data": [
+      "From sign-up to sign-on to sign-off, we help your enterprise secure every identity and power every trusted digital experience. No friction, all trust. | Professional Services | Essential | $35k | Plus | $50k | Everything in Essential | Balance security with customer convenience by using advanced policies that leverage context to only prompt for MFA when it is needed. | for Free | Sign up for a free 30-day trial of PingOne for Customers* to see how your organization can leverage cloud-based identity solutions to meet your business needs. | PingOne Advanced Services | Deploy advanced SSO, authentication, dynamic authorization and access security identity services as a starting point or to use alongside your existing Ping deployment. | Essential | Flexible, lightweight directory modeled on the SCIM standard and with group-based access control to simplify provisioning. | Plus | Everything in Essential | Try PingOne for Workforce for Free | Sign up for a free 30-day trial of PingOne for Workforce* to see how your organization can leverage cloud-based identity solutions to meet your unique business needs. | *PingOne for Workforce trial includes advanced authentication, user management, multi-factor authentication, risk and more | PingOne Advanced Services | Deploy advanced SSO, authentication, dynamic authorization and access security identity services as a starting point or alongside your existing Ping deployment. | Request a Free Demo | Quickly build and test different passwordless end-user journeys without any manual configuration or custom coding using the PingOne Getting Started wizard. | Request a FREE Demo"
+    ],
+    "note": null
+  },
+  {
+    "name": "Trust Swiftly",
+    "website": "https://trustswiftly.com",
+    "existing_plans": [
+      "Enterprise: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://trustswiftly.com/pricing",
+    "scraped_data": [
+      "How It Works | Identity Solutions | Pricing | Blog | Contact Us | Log In | Get Started | Pricing | Security-first pricing for teams that need speed, trust, and audit-ready identity verification at scale. | SECURITY-FIRST PRICING | Flexible Plans: Choose the level of assurance you need | Start instantly with self-serve plans, or engage our security team for high-assurance and IAL3-ready enterprise deployments. | Self-Serve Plans | FOR STARTUPS AND SMALLER-VOLUME ONBOARDING TEAMS. | No setup fees. Immediate access. Launch in minutes through hosted flows or API. | No setup fees | Immediate access | Upgrade anytime | Starter | $300 / month | For startups and low-volume onboarding | 100 verifications | 1 admin seat | Get Started | Business",
+      "SECURITY-FIRST PRICING | Flexible Plans: Choose the level of assurance you need | Start instantly with self-serve plans, or engage our security team for high-assurance and IAL3-ready enterprise deployments. | Self-Serve Plans | FOR STARTUPS AND SMALLER-VOLUME ONBOARDING TEAMS. | No setup fees. Immediate access. Launch in minutes through hosted flows or API. | No setup fees | Immediate access | Upgrade anytime | Starter | $300 / month | For startups and low-volume onboarding | 100 verifications | 1 admin seat | Get Started | Business | BEST FOR GROWTH-STAGE TEAMS | $600 / month | For scaling teams and higher throughput | 200 verifications | Unlimited seats | Select Business | ENTERPRISE SECURITY PROGRAM | Government-grade identity verification for high-volume operations | PRIMARY PATH FOR REGULATED AND HIGH-VOLUME DEPLOYMENTS",
+      "Self-Serve Plans | FOR STARTUPS AND SMALLER-VOLUME ONBOARDING TEAMS. | No setup fees. Immediate access. Launch in minutes through hosted flows or API. | No setup fees | Immediate access | Upgrade anytime | Starter | $300 / month | For startups and low-volume onboarding | 100 verifications | 1 admin seat | Get Started | Business | BEST FOR GROWTH-STAGE TEAMS | $600 / month | For scaling teams and higher throughput | 200 verifications | Unlimited seats | Select Business",
+      "Starter | $300 / month | For startups and low-volume onboarding | 100 verifications | 1 admin seat | Get Started",
+      "Business | BEST FOR GROWTH-STAGE TEAMS | $600 / month | For scaling teams and higher throughput | 200 verifications | Unlimited seats | Select Business"
+    ],
+    "note": null
+  },
+  {
+    "name": "Identity Verification Platform",
+    "website": "https://veridas.com",
+    "existing_plans": [],
+    "status": "found",
+    "scraped_url": "https://veridas.com/pricing",
+    "scraped_data": [
+      "Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies. | Compliance | Compliance | Veridas delivers proven protection with advanced biometrics. | Veridas delivers proven protection with advanced biometrics. | Without owning the core tech, providers can’t control roadmaps or adapt at the speed of new attacks. | Growth Through Trust | Secure identity unlocks business growth: higher customer acquisition, more transactions, increased lifetime value, and new revenue use cases. | AI-powered document verification, alone or with facial biometrics, verifies identities in seconds. Ensures compliance, fraud protection, and a smooth user experience. | Detect and eliminate duplicate or synthetic identities across your customer base to prevent fraud, protect compliance, and keep databases clean and reliable. | When it comes to fraud, “trust us” isn’t good enough. Our tech is rigorously tested and certified by independent, 3rd party experts to ensure you meet compliance requirements. | Regulatory compliance | Get 24/7 cloud monitoring, dedicated support, fraud and activity tracking, free updates, and sandbox access. | Optimize for Growth | The goal: streamline digital onboarding without compromising compliance or fraud prevention. | compliance with regulations | Compliance- Gerencia de Asuntos Legales y Cumplimiento at Grupo Boldt | Identity & Business Day The Hague: Navigating the AMLR Era and the Future of Digital Identity | and stop fraud across all vectors, including deepfakes, manipulated IDs, replay attacks, and advanced injection attacks. | Advanced Injection Attack Detection (IAD) | How does Veridas secure identity verification to help me grow my business? | save up to $90 million in annual fraud losses for every 100,000 customers onboarded | Acquisition, Protection, Growth, and Retention | your existing client database and compliance, we offer | Veridas solutions are deployed globally across multiple industries, securing trust and powering growth. For | , our IDV Platform smoothly and quickly onboards customers digitally while ensuring full regulatory compliance. In | , advanced defenses against injection attacks, and privacy-preserving identity reuse. | What security and compliance standards does Veridas meet to ensure our data is protected? | Veridas operates with privacy by design and by default, ensuring data protection compliance with major global regulations, including | , a dedicated support team, fraud and activity tracking, free updates, and sandbox access. We provide an"
+    ],
+    "note": null
+  },
+  {
+    "name": "AuthenticID Identity Proofing",
+    "website": "https://www.identintel.com",
+    "existing_plans": [
+      "Corporate Membership: 50% off for the first year"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.identintel.com",
+    "scraped_data": [
+      "free guide | AML & Compliance | Global ID Verification, Age Verification and Compliance Solutions | AML & Compliance | AML & Compliance | AML & Compliance | AML & Compliance | AML & Compliance | free guide | AML & Compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "Data Zoo Flow",
+    "website": "https://datazoo.com",
+    "existing_plans": [
+      "Basic Plan: $99/month",
+      "Pro Plan: $249/month",
+      "Enterprise Plan: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://datazoo.com/pricing",
+    "scraped_data": [
+      "The cookies that are categorised as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site. ... | The cookietest cookie is typically used to determine whether the user's browser accepts cookies, essential for website functionality and user experience. | Our team of experts is ready to help you implement the right identity verification and fraud detection solution for your business. | Custom solutions | Get a solution tailored to your specific business needs and use cases. | Security and compliance | Custom solutions | Get a solution tailored to your specific business needs and use cases. | Security and compliance | Compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "Digidentity",
+    "website": "https://www.digidentity.eu",
+    "existing_plans": [
+      "eHerkenning: Contact sales",
+      "Digital Signing: Contact sales",
+      "KYC Services: Contact sales"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "Real ID",
+    "website": "https://www.zoloz.com",
+    "existing_plans": [],
+    "status": "found",
+    "scraped_url": "https://www.zoloz.com/pricing",
+    "scraped_data": [
+      "$0.16 | $0.2 | $1.2 | Feel free to ask me anything about ZOLOZ!"
+    ],
+    "note": null
+  },
+  {
+    "name": "Faceki",
+    "website": "https://www.faceki.com/",
+    "existing_plans": [
+      "Usage Based: Usage Based, Per Month"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "Biometric Agreement",
+    "website": "https://www.firmaautografa.com",
+    "existing_plans": [
+      "Basic Plan: $29/month",
+      "Pro Plan: $79/month",
+      "Enterprise Plan: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.firmaautografa.com/pricing",
+    "scraped_data": [
+      "Legal Compliance | Legal Compliance | Legal compliance | Business email: | ¡FREE DEMO!"
+    ],
+    "note": null
+  },
+  {
+    "name": "eFACiLiTY Time and Attendance System",
+    "website": "http://www.sierratec.com",
+    "existing_plans": [
+      "Per User: $1200/user/month"
+    ],
+    "status": "found",
+    "scraped_url": "http://www.sierratec.com",
+    "scraped_data": [
+      "Turn legacy systems into scalable, high-performing enterprise platforms | Turn legacy systems into scalable, high-performing enterprise platforms | Enable Scalable Enterprise Operations with AI-Driven Systems | Enable Scalable Enterprise Operations with AI-Driven Systems | Scalable AI for Business | Scalable AI for Business | Building enterprise software has always been complex, slow, and resource-intensive. | Business teams waiting on IT to automate critical processes | AI That Delivers:\nReal Business Software,\nUnbelievably Automated | build full-stack enterprise applications, automate structured development workflows, and integrate seamlessly with your existing systems | AI That Delivers:\nReal Business Software,\nUnbelievably Automated | build full-stack enterprise applications, automate structured development workflows, and integrate seamlessly with your existing systems | Maintain data integrity, integration layers, and business logic throughout. | Scalable AI for Business | Scalable AI for Business | SIERRA’s AI solutions drive intelligent automation across key business departments by using AI Agents, seamlessly integrating with ERP, CRM, and internal systems | Scalable AI for Business | Scalable AI for Business | With decades of enterprise software expertise and a deep focus on GenAI, we bring: | Purpose-built AI solutions for structured enterprise challenges | Rapid implementation with lasting business value | A track record across Facility Management, WMS/ASRS, and Custom Solutions | Essential Links"
+    ],
+    "note": null
+  },
+  {
+    "name": "Jumio",
+    "website": "https://www.jumio.com",
+    "existing_plans": [
+      "Starter: $0",
+      "Pro: $199/month",
+      "Enterprise: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.jumio.com",
+    "scraped_data": [
+      "Regulations & Compliance | How to Protect Your Business in the Golden Age of Fraud and Disinformation. | KYC & AML Compliance | Premium Liveness Detection | KYC & AML Compliance | Compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "Biometric.Vision",
+    "website": "https://biometric.vision",
+    "existing_plans": [
+      "Standard Plan: Contact sales",
+      "Custom Solutions: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://biometric.vision",
+    "scraped_data": [
+      "WORK WITH BIOMETRIC.VISION | Ready to take your business to the next level? Scale confidently with Biometric.Vision's digital face registration. Fast. Simple. Secure. | Fast. Simple. Secure. | Request a Demo"
+    ],
+    "note": null
+  },
+  {
+    "name": "Folio3 AI Face Recognition",
+    "website": "https://folio3.com",
+    "existing_plans": [
+      "Starter: $49/month",
+      "Pro: $99/month",
+      "Enterprise: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://folio3.com/pricing",
+    "scraped_data": [
+      "Uninterrupted Business Operations | Business Intelligence (BI) Solutions | Small Business | Custom Development | Food Compliance | Food FSMA Compliance | Custom Medical Diagnostic Software | Patient Data Privacy & Compliance | From idea to scale, we power your growth through AI | AI-First Business Transformation | Folio3 developed an end-to-end portal with an intuitive user interface and automated the process of logging a complete history of compliance data for Redica Systems users. | Implemented NetSuite SuiteSuccess Software Standard for Educative Inc., which led to the Alliance Partner Spotlight Award in the education vertical. | Folio3 implemented NetSuite AFA Standard for Blackstrap, which helped them reduce manual processes in work order and inventory management by 40%. | Salesforce CRM Discovery: Sales Cloud Optimization, HIPAA Compliance, NetSuite Integration | Cross-platform mobile app, desktop browser: Food safety and compliance management software | We digitized the entire feedlot compliance management and auditing process with comprehensive compliance management solution that helped them on board more feedlots. | Our web app automated the life cycle of sale book from start to end which helped angus media to produce more books and drive more business in less time | A mobile app for Colgate Palmolive that helps their sales reps perform in-store activities, conduct surveys & compliance audits directly on their smartphones. | <img width=\"109\" height=\"50\" decoding=\"async\" src=\"https://folio3.com/wp-content/uploads/2023/09/angus-business.png\" /> | Folio3 is the most professional group we have worked with. They work with you around your time and deliver the best quality work."
+    ],
+    "note": null
+  },
+  {
+    "name": "Oz Liveness",
+    "website": "http://ozforensics.com",
+    "existing_plans": [
+      "Contact Sales: Contact Sales"
+    ],
+    "status": "found",
+    "scraped_url": "http://ozforensics.com/pricing",
+    "scraped_data": [
+      "Play with core functionality of our platform using our publicly available demo apps: | Security and Compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "Face Match",
+    "website": "https://sightcorp.com",
+    "existing_plans": [],
+    "status": "found",
+    "scraped_url": "https://sightcorp.com/pricing/",
+    "scraped_data": [
+      "best in the business. | Displai is the world’s leading brick-and-mortar digital signage for enterprise brands. | More for Enterprise | Enterprise-class security | Advanced user roles + permissions"
+    ],
+    "note": null
+  },
+  {
+    "name": "PXL Ident",
+    "website": "http://www.pxl-vision.com",
+    "existing_plans": [
+      "Starter: €1,/year"
+    ],
+    "status": "found",
+    "scraped_url": "http://www.pxl-vision.com",
+    "scraped_data": [
+      "PXL Pro | PXL Pro | PXL Pro | PXL Pro | PXL Pro | Security & Compliance | Simple Plug-and-Play solution with optimised basic functions | eIDAS & ZertES compliance | PXL Pro | Trust through security and compliance | \"Rather than a standard solution that would be 'somehow integrated', we wanted a | \"The flexibility of PXL Visions's platform has completely aligned with our need to provide a multitude of use cases tailored to various regulatory requirements and business preferences. | Security & Compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "FacePlugin",
+    "website": "https://faceplugin.com/",
+    "existing_plans": [],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "Edureg",
+    "website": "http://www.synel.co.uk",
+    "existing_plans": [
+      "Basic Plan: £10/user/month",
+      "Pro Plan: £25/user/month",
+      "Enterprise Plan: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "http://www.synel.co.uk",
+    "scraped_data": [
+      "Book a Free Consultation | WTR Compliance | HR & Compliance | Why Access Control Systems in Education Environments Are Essential for Safety and Efficiency | Free Tool · 90 seconds | WTR Compliance | HR & Compliance | Why Access Control Systems in Education Environments Are Essential for Safety and Efficiency | Book a Free Consultation | HR & Compliance | I manage HR & compliance | Manage doors, turnstiles, visitors, and biometrics from one platform, with real-time visibility, audit trails, and built-in support for safeguarding, compliance, and emergency response. | Securing the perimeter, automating compliance, and preparing your estate for Martyn's Law, the Building Safety Act, and KCSIE. | How to eliminate payroll leaks, ensure Working Time Regulations compliance, and get your workforce running on autopilot. | Each guide has a companion diagnostic tool that gives you a tailored figure to take into your next budget or compliance conversation. | £40 million | GDPR Compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "Face Recognition API",
+    "website": "https://arsa.technology",
+    "existing_plans": [
+      "Face Recognition API: Contact sales",
+      "AI Video Analytics Software: Contact sales",
+      "AI Box Series: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://arsa.technology/pricing",
+    "scraped_data": [
+      "Custom AI Solutions | Custom Web Application | Free Tools | Custom AI Solutions | Custom Web Application | Free Tools | A modular product portfolio spanning video analytics, biometric identity, and edge AI. Choose the deployment that fits your data, your latency budget, and your compliance posture. | Designed for environments where latency, privacy, reliability, and regulatory compliance are non-negotiable. | Enterprise-grade biometric SDK deployed entirely within your own infrastructure. Full face recognition, anti-spoofing liveness, and face analytic | Running offline, under your control, with zero external data transfer. Built for government, defense, banking, and regulated enterprise where data sovereignty and compliance are mandatory. | Government and enterprise ready | Safety & PPE Compliance | Monitor safety violations and PPE compliance in real-time, complemented with analytical dashboard. | Custom AI Solution | Custom Web Application Solution | Let's discuss how ARSA can help your business. | Custom AI Solution | Custom Web App Solution"
+    ],
+    "note": null
+  },
+  {
+    "name": "Biometric Security",
+    "website": "http://www.smarteyetechnology.com",
+    "existing_plans": [
+      "Basic: $29/month",
+      "Pro: $99/month",
+      "Enterprise: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "http://www.smarteyetechnology.com/plans",
+    "scraped_data": [
+      "Advanced Features | Advanced Features | Get a 14-day free trial | Advanced Features | Advanced Features | Enterprise | Premium Support | Enterprise | var PaModulesSettings = {\"equalHeight_url\":\"https:\\/\\/smarteyetechnology.com\\/wp-content\\/plugins\\/premium-addons-for-elementor\\/assets\\/frontend\\/min-js\\/premium-eq-height.min.js\"};"
+    ],
+    "note": null
+  },
+  {
+    "name": "ZipID",
+    "website": "https://zipidapp.com",
+    "existing_plans": [
+      "Starter: $7.50/month"
+    ],
+    "status": "found",
+    "scraped_url": "https://zipidapp.com/pricing",
+    "scraped_data": [
+      "Smarter Compliance, | No Matter the Size of Your Hive | Enterprise-grade I-9 compliance at a fraction of the cost. | Most I-9 platforms charge $300–$1,000/month before you process a single hire. | ZipID starts at $89/month — no setup fees, no training required, ICE-compliant from day one. | Book a Demo",
+      "Basic Queen Bee Plan | $7.50 / transaction | ‍For compliance-conscious teams that need fast, accurate I-9s | $7.50 | /transaction | Get Started | Automated workflow in 6 minutes or less | AI-powered ICE compliant OCR auto-fills employee and employer sections from ID scan | Remote, hybrid, and in-person hires all supported | Wet signatures with metadata — no printing required | Automated E-Verify redirect with I-9 Additional Information auto-populated | Downloadable I-9 PDF with IDs and selfie | Multi-location HR visibility and staff permissions | Audit-ready activity log searchable by employee, HR user, location, and date | Automated status updates and reminders throughout I-9 workflow | Full encryption of data at rest and in transit | New customer training by ZipID support team | AI Knowledge Base and chatbot for self-service support | Buzzing Hive Plan (popular) | $9.50 / transaction | ‍For teams that need identity confidence, not just form compliance | $9.50 | /transaction | Get Started | Everything in Basic Queen Bee, plus:",
+      "Basic Queen Bee Plan | $7.50 / transaction | ‍For compliance-conscious teams that need fast, accurate I-9s | $7.50 | /transaction | Get Started | Automated workflow in 6 minutes or less | AI-powered ICE compliant OCR auto-fills employee and employer sections from ID scan | Remote, hybrid, and in-person hires all supported | Wet signatures with metadata — no printing required | Automated E-Verify redirect with I-9 Additional Information auto-populated | Downloadable I-9 PDF with IDs and selfie | Multi-location HR visibility and staff permissions | Audit-ready activity log searchable by employee, HR user, location, and date | Automated status updates and reminders throughout I-9 workflow | Full encryption of data at rest and in transit | New customer training by ZipID support team | AI Knowledge Base and chatbot for self-service support",
+      "Basic Queen Bee Plan | $7.50 / transaction | ‍For compliance-conscious teams that need fast, accurate I-9s | $7.50 | /transaction | Get Started",
+      "$7.50 / transaction | ‍For compliance-conscious teams that need fast, accurate I-9s",
+      "Buzzing Hive Plan (popular) | $9.50 / transaction | ‍For teams that need identity confidence, not just form compliance | $9.50 | /transaction | Get Started | Everything in Basic Queen Bee, plus: | NIST-validated 1:1 biometric facial recognition at 99.998% accuracy | Live selfie matched to government-issued ID photo at point of hire | Liveness detection — prevents spoofing, deepfakes, and photo substitution | AI-powered fraud detection flags tampered, synthetic, or spoofed documents (coming soon) | Identity confidence score delivered with every new hire verification | Especially recommended for remote workers, regulated industries, and employers in sectors vulnerable to identity fraud or economic espionage | Priority customer support",
+      "Buzzing Hive Plan (popular) | $9.50 / transaction | ‍For teams that need identity confidence, not just form compliance | $9.50 | /transaction | Get Started",
+      "$9.50 / transaction | ‍For teams that need identity confidence, not just form compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "BAF",
+    "website": "https://3divi.ai",
+    "existing_plans": [
+      "Standard: $5000/year"
+    ],
+    "status": "found",
+    "scraped_url": "https://3divi.ai",
+    "scraped_data": [
+      "Custom AI Development | Core AI | Core AI | Let's talk business | Business Email | Please, use business Email only | Core AI | Custom AI development | Core AI | Let's Talk Business | Business Email | Please, use only professional Email | Business Email | Please, use only professional Email | Essential cookies"
+    ],
+    "note": null
+  },
+  {
+    "name": "Tecalis Authentication",
+    "website": "https://www.tecalis.com",
+    "existing_plans": [
+      "Contact Sales: Contact Sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.tecalis.com",
+    "scraped_data": [
+      "Scale your business and multiply your reach | Professional Resources | Scale your business and multiply your reach | Professional Resources | Business verification and registration | Compliance | Discuss with our experts how Tecalis can help you grow your business"
+    ],
+    "note": null
+  },
+  {
+    "name": "Biometric Attendance System",
+    "website": "http://cuckootech.com",
+    "existing_plans": [
+      "Standard Plan: $29 per user/month",
+      "Professional Plan: $49 per user/month",
+      "Enterprise Plan: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "http://cuckootech.com/pricing",
+    "scraped_data": [
+      "Enterprise time attendance management | Attendance compliance | Enterprise Attendance Management System | Cuckoo Tech is that enterprise attendance management system. | Attendance compliance.\n                                        State-wise. Correct format. Ready for presentation. | Enterprise Attendance System Specialist! | Compliance adherence. | Protect your business from proxy\n                                attendance due to\n                                fake-finger miscreants. | Time and Attendance systems are no more about just in-time and out-time.\n                        It has a direct impact on the billing and compliance related issues in many industries. | Attendance compliance | The enterprise Attendance Software CuckooTech powered by | Enterprise time attendance management | Attendance compliance"
+    ],
+    "note": null
+  },
+  {
+    "name": "iDenfy",
+    "website": "https://idenfy.com",
+    "existing_plans": [
+      "Pay Per Verification: Contact Sales",
+      "Basic: $1.35 / verification",
+      "Premium: $1.30 / verification",
+      "Enterprise: Custom"
+    ],
+    "status": "found",
+    "scraped_url": "https://idenfy.com/pricing",
+    "scraped_data": [
+      "Identity Verification | Know Your Business | AML Verification | Fraud Prevention | $ USD | € EUR | £ GBP | Basic | €1.25 / verif | Minimum commitment is €125/month | What's included? | ID verification | Document surface analysis | Face verification & matching | Liveness detection | See all features | Premium | €1.20 / verif | Minimum commitment is €300/month | What's included? | Discounts on extras | Everything included in Basic Plan | See all features | Enterprise | Custom",
+      "$ USD | € EUR | £ GBP | Basic | €1.25 / verif | Minimum commitment is €125/month | What's included? | ID verification | Document surface analysis | Face verification & matching | Liveness detection | See all features | Premium | €1.20 / verif | Minimum commitment is €300/month | What's included? | Discounts on extras | Everything included in Basic Plan | See all features | Enterprise | Custom | Volume-based pricing, the price drops to €0.50 / verif. | What's included? | Account manager | Business verification",
+      "Basic | €1.25 / verif | Minimum commitment is €125/month | What's included? | ID verification | Document surface analysis | Face verification & matching | Liveness detection | See all features | Premium | €1.20 / verif | Minimum commitment is €300/month | What's included? | Discounts on extras | Everything included in Basic Plan | See all features | Enterprise | Custom | Volume-based pricing, the price drops to €0.50 / verif. | What's included? | Account manager | Business verification | ISO 27001 and SOC II | Cyber insurance | Discounts on extras",
+      "Basic | €1.25 / verif | Minimum commitment is €125/month | What's included? | ID verification | Document surface analysis | Face verification & matching | Liveness detection | See all features",
+      "Premium | €1.20 / verif | Minimum commitment is €300/month | What's included? | Discounts on extras | Everything included in Basic Plan | See all features",
+      "Enterprise | Custom | Volume-based pricing, the price drops to €0.50 / verif. | What's included? | Account manager | Business verification | ISO 27001 and SOC II | Cyber insurance | Discounts on extras | See all features"
+    ],
+    "note": null
+  },
+  {
+    "name": "ComplyCube",
+    "website": "https://www.complycube.com",
+    "existing_plans": [
+      "Basic Plan: Contact sales",
+      "Pro Plan: Contact sales",
+      "Enterprise Plan: Contact sales",
+      "Starter: $99/mo",
+      "Core: $299/mo",
+      "Growth: Contact sales",
+      "Enterprise: Contact sales",
+      "Basic: $29/month",
+      "Pro: $99/month",
+      "Essential: $49/month"
+    ],
+    "status": "already_verified",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "verified in previous session"
+  },
+  {
+    "name": "Mitek Systems",
+    "website": "https://www.miteksystems.com",
+    "existing_plans": [
+      "Custom Pricing: Contact for details"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.miteksystems.com",
+    "scraped_data": [
+      "Positive Pay Plus | Compliance (KYC) | elevate compliance | We help you increase customer confidence, prevent fraud, and ensure compliance across intuitive user experiences. | Protect your bottom line with advanced fraud detection | Meet compliance demands | Simplify compliance. Mitigate risks. | Reduce compliance risks | Simplify compliance. Mitigate risks. | Reduce compliance risks | Ensure end-to-end compliance with regulatory mandates. | Reduce fraud, automate compliance, accelerate onboarding, and avoid costly audit fines. | We’ll work alongside your business in pre-sales and integration activities."
+    ],
+    "note": null
+  },
+  {
+    "name": "AU10TIX",
+    "website": "https://www.au10tix.com",
+    "existing_plans": [
+      "Identity Verification Suite: Contact for pricing",
+      "Serial Fraud Monitor: Contact for pricing",
+      "Reusable Digital ID: Contact for pricing",
+      "AML Screening: Contact for pricing",
+      "Biometric Verification: Contact for pricing",
+      "Basic KYC: $500 monthly minimum",
+      "Enhanced KYC: $500 monthly minimum",
+      "Enterprise: $500 monthly minimum",
+      "Compliance Suite: Contact for pricing",
+      "Document Verification: Contact for pricing",
+      "Basic: Contact for pricing",
+      "Pro: Contact for pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.au10tix.com/pricing",
+    "scraped_data": [
+      "BASIC KYC | Trusted partner for SMBs | Full auto | Let’s talk | Fast, compliant verification | ID Verification | Biometrics (Liveness & Face Match) | Case Management Dashboard | Let’s Talk! | Full global coverage | +180 Forgery detection tests | Plug & Play | Out-of-the-box workflows | $500 monthly minimum",
+      "Recommended | ENHANCED KYC | For stricter compliance needs | Hybrid | Let’s talk | Expanded verification for regulated journeys | Everything in Basic | Deepfake Detection | Proof of Address | Serial Fraud Detector | Dynamic Workflows | Manual Review | AML Screening | Let’s Talk! | Coordinated bot attack prevention | Real-time anomaly detection | Consortium verification | Injection detection | $500 monthly minimum"
+    ],
+    "note": null
+  },
+  {
+    "name": "Veriff",
+    "website": "https://www.veriff.com/",
+    "existing_plans": [
+      "Essential: $0.80 per verification / $49 month min",
+      "Plus: $1.39 per verification / $99 month min",
+      "Premium: $1.89 per verification / $209 month min",
+      "Enterprise: Contact for pricing",
+      "Basic Plan: $20/user/month",
+      "Pro Plan: $50/user/month"
+    ],
+    "status": "already_verified",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "verified in previous session"
+  },
+  {
+    "name": "Ondato",
+    "website": "https://ondato.com/",
+    "existing_plans": [
+      "Basic Plan: $49/month",
+      "Pro Plan: $99/month",
+      "Enterprise Plan: Custom pricing",
+      "Basic: $10/month",
+      "Pro: $50/month",
+      "Enterprise: Custom"
+    ],
+    "status": "already_verified",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "verified in previous session"
+  },
+  {
+    "name": "Entrust IDV, formerly Onfido",
+    "website": "https://www.entrust.com/",
+    "existing_plans": [
+      "Basic Plan: Contact for pricing",
+      "Standard Plan: Contact for pricing",
+      "Enterprise Plan: Contact for pricing",
+      "Basic: $29/month",
+      "Pro: $79/month",
+      "Enterprise: Custom pricing"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "Sumsub",
+    "website": "https://sumsub.com/",
+    "existing_plans": [
+      "Basic Plan: $0.05 per verification",
+      "Custom Plan: Custom pricing based on multi-level checks",
+      "Basic: $1.35 per verification",
+      "Compliance: $1.85 per verification",
+      "Enterprise: Let’s talk!"
+    ],
+    "status": "already_verified",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "verified in previous session"
+  },
+  {
+    "name": "Luxand FaceSDK",
+    "website": "https://www.luxand.com",
+    "existing_plans": [
+      "Basic: $29/month",
+      "Pro: $99/month",
+      "Enterprise: Custom",
+      "Basic Plan: $19/month",
+      "Pro Plan: $49/month",
+      "Enterprise Plan: Custom pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.luxand.com",
+    "scraped_data": [
+      "Free trial | Luxand Video Essentials | Free trial | Luxand Video Essentials"
+    ],
+    "note": null
+  },
+  {
+    "name": "Veridium",
+    "website": "https://www.veridiumid.com",
+    "existing_plans": [
+      "Basic Plan: $20/month",
+      "Pro Plan: $50/month",
+      "Enterprise Plan: Custom Pricing",
+      "Basic: $49/month",
+      "Pro: $99/month",
+      "Enterprise: Custom"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.veridiumid.com/pricing",
+    "scraped_data": [
+      "Facial biometrics using Veridium’s vFace technology securely verifies user identity through advanced facial recognition algorithms, providing a seamless and robust authentication method. | Business Objectives | Policy Orchestration that can handle your\nstandard regulations | for Veridium’s advanced solutions. | Facial biometrics using Veridium’s vFace technology securely verifies user identity through advanced facial recognition algorithms, providing a seamless and robust authentication method. | Compliance and Regulatory Framework | Compliance and Regulatory Framework | We deliver a Zero Knowledge Orchestrator, as well as a easy to use regulatory and compliance framework. | {\"imports\":{\"borlabs-cookie-core\":\"https://www.veridiumid.com/wp-content/plugins/borlabs-cookie/assets/javascript/borlabs-cookie.min.js?ver=3.4.2\"}}"
+    ],
+    "note": null
+  },
+  {
+    "name": "FaceOnLive Identity Verification Software",
+    "website": "https://faceonlive.com",
+    "existing_plans": [
+      "Basic Plan: $19/month",
+      "Pro Plan: $49/month",
+      "Enterprise Plan: Custom",
+      "Basic: $19/month",
+      "Pro: $49/month",
+      "Enterprise: Contact for pricing"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "Biometric Time Attendance System",
+    "website": "https://www.idemia.com",
+    "existing_plans": [
+      "Basic Plan: $29/month",
+      "Pro Plan: $49/month",
+      "Enterprise Plan: Custom pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.idemia.com",
+    "scraped_data": [
+      "Next-generation encryption for advanced security | Secure access to enterprise systems | More than 600 governments, state and federal organizations, and over 2300 enterprises trust us to secure billions of essential interactions worldwide. | Secure access to enterprise systems"
+    ],
+    "note": null
+  },
+  {
+    "name": "SentiVeillance Cluster",
+    "website": "https://aidoos.com",
+    "existing_plans": [
+      "Basic Plan: $29/month",
+      "Pro Plan: $79/month",
+      "Enterprise Plan: Custom pricing",
+      "Basic: $29/month",
+      "Pro: $99/month",
+      "Enterprise: Custom pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://aidoos.com/pricing",
+    "scraped_data": [
+      "Starter | The $2K bet — bypass procurement | $2,000 | 10 Delivery Units | Try AiDOOS on a contained scope — a small story, a UX iteration, a focused integration, a research write-up. Below most procurement thresholds. | VALIDITY · 90 DAYS | Buy Starter | ★ MOST POPULAR | Small | Activation tier — most teams start here | $10,000 | 60 Delivery Units | Run a real piece of work end-to-end. Multi-skill, multi-story. The tier where teams move from trying AiDOOS to using it. | VALIDITY · 6 MONTHS | Buy Small | Scale | Multi-team expansion — 33% off Starter | $40,000 | 300 Delivery Units | Power a full quarter of cross-skill execution across multiple teams, products, or features. | VALIDITY · 12 MONTHS | Buy Scale | Scale Plus | Your delivery platformed | $110,000"
+    ],
+    "note": null
+  },
+  {
+    "name": "Regula",
+    "website": "https://regulaforensics.com/",
+    "existing_plans": [
+      "Document Reader SDK: Not provided",
+      "Identity Verification Platform: Not provided",
+      "Face Recognition SDK: Not provided",
+      "Document Readers: Not provided",
+      "Video Spectral Comparators: Not provided"
+    ],
+    "status": "found",
+    "scraped_url": "https://regulaforensics.com/en/pricing",
+    "scraped_data": [
+      "Get court-ready evidence with advanced document and VIN examination tools. | Let’s design a verification flow that reduces fraud and scales with your business | See your ROI in minutes. Get clear numbers based on your industry, use case, and fraud risks — free and easy. | Regula Launches IDV Platform: The All-in-One Solution for Enterprise-Grade Identity Lifecycle Management | Business! | Document Readers for Business"
+    ],
+    "note": null
+  },
+  {
+    "name": "Incode",
+    "website": "https://incode.com/",
+    "existing_plans": [
+      "Starter: Contact sales",
+      "Pro: Contact sales",
+      "Enterprise: Contact sales"
+    ],
+    "status": "found",
+    "scraped_url": "https://incode.com",
+    "scraped_data": [
+      "Protect your business from deepfakes | KYC/AML compliance | Know Your Business (KYB) | Independent adversarial testing validated Incode against 13 advanced fraud attack types, including deepfakes, injected media, and AI-generated documents. | Keep bad actors out with advanced AI-powered prevention. Safeguard every step of the verification journey with end-to-end fraud signal monitoring. | Setting the standard in identity verification | Enterprise focus | We provide end-to-end identity solutions with a modular core platform, easily orchestrated and integrated tools, deep partnerships, and 99.99% reliability. | Business Trust | Verify true identities at onboarding to protect your business and customers from fraud. | KYC/AML compliance | Meet compliance requirements with zero-friction checks against biometric sources of truth. | Business Trust | Business Trust | Screen and verify businesses to build compliant and trusted business relationships from the start. | KYC/AML compliance | Verify businesses and their owners (KYC) to guarantee compliant business onboarding. | Confirm the identity of the true business owners to limit your risk exposure. | Verify the identity of autonomous AI systems to prevent fraud, ensure compliance and build trust in digital interactions. | Maximum growth without compromise | Power your business with AI-driven identity verification that stops fraud and ensures compliance. | “Six months of rigorous testing proved Incode indispensable for our stringent security and compliance benchmarks” | “Six months of rigorous testing proved Incode indispensable for our stringent security and compliance benchmarks” | KYC/AML Compliance | Know Your Business"
+    ],
+    "note": null
+  },
+  {
+    "name": "Shufti",
+    "website": "https://shuftipro.com/",
+    "existing_plans": [
+      "Pay As You Go: Contact for pricing",
+      "Monthly Subscription: Contact for pricing",
+      "Enterprise Solutions: Custom pricing",
+      "Free Forever: $0 / per check",
+      "Essentials: $0.95 / per check",
+      "Enterprise: Request Pricing",
+      "Basic: $10 per verification",
+      "Pro: $50 per user/month",
+      "Basic Plan: Contact for pricing",
+      "Standard Plan: Contact for pricing",
+      "Premium Plan: Contact for pricing"
+    ],
+    "status": "already_verified",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "verified in previous session"
+  },
+  {
+    "name": "Amiqus",
+    "website": "https://amiqus.co",
+    "existing_plans": [
+      "Standard: Contact for pricing",
+      "Premium: Contact for pricing",
+      "Scale: from £10 per client",
+      "Enterprise: Custom",
+      "Standard Candidate Check: from £7.50 per candidate",
+      "Scale Candidate Check: from £6 per candidate",
+      "Enterprise Candidate Check: Custom",
+      "Basic Plan: Contact for pricing",
+      "Premium Plan: Contact for pricing",
+      "Professional Plan: Contact for pricing",
+      "Enterprise Plan: Custom pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://amiqus.co/pricing",
+    "scraped_data": [
+      "Can’t wait and want to speak to one of the team now? Give our new business team a call directly on 0131 605 0107 or get in touch to request a call back. | Client onboarding | Staff onboarding | Standard | from £15per client | Minimum contract: £500/month | Pre-built client journeys | Custom templates | Team task assignments | Back-office remediation and reporting | Custom forms & branding | Group training and consultancy | Get started | Popular | Scale | from £10per client | Typical annual usage: 2,000+ clients | Everything in the ‘Standard’ package, plus | Bulk uploads | API connectivity | Unlimited custom forms | Integrations with your internal systems, including your PMS | Get started | Enterprise | Custom",
+      "Client onboarding | Staff onboarding | Standard | from £15per client | Minimum contract: £500/month | Pre-built client journeys | Custom templates | Team task assignments | Back-office remediation and reporting | Custom forms & branding | Group training and consultancy | Get started | Popular | Scale | from £10per client | Typical annual usage: 2,000+ clients | Everything in the ‘Standard’ package, plus | Bulk uploads | API connectivity | Unlimited custom forms | Integrations with your internal systems, including your PMS | Get started | Enterprise | Custom | Typical annual usage: 10,000+ clients",
+      "Standard | from £15per client | Minimum contract: £500/month | Pre-built client journeys | Custom templates | Team task assignments | Back-office remediation and reporting | Custom forms & branding | Group training and consultancy | Get started | Popular | Scale | from £10per client | Typical annual usage: 2,000+ clients | Everything in the ‘Standard’ package, plus | Bulk uploads | API connectivity | Unlimited custom forms | Integrations with your internal systems, including your PMS | Get started | Enterprise | Custom | Typical annual usage: 10,000+ clients | Everything in the ‘Scale’ package, plus | AML consultancy and process review",
+      "Standard | from £15per client | Minimum contract: £500/month | Pre-built client journeys | Custom templates | Team task assignments | Back-office remediation and reporting | Custom forms & branding | Group training and consultancy | Get started",
+      "Popular | Scale | from £10per client | Typical annual usage: 2,000+ clients | Everything in the ‘Standard’ package, plus | Bulk uploads | API connectivity | Unlimited custom forms | Integrations with your internal systems, including your PMS | Get started",
+      "Standardannuallyfrom £7.50per candidateMinimum contract: £500/monthRight to Work check: from £7.50 per candidateBPSS screening: from £20 per candidateAutomated referencing from £10 per candidateFull UK & International check coverage (e.g BPSS)Pre-built client journeysCustom templatesTeam task assignmentsUseful dashboards and reportsCustom forms & brandingGroup training and consultancyGet startedPopularScaleannuallyfrom £6per candidateTypical annual usage: 1250+ candidatesRight to Work check: from £6.75 per candidateBPSS screening: from £18 per candidateAutomated referencing from £9 per candidateEverything in the ‘Standard’ package, plusBulk uploadsAPI connectivityUnlimited custom formsCSV & Json exportsIntegrations with your internal systems, including your ATSGet startedEnterpriseannuallyCustomTypical annual usage: 10,000+ candidatesRight to Work check: from £6 per candidateDBSS screening: from £16 per candidateAutomated referencing from £8 per candidateEverything in the ‘Scale’ package, plusSingle-sign-on (SSO) functionalityAML consultancy and process reviewData hosting localisation Bespoke migration & implementationDedicated account and implementation managerPremium support with SLAs Get a bespoke price",
+      "PopularScaleannuallyfrom £6per candidateTypical annual usage: 1250+ candidatesRight to Work check: from £6.75 per candidateBPSS screening: from £18 per candidateAutomated referencing from £9 per candidateEverything in the ‘Standard’ package, plusBulk uploadsAPI connectivityUnlimited custom formsCSV & Json exportsIntegrations with your internal systems, including your ATSGet started"
+    ],
+    "note": null
+  },
+  {
+    "name": "FaceTec 3D Face Authentication",
+    "website": "https://www.facetec.com",
+    "existing_plans": [
+      "3D Liveness Check: Varies based on usage",
+      "Per User Pricing: Contact for Quote"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.facetec.com/pricing",
+    "scraped_data": [
+      "FaceTec’s Demo & Sample Apps Are Free for | Business Development Demos | Enterprise Accounts"
+    ],
+    "note": null
+  },
+  {
+    "name": "Identomat",
+    "website": "https://www.identomat.com",
+    "existing_plans": [
+      "Free Trial: null",
+      "Essentials: $0.45 / mo",
+      "Advanced: $0.28 / verification",
+      "Custom: Let's Chat",
+      "Basic Plan: $19/month",
+      "Pro Plan: $49/month",
+      "Enterprise Plan: Custom pricing",
+      "Basic: $29/month",
+      "Pro: $99/month",
+      "Enterprise: Custom pricing"
+    ],
+    "status": "already_verified",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "verified in previous session"
+  },
+  {
+    "name": "TalnFlo",
+    "website": "https://www.talnflo.com",
+    "existing_plans": [
+      "Standard: $199/seat",
+      "Startup: $99/seat",
+      "Startup Plan: $99/mo",
+      "Standard Plan: $199/mo"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.talnflo.com/pricing",
+    "scraped_data": [
+      "Free During Beta | Standard $199/Seat. Startup $99/Seat. Launching July 5, 2026. | Standard plan is $199/month per recruiting seat at launch (July 5, 2026), including 5 active job slots per seat. Start with our 30-day free trial. Each seat includes 5 active job slots distributed to the TalnFlo marketplace and 20+ partner job boards. | Candidates always use TalnFlo free. Pricing applies to recruiting seats only. | STANDARD PRICE | $199 /seat/month | Same price for every team, every seat . No tiers. | 30-DAY FREE TRIAL | 30 day trial | 1 job posting to 20+ boards, full dashboard, all inbound apps routed to you. No credit card. | LAUNCHING JULY 5, 2026 | Forever | INCUBATOR & ACCELERATOR MEMBERS | Startup Plan | $99/mo | 5 active job slots | Full distribution to 20+ partner boards | Scout Match (verified candidate scoring) | 50 Acorns per month for board boosts | Analytics dashboard | TalnFlo Job URL for every posting | Unlimited candidate messaging | Email support | 🌰 Spend 50 monthly Acorns on board boosts, extra job slots, and more. | EVERYONE ELSE",
+      "Every Seat. Full Access. No Limits. | $199/month (Standard plan) unlocks the entire TalnFlo marketplace — verified candidates, 5 active job slots per seat distributed to 20+ boards, full search, Scout Match, and pipeline tools. Nothing held back behind add-ons or higher tiers. | 5 active job slots per seat | 20+ partner job boards | Unlimited candidate outreach | ID-verified candidates | Optional video intros | 50+ profile filters | Scout Match scoring | Automated scheduling | Feature | TalnFlo | LinkedIn Recruiter | Job postings | 5 per seat | None included | Distribution to 20+ job boards | ID-verified candidates | Optional video intros per role | Candidate outreach / messaging | Unlimited | 100 InMails/mo | 50+ profile filters (timezone, clearance, certs) | Scout Match scoring | Limited",
+      "Save 78% on Recruiting. Launching July 5, 2026. | Free during beta. After Q3 2026, Standard plan is $199/seat/mo at launch (July 5, 2026)nth with the 30-day free trial. Lock in during Standard plan and your seats stay at $199/mo from launch on July 5, 2026. | Start Free Trial | Back to Overview"
+    ],
+    "note": null
+  },
+  {
+    "name": "CORE Identity Verification Solutions",
+    "website": "https://www.veridas.com",
+    "existing_plans": [
+      "Custom Pricing: N/A",
+      "Basic Plan: Contact for pricing",
+      "Pro Plan: Contact for pricing",
+      "Custom/Enterprise: Contact for pricing"
+    ],
+    "status": "found",
+    "scraped_url": "https://www.veridas.com/pricing",
+    "scraped_data": [
+      "Necessary cookies help make a website usable by enabling basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies. | Compliance | Compliance | Veridas delivers proven protection with advanced biometrics. | Veridas delivers proven protection with advanced biometrics. | Without owning the core tech, providers can’t control roadmaps or adapt at the speed of new attacks. | Growth Through Trust | Secure identity unlocks business growth: higher customer acquisition, more transactions, increased lifetime value, and new revenue use cases. | AI-powered document verification, alone or with facial biometrics, verifies identities in seconds. Ensures compliance, fraud protection, and a smooth user experience. | Detect and eliminate duplicate or synthetic identities across your customer base to prevent fraud, protect compliance, and keep databases clean and reliable. | When it comes to fraud, “trust us” isn’t good enough. Our tech is rigorously tested and certified by independent, 3rd party experts to ensure you meet compliance requirements. | Regulatory compliance | Get 24/7 cloud monitoring, dedicated support, fraud and activity tracking, free updates, and sandbox access. | Optimize for Growth | The goal: streamline digital onboarding without compromising compliance or fraud prevention. | compliance with regulations | Compliance- Gerencia de Asuntos Legales y Cumplimiento at Grupo Boldt | Identity & Business Day The Hague: Navigating the AMLR Era and the Future of Digital Identity | and stop fraud across all vectors, including deepfakes, manipulated IDs, replay attacks, and advanced injection attacks. | Advanced Injection Attack Detection (IAD) | How does Veridas secure identity verification to help me grow my business? | save up to $90 million in annual fraud losses for every 100,000 customers onboarded | Acquisition, Protection, Growth, and Retention | your existing client database and compliance, we offer | Veridas solutions are deployed globally across multiple industries, securing trust and powering growth. For | , our IDV Platform smoothly and quickly onboards customers digitally while ensuring full regulatory compliance. In | , advanced defenses against injection attacks, and privacy-preserving identity reuse. | What security and compliance standards does Veridas meet to ensure our data is protected? | Veridas operates with privacy by design and by default, ensuring data protection compliance with major global regulations, including | , a dedicated support team, fraud and activity tracking, free updates, and sandbox access. We provide an"
+    ],
+    "note": null
+  },
+  {
+    "name": "Video KYC Identity Verification Software",
+    "website": "https://isolve.in",
+    "existing_plans": [
+      "Basic Plan: $29/month",
+      "Pro Plan: $99/month",
+      "Enterprise Plan: Custom pricing",
+      "Basic: $19.99",
+      "Pro: $49.99",
+      "Enterprise: Custom"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  },
+  {
+    "name": "KYC Solution",
+    "website": "https://kycsolution.com",
+    "existing_plans": [
+      "Basic Plan: $19/month",
+      "Pro Plan: $49/month",
+      "Enterprise Plan: Custom pricing",
+      "Basic: $29/month",
+      "Pro: $99/month",
+      "Enterprise: Custom"
+    ],
+    "status": "found",
+    "scraped_url": "https://kycsolution.com/pricing",
+    "scraped_data": [
+      "Why KYC Solution™ Pricing Stands Out | Pay-per-check model – only pay for the verifications you actually run. | No setup fees – get started without platform or onboarding charges. | No minimum commitment on standard tiers – ideal for growth & testing. | Volume-based discounts – the more you verify, the lower your cost. | Enterprise pricing from as low as €0.10 per verification* | Includes KYC, AML, sanctions & PEP screening, biometrics and more.",
+      "Why KYC Solution™ Pricing Stands Out | Pay-per-check model – only pay for the verifications you actually run. | No setup fees – get started without platform or onboarding charges. | No minimum commitment on standard tiers – ideal for growing and testing new markets. | Volume-based discounts – the more you verify, the less you pay per document check. | Enterprise pricing from as low as €0.10 per document verification* for large-scale programmes. | Transparent structure designed for KYC, AML, sanctions & PEP screening, biometric checks and fully digital onboarding.",
+      "Plan | Price | Monthly Volume | Key Features | Best For | Starter | From €0.25 / verification | Up to ~5,000 checks/month | • Passport & ID verification | • Biometric face match + basic liveness | • Essential AML & sanctions screening | • Dashboard access + basic API | • No setup fee, no contract | Early-stage fintechs, PSPs, digital platforms, pilot projects, new-market testing | Growth | From €0.18 / verification | 5,000 – 50,000 checks/month | • 230+ country document coverage | • Advanced biometrics & enhanced liveness | • AML, sanctions, PEP, media checks | • Full API + SDK | • Custom rules & workflows | Scaling fintech, crypto, iGaming, telecom & cross-border platforms | Scale | From €0.14 / verification",
+      "Provider\tIndicative Document Verification Pricing*\tMinimum Monthly Commitment / Platform Fees*\tCommercial Model Highlights* | KYC Solution™\tFrom approx. €0.25 per check on standard tiers, down to around €0.10 per check at large enterprise scale.\tNo setup fee. No mandatory minimum commitment on standard tiers. Enterprise pricing is volume-based and fully negotiable.\tSimple, transparent pay-per-check model with volume discounts and tailored bundles for KYC, AML, sanctions, PEP and biometric verification – designed to maximise value and minimise total cost of ownership. | Top Competitor 1 (Global KYC/AML Vendor)\tPublic information indicates higher per-check pricing at low and mid volumes, with typical document verification fees often starting above our entry-level rates.\tFrequently offers subscription-style plans with fixed monthly fees, bundled checks and thresholds that may not suit smaller or fluctuating volumes.\tStrong feature set, but commercial model can be less flexible for emerging and mid-size businesses that prefer a pure usage-based approach without bundles. | Top Competitor 2 (Enterprise ID Verification Provider)\tSelf-service and enterprise plans commonly show per-verification pricing that is significantly higher than KYC Solution™ at equivalent volumes, particularly when advanced data extraction and fraud controls are included.\tOften sold with monthly minimum commitments and plan-based tiers that require a guaranteed spend, even at lower usage.\tWell-known brand in the identity space, but generally aligns with higher budgets and longer-term commitments compared to our flexible, low-barrier model. | Top Competitor 3 (Legacy Verification Platform)\tIndustry sources and comparison sites indicate document verification often priced at a premium, with more competitive rates only available at very high volumes.\tTypically sold via enterprise contracts with volume commitments, platform fees and additional charges for enhanced services.\tComprehensive enterprise solution, but with a pricing structure that can be less accessible to cost-sensitive organisations or those scaling rapidly across multiple markets."
+    ],
+    "note": null
+  },
+  {
+    "name": "Entrust Identity Verification",
+    "website": "https://www.entrust.com",
+    "existing_plans": [
+      "Standard Plan: Contact for pricing",
+      "Enterprise Plan: Contact for pricing"
+    ],
+    "status": "no_pricing_found",
+    "scraped_url": null,
+    "scraped_data": [],
+    "note": "tried all URL patterns, no pricing data detected"
+  }
+]

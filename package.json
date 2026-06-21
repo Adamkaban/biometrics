@@ -30,15 +30,15 @@
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.18.2",
-    "cloakbrowser": "^0.3.31",
     "phosphor-astro": "^2.1.0",
-    "playwright-core": "^1.61.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
+    "cloakbrowser": "^0.3.32",
+    "playwright-core": "^1.61.0",
     "vitest": "^4.1.8"
   }
 }

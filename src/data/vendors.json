@@ -276,40 +276,9 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Basic",
-            "price": "$500/month",
-            "features_included": [
-              "Identity verification",
-              "Fraud detection",
-              "Basic customer support"
-            ]
-          },
-          {
-            "name": "Premium",
-            "price": "$1500/month",
-            "features_included": [
-              "Advanced identity verification",
-              "Fraud detection",
-              "Priority customer support",
-              "Customizable workflows"
-            ]
-          },
-          {
-            "name": "Basic Plan",
-            "price": "$10 per verification",
-            "features_included": [
-              "Real-time verification",
-              "Email support"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "$100 per month",
-            "features_included": [
-              "Unlimited verifications",
-              "Priority support",
-              "Custom branding"
-            ]
+            "name": "Enterprise",
+            "price": "Contact for pricing",
+            "features_included": []
           }
         ],
         "key_features": [
@@ -440,65 +409,9 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Access to all SDKs",
-              "Basic technical support"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Priority support",
-              "Advanced analytics",
-              "Custom integrations"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Dedicated account manager",
-              "Custom solution design",
-              "24/7 support"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$29/month",
-            "features_included": [
-              "Identity verification",
-              "Facial recognition"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$99/month",
-            "features_included": [
-              "All Basic features",
-              "Document verification",
-              "KYC compliance"
-            ]
-          },
-          {
             "name": "Enterprise",
-            "price": "Custom pricing",
-            "features_included": [
-              "All Pro features",
-              "Custom integrations",
-              "Dedicated support"
-            ]
-          },
-          {
-            "name": "Standard",
             "price": "Contact for pricing",
-            "features_included": [
-              "All Basic features",
-              "1:n facial recognition",
-              "Facial age estimation"
-            ]
+            "features_included": []
           }
         ],
         "key_features": [
@@ -1713,30 +1626,34 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "Custom",
+            "name": "Essential",
+            "price": "Starting at $250/month",
             "features_included": [
-              "KYC Compliance",
-              "Identity Verification",
-              "Real-time Monitoring"
+              "Templated identity verification services",
+              "Platform automation features",
+              "SOC 2 Type 2 infrastructure",
+              "12-month minimum contract"
             ]
           },
           {
-            "name": "Pro Plan",
+            "name": "Growth",
             "price": "Custom",
             "features_included": [
-              "Advanced Fraud Detection",
-              "Custom Workflows",
-              "Integration Options"
+              "Everything in Essential",
+              "Graph access",
+              "3rd-party Marketplace Apps",
+              "Advanced security configuration",
+              "Redaction and permissions"
             ]
           },
           {
-            "name": "Enterprise Plan",
+            "name": "Enterprise",
             "price": "Custom",
             "features_included": [
-              "Dedicated Support",
-              "Custom Solutions",
-              "API Access"
+              "Everything in Growth",
+              "Custom multi-organization partitioning",
+              "Custom multi-product pricing",
+              "Dedicated support"
             ]
           }
         ],
@@ -2228,11 +2145,29 @@
         "founded_year": 2002,
         "pricing_plans": [
           {
-            "name": "Contact Sales",
+            "name": "Essential",
+            "price": "$35,000/year",
+            "features_included": [
+              "SSO",
+              "MFA",
+              "Cloud-based identity solutions"
+            ]
+          },
+          {
+            "name": "Plus",
+            "price": "$50,000/year",
+            "features_included": [
+              "Everything in Essential",
+              "Advanced authentication policies",
+              "Context-based MFA"
+            ]
+          },
+          {
+            "name": "Enterprise",
             "price": "Contact sales",
             "features_included": [
-              "Enterprise-level solutions",
-              "Custom pricing based on business needs"
+              "PingOne Advanced Services",
+              "Custom enterprise solutions"
             ]
           }
         ],
@@ -2319,14 +2254,32 @@
         "founded_year": 2014,
         "pricing_plans": [
           {
+            "name": "Starter",
+            "price": "$300/month",
+            "features_included": [
+              "100 verifications/month",
+              "1 admin seat",
+              "No setup fees",
+              "Hosted flows or API",
+              "Immediate access"
+            ]
+          },
+          {
+            "name": "Business",
+            "price": "$600/month",
+            "features_included": [
+              "200 verifications/month",
+              "Unlimited seats",
+              "No setup fees"
+            ]
+          },
+          {
             "name": "Enterprise",
             "price": "Contact sales",
             "features_included": [
-              "Customizable risk-based workflow orchestration",
-              "API-first architecture",
-              "Liveness checks",
-              "Dedicated support",
-              "Managed verification stations"
+              "Government-grade identity verification",
+              "High-volume deployments",
+              "IAL3-ready"
             ]
           }
         ],
@@ -2558,30 +2511,10 @@
         "founded_year": 2011,
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "$99/month",
-            "features_included": [
-              "Access to core identity verification features",
-              "Up to 1,000 verifications"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "$249/month",
-            "features_included": [
-              "Access to advanced features",
-              "Up to 5,000 verifications",
-              "Priority support"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
+            "name": "Enterprise",
             "price": "Contact sales",
             "features_included": [
-              "Custom pricing",
-              "Unlimited verifications",
-              "Dedicated support",
-              "Advanced integrations"
+              "Custom identity verification and fraud detection solutions"
             ]
           }
         ],
@@ -2906,31 +2839,9 @@
         "founded_year": 2010,
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "$29/month",
-            "features_included": [
-              "1 User",
-              "10 Verifications per Month",
-              "Email Support"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "$79/month",
-            "features_included": [
-              "5 Users",
-              "50 Verifications per Month",
-              "Priority Support"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
-            "price": "Contact sales",
-            "features_included": [
-              "Unlimited Users",
-              "Unlimited Verifications",
-              "Custom Solutions"
-            ]
+            "name": "Enterprise",
+            "price": "Contact for pricing",
+            "features_included": []
           }
         ],
         "key_features": [
@@ -3086,30 +2997,9 @@
         "founded_year": 2010,
         "pricing_plans": [
           {
-            "name": "Starter",
-            "price": "$0",
-            "features_included": [
-              "Basic Identity Verification",
-              "Automated Fraud Detection"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$199/month",
-            "features_included": [
-              "Advanced Biometrics",
-              "Fraud Insights",
-              "24/7 Support"
-            ]
-          },
-          {
             "name": "Enterprise",
             "price": "Contact sales",
-            "features_included": [
-              "Customized Solutions",
-              "High-Volume Processing",
-              "Dedicated Account Management"
-            ]
+            "features_included": []
           }
         ],
         "key_features": [
@@ -4195,9 +4085,34 @@
         "founded_year": 2020,
         "pricing_plans": [
           {
-            "name": "Starter",
-            "price": "$7.50/month",
-            "_source": "pricing_field"
+            "name": "Basic Queen Bee",
+            "price": "$7.50 per transaction",
+            "features_included": [
+              "I-9 compliance workflow",
+              "AI-powered ICE compliant OCR",
+              "Remote, hybrid, in-person hires",
+              "E-Verify redirect with auto-populated fields",
+              "Downloadable I-9 PDF with IDs and selfie",
+              "Audit-ready activity log",
+              "Full encryption at rest and in transit"
+            ]
+          },
+          {
+            "name": "Buzzing Hive",
+            "price": "$9.50 per transaction",
+            "features_included": [
+              "Everything in Basic Queen Bee",
+              "NIST-validated 1:1 biometric facial recognition (99.998% accuracy)",
+              "Live selfie matched to government-issued ID at point of hire",
+              "Liveness detection — prevents spoofing and deepfakes",
+              "AI-powered fraud detection",
+              "Identity confidence score"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": "Contact sales",
+            "features_included": []
           }
         ],
         "_pricing_source": "pricing_field_parsed"
@@ -4650,39 +4565,32 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Pay Per Verification",
-            "price": "Contact Sales",
-            "features_included": [
-              "Only pay for confirmed verifications",
-              "Potential 70% savings on onboarding costs",
-              "No charges for failed verification attempts"
-            ]
-          },
-          {
             "name": "Basic",
-            "price": "$1.35 / verification",
+            "price": "€1.25 per verification",
             "features_included": [
               "ID verification",
               "Document surface analysis",
               "Face verification & matching",
-              "Liveness detection"
+              "Liveness detection",
+              "Minimum commitment: €125/month"
             ]
           },
           {
             "name": "Premium",
-            "price": "$1.30 / verification",
+            "price": "€1.20 per verification",
             "features_included": [
+              "Everything in Basic",
               "Discounts on extras",
-              "Everything included in Basic Plan"
+              "Minimum commitment: €300/month"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "Custom",
+            "price": "Custom (from €0.50 at volume)",
             "features_included": [
               "Account manager",
               "Business verification",
-              "ISO 27001 and SOC II compliance",
+              "ISO 27001 and SOC II",
               "Cyber insurance",
               "Discounts on extras"
             ]
@@ -4889,33 +4797,6 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "Contact sales",
-            "features_included": [
-              "Identity verification",
-              "KYC solutions",
-              "AML compliance"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "Contact sales",
-            "features_included": [
-              "Advanced identity verification",
-              "Custom workflows",
-              "Fraud prevention tools"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
-            "price": "Contact sales",
-            "features_included": [
-              "Dedicated support",
-              "Integrations and API",
-              "Comprehensive reporting"
-            ]
-          },
-          {
             "name": "Starter",
             "price": "$99/mo",
             "features_included": [
@@ -4953,32 +4834,6 @@
               "Dedicated infrastructure with SLA-backed uptime",
               "White-glove compliance guidance, system design and support",
               "Unlimited white-labeled workflows and organizational partitioning"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$29/month",
-            "features_included": [
-              "Identity verification",
-              "Basic reporting"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$99/month",
-            "features_included": [
-              "Advanced ID verification",
-              "Real-time reporting",
-              "Fraud detection tools"
-            ]
-          },
-          {
-            "name": "Essential",
-            "price": "$49/month",
-            "features_included": [
-              "Customer screening",
-              "Document verification",
-              "Address verification"
             ]
           }
         ],
@@ -5307,128 +5162,38 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Identity Verification Suite",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Full ID support",
-              "Automated verification",
-              "Supports physical and digital IDs"
-            ]
-          },
-          {
-            "name": "Serial Fraud Monitor",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Add a second layer of defense",
-              "Protect against sophisticated fraud attacks"
-            ]
-          },
-          {
-            "name": "Reusable Digital ID",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Tamper-proof digital credentials",
-              "Easily shared across platforms"
-            ]
-          },
-          {
-            "name": "AML Screening",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Ensure compliance",
-              "Top quality risk mitigation"
-            ]
-          },
-          {
-            "name": "Biometric Verification",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Powered by NIST top-rated algorithms",
-              "Unrivaled accuracy"
-            ]
-          },
-          {
             "name": "Basic KYC",
-            "price": "$500 monthly minimum",
+            "price": "Contact sales",
             "features_included": [
               "ID Verification",
               "Biometrics (Liveness & Face Match)",
               "Case Management Dashboard",
               "Full global coverage",
               "+180 Forgery detection tests",
-              "Plug & Play",
-              "Out-of-the-box workflows"
+              "Plug & Play — out-of-the-box workflows",
+              "$500 monthly minimum"
             ]
           },
           {
             "name": "Enhanced KYC",
-            "price": "$500 monthly minimum",
+            "price": "Contact sales",
             "features_included": [
-              "Everything in Basic",
+              "Everything in Basic KYC",
               "Deepfake Detection",
               "Proof of Address",
               "Serial Fraud Detector",
               "Dynamic Workflows",
               "Manual Review",
               "AML Screening",
-              "Coordinated bot attack prevention",
-              "Real-time anomaly detection",
-              "Consortium verification",
-              "Injection detection"
+              "$500 monthly minimum"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "$500 monthly minimum",
+            "price": "Contact sales",
             "features_included": [
-              "Everything in Enhanced",
-              "Customized Workflows",
-              "Database Verification",
-              "Non-ID Document Authentication",
-              "Business Verification (KYB)",
-              "Age Estimation",
-              "Reusable Digital ID",
-              "Continuous Risk Monitoring",
-              "Document-level forgery tests",
-              "Ongoing verification & alerts",
-              "Strategic account manager"
-            ]
-          },
-          {
-            "name": "Compliance Suite",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Built-in KYC and AML",
-              "Automated processes",
-              "Customizable workflows"
-            ]
-          },
-          {
-            "name": "Document Verification",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Verify user's documents",
-              "Supports various document types",
-              "AI-based checks"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Single API integration",
-              "Basic support",
-              "Real-time processing"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Advanced API features",
-              "Increased request volume",
-              "Enhanced support",
-              "Custom business logic"
+              "Custom multi-product pricing",
+              "Dedicated support"
             ]
           }
         ],
@@ -5756,25 +5521,6 @@
               "Volume-based pricing discounts",
               "Personalized branding to suit your business"
             ]
-          },
-          {
-            "name": "Basic Plan",
-            "price": "$20/user/month",
-            "features_included": [
-              "ID verification",
-              "Self-service API",
-              "Email support"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "$50/user/month",
-            "features_included": [
-              "All Basic Plan features",
-              "Advanced fraud detection",
-              "Phone support",
-              "Custom branding"
-            ]
           }
         ],
         "_pages_scraped": [
@@ -5935,58 +5681,34 @@
         "free_trial_url": "https://ondato.com/book/",
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "$49/month",
+            "name": "Identity Verification",
+            "price": "€0.50–€1.40 per verification",
             "features_included": [
-              "Basic identity verification",
-              "Email support",
-              "Access to API"
+              "AI-Based ID verification",
+              "AML Screening",
+              "Proof of Address Check",
+              "KYC Specialist Check (add-on)",
+              "Session Video Recording (add-on)"
             ]
           },
           {
-            "name": "Pro Plan",
-            "price": "$99/month",
+            "name": "Know Your Business",
+            "price": "From €600",
             "features_included": [
-              "Advanced identity verification",
-              "Phone support",
-              "Access to API",
-              "Fraud detection"
+              "Business verification"
             ]
           },
           {
-            "name": "Enterprise Plan",
-            "price": "Custom pricing",
+            "name": "Age Verification",
+            "price": "From €0.01 per verification",
             "features_included": [
-              "All Pro features",
-              "Dedicated account manager",
-              "Custom solutions"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$10/month",
-            "features_included": [
-              "Basic identity verification",
-              "Email support"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$50/month",
-            "features_included": [
-              "Full identity verification",
-              "Phone support",
-              "Extended API access"
+              "Age verification"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "Custom",
-            "features_included": [
-              "Custom integrations",
-              "Dedicated account manager",
-              "Priority support"
-            ]
+            "price": "Talk to sales",
+            "features_included": []
           }
         ],
         "_pages_scraped": [
@@ -6083,32 +5805,6 @@
               "Includes Standard Plan features",
               "Advanced Analytics",
               "Custom Integrations"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$29/month",
-            "features_included": [
-              "Identity Verification",
-              "Fraud Detection"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$79/month",
-            "features_included": [
-              "All Basic features",
-              "KYC Compliance",
-              "Document Verification"
-            ]
-          },
-          {
-            "name": "Enterprise",
-            "price": "Custom pricing",
-            "features_included": [
-              "All Pro features",
-              "Custom Integrations",
-              "Dedicated Support"
             ]
           }
         ],
@@ -6257,24 +5953,6 @@
       "logo_source": "favicon",
       "website_data": {
         "pricing_plans": [
-          {
-            "name": "Basic Plan",
-            "price": "$0.05 per verification",
-            "features_included": [
-              "Identity Verification",
-              "Document Scanning",
-              "Fraud Detection"
-            ]
-          },
-          {
-            "name": "Custom Plan",
-            "price": "Custom pricing based on multi-level checks",
-            "features_included": [
-              "Advanced Verification Solutions",
-              "Transaction Monitoring",
-              "AML Compliance"
-            ]
-          },
           {
             "name": "Basic",
             "price": "$1.35 per verification",
@@ -7081,28 +6759,9 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "$29/month",
-            "features_included": [
-              "Identity verification",
-              "Document verification"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "$49/month",
-            "features_included": [
-              "KYC compliance",
-              "Advanced fraud detection"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
-            "price": "Custom pricing",
-            "features_included": [
-              "Custom integrations",
-              "Dedicated support"
-            ]
+            "name": "Enterprise",
+            "price": "Contact for pricing",
+            "features_included": []
           }
         ],
         "key_features": [
@@ -7262,61 +6921,9 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "$29/month",
-            "features_included": [
-              "Single user",
-              "Basic identity verification",
-              "Email support"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "$79/month",
-            "features_included": [
-              "Up to 5 users",
-              "Advanced identity verification",
-              "Phone support",
-              "API access"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
-            "price": "Custom pricing",
-            "features_included": [
-              "Unlimited users",
-              "Full suite of services",
-              "Dedicated account manager",
-              "Custom integrations"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$29/month",
-            "features_included": [
-              "Identity verification",
-              "Document verification",
-              "Fraud detection"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$99/month",
-            "features_included": [
-              "All Basic features",
-              "Biometric verification",
-              "Real-time alerts",
-              "API access"
-            ]
-          },
-          {
             "name": "Enterprise",
-            "price": "Custom pricing",
-            "features_included": [
-              "All Pro features",
-              "Custom integrations",
-              "Dedicated support"
-            ]
+            "price": "Contact for pricing",
+            "features_included": []
           }
         ],
         "key_features": [
@@ -7753,33 +7360,6 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Pay As You Go",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Per-verification cost",
-              "No minimum commitment",
-              "Flexible usage"
-            ]
-          },
-          {
-            "name": "Monthly Subscription",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Monthly billing",
-              "Usage tiers",
-              "Dedicated support"
-            ]
-          },
-          {
-            "name": "Enterprise Solutions",
-            "price": "Custom pricing",
-            "features_included": [
-              "Custom integrations",
-              "Data residency",
-              "Dedicated account manager"
-            ]
-          },
-          {
             "name": "Free Forever",
             "price": "$0 / per check",
             "features_included": [
@@ -7803,51 +7383,6 @@
               "Full service access",
               "Custom plans",
               "Dedicated sales team support"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$10 per verification",
-            "features_included": [
-              "Identity verification",
-              "Fraud detection",
-              "Mobile SDK access"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$50 per user/month",
-            "features_included": [
-              "All Basic features",
-              "Enhanced fraud detection",
-              "Multiple integrations"
-            ]
-          },
-          {
-            "name": "Basic Plan",
-            "price": "Contact for pricing",
-            "features_included": [
-              "Document verification",
-              "Biometric verification",
-              "Basic AML screening"
-            ]
-          },
-          {
-            "name": "Standard Plan",
-            "price": "Contact for pricing",
-            "features_included": [
-              "All features from Basic Plan",
-              "NFC verification",
-              "Address verification"
-            ]
-          },
-          {
-            "name": "Premium Plan",
-            "price": "Contact for pricing",
-            "features_included": [
-              "All features from Standard Plan",
-              "Enhanced due diligence",
-              "Fraud monitoring"
             ]
           }
         ],
@@ -8025,124 +7560,67 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Standard",
-            "price": "Contact for pricing",
+            "name": "Standard (Client Onboarding)",
+            "price": "From £15 per client",
             "features_included": [
-              "Identity verification",
-              "Client onboarding",
-              "AML checks"
-            ]
-          },
-          {
-            "name": "Premium",
-            "price": "Contact for pricing",
-            "features_included": [
-              "All standard features",
-              "Enhanced support",
-              "Custom integrations"
-            ]
-          },
-          {
-            "name": "Scale",
-            "price": "from £10 per client",
-            "features_included": [
-              "Everything in the ‘Standard’ package, plus",
-              "Bulk uploads",
-              "API connectivity",
-              "Unlimited custom forms",
-              "CSV & JSON exports",
-              "Integrations with your internal systems"
-            ]
-          },
-          {
-            "name": "Enterprise",
-            "price": "Custom",
-            "features_included": [
-              "Everything in the ‘Scale’ package, plus",
-              "Single-sign-on (SSO) functionality",
-              "AML consultancy and process review",
-              "Data hosting localisation",
-              "Bespoke migration & implementation",
-              "Dedicated account and implementation manager",
-              "Premium support with SLAs"
-            ]
-          },
-          {
-            "name": "Standard Candidate Check",
-            "price": "from £7.50 per candidate",
-            "features_included": [
-              "Right to Work check",
-              "BPSS screening",
-              "Automated referencing",
-              "Full UK & International check coverage",
+              "Minimum contract: £500/month",
               "Pre-built client journeys",
               "Custom templates",
               "Team task assignments",
-              "Useful dashboards and reports",
-              "Custom forms & branding",
-              "Group training and consultancy"
+              "Custom forms & branding"
             ]
           },
           {
-            "name": "Scale Candidate Check",
-            "price": "from £6 per candidate",
+            "name": "Scale (Client Onboarding)",
+            "price": "From £10 per client",
             "features_included": [
-              "Everything in the ‘Standard’ package, plus",
+              "2,000+ clients/year typical",
+              "Everything in Standard",
               "Bulk uploads",
               "API connectivity",
               "Unlimited custom forms",
-              "CSV & JSON exports",
-              "Integrations with your internal systems"
+              "Integrations with PMS"
             ]
           },
           {
-            "name": "Enterprise Candidate Check",
+            "name": "Enterprise (Client Onboarding)",
             "price": "Custom",
             "features_included": [
-              "Everything in the ‘Scale’ package, plus",
-              "Single-sign-on (SSO) functionality",
-              "AML consultancy and process review",
-              "Data hosting localisation",
+              "10,000+ clients/year typical",
+              "AML consultancy",
               "Bespoke migration & implementation",
-              "Dedicated account and implementation manager",
-              "Premium support with SLAs"
+              "Dedicated account manager"
             ]
           },
           {
-            "name": "Basic Plan",
-            "price": "Contact for pricing",
+            "name": "Standard (Staff Onboarding)",
+            "price": "From £7.50 per candidate",
             "features_included": [
-              "Client onboarding",
-              "Staff onboarding",
-              "Digital DBS checks"
+              "Minimum contract: £500/month",
+              "Right to Work check from £7.50",
+              "BPSS screening from £20",
+              "Automated referencing from £10"
             ]
           },
           {
-            "name": "Premium Plan",
-            "price": "Contact for pricing",
+            "name": "Scale (Staff Onboarding)",
+            "price": "From £6 per candidate",
             "features_included": [
-              "Anti-money laundering checks",
-              "Right to work checks",
-              "Automated employment references"
+              "1,250+ candidates/year typical",
+              "Right to Work check from £6.75",
+              "BPSS screening from £18",
+              "CSV & JSON exports",
+              "ATS integrations"
             ]
           },
           {
-            "name": "Professional Plan",
-            "price": "Contact for pricing",
+            "name": "Enterprise (Staff Onboarding)",
+            "price": "Custom",
             "features_included": [
-              "All Basic features",
-              "Pre-employment screening",
-              "Automated employment references",
-              "Client onboarding tools"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
-            "price": "Custom pricing",
-            "features_included": [
-              "All Professional features",
-              "Dedicated support",
-              "Custom integrations"
+              "10,000+ candidates/year typical",
+              "SSO functionality",
+              "AML consultancy",
+              "Data hosting localisation"
             ]
           }
         ],
@@ -8509,60 +7987,6 @@
               "Flexible data residency",
               "Request custom certifications",
               "Compliance Task Force"
-            ]
-          },
-          {
-            "name": "Basic Plan",
-            "price": "$19/month",
-            "features_included": [
-              "Identity verification",
-              "Fraud detection",
-              "Basic support"
-            ]
-          },
-          {
-            "name": "Pro Plan",
-            "price": "$49/month",
-            "features_included": [
-              "Advanced identity verification",
-              "Fraud detection",
-              "Priority support",
-              "API access"
-            ]
-          },
-          {
-            "name": "Enterprise Plan",
-            "price": "Custom pricing",
-            "features_included": [
-              "All features of Pro",
-              "Custom solutions",
-              "Dedicated account manager"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$29/month",
-            "features_included": [
-              "Identity verification",
-              "Fraud detection"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$99/month",
-            "features_included": [
-              "All Basic features",
-              "Document verification",
-              "API access"
-            ]
-          },
-          {
-            "name": "Enterprise",
-            "price": "Custom pricing",
-            "features_included": [
-              "All Pro features",
-              "Dedicated support",
-              "Custom integrations"
             ]
           }
         ],
@@ -9766,55 +9190,45 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Basic Plan",
-            "price": "$19/month",
+            "name": "Starter",
+            "price": "From €0.25 per verification",
             "features_included": [
-              "Identity verification",
-              "Document checks"
+              "Up to ~5,000 checks/month",
+              "Passport & ID verification",
+              "Biometric face match + basic liveness",
+              "Essential AML & sanctions screening",
+              "Dashboard access + basic API",
+              "No setup fee, no minimum commitment"
             ]
           },
           {
-            "name": "Pro Plan",
-            "price": "$49/month",
+            "name": "Growth",
+            "price": "From €0.18 per verification",
             "features_included": [
-              "Identity verification",
-              "Document checks",
-              "Enhanced fraud protection"
+              "5,000–50,000 checks/month",
+              "230+ country document coverage",
+              "Advanced biometrics & enhanced liveness",
+              "AML, sanctions, PEP, media checks",
+              "Full API + SDK",
+              "Custom rules & workflows"
             ]
           },
           {
-            "name": "Enterprise Plan",
-            "price": "Custom pricing",
+            "name": "Scale",
+            "price": "From €0.14 per verification",
             "features_included": [
-              "All Pro features",
-              "Custom integration options",
-              "Dedicated support"
-            ]
-          },
-          {
-            "name": "Basic",
-            "price": "$29/month",
-            "features_included": [
-              "Basic verification",
-              "Email support"
-            ]
-          },
-          {
-            "name": "Pro",
-            "price": "$99/month",
-            "features_included": [
-              "Advanced verification",
-              "Priority support",
-              "API access"
+              "Everything in Growth",
+              "50,000+ checks/month",
+              "Volume-based pricing"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "Custom",
+            "price": "From €0.10 per verification",
             "features_included": [
-              "Custom solutions",
-              "Dedicated account manager",
-              "Comprehensive support"
+              "Fully negotiable",
+              "No mandatory minimum commitment",
+              "Custom bundles for KYC, AML, sanctions, PEP, biometrics"
             ]
           }
         ],
