@@ -91,6 +91,36 @@ const softwareAppSchema = {
     bestRating: 5,
     worstRating: 1,
   },
+  ...(entry.data.scoreBreakdown
+    ? {
+        review: {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: entry.data.author,
+            url: `${siteConfig.seo.siteUrl}/about`,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "PrimeBiometry",
+            url: siteConfig.seo.siteUrl,
+          },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: entry.data.scoreBreakdown.total,
+            bestRating: 100,
+            worstRating: 0,
+          },
+          reviewBody: [
+            entry.data.bestFor ? `Best for: ${entry.data.bestFor}.` : "",
+            entry.data.avoidIf ? `Avoid if: ${entry.data.avoidIf}.` : "",
+          ]
+            .filter(Boolean)
+            .join(" "),
+          datePublished: entry.data.lastUpdated.toISOString().slice(0, 10),
+        },
+      }
+    : {}),
 };
 
 // Breadcrumb items
