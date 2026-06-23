@@ -34,6 +34,7 @@ const title = "KYC Cost Calculator 2026: 24 Vendors";
 const description =
   "Real KYC pricing for 24 vendors: per-check rates, monthly minimums, liveness and AML add-ons applied. Get your true monthly cost in 30 seconds.";
 const canonicalUrl = "https://primebiometry.com/tools/kyc-cost-calculator";
+const ogImage = "/og/kyc-cost-calculator.jpg";
 const lastUpdated = "2026-06-18";
 
 const faq = [
@@ -64,6 +65,7 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "KYC & AML Verification Cost Calculator",
+    description: "Free tool that calculates and compares monthly KYC and AML verification costs across 24+ vendors based on volume, liveness, and AML add-ons.",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: canonicalUrl,
@@ -96,7 +98,7 @@ const schema = [
 ];
 ---
 
-<BaseLayout {title} {description} {canonicalUrl} {schema}>
+<BaseLayout {title} {description} {canonicalUrl} {ogImage} {schema}>
   <div class="max-w-3xl mx-auto px-4 py-12">
     <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb" class="mb-6 text-sm text-zinc-500 dark:text-zinc-400">
