@@ -67,10 +67,10 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       "Document and country coverage. Global rollouts realistically need 180 plus countries supported; single-market players are usually fine in the 30 to 50 range.",
       "Sanctions and PEP data sources. Government lists (OFAC, EU, UN, UK HMT) are baseline. Commercial sources (Dow Jones Risk, LexisNexis Risk) widen coverage. Ask how often each list is refreshed because daily is the floor, intra-day is what crypto operators actually need.",
       "Compliance footprint. SOC 2 Type II, ISO 27001, and GDPR are baseline. US public-sector or banking buyers also want alignment with NIST 800-63 IAL2 or IAL3 depending on assurance level.",
-      "Per-check pricing. Look beyond the headline rate at the minimum monthly commitment, manual-review surcharges, and tier breakpoints. The right comparison is fully loaded cost at your projected volume, not the price quoted at the top of the page.",
-      "Conversion data. Vendor-published pass rate, drop-off rate, and median time-to-verify are useful but vary widely with traffic mix. Insist on a benchmark against a peer of your size and geography rather than the vendor's best-case cohort.",
+      "Per-check pricing. Look beyond the headline rate at the minimum monthly commitment, manual-review surcharges, and tier breakpoints. The right comparison is fully loaded cost at your projected volume, not the price quoted at the top of the page. See <a href=\"/blog/kyc-pricing-guide-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">KYC pricing guide 2026 →</a>",
+      "Conversion data. Vendor-published pass rate, drop-off rate, and median time-to-verify are useful but vary widely with traffic mix. Insist on a benchmark against a peer of your size and geography rather than the vendor's best-case cohort. Our <a href=\"/blog/veriff-vs-jumio-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">Veriff vs Jumio comparison</a> shows how conversion numbers differ in practice.",
       "Orchestration. Webhook reliability, idempotent APIs, async callbacks with sensible retry semantics, and the ability to fall back from one downstream provider to another are the engineering details that decide whether the integration survives a Black Friday traffic spike.",
-      "Audit trail. Immutable verification records exportable in regulator-friendly format. Plan for a 5 to 7 year retention window depending on jurisdiction.",
+      "Audit trail. Immutable verification records exportable in regulator-friendly format. Plan for a 5 to 7 year retention window depending on jurisdiction. Our <a href=\"/blog/best-kyc-aml-software-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">best KYC/AML software roundup</a> covers audit trail quality per vendor.",
     ],
     faq: [
       {
@@ -109,12 +109,12 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
     buyingCriteriaTitle: "How to evaluate an identity verification vendor",
     buyingCriteria: [
       "Document type coverage: passports, national IDs, driver's licences, residency permits, and military IDs depending on region. Plan for 180 plus countries on a global rollout, 30 to 50 for a single region.",
-      "Selfie and liveness. Passive liveness is the default for consumer onboarding because friction kills conversion. iBeta PAD Level 2 attestation is the floor for high-risk use cases like banking, healthcare, and government.",
+      "Selfie and liveness. Passive liveness is the default for consumer onboarding because friction kills conversion. iBeta PAD Level 2 attestation is the floor for high-risk use cases like banking, healthcare, and government. How the top two vendors compare on liveness: <a href=\"/blog/veriff-vs-jumio-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">Veriff vs Jumio 2026</a>.",
       "Database integration. Credit-bureau lookups, electoral roll, mobile operator data, and direct government registries where available. Coverage is regional and pass rates fluctuate, so plan for fallback orchestration when the primary source returns no match.",
       "Fraud signal layer. Device fingerprinting, velocity checks, repeat-document detection, and deepfake or synthetic-identity flags. Vendors with the strongest cross-customer data networks find synthetic identities that single-vendor solutions miss.",
       "Conversion benchmark. Insist on the vendor-published pass rate at the 7-day cohort level, not the raw single-attempt number. Anything below 85 percent on a standard customer mix is uncompetitive in 2026.",
       "Orchestration and workflow. No-code branching, conditional re-runs, manual review queues, and a clear escalation path to the compliance team. The tooling around the edges decides how much engineering time you spend after go-live.",
-      "Compliance footprint. SOC 2 Type II and ISO 27001 are baseline. eIDAS qualification is required for EU sectors that mandate it. FedRAMP is the gate for US public-sector deployments.",
+      "Compliance footprint. SOC 2 Type II and ISO 27001 are baseline. eIDAS qualification is required for EU sectors that mandate it. FedRAMP is the gate for US public-sector deployments. See compliance coverage by vendor in our <a href=\"/blog/best-kyc-aml-software-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">top IDV software roundup</a>.",
     ],
     faq: [
       {
@@ -152,10 +152,10 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
     ],
     buyingCriteriaTitle: "How to evaluate an AML vendor",
     buyingCriteria: [
-      "Sanctions list coverage. OFAC, EU, UN, and UK HMT lists are baseline, with regional lists layered on top. Daily refresh is the minimum acceptable cadence; intra-day refresh is what high-risk segments actually need.",
+      "Sanctions list coverage. OFAC, EU, UN, and UK HMT lists are baseline, with regional lists layered on top. Daily refresh is the minimum acceptable cadence; intra-day refresh is what high-risk segments actually need. See the <a href=\"/blog/kyc-aml-compliance-checklist-fintech-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">AML compliance checklist</a> for a full list of required data sources.",
       "PEP and adverse-media sources. Dow Jones Risk, LexisNexis Risk, and ComplyAdvantage are the standard commercial sources. Confirm coverage of non-Western names and language scripts because that is where most vendors fall short.",
       "Fuzzy-matching tuning. Ask for false-positive and false-negative rates at your specific tuning band. Insist on a benchmark run against your real customer base, not a generic test set.",
-      "Transaction monitoring rules. Both rule-based screens and ML scoring should be available. Just as important: can your compliance team deploy a custom rule without filing a vendor engineering ticket?",
+      "Transaction monitoring rules. Both rule-based screens and ML scoring should be available. Just as important: can your compliance team deploy a custom rule without filing a vendor engineering ticket? The <a href=\"/blog/best-kyc-aml-software-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">best AML software guide</a> compares rule-engine flexibility across vendors.",
       "Case management workflow. Alert triage, narrative templates, and direct SAR or STR filing integrations (FinCEN direct submission, goAML for FATF-aligned jurisdictions).",
       "Crypto KYT. For digital-asset businesses, wallet screening, integration with blockchain analytics providers (Chainalysis, TRM Labs, Elliptic), and Travel Rule routing capability are non-negotiable.",
       "Audit and reporting. Regulator-friendly export formats, immutable case history, and configurable retention typically in the 5 to 10 year range.",

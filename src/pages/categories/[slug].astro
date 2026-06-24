@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import VendorCard from "../../components/catalog/VendorCard.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
+import CategoryQuickFilters from "../../components/catalog/CategoryQuickFilters.astro";
 import {
   CATEGORY_SLUGS,
   buildItemListSchema,
@@ -79,7 +80,13 @@ const CATEGORY_BLOG_SLUGS: Record<string, string[]> = {
 const { categoryName } = Astro.props;
 const { slug } = Astro.params;
 
-const allPosts = await getCollection("blog");
+const [allPosts, assessments] = await Promise.all([
+  getCollection("blog"),
+  getCollection("assessments"),
+]);
+const bestForMap: Record<string, string | undefined> = Object.fromEntries(
+  assessments.map(a => [a.data.vendor, a.data.bestFor ?? undefined])
+);
 const relatedPosts = allPosts
   .filter((p) => (CATEGORY_BLOG_SLUGS[categoryName] ?? []).includes(p.slug))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
@@ -118,7 +125,17 @@ const faqSchema = content
     }
   : null;
 
-const schemas = faqSchema ? [itemListSchema, faqSchema] : [itemListSchema];
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "James Whitfield",
+  "url": `${siteConfig.seo.siteUrl}/about`,
+  "jobTitle": "KYC & Identity Verification Analyst",
+};
+
+const schemas = faqSchema
+  ? [itemListSchema, faqSchema, personSchema]
+  : [itemListSchema, personSchema];
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
@@ -138,9 +155,14 @@ const breadcrumbItems = [
 
     <div class="mt-6 mb-10">
       {lastUpdatedDisplay && (
-        <span class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-mono text-blue-700 dark:border-blue-900/40 dark:bg-blue-950/20 dark:text-blue-400">
-          Updated {lastUpdatedDisplay}
-        </span>
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-mono text-blue-700 dark:border-blue-900/40 dark:bg-blue-950/20 dark:text-blue-400">
+            Updated {lastUpdatedDisplay}
+          </span>
+          <span class="text-xs text-zinc-500 dark:text-zinc-400">
+            Reviewed by <a href="/about" class="text-blue-600 dark:text-blue-400 hover:underline">James Whitfield</a>, KYC &amp; Identity Verification Analyst
+          </span>
+        </div>
       )}
       <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
         Best {categoryName} Software 2026: Compare {vendors.length} Tools
@@ -154,7 +176,7 @@ const breadcrumbItems = [
         {CATEGORY_DESCRIPTIONS[categoryName]}
       </p>
       <p class="mt-3 text-sm text-zinc-500 dark:text-zinc-500">
-        Comparing {vendors.length} {vendors.length === 1 ? "vendor" : "vendors"}
+        <span id="vendor-count-text">{vendors.length} {vendors.length === 1 ? "vendor" : "vendors"}</span>
         {" · "}
         <a class="text-blue-600 dark:text-blue-400 hover:underline" href={`/vendors?category=${slug}`}>
           Refine with more filters →
@@ -162,9 +184,85 @@ const breadcrumbItems = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {vendors.map((v) => <VendorCard vendor={v} />)}
+    <CategoryQuickFilters />
+
+    <div class="flex items-center justify-between mb-3">
+      <span class="text-xs text-zinc-400 dark:text-zinc-500 select-none">Sort:</span>
+      <div class="flex items-center gap-1">
+        <button
+          data-sort="rating"
+          class="sort-btn sort-active rounded-md px-2.5 py-1 text-xs font-medium"
+        >Top Rated</button>
+        <button
+          data-sort="name"
+          class="sort-btn rounded-md px-2.5 py-1 text-xs font-medium"
+        >Name A-Z</button>
+      </div>
     </div>
+
+    <div id="vendor-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {vendors.map((v) => (
+        <VendorCard vendor={v} bestForSnippet={bestForMap[v.slug]} />
+      ))}
+    </div>
+
+    <style>
+      .sort-btn {
+        color: rgb(113 113 122); /* zinc-500 */
+        transition: color 0.15s, background 0.15s;
+      }
+      .sort-btn:hover {
+        color: rgb(39 39 42); /* zinc-800 */
+      }
+      .sort-btn.sort-active {
+        background: rgb(24 24 27); /* zinc-900 */
+        color: #fff;
+      }
+      @media (prefers-color-scheme: dark) {
+        .sort-btn {
+          color: rgb(161 161 170); /* zinc-400 */
+        }
+        .sort-btn:hover {
+          color: rgb(228 228 231); /* zinc-200 */
+        }
+        .sort-btn.sort-active {
+          background: rgb(244 244 245); /* zinc-100 */
+          color: rgb(24 24 27); /* zinc-900 */
+        }
+      }
+    </style>
+
+    <script>
+      (function () {
+        const grid = document.getElementById('vendor-grid');
+        if (!grid) return;
+
+        function sortVendors(mode: string) {
+          const cards = [...grid!.querySelectorAll<HTMLElement>('[data-vendor]')];
+          const featured = cards.filter(c => c.dataset.featured === 'true');
+          const regular  = cards.filter(c => c.dataset.featured !== 'true');
+
+          const comparator = mode === 'name'
+            ? (a: HTMLElement, b: HTMLElement) =>
+                (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '')
+            : (a: HTMLElement, b: HTMLElement) =>
+                parseFloat(b.dataset.rating ?? '0') - parseFloat(a.dataset.rating ?? '0');
+
+          featured.sort(comparator);
+          regular.sort(comparator);
+          [...featured, ...regular].forEach(c => grid!.appendChild(c));
+        }
+
+        const btns = document.querySelectorAll<HTMLButtonElement>('[data-sort]');
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('sort-active'));
+            btn.classList.add('sort-active');
+            sortVendors(btn.dataset.sort!);
+          });
+        });
+      })();
+    </script>
 
     {content && (
       <section class="mt-12 border-t border-zinc-200 dark:border-zinc-700 pt-10 max-w-[72ch]">
@@ -183,7 +281,7 @@ const breadcrumbItems = [
           {content.buyingCriteriaTitle}
         </h2>
         <ul class="flex flex-col gap-2 list-disc pl-5 text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
-          {content.buyingCriteria.map((point) => <li>{point}</li>)}
+          {content.buyingCriteria.map((point) => <li set:html={point} />)}
         </ul>
         <p class="mt-4 text-sm text-zinc-500">
           Read our full <a class="text-blue-600 dark:text-blue-400 hover:underline" href="/methodology">evaluation methodology →</a>

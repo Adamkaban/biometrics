@@ -139,7 +139,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Document authentication and biometric verification with deepfake-resistant matching."
+      "tagline": "Document authentication and biometric verification with deepfake-resistant matching.",
+      "has_assessment": true
     },
     {
       "name": "Digital Onboarding",
@@ -302,7 +303,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated document capture and remote onboarding with passive liveness checks."
+      "tagline": "Automated document capture and remote onboarding with passive liveness checks.",
+      "has_assessment": true
     },
     {
       "name": "Experian Identity proofing",
@@ -461,7 +463,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Data analytics-backed identity proofing for regulated financial services and insurers."
+      "tagline": "Data analytics-backed identity proofing for regulated financial services and insurers.",
+      "has_assessment": true
     },
     {
       "name": "UltraPass",
@@ -686,7 +689,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Passwordless facial-recognition authentication for fintech, gaming, and public sector."
+      "tagline": "Passwordless facial-recognition authentication for fintech, gaming, and public sector.",
+      "has_assessment": true
     },
     {
       "name": "Alice Biometrics",
@@ -855,7 +859,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Remote identity verification with quick selfie capture for high-volume user onboarding."
+      "tagline": "Remote identity verification with quick selfie capture for high-volume user onboarding.",
+      "has_assessment": true
     },
     {
       "name": "Recognito",
@@ -1077,7 +1082,8 @@
       },
       "region": "MENA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "NIST FRVT Top 1 face recognition and ID document verification with anti-spoofing."
+      "tagline": "NIST FRVT Top 1 face recognition and ID document verification with anti-spoofing.",
+      "has_assessment": true
     },
     {
       "name": "RegTechONE",
@@ -1343,7 +1349,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "All-in-one AML compliance platform for banks, insurers, and financial services."
+      "tagline": "All-in-one AML compliance platform for banks, insurers, and financial services.",
+      "has_assessment": true
     },
     {
       "name": "Fingera",
@@ -1472,7 +1479,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric attendance and access control with facial recognition and liveness detection."
+      "tagline": "Biometric attendance and access control with facial recognition and liveness detection.",
+      "has_assessment": true
     },
     {
       "name": "Zunoy Authenticator",
@@ -1703,7 +1711,8 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Two-factor authentication with TOTP codes and cloud backup for SaaS and e-commerce teams."
+      "tagline": "Two-factor authentication with TOTP codes and cloud backup for SaaS and e-commerce teams.",
+      "has_assessment": true
     },
     {
       "name": "Meon eKYC",
@@ -1928,7 +1937,8 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Electronic KYC with biometric liveness for banks, insurers, and telecom providers."
+      "tagline": "Electronic KYC with biometric liveness for banks, insurers, and telecom providers.",
+      "has_assessment": true
     },
     {
       "name": "Persona",
@@ -2112,7 +2122,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Configurable identity verification workflows for fintech, healthcare, and marketplaces."
+      "tagline": "Configurable identity verification workflows for fintech, healthcare, and marketplaces.",
+      "has_assessment": true
     },
     {
       "name": "IDnow Platform",
@@ -2292,7 +2303,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Document-and-biometric identity verification for banks, telecom, and regulated industries."
+      "tagline": "Document-and-biometric identity verification for banks, telecom, and regulated industries.",
+      "has_assessment": true
     },
     {
       "name": "xProof",
@@ -2467,7 +2479,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Global onboarding with advanced document verification and continuous fraud monitoring."
+      "tagline": "Global onboarding with advanced document verification and continuous fraud monitoring.",
+      "has_assessment": true
     },
     {
       "name": "1Kosmos Platform",
@@ -2556,7 +2569,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Decentralized identity verification with biometric and credential-based onboarding."
+      "tagline": "Decentralized identity verification with biometric and credential-based onboarding.",
+      "has_assessment": true
     },
     {
       "name": "Ping Identity Platform",
@@ -2702,7 +2716,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Centralized identity and access management with secure authentication for enterprises."
+      "tagline": "Centralized identity and access management with secure authentication for enterprises.",
+      "has_assessment": true
     },
     {
       "name": "Trust Swiftly",
@@ -2860,7 +2875,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Modular identity verification with 15+ check methods for fraud-prone online businesses."
+      "tagline": "Modular identity verification with 15+ check methods for fraud-prone online businesses.",
+      "has_assessment": true
     },
     {
       "name": "Identity Verification Platform",
@@ -2956,7 +2972,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Facial biometrics and document verification for fraud-resistant remote onboarding."
+      "tagline": "Facial biometrics and document verification for fraud-resistant remote onboarding.",
+      "has_assessment": true
     },
     {
       "name": "AuthenticID Identity Proofing",
@@ -3059,7 +3076,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated identity proofing with biometric checks and document analysis at scale."
+      "tagline": "Automated identity proofing with biometric checks and document analysis at scale.",
+      "has_assessment": true
     },
     {
       "name": "Data Zoo Flow",
@@ -3174,7 +3192,8 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Unified identity verification and compliance workflows for customer onboarding."
+      "tagline": "Unified identity verification and compliance workflows for customer onboarding.",
+      "has_assessment": true
     },
     {
       "name": "Digidentity",
@@ -3320,7 +3339,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Digital identity platform with verification, authentication, and electronic signatures."
+      "tagline": "Digital identity platform with verification, authentication, and electronic signatures.",
+      "has_assessment": true
     },
     {
       "name": "Real ID",
@@ -3410,7 +3430,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated KYC with facial recognition and document authentication for fast onboarding."
+      "tagline": "Automated KYC with facial recognition and document authentication for fast onboarding.",
+      "has_assessment": true
     },
     {
       "name": "Faceki",
@@ -3504,7 +3525,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Streamlined eKYC verification for resource-light teams in regulated industries."
+      "tagline": "Streamlined eKYC verification for resource-light teams in regulated industries.",
+      "has_assessment": true
     },
     {
       "name": "Biometric Agreement",
@@ -3623,7 +3645,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric e-signature verification with ID matching and liveness for legal agreements."
+      "tagline": "Biometric e-signature verification with ID matching and liveness for legal agreements.",
+      "has_assessment": true
     },
     {
       "name": "eFACiLiTY Time and Attendance System",
@@ -3715,7 +3738,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Real-time attendance tracking with biometric devices and mobile sign-in for workforces."
+      "tagline": "Real-time attendance tracking with biometric devices and mobile sign-in for workforces.",
+      "has_assessment": true
     },
     {
       "name": "Jumio",
@@ -3835,7 +3859,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Enterprise identity verification with orchestrator-level fraud prevention."
+      "tagline": "Enterprise identity verification with orchestrator-level fraud prevention.",
+      "has_assessment": true
     },
     {
       "name": "Biometric.Vision",
@@ -3973,7 +3998,8 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Facial recognition eKYC for digital onboarding and remote customer verification."
+      "tagline": "Facial recognition eKYC for digital onboarding and remote customer verification.",
+      "has_assessment": true
     },
     {
       "name": "Folio3 AI Face Recognition",
@@ -4105,7 +4131,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI face recognition with age, gender, and liveness detection for biometric apps."
+      "tagline": "AI face recognition with age, gender, and liveness detection for biometric apps.",
+      "has_assessment": true
     },
     {
       "name": "Oz Liveness",
@@ -4229,7 +4256,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Facial liveness detection and authentication built to combat biometric fraud at scale."
+      "tagline": "Facial liveness detection and authentication built to combat biometric fraud at scale.",
+      "has_assessment": true
     },
     {
       "name": "Mity",
@@ -4360,7 +4388,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI-powered identity verification with facial recognition and liveness for digital teams."
+      "tagline": "AI-powered identity verification with facial recognition and liveness for digital teams.",
+      "has_assessment": true
     },
     {
       "name": "EnQualify",
@@ -4446,7 +4475,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Mobile-native AI identity verification with on-device biometric checks for global users."
+      "tagline": "Mobile-native AI identity verification with on-device biometric checks for global users.",
+      "has_assessment": true
     },
     {
       "name": "Face Match",
@@ -4541,7 +4571,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Face biometric SDK for access control and KYC compliance in custom mobile applications."
+      "tagline": "Face biometric SDK for access control and KYC compliance in custom mobile applications.",
+      "has_assessment": true
     },
     {
       "name": "PXL Ident",
@@ -4643,7 +4674,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Swiss-made premium identity verification for regulated industries needing max security."
+      "tagline": "Swiss-made premium identity verification for regulated industries needing max security.",
+      "has_assessment": true
     },
     {
       "name": "FacePlugin",
@@ -4727,7 +4759,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Face recognition and liveness detection for ID verification in custom integrations."
+      "tagline": "Face recognition and liveness detection for ID verification in custom integrations.",
+      "has_assessment": true
     },
     {
       "name": "Edureg",
@@ -4864,7 +4897,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Modular student management with biometric attendance and access for schools."
+      "tagline": "Modular student management with biometric attendance and access for schools.",
+      "has_assessment": true
     },
     {
       "name": "Face Recognition API",
@@ -5003,7 +5037,8 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Developer-friendly computer vision APIs for face recognition and ID verification."
+      "tagline": "Developer-friendly computer vision APIs for face recognition and ID verification.",
+      "has_assessment": true
     },
     {
       "name": "Biometric Security",
@@ -5144,7 +5179,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric e-signature platform with secure file sharing and screen privacy controls."
+      "tagline": "Biometric e-signature platform with secure file sharing and screen privacy controls.",
+      "has_assessment": true
     },
     {
       "name": "ZipID",
@@ -5275,7 +5311,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Enterprise identity verification purpose-built for I-9 hiring with 99.8% face accuracy."
+      "tagline": "Enterprise identity verification purpose-built for I-9 hiring with 99.8% face accuracy.",
+      "has_assessment": true
     },
     {
       "name": "BAF",
@@ -5389,7 +5426,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric anti-fraud authentication with liveness and face matching for online services."
+      "tagline": "Biometric anti-fraud authentication with liveness and face matching for online services.",
+      "has_assessment": true
     },
     {
       "name": "azakaw",
@@ -5523,7 +5561,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Modular AML and KYC compliance platform for regulated businesses managing risk."
+      "tagline": "Modular AML and KYC compliance platform for regulated businesses managing risk.",
+      "has_assessment": true
     },
     {
       "name": "Tecalis Authentication",
@@ -5639,7 +5678,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Multi-factor authentication with biometric checks for enterprise products and services."
+      "tagline": "Multi-factor authentication with biometric checks for enterprise products and services.",
+      "has_assessment": true
     },
     {
       "name": "Biometric Attendance System",
@@ -5774,7 +5814,8 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Fingerprint attendance tracking with real-time entry-exit data for HR teams."
+      "tagline": "Fingerprint attendance tracking with real-time entry-exit data for HR teams.",
+      "has_assessment": true
     },
     {
       "name": "iDenfy",
@@ -6021,7 +6062,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated KYC and AML compliance for fintech, crypto, and gaming with global coverage."
+      "tagline": "Automated KYC and AML compliance for fintech, crypto, and gaming with global coverage.",
+      "has_assessment": true
     },
     {
       "name": "ComplyCube",
@@ -6311,7 +6353,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI-driven KYC, AML, and fraud prevention in one API for regulated digital businesses."
+      "tagline": "AI-driven KYC, AML, and fraud prevention in one API for regulated digital businesses.",
+      "has_assessment": true
     },
     {
       "name": "Mitek Systems",
@@ -6480,7 +6523,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Identity verification and fraud prevention for banks, fintech, and digital marketplaces."
+      "tagline": "Identity verification and fraud prevention for banks, fintech, and digital marketplaces.",
+      "has_assessment": true
     },
     {
       "name": "AU10TIX",
@@ -6730,7 +6774,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Scalable automated identity verification with airport-grade security for enterprises."
+      "tagline": "Scalable automated identity verification with airport-grade security for enterprises.",
+      "has_assessment": true
     },
     {
       "name": "Veriff",
@@ -7016,7 +7061,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Highly automated AI identity verification built for rapid global fintech scaling."
+      "tagline": "Highly automated AI identity verification built for rapid global fintech scaling.",
+      "has_assessment": true
     },
     {
       "name": "Ondato",
@@ -7257,7 +7303,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Global identity and age verification for KYC, AML, and onboarding in regulated markets."
+      "tagline": "Global identity and age verification for KYC, AML, and onboarding in regulated markets.",
+      "has_assessment": true
     },
     {
       "name": "Entrust IDV, formerly Onfido",
@@ -7458,7 +7505,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Secure onboarding and fraud-resistant identity verification for regulated enterprises."
+      "tagline": "Secure onboarding and fraud-resistant identity verification for regulated enterprises.",
+      "has_assessment": true
     },
     {
       "name": "Sumsub",
@@ -7684,7 +7732,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "All-in-one verification platform for user, business, and transaction monitoring."
+      "tagline": "All-in-one verification platform for user, business, and transaction monitoring.",
+      "has_assessment": true
     },
     {
       "name": "Luxand FaceSDK",
@@ -7925,7 +7974,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Cross-platform face recognition SDK with feature detection for embedded biometric apps."
+      "tagline": "Cross-platform face recognition SDK with feature detection for embedded biometric apps.",
+      "has_assessment": true
     },
     {
       "name": "Veridium",
@@ -8162,7 +8212,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Software-only passwordless authentication with multimodal biometrics for enterprises."
+      "tagline": "Software-only passwordless authentication with multimodal biometrics for enterprises.",
+      "has_assessment": true
     },
     {
       "name": "FaceOnLive Identity Verification Software",
@@ -8411,7 +8462,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "On-premise biometric identity verification with liveness and document checks for finance."
+      "tagline": "On-premise biometric identity verification with liveness and document checks for finance.",
+      "has_assessment": true
     },
     {
       "name": "Biometric Time Attendance System",
@@ -8603,7 +8655,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric workforce attendance with hardware and software for real-time monitoring."
+      "tagline": "Biometric workforce attendance with hardware and software for real-time monitoring.",
+      "has_assessment": true
     },
     {
       "name": "SentiVeillance Cluster",
@@ -8786,7 +8839,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Video surveillance with face identification and vehicle tracking for security teams."
+      "tagline": "Video surveillance with face identification and vehicle tracking for security teams.",
+      "has_assessment": true
     },
     {
       "name": "Regula",
@@ -8987,7 +9041,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Forensic-grade document verification and biometrics for regulated and government markets."
+      "tagline": "Forensic-grade document verification and biometrics for regulated and government markets.",
+      "has_assessment": true
     },
     {
       "name": "Incode",
@@ -9138,7 +9193,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI identity verification with biometrics and KYC for trust-critical enterprises."
+      "tagline": "AI identity verification with biometrics and KYC for trust-critical enterprises.",
+      "has_assessment": true
     },
     {
       "name": "Shufti",
@@ -9400,7 +9456,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Global KYC and AML compliance with identity and financial-crime risk screening."
+      "tagline": "Global KYC and AML compliance with identity and financial-crime risk screening.",
+      "has_assessment": true
     },
     {
       "name": "Amiqus",
@@ -9665,7 +9722,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Compliance onboarding for staff and clients in regulated sectors like legal and finance."
+      "tagline": "Compliance onboarding for staff and clients in regulated sectors like legal and finance.",
+      "has_assessment": true
     },
     {
       "name": "FaceTec 3D Face Authentication",
@@ -9861,7 +9919,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "3D face matching and liveness detection for passwordless enterprise authentication."
+      "tagline": "3D face matching and liveness detection for passwordless enterprise authentication.",
+      "has_assessment": true
     },
     {
       "name": "Identomat",
@@ -10156,7 +10215,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI-driven KYC and AML compliance with liveness and video verification for digital teams."
+      "tagline": "AI-driven KYC and AML compliance with liveness and video verification for digital teams.",
+      "has_assessment": true
     },
     {
       "name": "TalnFlo",
@@ -10350,7 +10410,8 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Dual-verified talent marketplace with video profiles and liveness checks for recruiters."
+      "tagline": "Dual-verified talent marketplace with video profiles and liveness checks for recruiters.",
+      "has_assessment": true
     },
     {
       "name": "CORE Identity Verification Solutions",
@@ -10592,7 +10653,8 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI identity verification with facial recognition and liveness for regulated industries."
+      "tagline": "AI identity verification with facial recognition and liveness for regulated industries.",
+      "has_assessment": true
     },
     {
       "name": "Imageware Authenticate",
@@ -10837,7 +10899,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Multi-modal biometric authentication with voice, fingerprint, and face for enterprises."
+      "tagline": "Multi-modal biometric authentication with voice, fingerprint, and face for enterprises.",
+      "has_assessment": true
     },
     {
       "name": "Video KYC Identity Verification Software",
@@ -11086,7 +11149,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Video-based KYC platform that eliminates repetitive customer outreach in onboarding."
+      "tagline": "Video-based KYC platform that eliminates repetitive customer outreach in onboarding.",
+      "has_assessment": true
     },
     {
       "name": "deepidv",
@@ -11324,7 +11388,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI identity verification with bank statement retrieval and document analysis for finance."
+      "tagline": "AI identity verification with bank statement retrieval and document analysis for finance.",
+      "has_assessment": true
     },
     {
       "name": "KYC Solution",
@@ -11561,7 +11626,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated KYC and KYB workflows for financial institutions and regulated industries."
+      "tagline": "Automated KYC and KYB workflows for financial institutions and regulated industries.",
+      "has_assessment": true
     },
     {
       "name": "SwiftDil",
@@ -11775,7 +11841,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "SaaS and API platform for KYC, AML, and identity checks in financial services."
+      "tagline": "SaaS and API platform for KYC, AML, and identity checks in financial services.",
+      "has_assessment": true
     },
     {
       "name": "Entrust Identity Verification",
@@ -11935,7 +12002,8 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Trusted onboarding with flexible identity verification for citizens and customers."
+      "tagline": "Trusted onboarding with flexible identity verification for citizens and customers.",
+      "has_assessment": true
     }
   ]
 }

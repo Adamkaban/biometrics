@@ -15,9 +15,10 @@ import {
 
 interface Props {
   vendor: Vendor;
+  bestForSnippet?: string;
 }
 
-const { vendor } = Astro.props;
+const { vendor, bestForSnippet } = Astro.props;
 
 const primaryCategory = vendor.primary_category ?? vendor.categories[0] ?? "";
 const cardClass = vendor.featured
@@ -33,6 +34,13 @@ const sourceAttribution = getSourceAttribution(vendor);
 const sdkTokens = (vendor.sdk_types ?? []).join(",");
 const complianceTokens = getActiveComplianceFlags(vendor).join(",");
 const industryTokens = getVendorIndustries(vendor).join(",");
+const pricingDisplay = vendor.starting_price === null
+  ? vendor.value_tier === "enterprise"
+    ? "Enterprise pricing · custom quote"
+    : vendor.value_tier === "mid"
+    ? "Mid-market · pricing on request"
+    : "Custom pricing"
+  : (vendor.pricing_summary || vendor.pricing);
 ---
 
 <a
@@ -49,6 +57,7 @@ const industryTokens = getVendorIndustries(vendor).join(",");
   data-sdks={sdkTokens}
   data-compliance={complianceTokens}
   data-industries={industryTokens}
+  data-global={vendor.global_claim}
   class={`flex flex-col gap-3 rounded-lg p-5 min-h-[420px] hover:shadow-md transition-shadow no-underline ${cardClass}`}
 >
   <!-- Logo + name + Featured pill -->
@@ -120,6 +129,12 @@ const industryTokens = getVendorIndustries(vendor).join(",");
     </p>
   )}
 
+  {bestForSnippet && (
+    <p class="line-clamp-2 text-xs italic text-zinc-500 dark:text-zinc-400 leading-relaxed">
+      <span class="not-italic font-medium text-zinc-400 dark:text-zinc-500">Best for:</span>{" "}{bestForSnippet}
+    </p>
+  )}
+
   <!-- Capability chips (verification_types || feature_flags) -->
   {capabilities.length > 0 && (
     <div class="flex flex-wrap gap-1">
@@ -160,7 +175,7 @@ const industryTokens = getVendorIndustries(vendor).join(",");
   <!-- Pricing + value tier -->
   <div class="flex items-center justify-between gap-2">
     <p class="text-sm text-zinc-700 dark:text-zinc-300 font-mono truncate">
-      {pricingLabel}
+      {pricingDisplay}
     </p>
     {valueTier && (
       <span class="shrink-0 text-xs rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-zinc-600 dark:text-zinc-400">

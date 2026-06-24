@@ -1,0 +1,106 @@
+---
+const chips = [
+  { id: "trial",  label: "Free Trial", attr: "data-trial",      val: "true",       mode: "exact"    },
+  { id: "global", label: "Global",     attr: "data-global",     val: "true",       mode: "exact"    },
+  { id: "sdk",    label: "API / SDK",  attr: "data-sdks",       val: "",           mode: "nonempty" },
+  { id: "soc2",   label: "SOC 2",      attr: "data-compliance", val: "soc2_type2", mode: "contains" },
+] as const;
+---
+
+<div class="flex flex-wrap items-center gap-2 mb-4" id="qf-wrap">
+  {chips.map(chip => (
+    <button
+      hidden
+      data-chip={chip.id}
+      data-attr={chip.attr}
+      data-val={chip.val}
+      data-mode={chip.mode}
+      aria-pressed="false"
+      class="rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-xs font-medium text-zinc-600 transition-colors hover:border-blue-300 hover:text-blue-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:border-blue-700 dark:hover:text-blue-400"
+    >
+      {chip.label}<span data-chip-count class="ml-1 tabular-nums text-zinc-400 dark:text-zinc-500"></span>
+    </button>
+  ))}
+</div>
+
+<script>
+  const wrap = document.getElementById('qf-wrap');
+  if (wrap) {
+    const chipBtns = wrap.querySelectorAll<HTMLButtonElement>('[data-chip]');
+    const cards = document.querySelectorAll<HTMLElement>('[data-vendor]');
+
+    function matches(card: HTMLElement, attr: string, val: string, mode: string): boolean {
+      const raw = card.getAttribute(attr) ?? '';
+      if (mode === 'exact') return raw === val;
+      if (mode === 'contains') return raw.split(',').includes(val);
+      if (mode === 'nonempty') return raw.trim() !== '';
+      return false;
+    }
+
+    // Init: count matches per chip, show only if >0
+    chipBtns.forEach(btn => {
+      const attr = btn.dataset.attr!;
+      const val = btn.dataset.val!;
+      const mode = btn.dataset.mode!;
+      const n = [...cards].filter(c => matches(c, attr, val, mode)).length;
+      if (n > 0) {
+        btn.hidden = false;
+        const countEl = btn.querySelector<HTMLElement>('[data-chip-count]');
+        if (countEl) countEl.textContent = `(${n})`;
+      }
+    });
+
+    let active: string | null = null;
+    const countText = document.getElementById('vendor-count-text');
+
+    function updateCountText(shown: number, total: number) {
+      if (!countText) return;
+      countText.textContent = active
+        ? `Showing ${shown} of ${total}`
+        : `${total} ${total === 1 ? 'vendor' : 'vendors'}`;
+    }
+
+    function setChipStyle(btn: HTMLButtonElement, on: boolean) {
+      if (on) {
+        btn.style.background = '#2563eb';
+        btn.style.color = '#ffffff';
+        btn.style.borderColor = '#2563eb';
+      } else {
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+
+    chipBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.chip!;
+        const attr = btn.dataset.attr!;
+        const val = btn.dataset.val!;
+        const mode = btn.dataset.mode!;
+
+        if (active === id) {
+          setChipStyle(btn, false);
+          cards.forEach(c => { c.hidden = false; });
+          active = null;
+          updateCountText(cards.length, cards.length);
+        } else {
+          if (active) {
+            const prev = wrap.querySelector<HTMLButtonElement>(`[data-chip="${active}"]`);
+            if (prev) setChipStyle(prev, false);
+          }
+          setChipStyle(btn, true);
+          active = id;
+          let shown = 0;
+          cards.forEach(c => {
+            const vis = matches(c, attr, val, mode);
+            c.hidden = !vis;
+            if (vis) shown++;
+          });
+          updateCountText(shown, cards.length);
+        }
+      });
+    });
+  }
+</script>

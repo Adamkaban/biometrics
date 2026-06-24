@@ -62,6 +62,8 @@ export type Vendor = {
   company: string;
   description: string;
   tagline?: string | null;
+  best_for?: string | null;
+  avoid_if?: string | null;
   primary_category: string | null;
   categories: string[];
   // marketing
