@@ -17,6 +17,10 @@ import {
   pickComplianceFlags,
   COMPLIANCE_LABELS,
   PROFILE_COMPLIANCE_ORDER,
+  getVendorIndustries,
+  getActiveComplianceFlags,
+  INDUSTRY_BUCKETS,
+  SDK_FILTER_LABELS,
 } from "../../lib/vendors";
 import type { Vendor } from "../../lib/vendors";
 import siteConfig from "../../../site.config";
@@ -146,6 +150,31 @@ const SDK_LABELS: Record<string, string> = {
   rest_api: "REST API",
   no_code: "No-Code",
 };
+
+const SDK_PAGE_SLUGS: Record<string, string> = {
+  web_sdk: "web-sdk",
+  ios_sdk: "ios-sdk",
+  android_sdk: "android-sdk",
+  rest_api: "rest-api",
+  no_code: "no-code",
+};
+const COMPLIANCE_PAGE_SLUGS: Record<string, string> = {
+  iso27001: "iso-27001",
+  soc2_type2: "soc-2",
+  ibeta_pad_l2: "ibeta-pad-l2",
+  gdpr: "gdpr",
+};
+
+const browseLinks: { href: string; label: string }[] = [
+  ...(vendor.sdk_types ?? [])
+    .filter((k) => SDK_PAGE_SLUGS[k])
+    .map((k) => ({ href: `/vendors/with/${SDK_PAGE_SLUGS[k]}`, label: SDK_FILTER_LABELS[k] ?? k })),
+  ...getActiveComplianceFlags(vendor)
+    .filter((k) => COMPLIANCE_PAGE_SLUGS[k])
+    .map((k) => ({ href: `/vendors/certified/${COMPLIANCE_PAGE_SLUGS[k]}`, label: COMPLIANCE_LABELS[k] })),
+  ...getVendorIndustries(vendor)
+    .map((k) => ({ href: `/vendors/for/${k}`, label: INDUSTRY_BUCKETS[k].label })),
+];
 
 const activeComplianceFlags = pickComplianceFlags(vendor, PROFILE_COMPLIANCE_ORDER);
 const integrationLabels = vendor.integration_methods?.length
@@ -606,6 +635,25 @@ const faqSchema = {
                 </div>
               )
             }
+
+            <!-- Also Browse -->
+            {browseLinks.length > 0 && (
+              <div>
+                <p class="text-xs uppercase tracking-wide text-zinc-500 mb-2">
+                  Also Browse
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  {browseLinks.map(({ href, label }) => (
+                    <a
+                      href={href}
+                      class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded-full px-2 py-0.5 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <!-- Data Sources -->
             <div>
