@@ -93,6 +93,18 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
         q: "What happens to KYC data after verification?",
         a: "Under GDPR, verification artefacts can only be stored for as long as AML regulation requires them, which is typically 5 years after the customer relationship ends in the EU and UK. Vendors with EU data residency offer scheduled document deletion or hashing once that window closes. US banks usually retain records for 5 to 7 years under FinCEN, and crypto exchanges face per-jurisdiction variation that often pushes retention even longer.",
       },
+      {
+        q: "What is KYB verification software?",
+        a: "KYB (Know Your Business) software applies identity checks to companies rather than individuals: business registration verification, beneficial ownership discovery, UBO screening against sanctions lists, and ongoing monitoring for adverse events. Most enterprise KYC platforms — Sumsub, Veriff, ComplyCube, Ondato — include KYB as a separate workflow. KYB checks are typically required for B2B onboarding in financial services and crypto under FATF Recommendation 24.",
+      },
+      {
+        q: "What is a KYC solution provider?",
+        a: "A KYC solution provider is a vendor that delivers identity verification and compliance checks as a service via API or no-code workflow. Types range from pure identity verification APIs (Veriff, iDenfy, Incode) to full compliance orchestration platforms (Sumsub, ComplyCube) that combine KYC, KYB, and AML monitoring. The 24 vendors in this directory cover the full spectrum from startup-friendly pay-as-you-go pricing to enterprise contracts with SLA guarantees.",
+      },
+      {
+        q: "What is the difference between KYC onboarding software and perpetual KYC?",
+        a: "KYC onboarding software runs a one-time identity check at customer registration: document verification, selfie match, sanctions screening. Perpetual KYC (pKYC) is an ongoing re-verification programme that triggers when a sanctions list updates, a customer's risk score changes, or adverse media appears. pKYC requires an event-driven architecture with near-real-time data feeds. Sumsub, Onfido, and ComplyCube offer pKYC workflows; most point solutions do not.",
+      },
     ],
     lastUpdated: "2026-06-18",
   },
