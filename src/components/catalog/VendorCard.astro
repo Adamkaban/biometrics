@@ -3,12 +3,10 @@ import {
   CARD_COMPLIANCE_ORDER,
   COMPLIANCE_LABELS,
   getActiveComplianceFlags,
-  getCapabilityLabels,
   getCoverageLabel,
   getSourceAttribution,
   getValueTierLabel,
   getVendorIndustries,
-  hasRatingData,
   pickComplianceFlags,
   type Vendor,
 } from "../../lib/vendors";
@@ -25,22 +23,28 @@ const cardClass = vendor.featured
   ? "border border-blue-200 bg-blue-50/50 dark:border-blue-600/30 dark:bg-blue-950/10"
   : "border border-zinc-200 bg-white dark:border-zinc-700 dark:bg-zinc-900";
 const topCompliance = pickComplianceFlags(vendor, CARD_COMPLIANCE_ORDER, 3);
-const pricingLabel = vendor.pricing_summary || vendor.pricing;
-const capabilities = getCapabilityLabels(vendor, 3);
 const coverage = getCoverageLabel(vendor);
 const valueTier = getValueTierLabel(vendor);
-const showRating = hasRatingData(vendor);
 const sourceAttribution = getSourceAttribution(vendor);
 const sdkTokens = (vendor.sdk_types ?? []).join(",");
 const complianceTokens = getActiveComplianceFlags(vendor).join(",");
 const industryTokens = getVendorIndustries(vendor).join(",");
+
+// 10+ reviews → full trust signal; 1-9 → muted, no star; 0 → hidden
+const hasHighConfidenceRating = vendor.rating > 0 && vendor.reviews_count >= 10;
+const hasLowConfidenceRating = vendor.rating > 0 && vendor.reviews_count > 0 && vendor.reviews_count < 10;
+
+// Text fallback when no concrete price — strip the redundant tier info
 const pricingDisplay = vendor.starting_price === null
   ? vendor.value_tier === "enterprise"
-    ? "Enterprise pricing · custom quote"
+    ? "Contact sales"
     : vendor.value_tier === "mid"
-    ? "Mid-market · pricing on request"
+    ? "Pricing on request"
     : "Custom pricing"
   : (vendor.pricing_summary || vendor.pricing);
+
+// Only show specific regional/country coverage — suppress all "Global" claims (baseline for IDV)
+const showCoverage = coverage && !vendor.global_claim;
 ---
 
 <a
@@ -75,7 +79,7 @@ const pricingDisplay = vendor.starting_price === null
           class="w-8 h-8 rounded object-contain"
         />
       </div>
-      <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100 truncate">
+      <span class="text-base font-semibold text-zinc-900 dark:text-zinc-100 truncate">
         {vendor.name}
       </span>
     </div>
@@ -86,8 +90,8 @@ const pricingDisplay = vendor.starting_price === null
     )}
   </div>
 
-  <!-- Rating row — source-attributed, hover tooltip -->
-  {showRating && (
+  <!-- Rating: high-confidence (10+ reviews) → amber star + tooltip -->
+  {hasHighConfidenceRating && (
     <div class="flex items-baseline gap-1.5">
       <span
         class="group relative inline-flex items-baseline gap-1 cursor-help"
@@ -113,6 +117,18 @@ const pricingDisplay = vendor.starting_price === null
     </div>
   )}
 
+  <!-- Rating: low-confidence (1-9 reviews) → muted text, no star -->
+  {hasLowConfidenceRating && (
+    <div class="flex items-baseline gap-1">
+      <span class="text-sm font-mono text-zinc-400 dark:text-zinc-500">
+        {vendor.rating.toFixed(1)}
+      </span>
+      <span class="text-xs text-zinc-400 dark:text-zinc-500">
+        · {vendor.reviews_count} {vendor.reviews_count === 1 ? "review" : "reviews"}
+      </span>
+    </div>
+  )}
+
   <!-- Category badge -->
   {primaryCategory && (
     <div>
@@ -122,27 +138,18 @@ const pricingDisplay = vendor.starting_price === null
     </div>
   )}
 
-  <!-- Description excerpt — prefers short B2B tagline, falls back to scraped description -->
+  <!-- Description — prefers B2B tagline, falls back to scraped description -->
   {(vendor.tagline || vendor.description) && (
-    <p class="line-clamp-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+    <p class="line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
       {vendor.tagline ?? vendor.description}
     </p>
   )}
 
   {bestForSnippet && (
-    <p class="line-clamp-2 text-xs italic text-zinc-500 dark:text-zinc-400 leading-relaxed">
-      <span class="not-italic font-medium text-zinc-400 dark:text-zinc-500">Best for:</span>{" "}{bestForSnippet}
-    </p>
-  )}
-
-  <!-- Capability chips (verification_types || feature_flags) -->
-  {capabilities.length > 0 && (
-    <div class="flex flex-wrap gap-1">
-      {capabilities.map(label => (
-        <span class="rounded-md bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-xs text-zinc-700 dark:text-zinc-300">
-          {label}
-        </span>
-      ))}
+    <div class="pl-3 border-l-2 border-blue-400 dark:border-blue-600">
+      <p class="line-clamp-2 text-sm text-zinc-900 dark:text-zinc-100 leading-snug">
+        <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide">Best for: </span>{bestForSnippet}
+      </p>
     </div>
   )}
 
@@ -160,38 +167,40 @@ const pricingDisplay = vendor.starting_price === null
     </div>
   )}
 
-  <!-- Coverage line — text + globe icon, no pill -->
-  {coverage && (
+  <!-- Coverage — only when it's more than just "Global" -->
+  {showCoverage && (
     <p class="inline-flex items-center gap-1 text-xs text-zinc-500 dark:text-zinc-400">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" aria-hidden="true">
-        <circle cx="128" cy="128" r="96"/>
-        <ellipse cx="128" cy="128" rx="40" ry="96"/>
-        <line x1="32" y1="128" x2="224" y2="128"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
       </svg>
       {coverage}
     </p>
   )}
 
-  <!-- Pricing + value tier -->
-  <div class="flex items-center justify-between gap-2">
-    <p class="text-sm text-zinc-700 dark:text-zinc-300 font-mono truncate">
-      {pricingDisplay}
-    </p>
-    {valueTier && (
-      <span class="shrink-0 text-xs rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-zinc-600 dark:text-zinc-400">
-        {valueTier}
-      </span>
-    )}
-  </div>
+  <!-- Pricing — full width, no truncation risk -->
+  <p class={`text-sm text-zinc-700 dark:text-zinc-300${vendor.starting_price !== null ? " font-mono" : ""}`}>
+    {pricingDisplay}
+  </p>
 
-  <!-- Free trial pill — emerald, check icon (distinguishes from compliance pills) -->
-  {vendor.has_free_trial && (
-    <span class="inline-flex w-fit items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400">
-      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-        <path d="m229.66 77.66-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69 218.34 66.34a8 8 0 0 1 11.32 11.32Z"/>
-      </svg>
-      Free trial
-    </span>
+  <!-- Tier + free trial — separate row, left-aligned -->
+  {(vendor.starting_price !== null && valueTier || vendor.has_free_trial) && (
+    <div class="flex flex-wrap items-center gap-1">
+      {vendor.starting_price !== null && valueTier && (
+        <span class="text-xs rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-zinc-600 dark:text-zinc-400">
+          {valueTier}
+        </span>
+      )}
+      {vendor.has_free_trial && (
+        <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+            <path d="m229.66 77.66-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69 218.34 66.34a8 8 0 0 1 11.32 11.32Z"/>
+          </svg>
+          Free trial
+        </span>
+      )}
+    </div>
   )}
 
   <!-- CTA -->
@@ -200,7 +209,7 @@ const pricingDisplay = vendor.starting_price === null
       Get Quote
     </span>
   ) : (
-    <span class="w-full border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 rounded-md px-4 py-2 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors text-center block mt-auto">
+    <span class="w-full border border-zinc-300 dark:border-zinc-600 text-zinc-800 dark:text-zinc-200 rounded-md px-4 py-2 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors text-center block mt-auto">
       View Profile
     </span>
   )}
