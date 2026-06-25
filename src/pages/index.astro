@@ -53,6 +53,67 @@ const breadcrumbSchema = {
   ],
 };
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Top Identity Verification & KYC Software",
+  description: "Independent comparison of leading identity verification, KYC, AML, and biometric authentication vendors",
+  numberOfItems: topVendors.length,
+  itemListElement: topVendors.map((v, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: v.name,
+    url: `https://primebiometry.com/vendors/${v.slug}`,
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the best identity verification software?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The best identity verification software depends on your use case. For high-volume fintech onboarding, iDenfy and Veriff lead on price and accuracy. For enterprise compliance, Jumio and Onfido offer broader document and country coverage. PrimeBiometry independently scores 69 vendors across compliance, integration depth, pricing transparency, and accuracy.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does KYC software cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "KYC software pricing ranges from $0.55 per verification (iDenfy pay-as-you-go) to $1.50+ per check at enterprise tier. Most platforms offer free trials or sandbox access. Monthly SaaS plans typically start at $299–$999/month for small teams. Pricing scales with verification volume, document types, and compliance certifications required.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between KYC and biometric verification?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "KYC (Know Your Customer) is a regulatory compliance process requiring identity checks before onboarding a user. Biometric verification is a technology method — liveness detection, face matching, fingerprint scanning — used to fulfill KYC requirements. Most modern KYC platforms include biometric verification, document verification, and deepfake detection as core steps.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which identity verification platforms are GDPR compliant?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most enterprise-grade platforms — iDenfy, Veriff, Onfido, Jumio, and ComplyCube — are GDPR compliant. Key signals to look for: SOC 2 Type II certification, ISO 27001, and EU data residency options. Our compliance coverage scores in each vendor profile reflect GDPR, CCPA, HIPAA, and iBeta PAD certification status.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I choose KYC compliance software?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Evaluate vendors on five criteria: (1) compliance certifications for your target markets (GDPR, CCPA, SOC 2), (2) document types and country coverage, (3) REST API and SDK integration depth, (4) per-verification pricing at your expected volume, and (5) liveness detection accuracy — iBeta PAD Level 2 is the industry benchmark for anti-spoofing. Read our full evaluation methodology for a detailed breakdown.",
+      },
+    },
+  ],
+};
+
 // Homepage schema: Organization + WebSite with SiteLinksSearchBox
 const schema = {
   "@context": "https://schema.org",
@@ -89,21 +150,21 @@ const schema = {
 ---
 
 <BaseLayout
-  title="KYC, AML & Biometric Software (2026)"
-  description="69 KYC, AML, and biometric vendors scored on price, accuracy, and compliance. iDenfy from $0.55/check, Veriff 99.6% accuracy. Independent, no paid placements."
+  title="Best Identity Verification & KYC Software 2026"
+  description="Compare 69 identity verification, KYC, and AML software vendors. Independent scores on price, accuracy, and compliance. iDenfy $0.55/check, Veriff 99.6% accuracy."
   canonicalUrl="https://primebiometry.com"
-  schema={[schema, breadcrumbSchema]}
+  schema={[schema, breadcrumbSchema, itemListSchema, faqSchema]}
 >
 
   <!-- 1. Hero ---------------------------------------------------------------->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-12 md:pt-24 md:pb-16">
     <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-      Compare KYC, AML, and Biometric<br class="hidden sm:block" /> Authentication Software
+      Compare Identity Verification,<br class="hidden sm:block" /> KYC & AML Software
     </h1>
     <p class="mt-4 text-base text-zinc-600 dark:text-zinc-400 max-w-[65ch] leading-relaxed">
       Independent analysis, ratings, and pricing comparison of {vendors.length}+
-      identity verification, AML compliance, and KYC software vendors for
-      enterprise IT and security teams.
+      identity verification, KYC compliance, AML, document verification, and
+      deepfake detection software vendors for enterprise security and compliance teams.
     </p>
 
     <!-- Search island with autocomplete -->
@@ -148,7 +209,7 @@ const schema = {
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
     <div class="flex items-center justify-between mb-6">
       <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-        Top Vendors
+        Top Identity Verification & KYC Vendors
       </h2>
       <a
         href="/vendors"
@@ -202,7 +263,77 @@ const schema = {
   <!-- 6. Calculator CTA ------------------------------------------------------>
   <CalculatorCTA />
 
-  <!-- 7. Blog preview (hidden until posts exist) ---------------------------->
+  <!-- 7. FAQ section ---------------------------------------------------------->
+  <section class="border-t border-zinc-200 dark:border-zinc-700 bg-zinc-50/50 dark:bg-zinc-950/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <h2 class="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-8">
+        Frequently Asked Questions
+      </h2>
+      <dl class="space-y-6">
+        <div>
+          <dt class="text-base font-medium text-zinc-900 dark:text-zinc-100">
+            What is the best identity verification software?
+          </dt>
+          <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            The best identity verification software depends on your use case. For high-volume fintech
+            onboarding, iDenfy and Veriff lead on price and accuracy. For enterprise compliance,
+            Jumio and Onfido offer broader document and country coverage. PrimeBiometry independently
+            scores {vendors.length} vendors across compliance, integration depth, pricing transparency, and accuracy.
+          </dd>
+        </div>
+        <div>
+          <dt class="text-base font-medium text-zinc-900 dark:text-zinc-100">
+            How much does KYC software cost?
+          </dt>
+          <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            KYC software pricing ranges from $0.55 per verification (iDenfy pay-as-you-go) to
+            $1.50+ per check at enterprise tier. Most platforms offer free trials or sandbox
+            access. Monthly SaaS plans start at $299–$999/month for small teams and scale with
+            verification volume, document types, and compliance certifications required.
+          </dd>
+        </div>
+        <div>
+          <dt class="text-base font-medium text-zinc-900 dark:text-zinc-100">
+            What is the difference between KYC and biometric verification?
+          </dt>
+          <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            KYC (Know Your Customer) is a regulatory compliance process requiring identity checks
+            before onboarding. Biometric verification is a technology method — liveness detection,
+            face matching, fingerprint scanning — used to fulfill KYC requirements. Most modern KYC
+            platforms include biometric verification, document verification, and deepfake detection
+            as core steps.
+          </dd>
+        </div>
+        <div>
+          <dt class="text-base font-medium text-zinc-900 dark:text-zinc-100">
+            Which identity verification platforms are GDPR compliant?
+          </dt>
+          <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Most enterprise-grade platforms — iDenfy, Veriff, Onfido, Jumio, and ComplyCube — are
+            GDPR compliant. Key signals: SOC 2 Type II certification, ISO 27001, and EU data
+            residency options. Our compliance coverage scores in each vendor profile reflect GDPR,
+            CCPA, HIPAA, and iBeta PAD certification status.
+          </dd>
+        </div>
+        <div>
+          <dt class="text-base font-medium text-zinc-900 dark:text-zinc-100">
+            How do I choose KYC compliance software?
+          </dt>
+          <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Evaluate vendors on five criteria: compliance certifications for your target markets
+            (GDPR, CCPA, SOC 2), document types and country coverage, REST API and SDK integration
+            depth, per-verification pricing at your expected volume, and liveness detection accuracy
+            — iBeta PAD Level 2 is the industry anti-spoofing benchmark.{" "}
+            <a href="/methodology" class="text-blue-600 dark:text-blue-400 hover:underline">
+              Read our full evaluation methodology →
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 8. Blog preview (hidden until posts exist) ---------------------------->
   {latestPosts.length > 0 && (
     <section class="border-t border-zinc-200 dark:border-zinc-700">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
