@@ -30,8 +30,8 @@ const CATEGORY_META: Record<string, { title: string; description: string }> = {
     description: "38 biometric auth platforms scored on liveness accuracy, ISO 30107 PAD certification, SDK coverage, and price. Open source to enterprise. Pick the right fit.",
   },
   "KYC Compliance": {
-    title: "Best KYC Compliance Software 2026: 24 Vendors",
-    description: "24 KYC platforms tested on per-check cost ($0.05 to $3), AML coverage, country support, monthly minimums. iDenfy wins low volume, Sumsub for crypto stacks.",
+    title: "Best KYC Software 2026: 24 Platforms Reviewed",
+    description: "Compare 24 KYC software platforms: per-check pricing ($0.05–$3), AML coverage, country support, monthly minimums. iDenfy wins low volume, Sumsub for crypto. Updated June 2026.",
   },
   "Identity Verification": {
     title: "Identity Verification 2026: 60 Vendors",
@@ -51,7 +51,7 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   "Biometric Authentication":
     "Biometric authentication software uses physical characteristics -- face, fingerprint, voice, or iris -- to verify identity. These solutions replace passwords with hardware sensors or software-based cameras, reducing credential theft risk while improving user experience.",
   "KYC Compliance":
-    "Know Your Customer (KYC) compliance software automates identity verification during customer onboarding. Regulated industries use these tools to verify government-issued IDs, screen against sanctions lists, and maintain audit trails for AML compliance.",
+    "Know Your Customer (KYC) compliance software automates identity verification, eKYC onboarding, and customer due diligence (CDD) for regulated industries. Fintechs, banks, and crypto exchanges use these platforms to verify government-issued IDs, apply a risk-based approach to onboarding, screen against sanctions and adverse media, and maintain immutable audit trails for AML compliance.",
   "Identity Verification":
     "Identity verification platforms confirm that users are who they claim to be by checking documents, selfies, and databases. Used in financial services, healthcare, and gig economy platforms for remote onboarding and access control.",
   "AML":
@@ -186,6 +186,37 @@ const breadcrumbItems = [
     </div>
 
     <CategoryQuickFilters />
+
+    {slug === "kyc-compliance" && (
+      <div class="mb-8 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900/50 p-5">
+        <p class="text-xs uppercase tracking-wide text-zinc-500 dark:text-zinc-400 mb-3 font-mono">Editor's top picks</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          <a href="/vendors/sumsub" class="flex items-start gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+            <span class="shrink-0 mt-0.5 rounded-full bg-blue-100 dark:bg-blue-950/40 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-400">Crypto / fintech</span>
+            <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">Sumsub</span>
+          </a>
+          <a href="/vendors/idenfy" class="flex items-start gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+            <span class="shrink-0 mt-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/40 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">Startups &lt;5k/mo</span>
+            <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">iDenfy</span>
+          </a>
+          <a href="/vendors/complycube" class="flex items-start gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+            <span class="shrink-0 mt-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-xs font-medium text-zinc-700 dark:text-zinc-300">Banks &amp; regulated</span>
+            <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">ComplyCube</span>
+          </a>
+          <a href="/vendors/veriff" class="flex items-start gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+            <span class="shrink-0 mt-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-xs font-medium text-zinc-700 dark:text-zinc-300">Global coverage</span>
+            <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">Veriff</span>
+          </a>
+          <a href="/vendors/ondato" class="flex items-start gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+            <span class="shrink-0 mt-0.5 rounded-full bg-amber-100 dark:bg-amber-950/40 px-2 py-0.5 text-xs font-medium text-amber-700 dark:text-amber-400">EU compliance</span>
+            <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">Ondato</span>
+          </a>
+        </div>
+        <p class="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+          Picks based on per-check cost, country coverage, and audit trail quality. See <a href="/methodology" class="text-blue-600 dark:text-blue-400 hover:underline">evaluation methodology →</a>
+        </p>
+      </div>
+    )}
 
     <div class="flex items-center justify-between mb-3">
       <span class="text-xs text-zinc-400 dark:text-zinc-500 select-none">Sort:</span>
