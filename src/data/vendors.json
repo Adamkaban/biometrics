@@ -5940,7 +5940,8 @@
         "Biometric Authentication",
         "Fraud Prevention",
         "Identity Verification",
-        "KYC Compliance"
+        "KYC Compliance",
+        "AML"
       ],
       "source": "g2",
       "source_url": "https://www.g2.com/search?query=biometric+authentication",

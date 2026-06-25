@@ -155,14 +155,14 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
 
   "AML": {
     intro:
-      "The best AML software in 2026 has to do three things at once: screen against a shifting sanctions landscape with intra-day refresh, monitor transactions in real time without drowning analysts in false positives, and handle crypto KYT alongside fiat in a single case-management surface. We compared nine platforms against those criteria. Picks are reviewed against our published methodology and refreshed monthly.",
+      "The best AML software in 2026 has to do three things at once: screen against a shifting sanctions landscape with intra-day refresh, monitor transactions in real time without drowning analysts in false positives, and handle crypto KYT alongside fiat in a single case-management surface. We compared 10 anti-money laundering software tools and platforms against those criteria. Picks are reviewed against our published methodology and refreshed monthly.",
     trendsTitle: "What is AML software in 2026?",
     trendsBody: [
-      "AML (Anti-Money Laundering) software monitors customer transactions, screens parties against sanctions and PEP lists, generates suspicious activity reports (SARs), and keeps audit trails ready for regulator review. It is required by FATF-aligned regimes for banks, payment processors, fintechs, crypto exchanges, and an expanding circle of gaming operators caught under FinCEN, the EU AMLD packages, and regional variants.",
+      "AML (Anti-Money Laundering) software monitors customer transactions, screens parties against sanctions and PEP lists, generates suspicious activity reports (SARs), and keeps audit trails ready for regulator review. It is required by FATF-aligned regimes for banks, payment processors, fintechs, crypto exchanges, and an expanding circle of gaming operators caught under FinCEN, the EU AMLD packages, and regional variants. Anti-money laundering software has evolved from batch overnight screening to real-time event-driven decisioning, with the shift accelerating after FinCEN's 2024 guidance on continuous monitoring requirements.",
       "Through 2026, real-time transaction monitoring has been replacing batch end-of-day rules. Vendors layer machine-learning anomaly detection on top of rule-based screens, and the published case studies show false-positive volume dropping 40 to 70 percent without missing true positives. Crypto-specific AML, branded by most vendors as KYT (Know Your Transaction), has split off into its own sub-category covering wallet screening, on-chain analytics, and FATF Travel Rule routing.",
       "Sanctions list complexity has grown sharply since the 2022 Russia and Iran sanctions and the layered sectoral lists that followed. Vendors compete on refresh frequency, fuzzy-matching accuracy, and adverse-media depth. The bigger procurement shift in 2026 is buyers wanting one platform that handles both fiat and crypto, instead of stitching two point solutions together at the case-management layer.",
     ],
-    buyingCriteriaTitle: "How to evaluate an AML vendor",
+    buyingCriteriaTitle: "How to evaluate AML software tools and platforms",
     buyingCriteria: [
       "Sanctions list coverage. OFAC, EU, UN, and UK HMT lists are baseline, with regional lists layered on top. Daily refresh is the minimum acceptable cadence; intra-day refresh is what high-risk segments actually need. See the <a href=\"/blog/kyc-aml-compliance-checklist-fintech-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">AML compliance checklist</a> for a full list of required data sources.",
       "PEP and adverse-media sources. Dow Jones Risk, LexisNexis Risk, and ComplyAdvantage are the standard commercial sources. Confirm coverage of non-Western names and language scripts because that is where most vendors fall short.",
@@ -170,12 +170,16 @@ export const CATEGORY_CONTENT: Record<string, CategoryContent> = {
       "Transaction monitoring rules. Both rule-based screens and ML scoring should be available. Just as important: can your compliance team deploy a custom rule without filing a vendor engineering ticket? The <a href=\"/blog/best-kyc-aml-software-2026\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">best AML software guide</a> compares rule-engine flexibility across vendors.",
       "Case management workflow. Alert triage, narrative templates, and direct SAR or STR filing integrations (FinCEN direct submission, goAML for FATF-aligned jurisdictions).",
       "Crypto KYT. For digital-asset businesses, wallet screening, integration with blockchain analytics providers (Chainalysis, TRM Labs, Elliptic), and Travel Rule routing capability are non-negotiable.",
-      "Audit and reporting. Regulator-friendly export formats, immutable case history, and configurable retention typically in the 5 to 10 year range.",
+      "Audit and reporting. Regulator-friendly export formats, immutable case history, and configurable retention typically in the 5 to 10 year range. For Tier-1 regulated banks with core-banking integration requirements, see our curated list of <a href=\"/vendors/for/banking\" class=\"text-blue-600 dark:text-blue-400 hover:underline\">AML-ready banking vendors →</a>",
     ],
     faq: [
       {
         q: "Is AML software mandatory?",
         a: "AML programmes are legally required for regulated entities under FATF-aligned regimes. That includes banks, money-service businesses, broker-dealers, crypto exchanges, certain insurers, and a growing list of gambling operators. Software itself is not strictly mandatory because manual screening can satisfy the rules, but the moment a business processes more than a few hundred customers a month, manual stops being feasible in practice.",
+      },
+      {
+        q: "What is the best AML software for banks?",
+        a: "Banks need AML software that integrates with core banking systems, supports direct SAR filing to FinCEN (goAML for FATF-aligned jurisdictions), and handles high transaction volumes without batch delays. The critical differentiators for banks versus fintechs are: real-time transaction monitoring at core-banking throughput, SWIFT message screening for correspondent banking, and configurable rules that a compliance team can deploy without vendor engineering tickets. RegTechONE, ComplyCube, and SwiftDil are among the platforms in this directory with documented bank deployments. Larger banks typically run enterprise contracts with Temenos, Oracle FCCM, or Actimize alongside a specialist crypto KYT layer.",
       },
       {
         q: "What is the difference between KYC and AML software?",
