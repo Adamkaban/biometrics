@@ -1,0 +1,95 @@
+{
+  "applied_at": "2026-06-28T20:10:26.922Z",
+  "changes": [
+    {
+      "slug": "entrust-idv-formerly-onfido",
+      "type": "year_fix",
+      "old": 1969,
+      "new": 2012
+    },
+    {
+      "slug": "sumsub",
+      "type": "year_fix",
+      "old": 2020,
+      "new": 2015
+    },
+    {
+      "slug": "complycube",
+      "type": "year_clear",
+      "old": 2007,
+      "kept": 2017
+    },
+    {
+      "slug": "amiqus",
+      "type": "year_fix",
+      "old": 2022,
+      "new": 2015
+    },
+    {
+      "slug": "persona",
+      "type": "year_clear",
+      "old": 2024,
+      "kept": 2018
+    },
+    {
+      "slug": "luxand-facesdk",
+      "type": "year_fix",
+      "old": 2015,
+      "new": 2005
+    },
+    {
+      "slug": "ondato",
+      "type": "year_fix",
+      "old": 2017,
+      "new": 2018
+    },
+    {
+      "slug": "shufti",
+      "type": "year_clear",
+      "old": 2016,
+      "kept": 2017
+    },
+    {
+      "slug": "veridium",
+      "type": "year_fix",
+      "old": 2015,
+      "new": 2012
+    },
+    {
+      "slug": "deepidv",
+      "type": "year_clear",
+      "old": 2024,
+      "kept": 2015
+    },
+    {
+      "slug": "recognito",
+      "type": "funding_hidden",
+      "reason": "IPO with only $15M — unusual"
+    },
+    {
+      "slug": "1kosmos-platform",
+      "type": "funding_hidden",
+      "reason": "Series B $1.3M < $5M threshold"
+    },
+    {
+      "slug": "biometric-agreement",
+      "type": "funding_hidden",
+      "reason": "Seed round $30M > $15M threshold"
+    },
+    {
+      "slug": "oz-liveness",
+      "type": "funding_hidden",
+      "reason": "$476M Private Equity for company with only 51-200 employees"
+    },
+    {
+      "slug": "enqualify",
+      "type": "funding_hidden",
+      "reason": "Seed round $18M > $15M threshold"
+    },
+    {
+      "slug": "biometric-attendance-system",
+      "type": "funding_hidden",
+      "reason": "IPO with only $9.4M — unusual"
+    }
+  ]
+}

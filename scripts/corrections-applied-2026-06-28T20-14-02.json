@@ -1,0 +1,10 @@
+{
+  "applied_at": "2026-06-28T20:14:02.616Z",
+  "changes": [
+    {
+      "file": "vendors.json",
+      "year_fixes": 10,
+      "funding_hidden": 0
+    }
+  ]
+}

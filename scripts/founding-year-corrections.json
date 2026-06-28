@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "entrust-idv-formerly-onfido",
+    "name": "Entrust IDV (formerly Onfido)",
+    "website_data_year": 1969,
+    "company_data_year": 2012,
+    "action": "set_website_data_year",
+    "suggested_year": 2012,
+    "confidence": "high",
+    "recommendation": "1969 is Entrust parent founding. Onfido founded 2012 at Oxford University. Display 2012.",
+    "source": "well-known fact"
+  },
+  {
+    "slug": "sumsub",
+    "name": "Sumsub",
+    "website_data_year": 2020,
+    "company_data_year": 2015,
+    "action": "set_website_data_year",
+    "suggested_year": 2015,
+    "confidence": "high",
+    "recommendation": "Sumsub founded 2015. 2020 is likely website_data scrape artifact. company_data=2015 is correct.",
+    "source": "well-known fact"
+  },
+  {
+    "slug": "complycube",
+    "name": "ComplyCube",
+    "website_data_year": 2017,
+    "company_data_year": 2007,
+    "action": "clear_company_data_year",
+    "suggested_year": 2017,
+    "confidence": "high",
+    "recommendation": "ComplyCube founded 2017. company_data=2007 is clearly wrong. website_data=2017 correct — remove conflicting company_data year.",
+    "source": "well-known fact"
+  },
+  {
+    "slug": "amiqus",
+    "name": "Amiqus",
+    "website_data_year": 2022,
+    "company_data_year": 2015,
+    "action": "set_website_data_year",
+    "suggested_year": 2015,
+    "confidence": "high",
+    "recommendation": "Amiqus (Scottish RegTech) founded 2015. 2022 in website_data is domain rebrand date. company_data=2015 correct.",
+    "source": "well-known fact"
+  },
+  {
+    "slug": "persona",
+    "name": "Persona",
+    "website_data_year": 2018,
+    "company_data_year": 2024,
+    "action": "clear_company_data_year",
+    "suggested_year": 2018,
+    "confidence": "high",
+    "recommendation": "persona.com founded 2018. company_data=2024 is scrape timestamp artifact. Clear it.",
+    "source": "well-known fact"
+  },
+  {
+    "slug": "luxand-facesdk",
+    "name": "Luxand FaceSDK",
+    "website_data_year": 2015,
+    "company_data_year": 2005,
+    "action": "set_website_data_year",
+    "suggested_year": 2005,
+    "confidence": "high",
+    "recommendation": "Luxand founded 2005. website_data=2015 is product relaunch date. Show 2005.",
+    "source": "well-known fact"
+  },
+  {
+    "slug": "ondato",
+    "name": "Ondato",
+    "website_data_year": 2017,
+    "company_data_year": 2018,
+    "action": "set_website_data_year",
+    "suggested_year": 2018,
+    "confidence": "medium",
+    "recommendation": "Ondato incorporated 2018 in Lithuania. website_data=2017 off by 1 year.",
+    "source": "known fact"
+  },
+  {
+    "slug": "shufti",
+    "name": "Shufti Pro",
+    "website_data_year": 2017,
+    "company_data_year": 2016,
+    "action": "clear_company_data_year",
+    "suggested_year": 2017,
+    "confidence": "medium",
+    "recommendation": "Shufti Pro public launch 2017. company_data=2016 may be dev start. Keep website_data=2017, clear company_data to remove conflict.",
+    "source": "known fact"
+  },
+  {
+    "slug": "veridium",
+    "name": "Veridium",
+    "website_data_year": 2015,
+    "company_data_year": 2012,
+    "action": "set_website_data_year",
+    "suggested_year": 2012,
+    "confidence": "medium",
+    "recommendation": "Veridium founded as BioID in 2012. website_data=2015 is product launch date. Show founding year 2012.",
+    "source": "known fact"
+  },
+  {
+    "slug": "deepidv",
+    "name": "deepidv",
+    "website_data_year": 2015,
+    "company_data_year": 2024,
+    "action": "clear_company_data_year",
+    "suggested_year": 2015,
+    "confidence": "high",
+    "recommendation": "company_data=2024 is scrape year artifact. Clear it.",
+    "source": "logic: 2024 is data collection year"
+  }
+]

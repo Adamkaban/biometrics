@@ -855,7 +855,8 @@
         "total_funding": "$15.0M",
         "funding_stage": "IPO",
         "_searched_at": "2026-06-01T11:51:46.913498",
-        "funding_display": true
+        "funding_display": false,
+        "_funding_display_original": true
       },
       "slug": "recognito",
       "featured": false,
@@ -1722,7 +1723,6 @@
         "_rescraped_at": "2026-06-01T12:10:34.512792"
       },
       "company_data": {
-        "founded_year": 2024,
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "total_funding": "$200.0M",
@@ -2086,7 +2086,8 @@
         "total_funding": "$1.3M",
         "funding_stage": "Series B",
         "_searched_at": "2026-06-01T11:46:34.623248",
-        "funding_display": true
+        "funding_display": false,
+        "_funding_display_original": true
       },
       "slug": "1kosmos-platform",
       "featured": false,
@@ -2870,7 +2871,8 @@
         "total_funding": "$30.0M",
         "funding_stage": "Seed",
         "_searched_at": "2026-06-01T11:46:48.260733",
-        "funding_display": true
+        "funding_display": false,
+        "_funding_display_original": true
       },
       "slug": "biometric-agreement",
       "featured": false,
@@ -3334,7 +3336,8 @@
         "total_funding": "$476.0M",
         "funding_stage": "Private Equity",
         "_searched_at": "2026-06-01T11:46:52.527310",
-        "funding_display": true
+        "funding_display": false,
+        "_funding_display_original": true
       },
       "slug": "oz-liveness",
       "featured": false,
@@ -3501,7 +3504,8 @@
         "total_funding": "$18.0M",
         "funding_stage": "Seed",
         "_searched_at": "2026-06-01T11:46:54.279600",
-        "funding_display": true
+        "funding_display": false,
+        "_funding_display_original": true
       },
       "slug": "enqualify",
       "featured": false,
@@ -4516,7 +4520,8 @@
         "total_funding": "$9.4M",
         "funding_stage": "IPO",
         "_searched_at": "2026-06-01T11:47:12.635792",
-        "funding_display": true
+        "funding_display": false,
+        "_funding_display_original": true
       },
       "slug": "biometric-attendance-system",
       "featured": false,
@@ -4968,7 +4973,6 @@
       "logo_url": "https://www.google.com/s2/favicons?domain=complycube.com&sz=128",
       "logo_source": "favicon",
       "company_data": {
-        "founded_year": 2007,
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "total_funding": "$196.0M",
@@ -5677,7 +5681,7 @@
         "supported_countries": "192",
         "accuracy_stats": "99.8%",
         "headquarters": "Lithuania",
-        "founded_year": 2017,
+        "founded_year": 2018,
         "free_trial_url": "https://ondato.com/book/",
         "pricing_plans": [
           {
@@ -5717,7 +5721,8 @@
           "https://ondato.com/product",
           "https://ondato.com/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:29:28.839769"
+        "_scraped_at": "2026-06-01T11:29:28.839769",
+        "_founded_year_original": 2018
       },
       "company_data": {
         "founded_year": 2018,
@@ -5879,7 +5884,7 @@
         "supported_countries": "Global",
         "accuracy_stats": "High accuracy in verification claims, detailed performance metrics available upon request",
         "headquarters": "Minneapolis, MN, USA",
-        "founded_year": 1969,
+        "founded_year": 2012,
         "free_trial_url": "https://www.entrust.com/resources/demos-trials",
         "_pages_scraped": [
           "https://www.entrust.com",
@@ -5887,7 +5892,8 @@
           "https://www.entrust.com/product",
           "https://www.entrust.com/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:30:11.338072"
+        "_scraped_at": "2026-06-01T11:30:11.338072",
+        "_founded_year_original": 2012
       },
       "company_data": {
         "founded_year": 2012,
@@ -6050,7 +6056,7 @@
         "supported_countries": "Worldwide",
         "accuracy_stats": "99.5% profile completion success rate",
         "headquarters": "Not specified",
-        "founded_year": 2020,
+        "founded_year": 2015,
         "free_trial_url": "https://sumsub.com/get-started/",
         "_pages_scraped": [
           "https://sumsub.com",
@@ -6059,7 +6065,8 @@
           "https://sumsub.com/product",
           "https://sumsub.com/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:30:22.806168"
+        "_scraped_at": "2026-06-01T11:30:22.806168",
+        "_founded_year_original": 2015
       },
       "company_data": {
         "founded_year": 2015,
@@ -6259,7 +6266,7 @@
         "supported_countries": "USA, Canada, UK, Australia",
         "accuracy_stats": "99.9% accuracy rate",
         "headquarters": "New York, NY",
-        "founded_year": 2015,
+        "founded_year": 2005,
         "free_trial_url": "https://vendor.com/free-trial",
         "_pages_scraped": [
           "https://www.g2.com/sellers/luxand-inc",
@@ -6275,7 +6282,8 @@
           "https://www.luxand.com/features"
         ],
         "_scraped_at": "2026-06-01T11:30:45.851012",
-        "_rescraped_at": "2026-06-01T12:16:51.548079"
+        "_rescraped_at": "2026-06-01T12:16:51.548079",
+        "_founded_year_original": 2005
       },
       "company_data": {
         "founded_year": 2005,
@@ -6471,7 +6479,7 @@
         "supported_countries": "Global",
         "accuracy_stats": "99.9% accuracy rate",
         "headquarters": "San Francisco, CA",
-        "founded_year": 2015,
+        "founded_year": 2012,
         "free_trial_url": "https://example.com/free-trial",
         "_pages_scraped": [
           "https://www.g2.com/sellers/veridium",
@@ -6487,7 +6495,8 @@
           "https://www.veridiumid.com/features"
         ],
         "_scraped_at": "2026-06-01T11:31:36.128567",
-        "_rescraped_at": "2026-06-01T12:18:03.972147"
+        "_rescraped_at": "2026-06-01T12:18:03.972147",
+        "_founded_year_original": 2012
       },
       "company_data": {
         "founded_year": 2012,
@@ -7499,7 +7508,6 @@
         "_scraped_at": "2026-06-01T11:34:49.782968"
       },
       "company_data": {
-        "founded_year": 2016,
         "employee_count_range": "201-500",
         "company_size_range": "201-500",
         "total_funding": "$20.0M",
@@ -7712,7 +7720,7 @@
         "supported_countries": "UK and EU",
         "accuracy_stats": "95% accuracy in identity verification",
         "headquarters": "UK",
-        "founded_year": 2022,
+        "founded_year": 2015,
         "free_trial_url": "https://amiqus.co/get-in-touch",
         "_pages_scraped": [
           "https://amiqus.co",
@@ -7721,7 +7729,8 @@
           "https://amiqus.co/product",
           "https://amiqus.co/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:34:52.282814"
+        "_scraped_at": "2026-06-01T11:34:52.282814",
+        "_founded_year_original": 2015
       },
       "company_data": {
         "founded_year": 2015,
@@ -9129,7 +9138,6 @@
         "_rescraped_at": "2026-06-01T12:21:03.474875"
       },
       "company_data": {
-        "founded_year": 2024,
         "employee_count_range": "2-10",
         "company_size_range": "1-10",
         "total_funding": "$1.4M",

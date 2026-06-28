@@ -49,7 +49,7 @@ const articleSchema = {
   author: {
     "@type": "Person",
     name: "James Whitfield",
-    jobTitle: "KYC & Identity Verification Analyst",
+    jobTitle: "Independent Researcher",
     url: "https://primebiometry.com/about",
   },
   publisher: {
@@ -137,9 +137,6 @@ if (post.data.faqItems && post.data.faqItems.length > 0) {
         <span>Updated {updatedDateStr}</span>
       </div>
 
-      <p class="text-xs text-zinc-500 dark:text-zinc-400 border-l-2 border-amber-400 pl-3 py-1">
-        Some links in this article may be affiliate links. PrimeBiometry earns a commission at no extra cost to you. This does not influence our editorial ratings or recommendations.
-      </p>
     </header>
 
     {post.data.ogImage && (
@@ -179,9 +176,9 @@ if (post.data.faqItems && post.data.faqItems.length > 0) {
     <footer class="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800">
       <div class="flex flex-col gap-3">
         <p class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">James Whitfield</p>
-        <p class="text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">KYC &amp; Identity Verification Analyst · PrimeBiometry</p>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">Independent Researcher · PrimeBiometry</p>
         <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-[65ch]">
-          James Whitfield founded PrimeBiometry to help compliance managers and IT teams cut through vendor marketing. He has evaluated 60+ identity verification platforms across fintech, banking, and crypto verticals.
+          James Whitfield is an independent researcher and the creator of PrimeBiometry. <a href="/about" class="text-blue-600 dark:text-blue-400 hover:underline">About the author →</a>
         </p>
         <a href="/methodology" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">
           Our evaluation methodology →

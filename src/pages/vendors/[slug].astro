@@ -216,22 +216,52 @@ const alternatives = primaryCategory
       .slice(0, 3)
   : [];
 
-// Auto-generate FAQPage from existing assessment + vendor data — no MDX changes needed
+// FAQ question variants — unique per vendor based on pricing type, integration complexity, bestFor phrase
+function faqQ1(v: Vendor, plans: typeof pricingPlans): string {
+  if (plans.length > 0 && plans[0].name && !/custom|contact|quote/i.test(plans[0].name)) {
+    return `What's included in ${v.name}'s ${plans[0].name} plan?`;
+  }
+  if (/contact|custom|request|quote/i.test(v.pricing ?? "")) {
+    return `Does ${v.name} publish its pricing, or is it quote-based?`;
+  }
+  return `How much does ${v.name} cost per verification?`;
+}
+
+function faqQ2(v: Vendor, bestFor: string): string {
+  const phrase = bestFor.replace(/[—–]/g, ",").split(",")[0].trim()
+    .split(/\s+/).slice(0, 4).join(" ").toLowerCase().replace(/\.$/, "");
+  return `Is ${v.name} a good fit for ${phrase}?`;
+}
+
+function faqQ3(v: Vendor, complexity: string): string {
+  const c = complexity.toLowerCase();
+  if (c === "low") return `How quickly can developers integrate ${v.name}?`;
+  if (c === "high") return `What technical resources does ${v.name} integration require?`;
+  return `What does ${v.name} integration typically involve?`;
+}
+
+function faqQ4(v: Vendor, avoidIf: string): string {
+  if (/enterprise|large.org|bank|regulated/i.test(avoidIf)) return `Is ${v.name} built for enterprise-scale deployments?`;
+  if (/startup|small|early.stage|budget/i.test(avoidIf)) return `Is ${v.name} affordable for smaller teams?`;
+  if (/volume|high.volume|scale/i.test(avoidIf)) return `How does ${v.name} handle high verification volumes?`;
+  return `What are the main trade-offs with ${v.name}?`;
+}
+
 const autoFaqItems = [
   {
-    q: `How much does ${vendor.name} cost?`,
+    q: faqQ1(vendor, pricingPlans),
     a: `${vendor.name} pricing: ${vendor.pricing}.${pricingPlans.length > 0 ? ` Plans available: ${pricingPlans.map((p) => `${p.name} at ${p.price}`).join(", ")}.` : ""}`,
   },
   {
-    q: `Who is ${vendor.name} best for?`,
+    q: faqQ2(vendor, entry.data.bestFor),
     a: entry.data.bestFor,
   },
   {
-    q: `How difficult is ${vendor.name} to integrate?`,
+    q: faqQ3(vendor, entry.data.integrationComplexity),
     a: `${vendor.name} has ${entry.data.integrationComplexity.toLowerCase()} integration complexity.`,
   },
   ...(entry.data.avoidIf
-    ? [{ q: `What are the limitations of ${vendor.name}?`, a: entry.data.avoidIf }]
+    ? [{ q: faqQ4(vendor, entry.data.avoidIf), a: entry.data.avoidIf }]
     : []),
 ];
 

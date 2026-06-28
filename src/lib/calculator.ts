@@ -1,4 +1,4 @@
-const GBP_TO_USD = 1.27;
+const GBP_TO_USD = 1.27; // June 2026 — update if rate shifts >5%
 
 export const LIVENESS_SURCHARGE_USD = 0.30;
 export const AML_SURCHARGE_USD = 0.10;

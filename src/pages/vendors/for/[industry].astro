@@ -9,6 +9,9 @@ import {
   getVendorIndustries,
   type IndustryBucketKey,
 } from "../../../lib/vendors";
+import { INDUSTRY_CONTENT } from "../../../lib/industry-content";
+import type { EditorPick } from "../../../lib/category-content";
+import { getCollection } from "astro:content";
 import siteConfig from "../../../../site.config";
 
 export async function getStaticPaths() {
@@ -24,6 +27,7 @@ interface Props {
 
 const { industryKey } = Astro.props;
 const bucket = INDUSTRY_BUCKETS[industryKey];
+const content = INDUSTRY_CONTENT[industryKey];
 
 const matched = vendors
   .filter((v) => getVendorIndustries(v).includes(industryKey))
@@ -33,63 +37,133 @@ const matched = vendors
     return b.rating - a.rating;
   });
 
-const INTRO: Record<IndustryBucketKey, string> = {
-  banking: `KYC, AML, and identity verification platforms purpose-built for retail and commercial banks. Compliance-first vendors that meet ISO 27001, SOC 2, and Tier-1 regulator expectations.`,
-  fintech: `Identity verification and KYC tools optimized for fintech onboarding velocity — fast SDK integration, per-check pricing, and global document coverage.`,
-  crypto: `Travel Rule, KYT, and identity verification vendors used by exchanges, wallets, and Web3 platforms. Covers FATF compliance and wallet-screening capabilities.`,
-  igaming: `Age verification, source-of-funds, and KYC platforms tuned for licensed online gambling, sportsbooks, and iGaming operators across UKGC, MGA, and Curaçao jurisdictions.`,
-  healthcare: `Identity assurance and patient verification platforms compliant with HIPAA and capable of supporting telehealth, e-prescribing, and provider credentialing workflows.`,
-  ecommerce: `Verification, age-gating, and fraud-prevention platforms optimized for high-volume e-commerce and marketplace onboarding with low friction at checkout.`,
+const assessments = await getCollection("assessments");
+const bestForMap: Record<string, string | undefined> = Object.fromEntries(
+  assessments.map((a) => [a.data.vendor, a.data.bestFor ?? undefined])
+);
+
+const INDUSTRY_META: Record<IndustryBucketKey, { title: string; description: string }> = {
+  banking: {
+    title: "Identity Verification for Banking 2026 | PrimeBiometry",
+    description: `Compare ${matched.length} KYC and AML platforms built for retail and commercial banks. BSA/OCC compliance, SAR filing, NIST 800-63 IAL2, and examiner-ready audit trails. Updated June 2026.`,
+  },
+  fintech: {
+    title: "KYC Software for Fintech & Neobanks 2026 | PrimeBiometry",
+    description: `Compare ${matched.length} identity verification platforms optimised for fintech onboarding velocity. Pay-as-you-go pricing, MiCA/PSD2 compliance, high conversion rates. Updated June 2026.`,
+  },
+  crypto: {
+    title: "Crypto KYC & Travel Rule Compliance 2026 | PrimeBiometry",
+    description: `Compare ${matched.length} KYC and KYT vendors for exchanges, wallets, and VASPs. FATF Travel Rule, MiCA Art.68, wallet screening, and on-chain analytics. Updated June 2026.`,
+  },
+  igaming: {
+    title: "iGaming KYC & Age Verification 2026 | PrimeBiometry",
+    description: `Compare ${matched.length} identity verification platforms for licensed gambling operators. UKGC LCCP, MGA, GAMSTOP, age verification, and source-of-funds checks. Updated June 2026.`,
+  },
+  healthcare: {
+    title: "Patient Identity Verification for Healthcare 2026 | PrimeBiometry",
+    description: `Compare ${matched.length} HIPAA-compliant identity verification platforms for telehealth, patient onboarding, and provider credentialing. NIST 800-63-3 IAL2. Updated June 2026.`,
+  },
+  ecommerce: {
+    title: "Age Verification & Fraud Prevention for E-commerce 2026",
+    description: `Compare ${matched.length} identity and fraud prevention platforms for online retail. Age gating, account takeover prevention, and chargeback reduction. Updated June 2026.`,
+  },
 };
 
-const intro = INTRO[industryKey];
-
-// Short labels for <title> to stay ≤60 chars after " | PrimeBiometry" suffix
-const SHORT_LABEL: Record<IndustryBucketKey, string> = {
-  banking: "Banking",
-  fintech: "Fintech",
-  crypto: "Crypto",
-  igaming: "iGaming",
-  healthcare: "Healthcare",
-  ecommerce: "E-commerce",
+const INDUSTRY_H1: Record<IndustryBucketKey, string> = {
+  banking:    "Best Identity Verification for Banking 2026",
+  fintech:    "Best KYC Software for Fintech & Neobanks 2026",
+  crypto:     "Best Crypto KYC & Travel Rule Compliance 2026",
+  igaming:    "Best iGaming KYC & Age Verification Platforms 2026",
+  healthcare: "Best Patient Identity Verification for Healthcare 2026",
+  ecommerce:  "Best Age Verification & Fraud Prevention for E-commerce 2026",
 };
 
-const title = `Best Biometric Vendors for ${SHORT_LABEL[industryKey]} 2026`;
-const description = `Compare ${matched.length} identity verification and biometric authentication vendors built for ${bucket.label.toLowerCase()}. Pricing, compliance, and integration options.`;
-const canonicalUrl = `https://primebiometry.com/vendors/for/${industryKey}`;
+const meta = INDUSTRY_META[industryKey];
+const h1 = INDUSTRY_H1[industryKey];
+const canonicalUrl = `${siteConfig.seo.siteUrl}/vendors/for/${industryKey}`;
 
 const itemListSchema = buildItemListSchema(
   matched,
-  `Biometric and Identity Verification Vendors for ${bucket.label}`,
+  `Identity Verification Vendors for ${bucket.label}`,
   siteConfig.seo.siteUrl,
 );
+
+const faqSchema = content
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: content.faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    }
+  : null;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "James Whitfield",
+  url: `${siteConfig.seo.siteUrl}/about`,
+  jobTitle: "Independent Researcher",
+};
+
+const schemas = faqSchema
+  ? [itemListSchema, faqSchema, personSchema]
+  : [itemListSchema, personSchema];
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
   { name: "Vendors", url: "/vendors" },
   { name: bucket.label, url: `/vendors/for/${industryKey}` },
 ];
+
+const PICK_COLOR_MAP: Record<EditorPick["color"], { pill: string }> = {
+  blue:    { pill: "bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400" },
+  emerald: { pill: "bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400" },
+  zinc:    { pill: "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300" },
+  amber:   { pill: "bg-amber-100 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400" },
+  red:     { pill: "bg-red-100 dark:bg-red-950/40 text-red-700 dark:text-red-400" },
+};
+
+const lastUpdatedDisplay = content
+  ? new Date(content.lastUpdated).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
 ---
 
 <BaseLayout
-  title={title}
-  description={description}
+  title={meta.title}
+  description={meta.description}
   canonicalUrl={canonicalUrl}
-  schema={itemListSchema}
+  schema={schemas}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-    <div class="mb-6">
-      <BreadcrumbSchema items={breadcrumbItems} />
-    </div>
+    <BreadcrumbSchema items={breadcrumbItems} />
 
-    <div class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-        Best Biometric Vendors for {bucket.label} 2026
+    <div class="mt-6 mb-10">
+      {lastUpdatedDisplay && (
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-mono text-blue-700 dark:border-blue-900/40 dark:bg-blue-950/20 dark:text-blue-400">
+            Updated {lastUpdatedDisplay}
+          </span>
+          <span class="text-xs text-zinc-500 dark:text-zinc-400">
+            Researched by <a href="/about" class="text-blue-600 dark:text-blue-400 hover:underline">James Whitfield</a> · PrimeBiometry
+          </span>
+        </div>
+      )}
+      <h1 class="mt-4 text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+        {h1}
       </h1>
-      <p class="mt-3 text-base text-zinc-600 dark:text-zinc-400 max-w-[65ch] leading-relaxed">
-        {intro}
-      </p>
-      <p class="mt-2 text-sm text-zinc-500 dark:text-zinc-500">
+      {content?.intro && (
+        <p class="mt-5 text-lg text-zinc-700 dark:text-zinc-300 max-w-[65ch] leading-relaxed">
+          {content.intro}
+        </p>
+      )}
+      <p class="mt-3 text-sm text-zinc-500 dark:text-zinc-500">
         {matched.length} {matched.length === 1 ? "vendor" : "vendors"} matched ·
         <a class="text-blue-600 dark:text-blue-400 hover:underline" href={`/vendors?industry=${industryKey}`}>
           Refine with more filters →
@@ -97,14 +171,159 @@ const breadcrumbItems = [
       </p>
     </div>
 
+    {content?.picks && content.picks.length > 0 && (
+      <div class="mb-8 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900/50 p-5">
+        <p class="text-xs uppercase tracking-wide text-zinc-500 dark:text-zinc-400 mb-3 font-mono">Editor's top picks</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+          {content.picks.map((pick) => (
+            <a href={`/vendors/${pick.slug}`} class="flex items-start gap-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3 hover:border-blue-300 dark:hover:border-blue-700 transition-colors">
+              <span class={`shrink-0 mt-0.5 rounded-full px-2 py-0.5 text-xs font-medium ${PICK_COLOR_MAP[pick.color].pill}`}>
+                {pick.label}
+              </span>
+              <span class="text-sm font-medium text-zinc-900 dark:text-zinc-100">{pick.name}</span>
+            </a>
+          ))}
+        </div>
+        {content.picksNote && (
+          <p class="mt-3 text-xs text-zinc-500 dark:text-zinc-400" set:html={content.picksNote} />
+        )}
+      </div>
+    )}
+
+    <div class="flex items-center justify-between mb-3">
+      <span class="text-xs text-zinc-400 dark:text-zinc-500 select-none">Sort:</span>
+      <div class="flex items-center gap-1">
+        <button
+          data-sort="rating"
+          class="sort-btn sort-active rounded-md px-2.5 py-1 text-xs font-medium"
+        >Top Rated</button>
+        <button
+          data-sort="name"
+          class="sort-btn rounded-md px-2.5 py-1 text-xs font-medium"
+        >Name A-Z</button>
+      </div>
+    </div>
+
     {matched.length > 0 ? (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 [&>a]:min-w-0">
-        {matched.map((v) => <VendorCard vendor={v} />)}
+      <div id="vendor-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 [&>a]:min-w-0">
+        {matched.map((v) => <VendorCard vendor={v} bestForSnippet={bestForMap[v.slug]} />)}
       </div>
     ) : (
       <p class="text-sm text-zinc-500 dark:text-zinc-400">
         No vendors currently tagged for this industry. <a class="text-blue-600 dark:text-blue-400 hover:underline" href="/vendors">Browse all vendors →</a>
       </p>
+    )}
+
+    <style>
+      .sort-btn {
+        color: rgb(113 113 122);
+        transition: color 0.15s, background 0.15s;
+      }
+      .sort-btn:hover {
+        color: rgb(39 39 42);
+      }
+      .sort-btn.sort-active {
+        background: rgb(24 24 27);
+        color: #fff;
+      }
+      @media (prefers-color-scheme: dark) {
+        .sort-btn {
+          color: rgb(161 161 170);
+        }
+        .sort-btn:hover {
+          color: rgb(228 228 231);
+        }
+        .sort-btn.sort-active {
+          background: rgb(244 244 245);
+          color: rgb(24 24 27);
+        }
+      }
+    </style>
+
+    <script>
+      (function () {
+        const grid = document.getElementById('vendor-grid');
+        if (!grid) return;
+        function sortVendors(mode: string) {
+          const cards = [...grid!.querySelectorAll<HTMLElement>('[data-vendor]')];
+          const featured = cards.filter(c => c.dataset.featured === 'true');
+          const regular  = cards.filter(c => c.dataset.featured !== 'true');
+          const comparator = mode === 'name'
+            ? (a: HTMLElement, b: HTMLElement) =>
+                (a.dataset.name ?? '').localeCompare(b.dataset.name ?? '')
+            : (a: HTMLElement, b: HTMLElement) =>
+                parseFloat(b.dataset.rating ?? '0') - parseFloat(a.dataset.rating ?? '0');
+          featured.sort(comparator);
+          regular.sort(comparator);
+          [...featured, ...regular].forEach(c => grid!.appendChild(c));
+        }
+        const btns = document.querySelectorAll<HTMLButtonElement>('[data-sort]');
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('sort-active'));
+            btn.classList.add('sort-active');
+            sortVendors(btn.dataset.sort!);
+          });
+        });
+      })();
+    </script>
+
+    {content && (
+      <section class="mt-12 border-t border-zinc-200 dark:border-zinc-700 pt-10 max-w-[72ch]">
+        <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+          {content.trendsTitle}
+        </h2>
+        <div class="flex flex-col gap-4 text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          {content.trendsBody.map((para) => <p>{para}</p>)}
+        </div>
+      </section>
+    )}
+
+    {content && (
+      <section class="mt-10 max-w-[72ch]">
+        <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+          {content.buyingCriteriaTitle}
+        </h2>
+        <ul class="flex flex-col gap-2 list-disc pl-5 text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          {content.buyingCriteria.map((point) => <li set:html={point} />)}
+        </ul>
+        <p class="mt-4 text-sm text-zinc-500">
+          Read our full <a class="text-blue-600 dark:text-blue-400 hover:underline" href="/methodology">evaluation methodology →</a>
+        </p>
+      </section>
+    )}
+
+    {content && (
+      <section class="mt-12 border-t border-zinc-200 dark:border-zinc-700 pt-10 max-w-[72ch]">
+        <h2 class="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+          Frequently asked questions
+        </h2>
+        <div class="flex flex-col gap-2">
+          {content.faq.map((item) => (
+            <details class="group rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-4 py-3">
+              <summary class="flex cursor-pointer list-none items-center justify-between text-base font-medium text-zinc-900 dark:text-zinc-100">
+                <span>{item.q}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="shrink-0 transition-transform group-open:rotate-180"
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
     )}
   </div>
 </BaseLayout>

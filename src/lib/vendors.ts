@@ -130,7 +130,9 @@ export type Vendor = {
     products?: string[];
   };
   company_data?: {
+    founded_year?: number;
     employee_count_range?: string;
+    company_size_range?: string;
     total_funding?: string;
     funding_stage?: string;
     funding_display?: boolean;

@@ -32,6 +32,13 @@ const categoryData = [
   count: vendors.filter((v) => v.categories.includes(c.name)).length,
 }));
 
+// FAQ stats — computed once, used in homepage FAQ answers
+const gdprCount = vendors.filter((v) => v.compliance_flags?.gdpr).length;
+const publishedPricingCount = vendors.filter((v) => {
+  const p = (v.pricing ?? "").toLowerCase();
+  return !p.includes("contact") && !p.includes("custom") && !p.includes("request") && p.trim() !== "";
+}).length;
+
 // Lightweight data for HeroSearch island
 const searchVendors = vendors.map((v) => ({ name: v.name, slug: v.slug }));
 const searchCategories = Object.entries(CATEGORY_SLUGS).map(([name, slug]) => ({ name, slug }));
@@ -287,9 +294,10 @@ const schema = {
           </dt>
           <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
             KYC software pricing ranges from $0.55 per verification (iDenfy pay-as-you-go) to
-            $1.50+ per check at enterprise tier. Most platforms offer free trials or sandbox
-            access. Monthly SaaS plans start at $299–$999/month for small teams and scale with
-            verification volume, document types, and compliance certifications required.
+            $1.50+ per check at enterprise tier. Of the {vendors.length} platforms we track, {publishedPricingCount} publish
+            pricing transparently — the rest require a sales call for a quote. Monthly SaaS plans start
+            at $299–$999/month for small teams and scale with verification volume, document types, and
+            compliance certifications required.
           </dd>
         </div>
         <div>
@@ -309,10 +317,10 @@ const schema = {
             Which identity verification platforms are GDPR compliant?
           </dt>
           <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Most enterprise-grade platforms — iDenfy, Veriff, Onfido, Jumio, and ComplyCube — are
-            GDPR compliant. Key signals: SOC 2 Type II certification, ISO 27001, and EU data
-            residency options. Our compliance coverage scores in each vendor profile reflect GDPR,
-            CCPA, HIPAA, and iBeta PAD certification status.
+            {gdprCount} of the {vendors.length} platforms we track carry GDPR compliance. Key signals to
+            check: EU data residency options, a signed DPA, and whether biometric data is stored as
+            mathematical templates rather than raw images. Our compliance scores in each vendor profile
+            reflect GDPR, CCPA, SOC 2, HIPAA, and iBeta PAD certification status.
           </dd>
         </div>
         <div>
