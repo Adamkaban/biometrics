@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BreadcrumbSchema from "../../components/seo/BreadcrumbSchema.astro";
 import ScoreBreakdown from "../../components/methodology/ScoreBreakdown.astro";
+import DecisionCard from "../../components/vendor/DecisionCard.astro";
 import MapPin from "phosphor-astro/MapPin.astro";
 import CalendarBlank from "phosphor-astro/CalendarBlank.astro";
 import Money from "phosphor-astro/Money.astro";
@@ -305,6 +306,15 @@ const faqSchema = {
           &middot; by {entry.data.author}
         </p>
 
+        <!-- Decision Card — verdict, Best For / Avoid If, price, compliance ✓/✗, CTA -->
+        <DecisionCard
+          vendor={vendor}
+          verdict={entry.data.verdict}
+          bestFor={entry.data.bestFor}
+          avoidIf={entry.data.avoidIf}
+          integrationComplexity={entry.data.integrationComplexity}
+        />
+
         <!-- PrimeBiometry Score (v2.0 methodology) — only when scoreBreakdown is present in frontmatter -->
         {entry.data.scoreBreakdown && (
           <ScoreBreakdown
@@ -319,10 +329,56 @@ const faqSchema = {
           />
         )}
 
-        <!-- Assessment MDX content -->
-        <div class="prose prose-zinc dark:prose-invert max-w-none">
-          <Content />
-        </div>
+        <!-- Quick Alternatives — horizontal panel, comparison-intent capture above the fold -->
+        {alternatives.length > 0 && (
+          <section class="mt-6 mb-8">
+            <div class="flex items-baseline justify-between mb-3">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-700 dark:text-zinc-300">
+                Top Alternatives
+              </h2>
+              <a
+                href={`/categories/${categorySlug}`}
+                class="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                See all {primaryCategory} →
+              </a>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-3">
+              {alternatives.map((alt) => {
+                const delta = +(alt.rating - vendor.rating).toFixed(1);
+                const deltaColor = delta > 0
+                  ? "text-emerald-600 dark:text-emerald-400"
+                  : delta < 0
+                    ? "text-zinc-400 dark:text-zinc-500"
+                    : "text-zinc-500 dark:text-zinc-400";
+                const deltaLabel = delta > 0 ? `+${delta}` : delta.toString();
+                return (
+                  <a
+                    href={`/vendors/${alt.slug}`}
+                    class="group flex flex-col gap-2 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
+                  >
+                    <div class="flex items-center justify-between gap-2">
+                      <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                        {alt.name}
+                      </p>
+                      <span class={`shrink-0 text-xs font-mono ${deltaColor}`}>
+                        {deltaLabel}
+                      </span>
+                    </div>
+                    <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400 truncate">
+                      {alt.pricing}
+                    </p>
+                    {alt.best_for && (
+                      <p class="text-xs text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-snug">
+                        {alt.best_for}
+                      </p>
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         <!-- Pricing plans table -->
         {
@@ -410,6 +466,39 @@ const faqSchema = {
           </section>
         )}
 
+        <!-- Proof screenshots — element-clipped captures of vendor site that confirm assessment claims -->
+        {vendor.screenshots && vendor.screenshots.length > 0 && (
+          <section class="mt-10">
+            <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-700 dark:text-zinc-300 mb-3">
+              Captured From {vendor.name}
+            </h2>
+            <div class="grid gap-4 sm:grid-cols-2">
+              {vendor.screenshots.map((shot) => (
+                <figure class="border border-zinc-200 dark:border-zinc-700 rounded-lg overflow-hidden bg-white dark:bg-zinc-950">
+                  <img
+                    src={shot.src}
+                    alt={shot.alt}
+                    title={shot.alt}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-auto block"
+                  />
+                  <figcaption class="px-3 py-2 text-xs text-zinc-600 dark:text-zinc-400 border-t border-zinc-100 dark:border-zinc-800">
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Editorial narrative — contextual depth after structured data -->
+        <section class="mt-10">
+          <div class="prose prose-zinc dark:prose-invert max-w-none">
+            <Content />
+          </div>
+        </section>
+
         <!-- Related blog posts -->
         {relatedPosts.length > 0 && (
           <section class="mt-10">
@@ -432,38 +521,6 @@ const faqSchema = {
           </section>
         )}
 
-        <!-- Compare alternatives -->
-        {alternatives.length > 0 && (
-          <section class="mt-10">
-            <h2 class="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
-              Compare Alternatives
-            </h2>
-            <div class="flex flex-col gap-3">
-              {alternatives.map((alt) => (
-                <a
-                  href={`/vendors/${alt.slug}`}
-                  class="group flex items-center justify-between gap-4 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4 hover:border-blue-300 dark:hover:border-blue-700 transition-colors"
-                >
-                  <div class="min-w-0">
-                    <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {alt.name}
-                    </p>
-                    <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">{alt.pricing}</p>
-                  </div>
-                  <span class="shrink-0 text-sm font-mono font-semibold text-zinc-700 dark:text-zinc-300">
-                    {alt.rating.toFixed(1)}
-                  </span>
-                </a>
-              ))}
-            </div>
-            <a
-              href={`/categories/${categorySlug}`}
-              class="mt-4 inline-block text-sm text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              See all {primaryCategory} vendors →
-            </a>
-          </section>
-        )}
       </div>
 
       <!-- Right 30% sticky sidebar -->

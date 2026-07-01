@@ -1,0 +1,322 @@
+{
+  "veriff": [
+    {
+      "url": "https://www.veriff.com/pricing",
+      "selector": "near:Pricing",
+      "alt": "Veriff per-verification pricing plans",
+      "caption": "Veriff's published pricing — confirms transparent per-check model.",
+      "claim": "transparent per-verification pricing"
+    },
+    {
+      "url": "https://www.veriff.com/product/identity-verification",
+      "selector": "near:Verify individuals",
+      "alt": "Veriff identity verification covering 230+ countries and territories",
+      "caption": "Verify individuals anywhere — Veriff's coverage claim, in their own words.",
+      "claim": "230+ country coverage"
+    }
+  ],
+  "complycube": [
+    {
+      "url": "https://www.complycube.com/en/pricing/",
+      "selector": "near:Pricing plans",
+      "alt": "ComplyCube Starter, Core, Growth and Enterprise pricing tiers",
+      "caption": "Four published tiers — Starter from $99/month, Growth and Enterprise sales-quoted.",
+      "claim": "Starter plan $99/mo, sales-quoted Growth + Enterprise"
+    },
+    {
+      "url": "https://www.complycube.com/en/security/",
+      "selector": "near:Certifications",
+      "alt": "ComplyCube certifications: ISO 27001, SOC 2, iBeta PAD, UK DiATF",
+      "caption": "Independently certified: ISO 27001, SOC 2, iBeta PAD, UK DiATF.",
+      "claim": "ISO 27001 + SOC 2 + iBeta PAD + UK DiATF certifications"
+    }
+  ],
+  "idenfy": [
+    {
+      "url": "https://www.idenfy.com/",
+      "selector": "near:Industries",
+      "alt": "iDenfy industries served — fintech, crypto, gaming KYC verification",
+      "caption": "iDenfy's industry coverage — fintech, crypto, gaming, e-commerce KYC.",
+      "claim": "Industry-specific KYC verification"
+    },
+    {
+      "url": "https://www.idenfy.com/about-us/",
+      "selector": "near:iDenfy",
+      "alt": "iDenfy company profile and customer base",
+      "caption": "iDenfy company snapshot — used for B2B social proof.",
+      "claim": "Established KYC vendor"
+    }
+  ],
+  "shufti": [
+    {
+      "url": "https://shuftipro.com/pricing/",
+      "selector": "near:Free",
+      "alt": "Shufti Pro free starter tier and pay-as-you-go pricing",
+      "caption": "Free tier confirmed — pay-as-you-go thereafter.",
+      "claim": "Free starter tier exists"
+    },
+    {
+      "url": "https://shuftipro.com/global-coverage/",
+      "selector": "near:Global",
+      "alt": "Shufti Pro 200+ country global coverage map",
+      "caption": "Document and biometric coverage across 200+ countries.",
+      "claim": "200+ country coverage"
+    }
+  ],
+  "facetec-3d-face-authentication": [
+    {
+      "url": "https://www.facetec.com/",
+      "selector": "near:3D",
+      "alt": "FaceTec 3D face authentication platform homepage",
+      "caption": "FaceTec's 3D face authentication positioning — homepage hero.",
+      "claim": "Pure 3D biometric face authentication SDK"
+    },
+    {
+      "url": "https://www.facetec.com/",
+      "selector": "near:HOW FaceTec WORKS",
+      "alt": "FaceTec how it works — 3D liveness and face matching mechanics",
+      "caption": "How FaceTec works — 3D Liveness, ID scan, and face matching pipeline.",
+      "claim": "3D liveness + face matching pipeline"
+    }
+  ],
+  "ondato": [
+    {
+      "url": "https://ondato.com/",
+      "selector": "near:KYC",
+      "alt": "Ondato EU-licensed KYC and identity verification platform",
+      "caption": "Ondato's EU KYC positioning — homepage hero.",
+      "claim": "EU-licensed KYC platform"
+    },
+    {
+      "url": "https://ondato.com/",
+      "selector": "near:Discover the Power of Ondato",
+      "alt": "Ondato platform stats — 192 countries, 30s onboarding, 15,000+ AML sources",
+      "caption": "Ondato's scale — 192 countries, 30-second onboarding, 15,000+ AML sources.",
+      "claim": "192-country coverage, 15,000+ AML data sources"
+    }
+  ],
+  "sumsub": [
+    {
+      "url": "https://sumsub.com/pricing/",
+      "selector": "near:Pricing",
+      "alt": "Sumsub per-verification pricing for KYC, AML and transaction monitoring",
+      "caption": "Sumsub's published per-verification pricing — KYC + AML in one API.",
+      "claim": "Transparent per-verification pricing"
+    },
+    {
+      "url": "https://sumsub.com/aml-screening/",
+      "selector": "near:AML",
+      "alt": "Sumsub AML screening bundled with KYC into one API",
+      "caption": "Sumsub's AML screening — same API stack as KYC verification.",
+      "claim": "KYC + AML in one API"
+    }
+  ],
+  "xproof": [
+    {
+      "url": "https://www.daon.com/xproof/",
+      "selector": "near:xProof",
+      "alt": "Daon xProof enterprise biometric identity proofing platform",
+      "caption": "xProof enterprise IDV — cloud or on-premise deployment.",
+      "claim": "Cloud or on-premise deployment"
+    },
+    {
+      "url": "https://www.daon.com/",
+      "selector": "near:Identity",
+      "alt": "Daon enterprise identity proofing and authentication platform",
+      "caption": "Daon's positioning — enterprise identity proofing platform.",
+      "claim": "Enterprise IDV vendor"
+    }
+  ],
+  "recognito": [
+    {
+      "url": "https://recognito.vision/",
+      "selector": "near:ID Document Verification",
+      "alt": "Recognito ID document verification flow — face recognition SDK",
+      "caption": "Recognito's document + face verification flow on the homepage.",
+      "claim": "End-to-end ID + face verification"
+    },
+    {
+      "url": "https://recognito.vision/",
+      "selector": "near:Face Biometrics",
+      "alt": "Recognito face biometrics verification including liveness and 1:1 match",
+      "caption": "Recognito's face biometrics: capture, 1:1 match, liveness.",
+      "claim": "Face biometrics with liveness"
+    }
+  ],
+  "amiqus": [
+    {
+      "url": "https://amiqus.co/",
+      "selector": "near:Compliance",
+      "alt": "Amiqus UK compliance platform for legal, HR and financial firms",
+      "caption": "Amiqus's positioning — UK/EU compliance platform homepage.",
+      "claim": "UK/EU compliance platform"
+    },
+    {
+      "url": "https://amiqus.co/",
+      "selector": "near:One platform for onboarding compliance",
+      "alt": "Amiqus single platform covering AML, right-to-work, BPSS, DBS and IDV",
+      "caption": "Amiqus's product breadth — AML, right-to-work, DBS, IDV in one platform.",
+      "claim": "Combined staff vetting + client KYC"
+    }
+  ],
+  "biometric-time-attendance-system": [
+    {
+      "url": "https://www.idemia.com/",
+      "selector": "near:Identity",
+      "alt": "IDEMIA identity and biometric workforce solutions homepage",
+      "caption": "IDEMIA's positioning — identity and biometric solutions for workforce.",
+      "claim": "IDEMIA identity + biometric platform"
+    },
+    {
+      "url": "https://www.idemia.com/biometrics",
+      "selector": "near:Biometric",
+      "alt": "IDEMIA biometric authentication for enterprise workforce identity",
+      "caption": "IDEMIA's biometric portfolio — backbone of the time-attendance product.",
+      "claim": "Enterprise-grade biometric hardware"
+    }
+  ],
+  "regula": [
+    {
+      "url": "https://regulaforensics.com/products/document-reader-sdk/",
+      "selector": "near:Document Reader",
+      "alt": "Regula Document Reader SDK forensic-grade document authentication",
+      "caption": "Document Reader SDK — Regula's forensic-grade auth engine.",
+      "claim": "Forensic-grade document authentication"
+    },
+    {
+      "url": "https://regulaforensics.com/",
+      "selector": "near:Proven Impact in Numbers",
+      "alt": "Regula impact — 50% lower onboarding cost, 254 countries covered, 99.8% precision",
+      "caption": "Regula's measured impact — 50% lower onboarding cost, 254-country coverage.",
+      "claim": "254-country coverage, 99.8% precision"
+    }
+  ],
+  "entrust-idv-formerly-onfido": [
+    {
+      "url": "https://www.entrust.com/products/identity-verification",
+      "selector": "near:Identity Verification",
+      "alt": "Entrust identity verification platform formerly known as Onfido",
+      "caption": "Entrust IDV — the rebrand of Onfido under the Entrust portfolio.",
+      "claim": "Identity verification (formerly Onfido)"
+    },
+    {
+      "url": "https://www.entrust.com/products/pki",
+      "selector": "near:PKI",
+      "alt": "Entrust PKI public key infrastructure and certificate lifecycle management",
+      "caption": "Entrust PKI — what bundles IDV into a broader credentialing stack.",
+      "claim": "PKI + credential issuance bundled with IDV"
+    }
+  ],
+  "veridium": [
+    {
+      "url": "https://www.veridiumid.com/biometric-authentication/",
+      "selector": "near:Active and Passive Biometrics",
+      "alt": "Veridium active and passive biometric authentication platform",
+      "caption": "Veridium's biometric methods — active and passive signals, FIDO, vFace.",
+      "claim": "Active + passive biometric MFA"
+    },
+    {
+      "url": "https://www.veridiumid.com/why-veridium/",
+      "selector": "near:Achieving Identity-first Security Without Compromise",
+      "alt": "Veridium identity-first security positioning for enterprise IAM",
+      "caption": "Veridium's positioning — identity-first security for enterprise IAM.",
+      "claim": "Identity-first enterprise IAM"
+    }
+  ],
+  "persona": [
+    {
+      "url": "https://withpersona.com/",
+      "selector": "near:Keeping the internet human",
+      "alt": "Persona configurable KYC and KYB identity platform",
+      "caption": "Persona's positioning — flexible and secure way to verify people and businesses online.",
+      "claim": "Configurable KYC/KYB workflows"
+    },
+    {
+      "url": "https://withpersona.com/",
+      "selector": "near:Building blocks for your ideal identity solution",
+      "alt": "Persona modular identity platform — verifications, fraud prevention, orchestration",
+      "caption": "Persona's modular building blocks — verifications, fraud signals, orchestration.",
+      "claim": "Modular identity platform with composable verifications"
+    }
+  ],
+  "mitek-systems": [
+    {
+      "url": "https://www.miteksystems.com/check-fraud-defender",
+      "selector": "near:Check",
+      "alt": "Mitek Check Fraud Defender used by US banks",
+      "caption": "Check Fraud Defender — the differentiator vs other IDV vendors.",
+      "claim": "Check fraud detection alongside IDV"
+    },
+    {
+      "url": "https://www.miteksystems.com/mobile-deposit",
+      "selector": "near:Mobile",
+      "alt": "Mitek mobile deposit and ID capture SDK for banks",
+      "caption": "Mobile ID capture SDK — used by top US banks at scale.",
+      "claim": "Mobile ID capture used by US banks"
+    }
+  ],
+  "luxand-facesdk": [
+    {
+      "url": "https://www.luxand.com/facesdk/",
+      "selector": "near:FaceSDK",
+      "alt": "Luxand FaceSDK cross-platform face recognition library",
+      "caption": "FaceSDK — cross-platform with on-premise deployment.",
+      "claim": "Cross-platform SDK with on-prem option"
+    },
+    {
+      "url": "https://www.luxand.com/facesdk/download/",
+      "selector": "near:Download",
+      "alt": "Luxand FaceSDK download options for Windows, Linux, macOS, iOS, Android",
+      "caption": "Downloads for every major OS — proof of cross-platform reach.",
+      "claim": "Windows + Linux + macOS + iOS + Android builds"
+    }
+  ],
+  "entrust-identity-verification": [
+    {
+      "url": "https://www.entrust.com/products/identity-verification",
+      "selector": "near:Identity Verification",
+      "alt": "Entrust Identity Verification PKI-backed IDV platform",
+      "caption": "Entrust IDV product — PKI-backed identity verification.",
+      "claim": "PKI-backed identity verification"
+    },
+    {
+      "url": "https://www.entrust.com/products/pki",
+      "selector": "near:PKI Software Solutions Features",
+      "alt": "Entrust PKI software solutions features bundled with identity verification",
+      "caption": "Entrust's PKI stack — what bundles IDV into broader credentialing.",
+      "claim": "PKI + identity verification stack"
+    }
+  ],
+  "incode": [
+    {
+      "url": "https://www.incode.com/",
+      "selector": "near:Power a world of trust",
+      "alt": "Incode end-to-end identity verification — Gartner Magic Quadrant leader",
+      "caption": "Incode's positioning — Gartner Magic Quadrant leader for identity verification.",
+      "claim": "Gartner-leader end-to-end IDV"
+    },
+    {
+      "url": "https://www.incode.com/products",
+      "selector": "near:Incode",
+      "alt": "Incode product portfolio — identity verification and authentication suite",
+      "caption": "Incode's product suite — verification, authentication, business trust.",
+      "claim": "Full product suite covering verification + authentication"
+    }
+  ],
+  "1kosmos-platform": [
+    {
+      "url": "https://www.1kosmos.com/",
+      "selector": "near:Identity verification that",
+      "alt": "1Kosmos decentralized identity platform homepage",
+      "caption": "1Kosmos positioning — decentralized identity for workforce + customer.",
+      "claim": "Decentralized identity platform"
+    },
+    {
+      "url": "https://www.1kosmos.com/",
+      "selector": "near:Modern identity across the user lifecycle",
+      "alt": "1Kosmos modern identity across user lifecycle — passwordless biometric MFA",
+      "caption": "1Kosmos coverage — verification, authentication, recovery across the full user lifecycle.",
+      "claim": "Full user-lifecycle identity"
+    }
+  ]
+}

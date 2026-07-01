@@ -1,0 +1,127 @@
+
+=== veriff ===
+  ✓ public/images/vendors/veriff-1.webp
+  ✓ public/images/vendors/veriff-2.webp
+
+=== complycube ===
+  ✓ public/images/vendors/complycube-1.webp
+  ✓ public/images/vendors/complycube-2.webp
+
+=== idenfy ===
+  ✗ near: text not found — "Identity"
+  ✓ public/images/vendors/idenfy-2.webp
+
+=== shufti ===
+  ✓ public/images/vendors/shufti-1.webp
+  ✓ public/images/vendors/shufti-2.webp
+
+=== facetec-3d-face-authentication ===
+  ✓ public/images/vendors/facetec-3d-face-authentication-1.webp
+  ✗ near: text not found — "Liveness"
+
+=== ondato ===
+  ✓ public/images/vendors/ondato-1.webp
+  ✗ near: text not found — "AML"
+
+=== sumsub ===
+  ✓ public/images/vendors/sumsub-1.webp
+  ✓ public/images/vendors/sumsub-2.webp
+
+=== xproof ===
+  ✓ public/images/vendors/xproof-1.webp
+  ✓ public/images/vendors/xproof-2.webp
+
+=== recognito ===
+  ✓ public/images/vendors/recognito-1.webp
+  ✓ public/images/vendors/recognito-2.webp
+
+=== amiqus ===
+  ✓ public/images/vendors/amiqus-1.webp
+  ✗ near: text not found — "Amiqus"
+
+=== biometric-time-attendance-system ===
+  ✓ public/images/vendors/biometric-time-attendance-system-1.webp
+  ✓ public/images/vendors/biometric-time-attendance-system-2.webp
+
+=== regula ===
+  ✓ public/images/vendors/regula-1.webp
+  ✗ near: text not found — "Products"
+
+=== entrust-idv-formerly-onfido ===
+  ✓ public/images/vendors/entrust-idv-formerly-onfido-1.webp
+  ✗ locator.screenshot: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator('[data-shot-marker="shot-target-26-1782854351863"]').first()
+
+
+=== veridium ===
+  ✗ page.goto: net::ERR_CONNECTION_RESET at https://www.veridiumid.com/biometric-authentication/
+Call log:
+  - navigating to "https://www.veridiumid.com/biometric-authentication/", waiting until "domcontentloaded"
+
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.veridiumid.com/why-veridium/", waiting until "domcontentloaded"
+
+
+=== persona ===
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://withpersona.com/", waiting until "domcontentloaded"
+
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://withpersona.com/solutions", waiting until "domcontentloaded"
+
+
+=== mitek-systems ===
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.miteksystems.com/check-fraud-defender", waiting until "domcontentloaded"
+
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.miteksystems.com/mobile-deposit", waiting until "domcontentloaded"
+
+
+=== luxand-facesdk ===
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.luxand.com/facesdk/", waiting until "domcontentloaded"
+
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.luxand.com/facesdk/download/", waiting until "domcontentloaded"
+
+
+=== entrust-identity-verification ===
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.entrust.com/products/identity-verification", waiting until "domcontentloaded"
+
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.entrust.com/solutions/identity", waiting until "domcontentloaded"
+
+
+=== incode ===
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://incode.com/", waiting until "domcontentloaded"
+
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://incode.com/", waiting until "domcontentloaded"
+
+
+=== 1kosmos-platform ===
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.1kosmos.com/", waiting until "domcontentloaded"
+
+  ✗ page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.1kosmos.com/", waiting until "domcontentloaded"
+
+
+20/40 captured. Log: scripts/logs/screenshot-run-2026-06-30.json

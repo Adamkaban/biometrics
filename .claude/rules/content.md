@@ -11,38 +11,70 @@ Every piece of content must demonstrate Experience, Expertise, Authoritativeness
 
 ## Vendor Assessments (src/content/assessments/[slug].mdx)
 
-Each assessment file provides the original editorial layer for a vendor page.
-Required sections:
+The vendor page renders a **DecisionCard** above the fold from frontmatter alone (verdict + bestFor + avoidIf + integrationComplexity + compliance/price auto-pulled from `vendors.json`). The MDX body is **narrative-only** — contextual depth for buyers who scrolled past the decision tool. Do NOT repeat Best For / Avoid If / compliance table / integration complexity inside the MDX body — those duplicate the DecisionCard.
 
-```mdx
+### Frontmatter (structured decision data)
+
+```yaml
 ---
 vendor: idenfy
 lastUpdated: 2026-06-01
 author: [Author Name]
+metaTitle: "[Vendor] [Year]: [hook]"           # optional
+metaDescription: "[150-160 chars]"             # optional
+verdict: "[1-2 sentences. Editorial verdict — what makes this vendor distinctive or risky. Renders above the fold in DecisionCard.]"
+bestFor: "[Named segment + size + jurisdiction. 'Fintech, 500-5000 verifications/month, EU' beats 'great for fintech'.]"
+avoidIf: "[Specific honest tradeoff. Not 'not for everyone'.]"
+integrationComplexity: Low | Medium | High
+hasFreeTrialVerified: true                     # optional
+scoreBreakdown:                                # optional, methodology 2.0
+  compliance: 20
+  integration: 24
+  marketCoverage: 5
+  pricingTransparency: 5
+  userSentiment: 15
+  total: 69
+  scoredAt: 2026-06-18
+  methodologyVersion: "2.0"
 ---
+```
 
+Writing guidelines:
+- `verdict`: max 320 chars. Lead with non-obvious judgment. Not marketing copy.
+- `bestFor`: segment + size + geography. Scanner-friendly.
+- `avoidIf`: a specific named tradeoff.
+
+Compliance ✓/✗ row, price band, price label all auto-render from `vendors.json` (`compliance_flags`, `value_tier`, `starting_price`). Do NOT duplicate these in frontmatter or body.
+
+### Body MDX (narrative-only)
+
+The body is the editorial depth layer. Keep these sections only:
+
+```mdx
 ## PrimeBiometry Assessment
 
-[2-3 sentences of original editorial summary — what makes this vendor distinctive]
+[3-5 sentences of original editorial framing — vendor positioning, history, distinctive engineering, or market context the DecisionCard cannot convey.]
 
-### Best For
-[Specific use case + company type, e.g., "Fintech startups needing fast KYC onboarding with <500 verifications/month"]
+## Pricing Analysis
 
-### Avoid If
-[Honest limitation, e.g., "Enterprise with complex multi-jurisdiction requirements — pricing scales unfavorably"]
-
-### Compliance Coverage
-[Table or list: GDPR ✓/✗, CCPA ✓/✗, SOC2 ✓/✗, ISO 27001 ✓/✗, HIPAA ✓/✗]
-
-### Integration Complexity
-[Low / Medium / High — with brief reason: "REST API + webhooks, SDK available for iOS/Android/Web"]
-
-### Pricing Analysis
-[Original analysis of pricing tiers — not just repeating the numbers, but what they mean for different buyer sizes]
+[Original analysis of pricing tiers — what numbers mean for different buyer sizes. Negotiation leverage. Hidden costs. One-line deltas vs 2-3 named competitors.]
 
 ## FAQ
-[3-5 questions with answers — use FAQPage schema]
+
+**[Question 1]?**
+[Answer 1]
+
+**[Question 2]?**
+[Answer 2]
+
+[3-5 Q&A pairs. FAQPage schema auto-generates from frontmatter — keep these genuinely answerable, not keyword stuffing.]
 ```
+
+**Removed H3 sections** (now structured in frontmatter / DecisionCard — do NOT add these inside MDX body):
+- ~~### Best For~~
+- ~~### Avoid If~~
+- ~~### Compliance Coverage~~
+- ~~### Integration Complexity~~
 
 Never copy vendor descriptions verbatim from G2, Gartner, or Capterra. Rewrite completely.
 The description in vendors.json is scraped source material, not publishable content.

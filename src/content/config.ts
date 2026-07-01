@@ -8,6 +8,7 @@ const assessments = defineCollection({
     author: z.string(),
     metaTitle: z.string().optional(),
     metaDescription: z.string().optional(),
+    verdict: z.string().max(320).optional(),
     bestFor: z.string(),
     avoidIf: z.string(),
     integrationComplexity: z.enum(["Low", "Medium", "High"]),

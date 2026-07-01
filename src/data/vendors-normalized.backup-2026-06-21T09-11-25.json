@@ -139,8 +139,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Document authentication and biometric verification with deepfake-resistant matching.",
-      "has_assessment": true
+      "tagline": "Document authentication and biometric verification with deepfake-resistant matching."
     },
     {
       "name": "Digital Onboarding",
@@ -303,8 +302,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated document capture and remote onboarding with passive liveness checks.",
-      "has_assessment": true
+      "tagline": "Automated document capture and remote onboarding with passive liveness checks."
     },
     {
       "name": "Experian Identity proofing",
@@ -396,9 +394,40 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Enterprise",
-            "price": "Contact for pricing",
-            "features_included": []
+            "name": "Basic",
+            "price": "$500/month",
+            "features_included": [
+              "Identity verification",
+              "Fraud detection",
+              "Basic customer support"
+            ]
+          },
+          {
+            "name": "Premium",
+            "price": "$1500/month",
+            "features_included": [
+              "Advanced identity verification",
+              "Fraud detection",
+              "Priority customer support",
+              "Customizable workflows"
+            ]
+          },
+          {
+            "name": "Basic Plan",
+            "price": "$10 per verification",
+            "features_included": [
+              "Real-time verification",
+              "Email support"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "$100 per month",
+            "features_included": [
+              "Unlimited verifications",
+              "Priority support",
+              "Custom branding"
+            ]
           }
         ],
         "key_features": [
@@ -463,8 +492,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Data analytics-backed identity proofing for regulated financial services and insurers.",
-      "has_assessment": true
+      "tagline": "Data analytics-backed identity proofing for regulated financial services and insurers."
     },
     {
       "name": "UltraPass",
@@ -568,9 +596,65 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Enterprise",
+            "name": "Basic Plan",
             "price": "Contact for pricing",
-            "features_included": []
+            "features_included": [
+              "Access to all SDKs",
+              "Basic technical support"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Priority support",
+              "Advanced analytics",
+              "Custom integrations"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Dedicated account manager",
+              "Custom solution design",
+              "24/7 support"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "$29/month",
+            "features_included": [
+              "Identity verification",
+              "Facial recognition"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$99/month",
+            "features_included": [
+              "All Basic features",
+              "Document verification",
+              "KYC compliance"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": "Custom pricing",
+            "features_included": [
+              "All Pro features",
+              "Custom integrations",
+              "Dedicated support"
+            ]
+          },
+          {
+            "name": "Standard",
+            "price": "Contact for pricing",
+            "features_included": [
+              "All Basic features",
+              "1:n facial recognition",
+              "Facial age estimation"
+            ]
           }
         ],
         "key_features": [
@@ -689,8 +773,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Passwordless facial-recognition authentication for fintech, gaming, and public sector.",
-      "has_assessment": true
+      "tagline": "Passwordless facial-recognition authentication for fintech, gaming, and public sector."
     },
     {
       "name": "Alice Biometrics",
@@ -859,8 +942,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Remote identity verification with quick selfie capture for high-volume user onboarding.",
-      "has_assessment": true
+      "tagline": "Remote identity verification with quick selfie capture for high-volume user onboarding."
     },
     {
       "name": "Recognito",
@@ -1078,27 +1160,11 @@
         "company_size_range": "51-200",
         "total_funding": "$15.0M",
         "funding_stage": "IPO",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "region": "MENA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "NIST FRVT Top 1 face recognition and ID document verification with anti-spoofing.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/recognito-1.webp",
-          "alt": "Recognito ID document verification flow — face recognition SDK",
-          "caption": "Recognito's document + face verification flow on the homepage.",
-          "claim": "End-to-end ID + face verification"
-        },
-        {
-          "src": "/images/vendors/recognito-2.webp",
-          "alt": "Recognito face biometrics verification including liveness and 1:1 match",
-          "caption": "Recognito's face biometrics: capture, 1:1 match, liveness.",
-          "claim": "Face biometrics with liveness"
-        }
-      ]
+      "tagline": "NIST FRVT Top 1 face recognition and ID document verification with anti-spoofing."
     },
     {
       "name": "RegTechONE",
@@ -1364,8 +1430,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "All-in-one AML compliance platform for banks, insurers, and financial services.",
-      "has_assessment": true
+      "tagline": "All-in-one AML compliance platform for banks, insurers, and financial services."
     },
     {
       "name": "Fingera",
@@ -1494,8 +1559,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric attendance and access control with facial recognition and liveness detection.",
-      "has_assessment": true
+      "tagline": "Biometric attendance and access control with facial recognition and liveness detection."
     },
     {
       "name": "Zunoy Authenticator",
@@ -1726,8 +1790,7 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Two-factor authentication with TOTP codes and cloud backup for SaaS and e-commerce teams.",
-      "has_assessment": true
+      "tagline": "Two-factor authentication with TOTP codes and cloud backup for SaaS and e-commerce teams."
     },
     {
       "name": "Meon eKYC",
@@ -1952,8 +2015,7 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Electronic KYC with biometric liveness for banks, insurers, and telecom providers.",
-      "has_assessment": true
+      "tagline": "Electronic KYC with biometric liveness for banks, insurers, and telecom providers."
     },
     {
       "name": "Persona",
@@ -1980,14 +2042,9 @@
       "reviews_count": 68,
       "rating_breakdown": null,
       "pricing": "Contact",
-      "pricing_model": "flat_monthly",
-      "pricing_summary": "From $250/month",
-      "starting_price": {
-        "amount": 250,
-        "currency": "USD",
-        "period": "monthly",
-        "raw": "Starting at $250/month (12-month minimum)"
-      },
+      "pricing_model": "custom",
+      "pricing_summary": "Contact Sales",
+      "starting_price": null,
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -2046,34 +2103,30 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Essential",
-            "price": "Starting at $250/month",
+            "name": "Basic Plan",
+            "price": "Custom",
             "features_included": [
-              "Templated identity verification services",
-              "Platform automation features",
-              "SOC 2 Type 2 infrastructure",
-              "12-month minimum contract"
+              "KYC Compliance",
+              "Identity Verification",
+              "Real-time Monitoring"
             ]
           },
           {
-            "name": "Growth",
+            "name": "Pro Plan",
             "price": "Custom",
             "features_included": [
-              "Everything in Essential",
-              "Graph access",
-              "3rd-party Marketplace Apps",
-              "Advanced security configuration",
-              "Redaction and permissions"
+              "Advanced Fraud Detection",
+              "Custom Workflows",
+              "Integration Options"
             ]
           },
           {
-            "name": "Enterprise",
+            "name": "Enterprise Plan",
             "price": "Custom",
             "features_included": [
-              "Everything in Growth",
-              "Custom multi-organization partitioning",
-              "Custom multi-product pricing",
-              "Dedicated support"
+              "Dedicated Support",
+              "Custom Solutions",
+              "API Access"
             ]
           }
         ],
@@ -2128,31 +2181,16 @@
         "free_trial_url": "https://withpersona.com/signup"
       },
       "company_data": {
+        "founded_year": 2024,
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "total_funding": "$200.0M",
         "funding_stage": "Series D",
-        "funding_display": true,
-        "_founded_year_original": 2024
+        "funding_display": true
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Configurable identity verification workflows for fintech, healthcare, and marketplaces.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/persona-1.webp",
-          "alt": "Persona configurable KYC and KYB identity platform",
-          "caption": "Persona's positioning — flexible and secure way to verify people and businesses online.",
-          "claim": "Configurable KYC/KYB workflows"
-        },
-        {
-          "src": "/images/vendors/persona-2.webp",
-          "alt": "Persona modular identity platform — verifications, fraud prevention, orchestration",
-          "caption": "Persona's modular building blocks — verifications, fraud signals, orchestration.",
-          "claim": "Modular identity platform with composable verifications"
-        }
-      ]
+      "tagline": "Configurable identity verification workflows for fintech, healthcare, and marketplaces."
     },
     {
       "name": "IDnow Platform",
@@ -2332,8 +2370,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Document-and-biometric identity verification for banks, telecom, and regulated industries.",
-      "has_assessment": true
+      "tagline": "Document-and-biometric identity verification for banks, telecom, and regulated industries."
     },
     {
       "name": "xProof",
@@ -2508,22 +2545,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Global onboarding with advanced document verification and continuous fraud monitoring.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/xproof-1.webp",
-          "alt": "Daon xProof enterprise biometric identity proofing platform",
-          "caption": "xProof enterprise IDV — cloud or on-premise deployment.",
-          "claim": "Cloud or on-premise deployment"
-        },
-        {
-          "src": "/images/vendors/xproof-2.webp",
-          "alt": "Daon enterprise identity proofing and authentication platform",
-          "caption": "Daon's positioning — enterprise identity proofing platform.",
-          "claim": "Enterprise IDV vendor"
-        }
-      ]
+      "tagline": "Global onboarding with advanced document verification and continuous fraud monitoring."
     },
     {
       "name": "1Kosmos Platform",
@@ -2608,27 +2630,11 @@
         "company_size_range": "51-200",
         "total_funding": "$1.3M",
         "funding_stage": "Series B",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Decentralized identity verification with biometric and credential-based onboarding.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/1kosmos-platform-1.webp",
-          "alt": "1Kosmos decentralized identity platform homepage",
-          "caption": "1Kosmos positioning — decentralized identity for workforce + customer.",
-          "claim": "Decentralized identity platform"
-        },
-        {
-          "src": "/images/vendors/1kosmos-platform-2.webp",
-          "alt": "1Kosmos modern identity across user lifecycle — passwordless biometric MFA",
-          "caption": "1Kosmos coverage — verification, authentication, recovery across the full user lifecycle.",
-          "claim": "Full user-lifecycle identity"
-        }
-      ]
+      "tagline": "Decentralized identity verification with biometric and credential-based onboarding."
     },
     {
       "name": "Ping Identity Platform",
@@ -2655,14 +2661,9 @@
       "reviews_count": 5,
       "rating_breakdown": null,
       "pricing": "Contact",
-      "pricing_model": "flat_yearly",
-      "pricing_summary": "From $35,000/year",
-      "starting_price": {
-        "amount": 35000,
-        "currency": "USD",
-        "period": "per_year",
-        "raw": "$35k/year"
-      },
+      "pricing_model": "custom",
+      "pricing_summary": "Contact Sales",
+      "starting_price": null,
       "min_monthly_commitment": null,
       "free_trial": {
         "days": null
@@ -2722,29 +2723,11 @@
         "founded_year": 2002,
         "pricing_plans": [
           {
-            "name": "Essential",
-            "price": "$35,000/year",
-            "features_included": [
-              "SSO",
-              "MFA",
-              "Cloud-based identity solutions"
-            ]
-          },
-          {
-            "name": "Plus",
-            "price": "$50,000/year",
-            "features_included": [
-              "Everything in Essential",
-              "Advanced authentication policies",
-              "Context-based MFA"
-            ]
-          },
-          {
-            "name": "Enterprise",
+            "name": "Contact Sales",
             "price": "Contact sales",
             "features_included": [
-              "PingOne Advanced Services",
-              "Custom enterprise solutions"
+              "Enterprise-level solutions",
+              "Custom pricing based on business needs"
             ]
           }
         ],
@@ -2774,8 +2757,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Centralized identity and access management with secure authentication for enterprises.",
-      "has_assessment": true
+      "tagline": "Centralized identity and access management with secure authentication for enterprises."
     },
     {
       "name": "Trust Swiftly",
@@ -2877,32 +2859,14 @@
         "founded_year": 2014,
         "pricing_plans": [
           {
-            "name": "Starter",
-            "price": "$300/month",
-            "features_included": [
-              "100 verifications/month",
-              "1 admin seat",
-              "No setup fees",
-              "Hosted flows or API",
-              "Immediate access"
-            ]
-          },
-          {
-            "name": "Business",
-            "price": "$600/month",
-            "features_included": [
-              "200 verifications/month",
-              "Unlimited seats",
-              "No setup fees"
-            ]
-          },
-          {
             "name": "Enterprise",
             "price": "Contact sales",
             "features_included": [
-              "Government-grade identity verification",
-              "High-volume deployments",
-              "IAL3-ready"
+              "Customizable risk-based workflow orchestration",
+              "API-first architecture",
+              "Liveness checks",
+              "Dedicated support",
+              "Managed verification stations"
             ]
           }
         ],
@@ -2933,8 +2897,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Modular identity verification with 15+ check methods for fraud-prone online businesses.",
-      "has_assessment": true
+      "tagline": "Modular identity verification with 15+ check methods for fraud-prone online businesses."
     },
     {
       "name": "Identity Verification Platform",
@@ -3030,8 +2993,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Facial biometrics and document verification for fraud-resistant remote onboarding.",
-      "has_assessment": true
+      "tagline": "Facial biometrics and document verification for fraud-resistant remote onboarding."
     },
     {
       "name": "AuthenticID Identity Proofing",
@@ -3134,8 +3096,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated identity proofing with biometric checks and document analysis at scale.",
-      "has_assessment": true
+      "tagline": "Automated identity proofing with biometric checks and document analysis at scale."
     },
     {
       "name": "Data Zoo Flow",
@@ -3218,10 +3179,30 @@
         "founded_year": 2011,
         "pricing_plans": [
           {
-            "name": "Enterprise",
+            "name": "Basic Plan",
+            "price": "$99/month",
+            "features_included": [
+              "Access to core identity verification features",
+              "Up to 1,000 verifications"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "$249/month",
+            "features_included": [
+              "Access to advanced features",
+              "Up to 5,000 verifications",
+              "Priority support"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
             "price": "Contact sales",
             "features_included": [
-              "Custom identity verification and fraud detection solutions"
+              "Custom pricing",
+              "Unlimited verifications",
+              "Dedicated support",
+              "Advanced integrations"
             ]
           }
         ],
@@ -3250,8 +3231,7 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Unified identity verification and compliance workflows for customer onboarding.",
-      "has_assessment": true
+      "tagline": "Unified identity verification and compliance workflows for customer onboarding."
     },
     {
       "name": "Digidentity",
@@ -3397,8 +3377,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Digital identity platform with verification, authentication, and electronic signatures.",
-      "has_assessment": true
+      "tagline": "Digital identity platform with verification, authentication, and electronic signatures."
     },
     {
       "name": "Real ID",
@@ -3488,8 +3467,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated KYC with facial recognition and document authentication for fast onboarding.",
-      "has_assessment": true
+      "tagline": "Automated KYC with facial recognition and document authentication for fast onboarding."
     },
     {
       "name": "Faceki",
@@ -3583,8 +3561,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Streamlined eKYC verification for resource-light teams in regulated industries.",
-      "has_assessment": true
+      "tagline": "Streamlined eKYC verification for resource-light teams in regulated industries."
     },
     {
       "name": "Biometric Agreement",
@@ -3670,9 +3647,31 @@
         "founded_year": 2010,
         "pricing_plans": [
           {
-            "name": "Enterprise",
-            "price": "Contact for pricing",
-            "features_included": []
+            "name": "Basic Plan",
+            "price": "$29/month",
+            "features_included": [
+              "1 User",
+              "10 Verifications per Month",
+              "Email Support"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "$79/month",
+            "features_included": [
+              "5 Users",
+              "50 Verifications per Month",
+              "Priority Support"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
+            "price": "Contact sales",
+            "features_included": [
+              "Unlimited Users",
+              "Unlimited Verifications",
+              "Custom Solutions"
+            ]
           }
         ],
         "key_features": [
@@ -3699,13 +3698,11 @@
         "company_size_range": "201-500",
         "total_funding": "$30.0M",
         "funding_stage": "Seed",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric e-signature verification with ID matching and liveness for legal agreements.",
-      "has_assessment": true
+      "tagline": "Biometric e-signature verification with ID matching and liveness for legal agreements."
     },
     {
       "name": "eFACiLiTY Time and Attendance System",
@@ -3797,8 +3794,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Real-time attendance tracking with biometric devices and mobile sign-in for workforces.",
-      "has_assessment": true
+      "tagline": "Real-time attendance tracking with biometric devices and mobile sign-in for workforces."
     },
     {
       "name": "Jumio",
@@ -3888,9 +3884,30 @@
         "founded_year": 2010,
         "pricing_plans": [
           {
+            "name": "Starter",
+            "price": "$0",
+            "features_included": [
+              "Basic Identity Verification",
+              "Automated Fraud Detection"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$199/month",
+            "features_included": [
+              "Advanced Biometrics",
+              "Fraud Insights",
+              "24/7 Support"
+            ]
+          },
+          {
             "name": "Enterprise",
             "price": "Contact sales",
-            "features_included": []
+            "features_included": [
+              "Customized Solutions",
+              "High-Volume Processing",
+              "Dedicated Account Management"
+            ]
           }
         ],
         "key_features": [
@@ -3918,8 +3935,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Enterprise identity verification with orchestrator-level fraud prevention.",
-      "has_assessment": true
+      "tagline": "Enterprise identity verification with orchestrator-level fraud prevention."
     },
     {
       "name": "Biometric.Vision",
@@ -4057,8 +4073,7 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Facial recognition eKYC for digital onboarding and remote customer verification.",
-      "has_assessment": true
+      "tagline": "Facial recognition eKYC for digital onboarding and remote customer verification."
     },
     {
       "name": "Folio3 AI Face Recognition",
@@ -4190,8 +4205,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI face recognition with age, gender, and liveness detection for biometric apps.",
-      "has_assessment": true
+      "tagline": "AI face recognition with age, gender, and liveness detection for biometric apps."
     },
     {
       "name": "Oz Liveness",
@@ -4311,13 +4325,11 @@
         "company_size_range": "51-200",
         "total_funding": "$476.0M",
         "funding_stage": "Private Equity",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Facial liveness detection and authentication built to combat biometric fraud at scale.",
-      "has_assessment": true
+      "tagline": "Facial liveness detection and authentication built to combat biometric fraud at scale."
     },
     {
       "name": "Mity",
@@ -4448,8 +4460,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI-powered identity verification with facial recognition and liveness for digital teams.",
-      "has_assessment": true
+      "tagline": "AI-powered identity verification with facial recognition and liveness for digital teams."
     },
     {
       "name": "EnQualify",
@@ -4531,13 +4542,11 @@
         "company_size_range": "51-200",
         "total_funding": "$18.0M",
         "funding_stage": "Seed",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Mobile-native AI identity verification with on-device biometric checks for global users.",
-      "has_assessment": true
+      "tagline": "Mobile-native AI identity verification with on-device biometric checks for global users."
     },
     {
       "name": "Face Match",
@@ -4632,8 +4641,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Face biometric SDK for access control and KYC compliance in custom mobile applications.",
-      "has_assessment": true
+      "tagline": "Face biometric SDK for access control and KYC compliance in custom mobile applications."
     },
     {
       "name": "PXL Ident",
@@ -4735,8 +4743,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Swiss-made premium identity verification for regulated industries needing max security.",
-      "has_assessment": true
+      "tagline": "Swiss-made premium identity verification for regulated industries needing max security."
     },
     {
       "name": "FacePlugin",
@@ -4820,8 +4827,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Face recognition and liveness detection for ID verification in custom integrations.",
-      "has_assessment": true
+      "tagline": "Face recognition and liveness detection for ID verification in custom integrations."
     },
     {
       "name": "Edureg",
@@ -4958,8 +4964,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Modular student management with biometric attendance and access for schools.",
-      "has_assessment": true
+      "tagline": "Modular student management with biometric attendance and access for schools."
     },
     {
       "name": "Face Recognition API",
@@ -5098,8 +5103,7 @@
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Developer-friendly computer vision APIs for face recognition and ID verification.",
-      "has_assessment": true
+      "tagline": "Developer-friendly computer vision APIs for face recognition and ID verification."
     },
     {
       "name": "Biometric Security",
@@ -5240,8 +5244,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric e-signature platform with secure file sharing and screen privacy controls.",
-      "has_assessment": true
+      "tagline": "Biometric e-signature platform with secure file sharing and screen privacy controls."
     },
     {
       "name": "ZipID",
@@ -5330,34 +5333,11 @@
         "founded_year": 2020,
         "pricing_plans": [
           {
-            "name": "Basic Queen Bee",
-            "price": "$7.50 per transaction",
-            "features_included": [
-              "I-9 compliance workflow",
-              "AI-powered ICE compliant OCR",
-              "Remote, hybrid, in-person hires",
-              "E-Verify redirect with auto-populated fields",
-              "Downloadable I-9 PDF with IDs and selfie",
-              "Audit-ready activity log",
-              "Full encryption at rest and in transit"
-            ]
-          },
-          {
-            "name": "Buzzing Hive",
-            "price": "$9.50 per transaction",
-            "features_included": [
-              "Everything in Basic Queen Bee",
-              "NIST-validated 1:1 biometric facial recognition (99.998% accuracy)",
-              "Live selfie matched to government-issued ID at point of hire",
-              "Liveness detection — prevents spoofing and deepfakes",
-              "AI-powered fraud detection",
-              "Identity confidence score"
-            ]
-          },
-          {
-            "name": "Enterprise",
-            "price": "Contact sales",
-            "features_included": []
+            "name": "Starter",
+            "price": "$7.50/month",
+            "monthly_cap": 5,
+            "overage_rate": 1.50,
+            "_source": "pricing_field"
           }
         ],
         "_pricing_source": "pricing_field_parsed"
@@ -5372,8 +5352,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Enterprise identity verification purpose-built for I-9 hiring with 99.8% face accuracy.",
-      "has_assessment": true
+      "tagline": "Enterprise identity verification purpose-built for I-9 hiring with 99.8% face accuracy."
     },
     {
       "name": "BAF",
@@ -5487,8 +5466,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric anti-fraud authentication with liveness and face matching for online services.",
-      "has_assessment": true
+      "tagline": "Biometric anti-fraud authentication with liveness and face matching for online services."
     },
     {
       "name": "azakaw",
@@ -5622,8 +5600,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Modular AML and KYC compliance platform for regulated businesses managing risk.",
-      "has_assessment": true
+      "tagline": "Modular AML and KYC compliance platform for regulated businesses managing risk."
     },
     {
       "name": "Tecalis Authentication",
@@ -5739,8 +5716,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Multi-factor authentication with biometric checks for enterprise products and services.",
-      "has_assessment": true
+      "tagline": "Multi-factor authentication with biometric checks for enterprise products and services."
     },
     {
       "name": "Biometric Attendance System",
@@ -5871,13 +5847,11 @@
         "company_size_range": "51-200",
         "total_funding": "$9.4M",
         "funding_stage": "IPO",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Fingerprint attendance tracking with real-time entry-exit data for HR teams.",
-      "has_assessment": true
+      "tagline": "Fingerprint attendance tracking with real-time entry-exit data for HR teams."
     },
     {
       "name": "iDenfy",
@@ -5906,19 +5880,19 @@
       "rating": 4.9,
       "reviews_count": 216,
       "rating_breakdown": null,
-      "pricing": "Starting at €1.20/verification",
+      "pricing": "Starting at $0.55",
       "pricing_model": "per_check",
-      "pricing_summary": "From €1.20/verification",
+      "pricing_summary": "From $1.35/check",
       "starting_price": {
-        "amount": 1.2,
-        "currency": "EUR",
+        "amount": 1.35,
+        "currency": "USD",
         "period": "per_check",
-        "raw": "€1.20 per verification"
+        "raw": "$1.35 / verif"
       },
       "min_monthly_commitment": {
-        "amount": 125,
-        "currency": "EUR",
-        "raw": "€125/mo minimum"
+        "amount": 135,
+        "currency": "USD",
+        "raw": "Minimum commitment is $135"
       },
       "free_trial": {
         "days": 14
@@ -6010,32 +5984,39 @@
       "website_data": {
         "pricing_plans": [
           {
+            "name": "Pay Per Verification",
+            "price": "Contact Sales",
+            "features_included": [
+              "Only pay for confirmed verifications",
+              "Potential 70% savings on onboarding costs",
+              "No charges for failed verification attempts"
+            ]
+          },
+          {
             "name": "Basic",
-            "price": "€1.25 per verification",
+            "price": "$1.35 / verification",
             "features_included": [
               "ID verification",
               "Document surface analysis",
               "Face verification & matching",
-              "Liveness detection",
-              "Minimum commitment: €125/month"
+              "Liveness detection"
             ]
           },
           {
             "name": "Premium",
-            "price": "€1.20 per verification",
+            "price": "$1.30 / verification",
             "features_included": [
-              "Everything in Basic",
               "Discounts on extras",
-              "Minimum commitment: €300/month"
+              "Everything included in Basic Plan"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "Custom (from €0.50 at volume)",
+            "price": "Custom",
             "features_included": [
               "Account manager",
               "Business verification",
-              "ISO 27001 and SOC II",
+              "ISO 27001 and SOC II compliance",
               "Cyber insurance",
               "Discounts on extras"
             ]
@@ -6124,22 +6105,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated KYC and AML compliance for fintech, crypto, and gaming with global coverage.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/idenfy-1.webp",
-          "alt": "iDenfy industries served — fintech, crypto, gaming KYC verification",
-          "caption": "iDenfy's industry coverage — fintech, crypto, gaming, e-commerce KYC.",
-          "claim": "Industry-specific KYC verification"
-        },
-        {
-          "src": "/images/vendors/idenfy-2.webp",
-          "alt": "iDenfy company profile and customer base",
-          "caption": "iDenfy company snapshot — used for B2B social proof.",
-          "claim": "Established KYC vendor"
-        }
-      ]
+      "tagline": "Automated KYC and AML compliance for fintech, crypto, and gaming with global coverage."
     },
     {
       "name": "ComplyCube",
@@ -6260,6 +6226,33 @@
       "website_data": {
         "pricing_plans": [
           {
+            "name": "Basic Plan",
+            "price": "Contact sales",
+            "features_included": [
+              "Identity verification",
+              "KYC solutions",
+              "AML compliance"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "Contact sales",
+            "features_included": [
+              "Advanced identity verification",
+              "Custom workflows",
+              "Fraud prevention tools"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
+            "price": "Contact sales",
+            "features_included": [
+              "Dedicated support",
+              "Integrations and API",
+              "Comprehensive reporting"
+            ]
+          },
+          {
             "name": "Starter",
             "price": "$99/mo",
             "features_included": [
@@ -6297,6 +6290,32 @@
               "Dedicated infrastructure with SLA-backed uptime",
               "White-glove compliance guidance, system design and support",
               "Unlimited white-labeled workflows and organizational partitioning"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "$29/month",
+            "features_included": [
+              "Identity verification",
+              "Basic reporting"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$99/month",
+            "features_included": [
+              "Advanced ID verification",
+              "Real-time reporting",
+              "Fraud detection tools"
+            ]
+          },
+          {
+            "name": "Essential",
+            "price": "$49/month",
+            "features_included": [
+              "Customer screening",
+              "Document verification",
+              "Address verification"
             ]
           }
         ],
@@ -6420,31 +6439,16 @@
         "founded_year": 2017
       },
       "company_data": {
+        "founded_year": 2007,
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "total_funding": "$196.0M",
         "funding_stage": "Series D",
-        "funding_display": true,
-        "_founded_year_original": 2007
+        "funding_display": true
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI-driven KYC, AML, and fraud prevention in one API for regulated digital businesses.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/complycube-1.webp",
-          "alt": "ComplyCube Starter, Core, Growth and Enterprise pricing tiers",
-          "caption": "Four published tiers — Starter from $99/month, Growth and Enterprise sales-quoted.",
-          "claim": "Starter plan $99/mo, sales-quoted Growth + Enterprise"
-        },
-        {
-          "src": "/images/vendors/complycube-2.webp",
-          "alt": "ComplyCube certifications: ISO 27001, SOC 2, iBeta PAD, UK DiATF",
-          "caption": "Independently certified: ISO 27001, SOC 2, iBeta PAD, UK DiATF.",
-          "claim": "ISO 27001 + SOC 2 + iBeta PAD + UK DiATF certifications"
-        }
-      ]
+      "tagline": "AI-driven KYC, AML, and fraud prevention in one API for regulated digital businesses."
     },
     {
       "name": "Mitek Systems",
@@ -6613,22 +6617,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Identity verification and fraud prevention for banks, fintech, and digital marketplaces.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/mitek-systems-1.webp",
-          "alt": "Mitek Check Fraud Defender used by US banks",
-          "caption": "Check Fraud Defender — the differentiator vs other IDV vendors.",
-          "claim": "Check fraud detection alongside IDV"
-        },
-        {
-          "src": "/images/vendors/mitek-systems-2.webp",
-          "alt": "Mitek mobile deposit and ID capture SDK for banks",
-          "caption": "Mobile ID capture SDK — used by top US banks at scale.",
-          "claim": "Mobile ID capture used by US banks"
-        }
-      ]
+      "tagline": "Identity verification and fraud prevention for banks, fintech, and digital marketplaces."
     },
     {
       "name": "AU10TIX",
@@ -6734,38 +6723,128 @@
       "website_data": {
         "pricing_plans": [
           {
+            "name": "Identity Verification Suite",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Full ID support",
+              "Automated verification",
+              "Supports physical and digital IDs"
+            ]
+          },
+          {
+            "name": "Serial Fraud Monitor",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Add a second layer of defense",
+              "Protect against sophisticated fraud attacks"
+            ]
+          },
+          {
+            "name": "Reusable Digital ID",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Tamper-proof digital credentials",
+              "Easily shared across platforms"
+            ]
+          },
+          {
+            "name": "AML Screening",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Ensure compliance",
+              "Top quality risk mitigation"
+            ]
+          },
+          {
+            "name": "Biometric Verification",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Powered by NIST top-rated algorithms",
+              "Unrivaled accuracy"
+            ]
+          },
+          {
             "name": "Basic KYC",
-            "price": "Contact sales",
+            "price": "$500 monthly minimum",
             "features_included": [
               "ID Verification",
               "Biometrics (Liveness & Face Match)",
               "Case Management Dashboard",
               "Full global coverage",
               "+180 Forgery detection tests",
-              "Plug & Play — out-of-the-box workflows",
-              "$500 monthly minimum"
+              "Plug & Play",
+              "Out-of-the-box workflows"
             ]
           },
           {
             "name": "Enhanced KYC",
-            "price": "Contact sales",
+            "price": "$500 monthly minimum",
             "features_included": [
-              "Everything in Basic KYC",
+              "Everything in Basic",
               "Deepfake Detection",
               "Proof of Address",
               "Serial Fraud Detector",
               "Dynamic Workflows",
               "Manual Review",
               "AML Screening",
-              "$500 monthly minimum"
+              "Coordinated bot attack prevention",
+              "Real-time anomaly detection",
+              "Consortium verification",
+              "Injection detection"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "Contact sales",
+            "price": "$500 monthly minimum",
             "features_included": [
-              "Custom multi-product pricing",
-              "Dedicated support"
+              "Everything in Enhanced",
+              "Customized Workflows",
+              "Database Verification",
+              "Non-ID Document Authentication",
+              "Business Verification (KYB)",
+              "Age Estimation",
+              "Reusable Digital ID",
+              "Continuous Risk Monitoring",
+              "Document-level forgery tests",
+              "Ongoing verification & alerts",
+              "Strategic account manager"
+            ]
+          },
+          {
+            "name": "Compliance Suite",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Built-in KYC and AML",
+              "Automated processes",
+              "Customizable workflows"
+            ]
+          },
+          {
+            "name": "Document Verification",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Verify user's documents",
+              "Supports various document types",
+              "AI-based checks"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Single API integration",
+              "Basic support",
+              "Real-time processing"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Advanced API features",
+              "Increased request volume",
+              "Enhanced support",
+              "Custom business logic"
             ]
           }
         ],
@@ -6878,8 +6957,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Scalable automated identity verification with airport-grade security for enterprises.",
-      "has_assessment": true
+      "tagline": "Scalable automated identity verification with airport-grade security for enterprises."
     },
     {
       "name": "Veriff",
@@ -7155,6 +7233,25 @@
               "Volume-based pricing discounts",
               "Personalized branding to suit your business"
             ]
+          },
+          {
+            "name": "Basic Plan",
+            "price": "$20/user/month",
+            "features_included": [
+              "ID verification",
+              "Self-service API",
+              "Email support"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "$50/user/month",
+            "features_included": [
+              "All Basic Plan features",
+              "Advanced fraud detection",
+              "Phone support",
+              "Custom branding"
+            ]
           }
         ]
       },
@@ -7165,22 +7262,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Highly automated AI identity verification built for rapid global fintech scaling.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/veriff-1.webp",
-          "alt": "Veriff per-verification pricing plans",
-          "caption": "Veriff's published pricing — confirms transparent per-check model.",
-          "claim": "transparent per-verification pricing"
-        },
-        {
-          "src": "/images/vendors/veriff-2.webp",
-          "alt": "Veriff identity verification covering 230+ countries and territories",
-          "caption": "Verify individuals anywhere — Veriff's coverage claim, in their own words.",
-          "claim": "230+ country coverage"
-        }
-      ]
+      "tagline": "Highly automated AI identity verification built for rapid global fintech scaling."
     },
     {
       "name": "Ondato",
@@ -7210,14 +7292,9 @@
       "reviews_count": 80,
       "rating_breakdown": null,
       "pricing": "Free trial available",
-      "pricing_model": "per_check",
-      "pricing_summary": "From €0.50/verification",
-      "starting_price": {
-        "amount": 0.5,
-        "currency": "EUR",
-        "period": "per_check",
-        "raw": "€0.50–€1.40 per verification"
-      },
+      "pricing_model": "custom",
+      "pricing_summary": "Contact Sales",
+      "starting_price": null,
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -7376,41 +7453,72 @@
         "supported_countries": "192",
         "accuracy_stats": "99.8%",
         "headquarters": "Lithuania",
-        "founded_year": 2018,
+        "founded_year": 2017,
         "free_trial_url": "https://ondato.com/book/",
         "pricing_plans": [
           {
-            "name": "Identity Verification",
-            "price": "€0.50–€1.40 per verification",
+            "name": "Basic Plan",
+            "price": "$49/month",
+            "monthly_cap": 30,
+            "overage_rate": 1.50,
             "features_included": [
-              "AI-Based ID verification",
-              "AML Screening",
-              "Proof of Address Check",
-              "KYC Specialist Check (add-on)",
-              "Session Video Recording (add-on)"
+              "Basic identity verification",
+              "Email support",
+              "Access to API"
             ]
           },
           {
-            "name": "Know Your Business",
-            "price": "From €600",
+            "name": "Pro Plan",
+            "price": "$99/month",
+            "monthly_cap": 100,
+            "overage_rate": 1.20,
             "features_included": [
-              "Business verification"
+              "Advanced identity verification",
+              "Phone support",
+              "Access to API",
+              "Fraud detection"
             ]
           },
           {
-            "name": "Age Verification",
-            "price": "From €0.01 per verification",
+            "name": "Enterprise Plan",
+            "price": "Custom pricing",
             "features_included": [
-              "Age verification"
+              "All Pro features",
+              "Dedicated account manager",
+              "Custom solutions"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "$10/month",
+            "monthly_cap": 10,
+            "overage_rate": 1.80,
+            "features_included": [
+              "Basic identity verification",
+              "Email support"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$50/month",
+            "monthly_cap": 50,
+            "overage_rate": 1.50,
+            "features_included": [
+              "Full identity verification",
+              "Phone support",
+              "Extended API access"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "Talk to sales",
-            "features_included": []
+            "price": "Custom",
+            "features_included": [
+              "Custom integrations",
+              "Dedicated account manager",
+              "Priority support"
+            ]
           }
-        ],
-        "_founded_year_original": 2017
+        ]
       },
       "company_data": {
         "founded_year": 2018,
@@ -7422,22 +7530,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Global identity and age verification for KYC, AML, and onboarding in regulated markets.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/ondato-1.webp",
-          "alt": "Ondato EU-licensed KYC and identity verification platform",
-          "caption": "Ondato's EU KYC positioning — homepage hero.",
-          "claim": "EU-licensed KYC platform"
-        },
-        {
-          "src": "/images/vendors/ondato-2.webp",
-          "alt": "Ondato platform stats — 192 countries, 30s onboarding, 15,000+ AML sources",
-          "caption": "Ondato's scale — 192 countries, 30-second onboarding, 15,000+ AML sources.",
-          "claim": "192-country coverage, 15,000+ AML data sources"
-        }
-      ]
+      "tagline": "Global identity and age verification for KYC, AML, and onboarding in regulated markets."
     },
     {
       "name": "Entrust IDV, formerly Onfido",
@@ -7552,6 +7645,32 @@
               "Advanced Analytics",
               "Custom Integrations"
             ]
+          },
+          {
+            "name": "Basic",
+            "price": "$29/month",
+            "features_included": [
+              "Identity Verification",
+              "Fraud Detection"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$79/month",
+            "features_included": [
+              "All Basic features",
+              "KYC Compliance",
+              "Document Verification"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": "Custom pricing",
+            "features_included": [
+              "All Pro features",
+              "Custom Integrations",
+              "Dedicated Support"
+            ]
           }
         ],
         "key_features": [
@@ -7625,9 +7744,8 @@
         "supported_countries": "Global",
         "accuracy_stats": "High accuracy in verification claims, detailed performance metrics available upon request",
         "headquarters": "Minneapolis, MN, USA",
-        "founded_year": 2012,
-        "free_trial_url": "https://www.entrust.com/resources/demos-trials",
-        "_founded_year_original": 1969
+        "founded_year": 1969,
+        "free_trial_url": "https://www.entrust.com/resources/demos-trials"
       },
       "company_data": {
         "founded_year": 2012,
@@ -7639,22 +7757,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Secure onboarding and fraud-resistant identity verification for regulated enterprises.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/entrust-idv-formerly-onfido-1.webp",
-          "alt": "Entrust identity verification platform formerly known as Onfido",
-          "caption": "Entrust IDV — the rebrand of Onfido under the Entrust portfolio.",
-          "claim": "Identity verification (formerly Onfido)"
-        },
-        {
-          "src": "/images/vendors/entrust-idv-formerly-onfido-2.webp",
-          "alt": "Entrust PKI public key infrastructure and certificate lifecycle management",
-          "caption": "Entrust PKI — what bundles IDV into a broader credentialing stack.",
-          "claim": "PKI + credential issuance bundled with IDV"
-        }
-      ]
+      "tagline": "Secure onboarding and fraud-resistant identity verification for regulated enterprises."
     },
     {
       "name": "Sumsub",
@@ -7666,8 +7769,7 @@
         "Biometric Authentication",
         "Fraud Prevention",
         "Identity Verification",
-        "KYC Compliance",
-        "AML"
+        "KYC Compliance"
       ],
       "featured": true,
       "affiliate_url": null,
@@ -7773,6 +7875,24 @@
       "website_data": {
         "pricing_plans": [
           {
+            "name": "Basic Plan",
+            "price": "$0.05 per verification",
+            "features_included": [
+              "Identity Verification",
+              "Document Scanning",
+              "Fraud Detection"
+            ]
+          },
+          {
+            "name": "Custom Plan",
+            "price": "Custom pricing based on multi-level checks",
+            "features_included": [
+              "Advanced Verification Solutions",
+              "Transaction Monitoring",
+              "AML Compliance"
+            ]
+          },
+          {
             "name": "Basic",
             "price": "$1.35 per verification",
             "features_included": [
@@ -7868,9 +7988,8 @@
         "supported_countries": "Worldwide",
         "accuracy_stats": "99.5% profile completion success rate",
         "headquarters": "Not specified",
-        "founded_year": 2015,
-        "free_trial_url": "https://sumsub.com/get-started/",
-        "_founded_year_original": 2020
+        "founded_year": 2020,
+        "free_trial_url": "https://sumsub.com/get-started/"
       },
       "company_data": {
         "founded_year": 2015,
@@ -7882,22 +8001,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "All-in-one verification platform for user, business, and transaction monitoring.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/sumsub-1.webp",
-          "alt": "Sumsub per-verification pricing for KYC, AML and transaction monitoring",
-          "caption": "Sumsub's published per-verification pricing — KYC + AML in one API.",
-          "claim": "Transparent per-verification pricing"
-        },
-        {
-          "src": "/images/vendors/sumsub-2.webp",
-          "alt": "Sumsub AML screening bundled with KYC into one API",
-          "caption": "Sumsub's AML screening — same API stack as KYC verification.",
-          "claim": "KYC + AML in one API"
-        }
-      ]
+      "tagline": "All-in-one verification platform for user, business, and transaction monitoring."
     },
     {
       "name": "Luxand FaceSDK",
@@ -8127,9 +8231,8 @@
         "supported_countries": "USA, Canada, UK, Australia",
         "accuracy_stats": "99.9% accuracy rate",
         "headquarters": "New York, NY",
-        "founded_year": 2005,
-        "free_trial_url": "https://vendor.com/free-trial",
-        "_founded_year_original": 2015
+        "founded_year": 2015,
+        "free_trial_url": "https://vendor.com/free-trial"
       },
       "company_data": {
         "founded_year": 2005,
@@ -8139,22 +8242,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Cross-platform face recognition SDK with feature detection for embedded biometric apps.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/luxand-facesdk-1.webp",
-          "alt": "Luxand FaceSDK cross-platform face recognition library",
-          "caption": "FaceSDK — cross-platform with on-premise deployment.",
-          "claim": "Cross-platform SDK with on-prem option"
-        },
-        {
-          "src": "/images/vendors/luxand-facesdk-2.webp",
-          "alt": "Luxand FaceSDK download options for Windows, Linux, macOS, iOS, Android",
-          "caption": "Downloads for every major OS — proof of cross-platform reach.",
-          "claim": "Windows + Linux + macOS + iOS + Android builds"
-        }
-      ]
+      "tagline": "Cross-platform face recognition SDK with feature detection for embedded biometric apps."
     },
     {
       "name": "Veridium",
@@ -8380,9 +8468,8 @@
         "supported_countries": "Global",
         "accuracy_stats": "99.9% accuracy rate",
         "headquarters": "San Francisco, CA",
-        "founded_year": 2012,
-        "free_trial_url": "https://example.com/free-trial",
-        "_founded_year_original": 2015
+        "founded_year": 2015,
+        "free_trial_url": "https://example.com/free-trial"
       },
       "company_data": {
         "founded_year": 2012,
@@ -8392,22 +8479,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Software-only passwordless authentication with multimodal biometrics for enterprises.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/veridium-1.webp",
-          "alt": "Veridium active and passive biometric authentication platform",
-          "caption": "Veridium's biometric methods — active and passive signals, FIDO, vFace.",
-          "claim": "Active + passive biometric MFA"
-        },
-        {
-          "src": "/images/vendors/veridium-2.webp",
-          "alt": "Veridium identity-first security positioning for enterprise IAM",
-          "caption": "Veridium's positioning — identity-first security for enterprise IAM.",
-          "claim": "Identity-first enterprise IAM"
-        }
-      ]
+      "tagline": "Software-only passwordless authentication with multimodal biometrics for enterprises."
     },
     {
       "name": "FaceOnLive Identity Verification Software",
@@ -8656,8 +8728,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "On-premise biometric identity verification with liveness and document checks for finance.",
-      "has_assessment": true
+      "tagline": "On-premise biometric identity verification with liveness and document checks for finance."
     },
     {
       "name": "Biometric Time Attendance System",
@@ -8753,9 +8824,28 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Enterprise",
-            "price": "Contact for pricing",
-            "features_included": []
+            "name": "Basic Plan",
+            "price": "$29/month",
+            "features_included": [
+              "Identity verification",
+              "Document verification"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "$49/month",
+            "features_included": [
+              "KYC compliance",
+              "Advanced fraud detection"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
+            "price": "Custom pricing",
+            "features_included": [
+              "Custom integrations",
+              "Dedicated support"
+            ]
           }
         ],
         "key_features": [
@@ -8849,22 +8939,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Biometric workforce attendance with hardware and software for real-time monitoring.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/biometric-time-attendance-system-1.webp",
-          "alt": "IDEMIA identity and biometric workforce solutions homepage",
-          "caption": "IDEMIA's positioning — identity and biometric solutions for workforce.",
-          "claim": "IDEMIA identity + biometric platform"
-        },
-        {
-          "src": "/images/vendors/biometric-time-attendance-system-2.webp",
-          "alt": "IDEMIA biometric authentication for enterprise workforce identity",
-          "caption": "IDEMIA's biometric portfolio — backbone of the time-attendance product.",
-          "claim": "Enterprise-grade biometric hardware"
-        }
-      ]
+      "tagline": "Biometric workforce attendance with hardware and software for real-time monitoring."
     },
     {
       "name": "SentiVeillance Cluster",
@@ -8958,9 +9033,61 @@
       "website_data": {
         "pricing_plans": [
           {
+            "name": "Basic Plan",
+            "price": "$29/month",
+            "features_included": [
+              "Single user",
+              "Basic identity verification",
+              "Email support"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "$79/month",
+            "features_included": [
+              "Up to 5 users",
+              "Advanced identity verification",
+              "Phone support",
+              "API access"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
+            "price": "Custom pricing",
+            "features_included": [
+              "Unlimited users",
+              "Full suite of services",
+              "Dedicated account manager",
+              "Custom integrations"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "$29/month",
+            "features_included": [
+              "Identity verification",
+              "Document verification",
+              "Fraud detection"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$99/month",
+            "features_included": [
+              "All Basic features",
+              "Biometric verification",
+              "Real-time alerts",
+              "API access"
+            ]
+          },
+          {
             "name": "Enterprise",
-            "price": "Contact for pricing",
-            "features_included": []
+            "price": "Custom pricing",
+            "features_included": [
+              "All Pro features",
+              "Custom integrations",
+              "Dedicated support"
+            ]
           }
         ],
         "key_features": [
@@ -9047,8 +9174,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Video surveillance with face identification and vehicle tracking for security teams.",
-      "has_assessment": true
+      "tagline": "Video surveillance with face identification and vehicle tracking for security teams."
     },
     {
       "name": "Regula",
@@ -9249,22 +9375,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Forensic-grade document verification and biometrics for regulated and government markets.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/regula-1.webp",
-          "alt": "Regula Document Reader SDK forensic-grade document authentication",
-          "caption": "Document Reader SDK — Regula's forensic-grade auth engine.",
-          "claim": "Forensic-grade document authentication"
-        },
-        {
-          "src": "/images/vendors/regula-2.webp",
-          "alt": "Regula impact — 50% lower onboarding cost, 254 countries covered, 99.8% precision",
-          "caption": "Regula's measured impact — 50% lower onboarding cost, 254-country coverage.",
-          "claim": "254-country coverage, 99.8% precision"
-        }
-      ]
+      "tagline": "Forensic-grade document verification and biometrics for regulated and government markets."
     },
     {
       "name": "Incode",
@@ -9415,16 +9526,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI identity verification with biometrics and KYC for trust-critical enterprises.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/incode-2.webp",
-          "alt": "Incode product portfolio — identity verification and authentication suite",
-          "caption": "Incode's product suite — verification, authentication, business trust.",
-          "claim": "Full product suite covering verification + authentication"
-        }
-      ]
+      "tagline": "AI identity verification with biometrics and KYC for trust-critical enterprises."
     },
     {
       "name": "Shufti",
@@ -9546,6 +9648,33 @@
       "website_data": {
         "pricing_plans": [
           {
+            "name": "Pay As You Go",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Per-verification cost",
+              "No minimum commitment",
+              "Flexible usage"
+            ]
+          },
+          {
+            "name": "Monthly Subscription",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Monthly billing",
+              "Usage tiers",
+              "Dedicated support"
+            ]
+          },
+          {
+            "name": "Enterprise Solutions",
+            "price": "Custom pricing",
+            "features_included": [
+              "Custom integrations",
+              "Data residency",
+              "Dedicated account manager"
+            ]
+          },
+          {
             "name": "Free Forever",
             "price": "$0 / per check",
             "features_included": [
@@ -9569,6 +9698,51 @@
               "Full service access",
               "Custom plans",
               "Dedicated sales team support"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "$10 per verification",
+            "features_included": [
+              "Identity verification",
+              "Fraud detection",
+              "Mobile SDK access"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$50 per user/month",
+            "features_included": [
+              "All Basic features",
+              "Enhanced fraud detection",
+              "Multiple integrations"
+            ]
+          },
+          {
+            "name": "Basic Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Document verification",
+              "Biometric verification",
+              "Basic AML screening"
+            ]
+          },
+          {
+            "name": "Standard Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "All features from Basic Plan",
+              "NFC verification",
+              "Address verification"
+            ]
+          },
+          {
+            "name": "Premium Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "All features from Standard Plan",
+              "Enhanced due diligence",
+              "Fraud monitoring"
             ]
           }
         ],
@@ -9677,31 +9851,16 @@
         "free_trial_url": "https://shuftipro.com/pricing/"
       },
       "company_data": {
+        "founded_year": 2016,
         "employee_count_range": "201-500",
         "company_size_range": "201-500",
         "total_funding": "$20.0M",
         "funding_stage": "Series A",
-        "funding_display": true,
-        "_founded_year_original": 2016
+        "funding_display": true
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Global KYC and AML compliance with identity and financial-crime risk screening.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/shufti-1.webp",
-          "alt": "Shufti Pro free starter tier and pay-as-you-go pricing",
-          "caption": "Free tier confirmed — pay-as-you-go thereafter.",
-          "claim": "Free starter tier exists"
-        },
-        {
-          "src": "/images/vendors/shufti-2.webp",
-          "alt": "Shufti Pro 200+ country global coverage map",
-          "caption": "Document and biometric coverage across 200+ countries.",
-          "claim": "200+ country coverage"
-        }
-      ]
+      "tagline": "Global KYC and AML compliance with identity and financial-crime risk screening."
     },
     {
       "name": "Amiqus",
@@ -9802,67 +9961,124 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Standard (Client Onboarding)",
-            "price": "From £15 per client",
+            "name": "Standard",
+            "price": "Contact for pricing",
             "features_included": [
-              "Minimum contract: £500/month",
-              "Pre-built client journeys",
-              "Custom templates",
-              "Team task assignments",
-              "Custom forms & branding"
+              "Identity verification",
+              "Client onboarding",
+              "AML checks"
             ]
           },
           {
-            "name": "Scale (Client Onboarding)",
-            "price": "From £10 per client",
+            "name": "Premium",
+            "price": "Contact for pricing",
             "features_included": [
-              "2,000+ clients/year typical",
-              "Everything in Standard",
+              "All standard features",
+              "Enhanced support",
+              "Custom integrations"
+            ]
+          },
+          {
+            "name": "Scale",
+            "price": "from £10 per client",
+            "features_included": [
+              "Everything in the ‘Standard’ package, plus",
               "Bulk uploads",
               "API connectivity",
               "Unlimited custom forms",
-              "Integrations with PMS"
-            ]
-          },
-          {
-            "name": "Enterprise (Client Onboarding)",
-            "price": "Custom",
-            "features_included": [
-              "10,000+ clients/year typical",
-              "AML consultancy",
-              "Bespoke migration & implementation",
-              "Dedicated account manager"
-            ]
-          },
-          {
-            "name": "Standard (Staff Onboarding)",
-            "price": "From £7.50 per candidate",
-            "features_included": [
-              "Minimum contract: £500/month",
-              "Right to Work check from £7.50",
-              "BPSS screening from £20",
-              "Automated referencing from £10"
-            ]
-          },
-          {
-            "name": "Scale (Staff Onboarding)",
-            "price": "From £6 per candidate",
-            "features_included": [
-              "1,250+ candidates/year typical",
-              "Right to Work check from £6.75",
-              "BPSS screening from £18",
               "CSV & JSON exports",
-              "ATS integrations"
+              "Integrations with your internal systems"
             ]
           },
           {
-            "name": "Enterprise (Staff Onboarding)",
+            "name": "Enterprise",
             "price": "Custom",
             "features_included": [
-              "10,000+ candidates/year typical",
-              "SSO functionality",
-              "AML consultancy",
-              "Data hosting localisation"
+              "Everything in the ‘Scale’ package, plus",
+              "Single-sign-on (SSO) functionality",
+              "AML consultancy and process review",
+              "Data hosting localisation",
+              "Bespoke migration & implementation",
+              "Dedicated account and implementation manager",
+              "Premium support with SLAs"
+            ]
+          },
+          {
+            "name": "Standard Candidate Check",
+            "price": "from £7.50 per candidate",
+            "features_included": [
+              "Right to Work check",
+              "BPSS screening",
+              "Automated referencing",
+              "Full UK & International check coverage",
+              "Pre-built client journeys",
+              "Custom templates",
+              "Team task assignments",
+              "Useful dashboards and reports",
+              "Custom forms & branding",
+              "Group training and consultancy"
+            ]
+          },
+          {
+            "name": "Scale Candidate Check",
+            "price": "from £6 per candidate",
+            "features_included": [
+              "Everything in the ‘Standard’ package, plus",
+              "Bulk uploads",
+              "API connectivity",
+              "Unlimited custom forms",
+              "CSV & JSON exports",
+              "Integrations with your internal systems"
+            ]
+          },
+          {
+            "name": "Enterprise Candidate Check",
+            "price": "Custom",
+            "features_included": [
+              "Everything in the ‘Scale’ package, plus",
+              "Single-sign-on (SSO) functionality",
+              "AML consultancy and process review",
+              "Data hosting localisation",
+              "Bespoke migration & implementation",
+              "Dedicated account and implementation manager",
+              "Premium support with SLAs"
+            ]
+          },
+          {
+            "name": "Basic Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Client onboarding",
+              "Staff onboarding",
+              "Digital DBS checks"
+            ]
+          },
+          {
+            "name": "Premium Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "Anti-money laundering checks",
+              "Right to work checks",
+              "Automated employment references"
+            ]
+          },
+          {
+            "name": "Professional Plan",
+            "price": "Contact for pricing",
+            "features_included": [
+              "All Basic features",
+              "Pre-employment screening",
+              "Automated employment references",
+              "Client onboarding tools"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
+            "price": "Custom pricing",
+            "features_included": [
+              "All Professional features",
+              "Dedicated support",
+              "Custom integrations"
             ]
           }
         ],
@@ -9953,9 +10169,8 @@
         "supported_countries": "UK and EU",
         "accuracy_stats": "95% accuracy in identity verification",
         "headquarters": "UK",
-        "founded_year": 2015,
-        "free_trial_url": "https://amiqus.co/get-in-touch",
-        "_founded_year_original": 2022
+        "founded_year": 2022,
+        "free_trial_url": "https://amiqus.co/get-in-touch"
       },
       "company_data": {
         "founded_year": 2015,
@@ -9967,22 +10182,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Compliance onboarding for staff and clients in regulated sectors like legal and finance.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/amiqus-1.webp",
-          "alt": "Amiqus UK compliance platform for legal, HR and financial firms",
-          "caption": "Amiqus's positioning — UK/EU compliance platform homepage.",
-          "claim": "UK/EU compliance platform"
-        },
-        {
-          "src": "/images/vendors/amiqus-2.webp",
-          "alt": "Amiqus single platform covering AML, right-to-work, BPSS, DBS and IDV",
-          "caption": "Amiqus's product breadth — AML, right-to-work, DBS, IDV in one platform.",
-          "claim": "Combined staff vetting + client KYC"
-        }
-      ]
+      "tagline": "Compliance onboarding for staff and clients in regulated sectors like legal and finance."
     },
     {
       "name": "FaceTec 3D Face Authentication",
@@ -10178,22 +10378,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "3D face matching and liveness detection for passwordless enterprise authentication.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/facetec-3d-face-authentication-1.webp",
-          "alt": "FaceTec 3D face authentication platform homepage",
-          "caption": "FaceTec's 3D face authentication positioning — homepage hero.",
-          "claim": "Pure 3D biometric face authentication SDK"
-        },
-        {
-          "src": "/images/vendors/facetec-3d-face-authentication-2.webp",
-          "alt": "FaceTec how it works — 3D liveness and face matching mechanics",
-          "caption": "How FaceTec works — 3D Liveness, ID scan, and face matching pipeline.",
-          "claim": "3D liveness + face matching pipeline"
-        }
-      ]
+      "tagline": "3D face matching and liveness detection for passwordless enterprise authentication."
     },
     {
       "name": "Identomat",
@@ -10359,6 +10544,60 @@
               "Request custom certifications",
               "Compliance Task Force"
             ]
+          },
+          {
+            "name": "Basic Plan",
+            "price": "$19/month",
+            "features_included": [
+              "Identity verification",
+              "Fraud detection",
+              "Basic support"
+            ]
+          },
+          {
+            "name": "Pro Plan",
+            "price": "$49/month",
+            "features_included": [
+              "Advanced identity verification",
+              "Fraud detection",
+              "Priority support",
+              "API access"
+            ]
+          },
+          {
+            "name": "Enterprise Plan",
+            "price": "Custom pricing",
+            "features_included": [
+              "All features of Pro",
+              "Custom solutions",
+              "Dedicated account manager"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "$29/month",
+            "features_included": [
+              "Identity verification",
+              "Fraud detection"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$99/month",
+            "features_included": [
+              "All Basic features",
+              "Document verification",
+              "API access"
+            ]
+          },
+          {
+            "name": "Enterprise",
+            "price": "Custom pricing",
+            "features_included": [
+              "All Pro features",
+              "Dedicated support",
+              "Custom integrations"
+            ]
           }
         ],
         "key_features": [
@@ -10488,8 +10727,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI-driven KYC and AML compliance with liveness and video verification for digital teams.",
-      "has_assessment": true
+      "tagline": "AI-driven KYC and AML compliance with liveness and video verification for digital teams."
     },
     {
       "name": "TalnFlo",
@@ -10683,8 +10921,7 @@
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Dual-verified talent marketplace with video profiles and liveness checks for recruiters.",
-      "has_assessment": true
+      "tagline": "Dual-verified talent marketplace with video profiles and liveness checks for recruiters."
     },
     {
       "name": "CORE Identity Verification Solutions",
@@ -10926,8 +11163,7 @@
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI identity verification with facial recognition and liveness for regulated industries.",
-      "has_assessment": true
+      "tagline": "AI identity verification with facial recognition and liveness for regulated industries."
     },
     {
       "name": "Imageware Authenticate",
@@ -11172,8 +11408,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Multi-modal biometric authentication with voice, fingerprint, and face for enterprises.",
-      "has_assessment": true
+      "tagline": "Multi-modal biometric authentication with voice, fingerprint, and face for enterprises."
     },
     {
       "name": "Video KYC Identity Verification Software",
@@ -11422,8 +11657,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Video-based KYC platform that eliminates repetitive customer outreach in onboarding.",
-      "has_assessment": true
+      "tagline": "Video-based KYC platform that eliminates repetitive customer outreach in onboarding."
     },
     {
       "name": "deepidv",
@@ -11652,17 +11886,16 @@
         "free_trial_url": "https://vendor.com/free-trial"
       },
       "company_data": {
+        "founded_year": 2024,
         "employee_count_range": "2-10",
         "company_size_range": "1-10",
         "total_funding": "$1.4M",
         "funding_stage": "Seed",
-        "funding_display": false,
-        "_founded_year_original": 2024
+        "funding_display": false
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "AI identity verification with bank statement retrieval and document analysis for finance.",
-      "has_assessment": true
+      "tagline": "AI identity verification with bank statement retrieval and document analysis for finance."
     },
     {
       "name": "KYC Solution",
@@ -11765,45 +11998,55 @@
       "website_data": {
         "pricing_plans": [
           {
-            "name": "Starter",
-            "price": "From €0.25 per verification",
+            "name": "Basic Plan",
+            "price": "$19/month",
             "features_included": [
-              "Up to ~5,000 checks/month",
-              "Passport & ID verification",
-              "Biometric face match + basic liveness",
-              "Essential AML & sanctions screening",
-              "Dashboard access + basic API",
-              "No setup fee, no minimum commitment"
+              "Identity verification",
+              "Document checks"
             ]
           },
           {
-            "name": "Growth",
-            "price": "From €0.18 per verification",
+            "name": "Pro Plan",
+            "price": "$49/month",
             "features_included": [
-              "5,000–50,000 checks/month",
-              "230+ country document coverage",
-              "Advanced biometrics & enhanced liveness",
-              "AML, sanctions, PEP, media checks",
-              "Full API + SDK",
-              "Custom rules & workflows"
+              "Identity verification",
+              "Document checks",
+              "Enhanced fraud protection"
             ]
           },
           {
-            "name": "Scale",
-            "price": "From €0.14 per verification",
+            "name": "Enterprise Plan",
+            "price": "Custom pricing",
             "features_included": [
-              "Everything in Growth",
-              "50,000+ checks/month",
-              "Volume-based pricing"
+              "All Pro features",
+              "Custom integration options",
+              "Dedicated support"
+            ]
+          },
+          {
+            "name": "Basic",
+            "price": "$29/month",
+            "features_included": [
+              "Basic verification",
+              "Email support"
+            ]
+          },
+          {
+            "name": "Pro",
+            "price": "$99/month",
+            "features_included": [
+              "Advanced verification",
+              "Priority support",
+              "API access"
             ]
           },
           {
             "name": "Enterprise",
-            "price": "From €0.10 per verification",
+            "price": "Custom",
             "features_included": [
-              "Fully negotiable",
-              "No mandatory minimum commitment",
-              "Custom bundles for KYC, AML, sanctions, PEP, biometrics"
+              "Custom solutions",
+              "Dedicated account manager",
+              "Comprehensive support"
             ]
           }
         ],
@@ -11899,8 +12142,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Automated KYC and KYB workflows for financial institutions and regulated industries.",
-      "has_assessment": true
+      "tagline": "Automated KYC and KYB workflows for financial institutions and regulated industries."
     },
     {
       "name": "SwiftDil",
@@ -12114,8 +12356,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "SaaS and API platform for KYC, AML, and identity checks in financial services.",
-      "has_assessment": true
+      "tagline": "SaaS and API platform for KYC, AML, and identity checks in financial services."
     },
     {
       "name": "Entrust Identity Verification",
@@ -12275,22 +12516,7 @@
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
-      "tagline": "Trusted onboarding with flexible identity verification for citizens and customers.",
-      "has_assessment": true,
-      "screenshots": [
-        {
-          "src": "/images/vendors/entrust-identity-verification-1.webp",
-          "alt": "Entrust Identity Verification PKI-backed IDV platform",
-          "caption": "Entrust IDV product — PKI-backed identity verification.",
-          "claim": "PKI-backed identity verification"
-        },
-        {
-          "src": "/images/vendors/entrust-identity-verification-2.webp",
-          "alt": "Entrust PKI software solutions features bundled with identity verification",
-          "caption": "Entrust's PKI stack — what bundles IDV into broader credentialing.",
-          "claim": "PKI + identity verification stack"
-        }
-      ]
+      "tagline": "Trusted onboarding with flexible identity verification for citizens and customers."
     }
   ]
 }

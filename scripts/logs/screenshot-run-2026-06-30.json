@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "incode",
+    "index": 1,
+    "url": "https://www.incode.com/",
+    "selector": "near:Power a world of trust",
+    "claim": "Gartner-leader end-to-end IDV",
+    "ok": false,
+    "error": "near: text not found — \"Power a world of trust\"",
+    "note": null,
+    "cookieDismissed": "#cookiescript_accept",
+    "outPath": null
+  },
+  {
+    "slug": "incode",
+    "index": 2,
+    "url": "https://www.incode.com/products",
+    "selector": "near:Incode",
+    "claim": "Full product suite covering verification + authentication",
+    "ok": true,
+    "error": null,
+    "note": null,
+    "cookieDismissed": null,
+    "outPath": "public/images/vendors/incode-2.webp"
+  }
+]

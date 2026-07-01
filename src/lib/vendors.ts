@@ -138,6 +138,13 @@ export type Vendor = {
     funding_display?: boolean;
   };
   region: Region | null;
+  // editorial visuals
+  screenshots?: Array<{
+    src: string;
+    alt: string;
+    caption: string;
+    claim?: string;
+  }>;
   // meta
   last_normalized_at: string;
 };
@@ -398,6 +405,50 @@ export function getVendorsByCategory(categoryName: string): Vendor[] {
 export function getOutboundUrl(vendor: Vendor): string {
   if (vendor.affiliate_url) return vendor.affiliate_url;
   return vendor.vendor_website;
+}
+
+// Canonical B2B compliance checklist for DecisionCard ✓/✗ row.
+// Each entry maps a display label to the compliance_flags keys that satisfy it.
+// SOC 2 is satisfied by either soc2 or soc2_type2.
+export const DECISION_COMPLIANCE_CHECKLIST: Array<{
+  label: string;
+  keys: Array<keyof ComplianceFlags>;
+}> = [
+  { label: "GDPR", keys: ["gdpr"] },
+  { label: "SOC 2", keys: ["soc2_type2", "soc2"] },
+  { label: "ISO 27001", keys: ["iso27001"] },
+  { label: "HIPAA", keys: ["hipaa"] },
+  { label: "PCI DSS", keys: ["pci_dss"] },
+  { label: "CCPA", keys: ["ccpa"] },
+];
+
+export function vendorMeetsCompliance(
+  vendor: Vendor,
+  keys: Array<keyof ComplianceFlags>,
+): boolean {
+  return keys.some((k) => vendor.compliance_flags?.[k]);
+}
+
+// value_tier → simple price band glyph for DecisionCard
+export function getPriceBand(vendor: Vendor): string | null {
+  switch (vendor.value_tier) {
+    case "budget":
+      return "$";
+    case "mid":
+      return "$$";
+    case "enterprise":
+      return "$$$";
+    default:
+      return null;
+  }
+}
+
+// Single-line price for DecisionCard. Prefers normalized starting_price,
+// falls back to raw vendor.pricing string when normalization is missing.
+export function getDecisionPriceLabel(vendor: Vendor): string {
+  if (vendor.starting_price?.raw) return vendor.starting_price.raw;
+  if (vendor.pricing) return vendor.pricing;
+  return "Contact for pricing";
 }
 
 // Pick up to N compliance flags from the given order that are true on the vendor.

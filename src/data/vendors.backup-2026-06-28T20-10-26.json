@@ -855,8 +855,7 @@
         "total_funding": "$15.0M",
         "funding_stage": "IPO",
         "_searched_at": "2026-06-01T11:51:46.913498",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "slug": "recognito",
       "featured": false,
@@ -885,21 +884,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": true
       },
-      "countries_count": 195,
-      "screenshots": [
-        {
-          "src": "/images/vendors/recognito-1.webp",
-          "alt": "Recognito ID document verification flow — face recognition SDK",
-          "caption": "Recognito's document + face verification flow on the homepage.",
-          "claim": "End-to-end ID + face verification"
-        },
-        {
-          "src": "/images/vendors/recognito-2.webp",
-          "alt": "Recognito face biometrics verification including liveness and 1:1 match",
-          "caption": "Recognito's face biometrics: capture, 1:1 match, liveness.",
-          "claim": "Face biometrics with liveness"
-        }
-      ]
+      "countries_count": 195
     },
     {
       "name": "RegTechONE",
@@ -1737,6 +1722,7 @@
         "_rescraped_at": "2026-06-01T12:10:34.512792"
       },
       "company_data": {
+        "founded_year": 2024,
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "total_funding": "$200.0M",
@@ -1771,21 +1757,7 @@
         "has_kyb": true,
         "has_transaction_monitoring": true
       },
-      "countries_count": 200,
-      "screenshots": [
-        {
-          "src": "/images/vendors/persona-1.webp",
-          "alt": "Persona configurable KYC and KYB identity platform",
-          "caption": "Persona's positioning — flexible and secure way to verify people and businesses online.",
-          "claim": "Configurable KYC/KYB workflows"
-        },
-        {
-          "src": "/images/vendors/persona-2.webp",
-          "alt": "Persona modular identity platform — verifications, fraud prevention, orchestration",
-          "caption": "Persona's modular building blocks — verifications, fraud signals, orchestration.",
-          "claim": "Modular identity platform with composable verifications"
-        }
-      ]
+      "countries_count": 200
     },
     {
       "name": "IDnow Platform",
@@ -2069,21 +2041,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": 195,
-      "screenshots": [
-        {
-          "src": "/images/vendors/xproof-1.webp",
-          "alt": "Daon xProof enterprise biometric identity proofing platform",
-          "caption": "xProof enterprise IDV — cloud or on-premise deployment.",
-          "claim": "Cloud or on-premise deployment"
-        },
-        {
-          "src": "/images/vendors/xproof-2.webp",
-          "alt": "Daon enterprise identity proofing and authentication platform",
-          "caption": "Daon's positioning — enterprise identity proofing platform.",
-          "claim": "Enterprise IDV vendor"
-        }
-      ]
+      "countries_count": 195
     },
     {
       "name": "1Kosmos Platform",
@@ -2128,8 +2086,7 @@
         "total_funding": "$1.3M",
         "funding_stage": "Series B",
         "_searched_at": "2026-06-01T11:46:34.623248",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "slug": "1kosmos-platform",
       "featured": false,
@@ -2153,21 +2110,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": null,
-      "screenshots": [
-        {
-          "src": "/images/vendors/1kosmos-platform-1.webp",
-          "alt": "1Kosmos decentralized identity platform homepage",
-          "caption": "1Kosmos positioning — decentralized identity for workforce + customer.",
-          "claim": "Decentralized identity platform"
-        },
-        {
-          "src": "/images/vendors/1kosmos-platform-2.webp",
-          "alt": "1Kosmos modern identity across user lifecycle — passwordless biometric MFA",
-          "caption": "1Kosmos coverage — verification, authentication, recovery across the full user lifecycle.",
-          "claim": "Full user-lifecycle identity"
-        }
-      ]
+      "countries_count": null
     },
     {
       "name": "Ping Identity Platform",
@@ -2927,8 +2870,7 @@
         "total_funding": "$30.0M",
         "funding_stage": "Seed",
         "_searched_at": "2026-06-01T11:46:48.260733",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "slug": "biometric-agreement",
       "featured": false,
@@ -3392,8 +3334,7 @@
         "total_funding": "$476.0M",
         "funding_stage": "Private Equity",
         "_searched_at": "2026-06-01T11:46:52.527310",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "slug": "oz-liveness",
       "featured": false,
@@ -3560,8 +3501,7 @@
         "total_funding": "$18.0M",
         "funding_stage": "Seed",
         "_searched_at": "2026-06-01T11:46:54.279600",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "slug": "enqualify",
       "featured": false,
@@ -4576,8 +4516,7 @@
         "total_funding": "$9.4M",
         "funding_stage": "IPO",
         "_searched_at": "2026-06-01T11:47:12.635792",
-        "funding_display": false,
-        "_funding_display_original": true
+        "funding_display": true
       },
       "slug": "biometric-attendance-system",
       "featured": false,
@@ -4831,20 +4770,6 @@
         "Phone Verification",
         "Email Verification",
         "NFC"
-      ],
-      "screenshots": [
-        {
-          "src": "/images/vendors/idenfy-1.webp",
-          "alt": "iDenfy industries served — fintech, crypto, gaming KYC verification",
-          "caption": "iDenfy's industry coverage — fintech, crypto, gaming, e-commerce KYC.",
-          "claim": "Industry-specific KYC verification"
-        },
-        {
-          "src": "/images/vendors/idenfy-2.webp",
-          "alt": "iDenfy company profile and customer base",
-          "caption": "iDenfy company snapshot — used for B2B social proof.",
-          "claim": "Established KYC vendor"
-        }
       ]
     },
     {
@@ -5043,6 +4968,7 @@
       "logo_url": "https://www.google.com/s2/favicons?domain=complycube.com&sz=128",
       "logo_source": "favicon",
       "company_data": {
+        "founded_year": 2007,
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "total_funding": "$196.0M",
@@ -5078,21 +5004,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": true
       },
-      "countries_count": 220,
-      "screenshots": [
-        {
-          "src": "/images/vendors/complycube-1.webp",
-          "alt": "ComplyCube Starter, Core, Growth and Enterprise pricing tiers",
-          "caption": "Four published tiers — Starter from $99/month, Growth and Enterprise sales-quoted.",
-          "claim": "Starter plan $99/mo, sales-quoted Growth + Enterprise"
-        },
-        {
-          "src": "/images/vendors/complycube-2.webp",
-          "alt": "ComplyCube certifications: ISO 27001, SOC 2, iBeta PAD, UK DiATF",
-          "caption": "Independently certified: ISO 27001, SOC 2, iBeta PAD, UK DiATF.",
-          "claim": "ISO 27001 + SOC 2 + iBeta PAD + UK DiATF certifications"
-        }
-      ]
+      "countries_count": 220
     },
     {
       "name": "Mitek Systems",
@@ -5224,21 +5136,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": true
       },
-      "countries_count": 195,
-      "screenshots": [
-        {
-          "src": "/images/vendors/mitek-systems-1.webp",
-          "alt": "Mitek Check Fraud Defender used by US banks",
-          "caption": "Check Fraud Defender — the differentiator vs other IDV vendors.",
-          "claim": "Check fraud detection alongside IDV"
-        },
-        {
-          "src": "/images/vendors/mitek-systems-2.webp",
-          "alt": "Mitek mobile deposit and ID capture SDK for banks",
-          "caption": "Mobile ID capture SDK — used by top US banks at scale.",
-          "claim": "Mobile ID capture used by US banks"
-        }
-      ]
+      "countries_count": 195
     },
     {
       "name": "AU10TIX",
@@ -5666,21 +5564,7 @@
         "has_kyb": true,
         "has_transaction_monitoring": true
       },
-      "countries_count": 230,
-      "screenshots": [
-        {
-          "src": "/images/vendors/veriff-1.webp",
-          "alt": "Veriff per-verification pricing plans",
-          "caption": "Veriff's published pricing — confirms transparent per-check model.",
-          "claim": "transparent per-verification pricing"
-        },
-        {
-          "src": "/images/vendors/veriff-2.webp",
-          "alt": "Veriff identity verification covering 230+ countries and territories",
-          "caption": "Verify individuals anywhere — Veriff's coverage claim, in their own words.",
-          "claim": "230+ country coverage"
-        }
-      ]
+      "countries_count": 230
     },
     {
       "name": "Ondato",
@@ -5793,7 +5677,7 @@
         "supported_countries": "192",
         "accuracy_stats": "99.8%",
         "headquarters": "Lithuania",
-        "founded_year": 2018,
+        "founded_year": 2017,
         "free_trial_url": "https://ondato.com/book/",
         "pricing_plans": [
           {
@@ -5833,8 +5717,7 @@
           "https://ondato.com/product",
           "https://ondato.com/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:29:28.839769",
-        "_founded_year_original": 2018
+        "_scraped_at": "2026-06-01T11:29:28.839769"
       },
       "company_data": {
         "founded_year": 2018,
@@ -5872,21 +5755,7 @@
         "has_kyb": true,
         "has_transaction_monitoring": true
       },
-      "countries_count": null,
-      "screenshots": [
-        {
-          "src": "/images/vendors/ondato-1.webp",
-          "alt": "Ondato EU-licensed KYC and identity verification platform",
-          "caption": "Ondato's EU KYC positioning — homepage hero.",
-          "claim": "EU-licensed KYC platform"
-        },
-        {
-          "src": "/images/vendors/ondato-2.webp",
-          "alt": "Ondato platform stats — 192 countries, 30s onboarding, 15,000+ AML sources",
-          "caption": "Ondato's scale — 192 countries, 30-second onboarding, 15,000+ AML sources.",
-          "claim": "192-country coverage, 15,000+ AML data sources"
-        }
-      ]
+      "countries_count": null
     },
     {
       "name": "Entrust IDV, formerly Onfido",
@@ -6010,7 +5879,7 @@
         "supported_countries": "Global",
         "accuracy_stats": "High accuracy in verification claims, detailed performance metrics available upon request",
         "headquarters": "Minneapolis, MN, USA",
-        "founded_year": 2012,
+        "founded_year": 1969,
         "free_trial_url": "https://www.entrust.com/resources/demos-trials",
         "_pages_scraped": [
           "https://www.entrust.com",
@@ -6018,8 +5887,7 @@
           "https://www.entrust.com/product",
           "https://www.entrust.com/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:30:11.338072",
-        "_founded_year_original": 2012
+        "_scraped_at": "2026-06-01T11:30:11.338072"
       },
       "company_data": {
         "founded_year": 2012,
@@ -6057,21 +5925,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": 195,
-      "screenshots": [
-        {
-          "src": "/images/vendors/entrust-idv-formerly-onfido-1.webp",
-          "alt": "Entrust identity verification platform formerly known as Onfido",
-          "caption": "Entrust IDV — the rebrand of Onfido under the Entrust portfolio.",
-          "claim": "Identity verification (formerly Onfido)"
-        },
-        {
-          "src": "/images/vendors/entrust-idv-formerly-onfido-2.webp",
-          "alt": "Entrust PKI public key infrastructure and certificate lifecycle management",
-          "caption": "Entrust PKI — what bundles IDV into a broader credentialing stack.",
-          "claim": "PKI + credential issuance bundled with IDV"
-        }
-      ]
+      "countries_count": 195
     },
     {
       "name": "Sumsub",
@@ -6196,7 +6050,7 @@
         "supported_countries": "Worldwide",
         "accuracy_stats": "99.5% profile completion success rate",
         "headquarters": "Not specified",
-        "founded_year": 2015,
+        "founded_year": 2020,
         "free_trial_url": "https://sumsub.com/get-started/",
         "_pages_scraped": [
           "https://sumsub.com",
@@ -6205,8 +6059,7 @@
           "https://sumsub.com/product",
           "https://sumsub.com/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:30:22.806168",
-        "_founded_year_original": 2015
+        "_scraped_at": "2026-06-01T11:30:22.806168"
       },
       "company_data": {
         "founded_year": 2015,
@@ -6244,21 +6097,7 @@
         "has_kyb": true,
         "has_transaction_monitoring": true
       },
-      "countries_count": 195,
-      "screenshots": [
-        {
-          "src": "/images/vendors/sumsub-1.webp",
-          "alt": "Sumsub per-verification pricing for KYC, AML and transaction monitoring",
-          "caption": "Sumsub's published per-verification pricing — KYC + AML in one API.",
-          "claim": "Transparent per-verification pricing"
-        },
-        {
-          "src": "/images/vendors/sumsub-2.webp",
-          "alt": "Sumsub AML screening bundled with KYC into one API",
-          "caption": "Sumsub's AML screening — same API stack as KYC verification.",
-          "claim": "KYC + AML in one API"
-        }
-      ]
+      "countries_count": 195
     },
     {
       "name": "Luxand FaceSDK",
@@ -6420,7 +6259,7 @@
         "supported_countries": "USA, Canada, UK, Australia",
         "accuracy_stats": "99.9% accuracy rate",
         "headquarters": "New York, NY",
-        "founded_year": 2005,
+        "founded_year": 2015,
         "free_trial_url": "https://vendor.com/free-trial",
         "_pages_scraped": [
           "https://www.g2.com/sellers/luxand-inc",
@@ -6436,8 +6275,7 @@
           "https://www.luxand.com/features"
         ],
         "_scraped_at": "2026-06-01T11:30:45.851012",
-        "_rescraped_at": "2026-06-01T12:16:51.548079",
-        "_founded_year_original": 2005
+        "_rescraped_at": "2026-06-01T12:16:51.548079"
       },
       "company_data": {
         "founded_year": 2005,
@@ -6473,21 +6311,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": true
       },
-      "countries_count": null,
-      "screenshots": [
-        {
-          "src": "/images/vendors/luxand-facesdk-1.webp",
-          "alt": "Luxand FaceSDK cross-platform face recognition library",
-          "caption": "FaceSDK — cross-platform with on-premise deployment.",
-          "claim": "Cross-platform SDK with on-prem option"
-        },
-        {
-          "src": "/images/vendors/luxand-facesdk-2.webp",
-          "alt": "Luxand FaceSDK download options for Windows, Linux, macOS, iOS, Android",
-          "caption": "Downloads for every major OS — proof of cross-platform reach.",
-          "claim": "Windows + Linux + macOS + iOS + Android builds"
-        }
-      ]
+      "countries_count": null
     },
     {
       "name": "Veridium",
@@ -6647,7 +6471,7 @@
         "supported_countries": "Global",
         "accuracy_stats": "99.9% accuracy rate",
         "headquarters": "San Francisco, CA",
-        "founded_year": 2012,
+        "founded_year": 2015,
         "free_trial_url": "https://example.com/free-trial",
         "_pages_scraped": [
           "https://www.g2.com/sellers/veridium",
@@ -6663,8 +6487,7 @@
           "https://www.veridiumid.com/features"
         ],
         "_scraped_at": "2026-06-01T11:31:36.128567",
-        "_rescraped_at": "2026-06-01T12:18:03.972147",
-        "_founded_year_original": 2012
+        "_rescraped_at": "2026-06-01T12:18:03.972147"
       },
       "company_data": {
         "founded_year": 2012,
@@ -6700,21 +6523,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": true
       },
-      "countries_count": 195,
-      "screenshots": [
-        {
-          "src": "/images/vendors/veridium-1.webp",
-          "alt": "Veridium active and passive biometric authentication platform",
-          "caption": "Veridium's biometric methods — active and passive signals, FIDO, vFace.",
-          "claim": "Active + passive biometric MFA"
-        },
-        {
-          "src": "/images/vendors/veridium-2.webp",
-          "alt": "Veridium identity-first security positioning for enterprise IAM",
-          "caption": "Veridium's positioning — identity-first security for enterprise IAM.",
-          "claim": "Identity-first enterprise IAM"
-        }
-      ]
+      "countries_count": 195
     },
     {
       "name": "FaceOnLive Identity Verification Software",
@@ -7088,21 +6897,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": true
       },
-      "countries_count": 195,
-      "screenshots": [
-        {
-          "src": "/images/vendors/biometric-time-attendance-system-1.webp",
-          "alt": "IDEMIA identity and biometric workforce solutions homepage",
-          "caption": "IDEMIA's positioning — identity and biometric solutions for workforce.",
-          "claim": "IDEMIA identity + biometric platform"
-        },
-        {
-          "src": "/images/vendors/biometric-time-attendance-system-2.webp",
-          "alt": "IDEMIA biometric authentication for enterprise workforce identity",
-          "caption": "IDEMIA's biometric portfolio — backbone of the time-attendance product.",
-          "claim": "Enterprise-grade biometric hardware"
-        }
-      ]
+      "countries_count": 195
     },
     {
       "name": "SentiVeillance Cluster",
@@ -7424,21 +7219,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": 254,
-      "screenshots": [
-        {
-          "src": "/images/vendors/regula-1.webp",
-          "alt": "Regula Document Reader SDK forensic-grade document authentication",
-          "caption": "Document Reader SDK — Regula's forensic-grade auth engine.",
-          "claim": "Forensic-grade document authentication"
-        },
-        {
-          "src": "/images/vendors/regula-2.webp",
-          "alt": "Regula impact — 50% lower onboarding cost, 254 countries covered, 99.8% precision",
-          "caption": "Regula's measured impact — 50% lower onboarding cost, 254-country coverage.",
-          "claim": "254-country coverage, 99.8% precision"
-        }
-      ]
+      "countries_count": 254
     },
     {
       "name": "Incode",
@@ -7554,15 +7335,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": null,
-      "screenshots": [
-        {
-          "src": "/images/vendors/incode-2.webp",
-          "alt": "Incode product portfolio — identity verification and authentication suite",
-          "caption": "Incode's product suite — verification, authentication, business trust.",
-          "claim": "Full product suite covering verification + authentication"
-        }
-      ]
+      "countries_count": null
     },
     {
       "name": "Shufti",
@@ -7726,6 +7499,7 @@
         "_scraped_at": "2026-06-01T11:34:49.782968"
       },
       "company_data": {
+        "founded_year": 2016,
         "employee_count_range": "201-500",
         "company_size_range": "201-500",
         "total_funding": "$20.0M",
@@ -7761,21 +7535,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": 200,
-      "screenshots": [
-        {
-          "src": "/images/vendors/shufti-1.webp",
-          "alt": "Shufti Pro free starter tier and pay-as-you-go pricing",
-          "caption": "Free tier confirmed — pay-as-you-go thereafter.",
-          "claim": "Free starter tier exists"
-        },
-        {
-          "src": "/images/vendors/shufti-2.webp",
-          "alt": "Shufti Pro 200+ country global coverage map",
-          "caption": "Document and biometric coverage across 200+ countries.",
-          "claim": "200+ country coverage"
-        }
-      ]
+      "countries_count": 200
     },
     {
       "name": "Amiqus",
@@ -7952,7 +7712,7 @@
         "supported_countries": "UK and EU",
         "accuracy_stats": "95% accuracy in identity verification",
         "headquarters": "UK",
-        "founded_year": 2015,
+        "founded_year": 2022,
         "free_trial_url": "https://amiqus.co/get-in-touch",
         "_pages_scraped": [
           "https://amiqus.co",
@@ -7961,8 +7721,7 @@
           "https://amiqus.co/product",
           "https://amiqus.co/solutions"
         ],
-        "_scraped_at": "2026-06-01T11:34:52.282814",
-        "_founded_year_original": 2015
+        "_scraped_at": "2026-06-01T11:34:52.282814"
       },
       "company_data": {
         "founded_year": 2015,
@@ -8000,21 +7759,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": null,
-      "screenshots": [
-        {
-          "src": "/images/vendors/amiqus-1.webp",
-          "alt": "Amiqus UK compliance platform for legal, HR and financial firms",
-          "caption": "Amiqus's positioning — UK/EU compliance platform homepage.",
-          "claim": "UK/EU compliance platform"
-        },
-        {
-          "src": "/images/vendors/amiqus-2.webp",
-          "alt": "Amiqus single platform covering AML, right-to-work, BPSS, DBS and IDV",
-          "caption": "Amiqus's product breadth — AML, right-to-work, DBS, IDV in one platform.",
-          "claim": "Combined staff vetting + client KYC"
-        }
-      ]
+      "countries_count": null
     },
     {
       "name": "FaceTec 3D Face Authentication",
@@ -8171,21 +7916,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": 180,
-      "screenshots": [
-        {
-          "src": "/images/vendors/facetec-3d-face-authentication-1.webp",
-          "alt": "FaceTec 3D face authentication platform homepage",
-          "caption": "FaceTec's 3D face authentication positioning — homepage hero.",
-          "claim": "Pure 3D biometric face authentication SDK"
-        },
-        {
-          "src": "/images/vendors/facetec-3d-face-authentication-2.webp",
-          "alt": "FaceTec how it works — 3D liveness and face matching mechanics",
-          "caption": "How FaceTec works — 3D Liveness, ID scan, and face matching pipeline.",
-          "claim": "3D liveness + face matching pipeline"
-        }
-      ]
+      "countries_count": 180
     },
     {
       "name": "Identomat",
@@ -9398,6 +9129,7 @@
         "_rescraped_at": "2026-06-01T12:21:03.474875"
       },
       "company_data": {
+        "founded_year": 2024,
         "employee_count_range": "2-10",
         "company_size_range": "1-10",
         "total_funding": "$1.4M",
@@ -9956,21 +9688,7 @@
         "has_kyb": false,
         "has_transaction_monitoring": false
       },
-      "countries_count": 150,
-      "screenshots": [
-        {
-          "src": "/images/vendors/entrust-identity-verification-1.webp",
-          "alt": "Entrust Identity Verification PKI-backed IDV platform",
-          "caption": "Entrust IDV product — PKI-backed identity verification.",
-          "claim": "PKI-backed identity verification"
-        },
-        {
-          "src": "/images/vendors/entrust-identity-verification-2.webp",
-          "alt": "Entrust PKI software solutions features bundled with identity verification",
-          "caption": "Entrust's PKI stack — what bundles IDV into broader credentialing.",
-          "claim": "PKI + identity verification stack"
-        }
-      ]
+      "countries_count": 150
     }
   ]
 }

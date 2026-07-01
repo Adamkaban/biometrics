@@ -1,0 +1,109 @@
+
+=== veriff ===
+  ✓ public/images/vendors/veriff-1.webp
+  ✗ near: text not found — "Accuracy"
+
+=== complycube ===
+  ✓ public/images/vendors/complycube-1.webp
+  ✓ public/images/vendors/complycube-2.webp
+
+=== idenfy ===
+  ✗ near: text not found — "Pricing"
+  ✗ near: text not found — "Reviews"
+
+=== shufti ===
+  ✓ public/images/vendors/shufti-1.webp
+  ✓ public/images/vendors/shufti-2.webp
+
+=== facetec-3d-face-authentication ===
+  ✗ page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.facetec.com/spoof-bounty-program/", waiting until "domcontentloaded"
+
+  ✗ near: text not found — "Certifications"
+
+=== ondato ===
+  ✗ near: text not found — "Pricing"
+  ✗ near: text not found — "Transaction"
+
+=== sumsub ===
+  ✓ public/images/vendors/sumsub-1.webp
+  ✗ near: text not found — "Transaction"
+
+=== xproof ===
+  ✓ public/images/vendors/xproof-1.webp
+  ✗ near: text not found — "Certifications"
+
+=== recognito ===
+  ✗ near: text not found — "NIST"
+  ✗ near: text not found — "SDK"
+
+=== amiqus ===
+  ✗ near: text not found — "Pricing"
+  ✗ near: text not found — "Staff"
+
+=== biometric-time-attendance-system ===
+  ✗ near: text not found — "Time"
+  ✓ public/images/vendors/biometric-time-attendance-system-2.webp
+
+=== regula ===
+  ✓ public/images/vendors/regula-1.webp
+  ✗ near: text not found — "Database"
+
+=== entrust-idv-formerly-onfido ===
+  ✓ public/images/vendors/entrust-idv-formerly-onfido-1.webp
+  ✓ public/images/vendors/entrust-idv-formerly-onfido-2.webp
+
+=== veridium ===
+  ✓ public/images/vendors/veridium-1.webp
+  ✗ near: text not found — "Why"
+
+=== persona ===
+  ✗ near: text not found — "Product"
+  ✗ near: text not found — "Coverage"
+
+=== mitek-systems ===
+  ✓ public/images/vendors/mitek-systems-1.webp
+  ✓ public/images/vendors/mitek-systems-2.webp
+
+=== luxand-facesdk ===
+  ✗ page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.luxand.com/facesdk/", waiting until "domcontentloaded"
+
+  ✗ page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.luxand.com/facesdk/download/
+Call log:
+  - navigating to "https://www.luxand.com/facesdk/download/", waiting until "domcontentloaded"
+
+
+=== entrust-identity-verification ===
+  ✗ page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.entrust.com/products/identity-verification
+Call log:
+  - navigating to "https://www.entrust.com/products/identity-verification", waiting until "domcontentloaded"
+
+  ✗ page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.entrust.com/about/company
+Call log:
+  - navigating to "https://www.entrust.com/about/company", waiting until "domcontentloaded"
+
+
+=== incode ===
+  ✗ page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://incode.com/platform/", waiting until "domcontentloaded"
+
+  ✗ page.goto: net::ERR_NAME_NOT_RESOLVED at https://incode.com/solutions/financial-services/
+Call log:
+  - navigating to "https://incode.com/solutions/financial-services/", waiting until "domcontentloaded"
+
+
+=== 1kosmos-platform ===
+  ✗ page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.1kosmos.com/products/blockid/", waiting until "domcontentloaded"
+
+  ✗ page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.1kosmos.com/passwordless-authentication/
+Call log:
+  - navigating to "https://www.1kosmos.com/passwordless-authentication/", waiting until "domcontentloaded"
+
+
+14/40 captured. Log: scripts/logs/screenshot-run-2026-06-29.json
