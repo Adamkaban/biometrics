@@ -1,0 +1,185 @@
+---
+title: "Veriff vs Sumsub 2026: Deepfake Bypass"
+description: "Veriff vs Sumsub for deepfake-resistant KYC: injection attacks, active liveness, NFC chip reads, $0.80 vs $1.35/check. Buyer decision framework."
+author: "James Whitfield"
+pubDate: 2026-07-01
+updatedDate: 2026-07-01
+category: "Comparison"
+featured: false
+ogImage: /images/blog/veriff-vs-sumsub-deepfake-detection-2026.jpg
+faqItems:
+  - q: "Can basic liveness checks detect high-res deepfakes in 2026?"
+    a: "Passive single-frame liveness fails against current-generation deepfakes because the attacks are trained against those exact spoof signatures. Active challenge-response liveness combined with injection-attack detection catches significantly more than passive checks alone."
+  - q: "What is the difference between a deepfake detection tool and a liveness check?"
+    a: "A liveness check confirms a real human is in front of the camera. A deepfake detection tool analyzes whether the media itself has been synthetically generated. Strong identity verification stacks run both simultaneously, not one instead of the other."
+  - q: "How do injection attacks bypass liveness checks without a physical mask or deepfake video on screen?"
+    a: "Injection attacks use virtual camera software to feed pre-recorded or synthesized video directly into the verification pipeline, bypassing the physical camera sensor. Detecting this requires device fingerprinting and camera API validation, not just facial analysis."
+  - q: "Is deepfake video harder to detect than deepfake images?"
+    a: "Yes. People are roughly 36% less likely to catch deepfake video manipulation compared to deepfake images. Motion adds convincing detail that a static frame cannot fake as easily."
+  - q: "Which identity verification vendor has the best deepfake detection in 2026?"
+    a: "No single vendor covers every attack vector. Veriff and Sumsub both score well on documented liveness and fraud prevention. Regula and Alice Biometrics add NFC chip verification as an additional document-side defense against deepfake-paired document fraud."
+  - q: "Is paying for enterprise deepfake detection software worth it in 2026?"
+    a: "For regulated industries facing high-value fraud exposure, yes. Deepfakes now account for around 40% of biometric fraud attempts, and a single successful bypass typically outweighs the per-verification price difference between budget and enterprise-grade vendors."
+  - q: "Can audio deepfake detection be added to an existing identity verification stack?"
+    a: "Most modern identity verification platforms are modular enough to layer voice-based challenge-response checks alongside existing facial liveness. This matters as fraudsters pair synthesized video with cloned voice for call-center and voice-authenticated transactions."
+---
+
+**TL;DR:**
+
+- Basic passive liveness (blink, smile, head-turn) is defeated by current-generation deepfakes at production scale.
+- Injection attacks (virtual camera feeds) are now the dominant bypass vector, not print masks or held-up phones.
+- Look for iBeta PAD Level 2 certification and documented false-accept rates, not vendor self-attestation.
+- [Veriff](/vendors/veriff) lists $0.80/check with claimed 99.6% IDV accuracy; [Sumsub](/vendors/sumsub) lists $1.35/check with bundled KYC/AML.
+- NFC chip verification on ePassports is a meaningful differentiator against document-side deepfake fraud.
+- Multi-modal verification (face + voice + document chip) is becoming the baseline for high-assurance onboarding.
+
+<img src="/images/blog/veriff-vs-sumsub-deepfake-detection-2026-1.webp" alt="Veriff vs Sumsub deepfake liveness detection 2026 -- identity verification buyer guide" title="Veriff vs Sumsub deepfake liveness detection 2026 -- identity verification buyer guide" width="1200" height="630" loading="eager" decoding="async" />
+
+## Why Basic Liveness Checks Fail Against High-Res Deepfakes
+
+Only 0.1% of people can reliably tell a real face from a deepfake, per an iProov study cited by [TruthScan](https://truthscan.com/blog/deepfake-statistics/). That failure rate is why deepfake detection has become a machine problem.
+
+Most vendors sell "liveness detection" as a single checkbox without disclosing whether it is passive (single selfie scored for texture and depth) or active (challenge-response flow requiring blink or head turn or spoken phrase). Passive-only liveness is the weakest layer. It scores a static frame against known spoof artifacts, and current deepfake generation renders those artifacts invisible to both the algorithm and the human reviewer behind it.
+
+Deepfake face-swap attack volume aimed specifically at identity verification bypasses rose **704%** in a single recent measurement period, per [Bright Defense](https://www.brightdefense.com/resources/deepfake-statistics/). That is the primary attack vector against onboarding flows that still rely on single-frame liveness.
+
+<img src="/images/blog/veriff-vs-sumsub-deepfake-detection-2026-2.webp" alt="Passive liveness check failing against high-res deepfake video -- KYC identity verification" title="Passive liveness check failing against high-res deepfake video -- KYC identity verification" width="1200" height="630" loading="lazy" decoding="async" />
+
+## Injection Attacks: The Real Threat Behind Liveness Bypass
+
+Most published guidance on deepfake identification still focuses on visual tells: unnatural blinking, warped earlobes, mismatched lighting. Those tells matter less every quarter because the attack itself moved upstream of the camera.
+
+A **Native Virtual Camera attack** injects a synthetic video feed directly into the verification pipeline, bypassing the physical camera sensor. The liveness check never sees a real face, spoofed or otherwise. It sees a rendered feed presented as if it came from a webcam.
+
+> Native Virtual Camera attacks spiked **2,665%** in a single recent measurement period, per [Stingrai](https://www.stingrai.io/blog/deepfake-statistics-2026).
+
+One financial institution documented **8,065** biometric injection-attack attempts in an eight-month window, per [Shufti Pro](https://shuftipro.com/blog/face-spoofing-and-liveness-bypass-the-real-threat-to-facial-recognition/) research. This is a recurring line item in fraud reports at any institution running high-volume digital onboarding.
+
+Detecting an injection attack requires signal that has nothing to do with the face itself: device fingerprinting, camera API validation, and sensor metadata checks. Vendors that only score the pixels are blind to this category.
+
+<img src="/images/blog/veriff-vs-sumsub-deepfake-detection-2026-3.webp" alt="Native virtual camera injection attack bypassing liveness check -- deepfake KYC fraud 2026" title="Native virtual camera injection attack bypassing liveness check -- deepfake KYC fraud 2026" width="1200" height="630" loading="lazy" decoding="async" />
+
+## Veriff vs Sumsub: Deepfake Detection Capability Compared
+
+Both vendors show up repeatedly in our [identity verification category](/categories/identity-verification) comparisons, procured specifically for deepfake resistance rather than basic document checks. Here is how they stack up.
+
+| Criteria | Veriff | Sumsub |
+|----------|--------|--------|
+| Per-check pricing | $0.80 | $1.35 |
+| Advertised accuracy | 99.6% claimed IDV accuracy | Not published as single metric |
+| Country coverage | 230+ countries and territories | Broad global coverage, regional compliance modules |
+| Pricing model | Essential, Plus, Enterprise tiers | Volume-based per-verification |
+| AML bundled | No (Risk Insights only) | Yes (integrated KYC/AML) |
+| Best fit | High-volume onboarding needing per-check cost control | Fintechs needing bundled KYC/AML plus fraud prevention |
+
+### Veriff
+
+Veriff markets a 99.6% accuracy figure and coverage across 230+ countries. It positions itself as the instant-decision option for onboarding flows that cannot tolerate manual review queues. The tiered structure (Essential, Plus, Enterprise) means the $0.80 headline price applies to the entry tier. Cost climbs with document-plus-biometric bundling.
+
+**Avoid if:** Your compliance team requires published, audited iBeta PAD certification numbers rather than internal accuracy claims before signing. Veriff's public pages emphasize speed and coverage more than third-party audit citations.
+
+### Sumsub
+
+[Sumsub](/vendors/sumsub) bundles identity verification with AML screening and fraud prevention in a single workflow. This matters for regulated fintechs that need KYC and transaction monitoring under one contract rather than stitched-together point solutions. At $1.35 per check, it costs more per verification than Veriff, but the bundled AML layer can reduce total vendor count in a compliance stack.
+
+**Avoid if:** You only need document-plus-liveness checks with no AML requirement. Paying for a bundled compliance stack you will not use is bad unit economics.
+
+<img src="/images/blog/veriff-vs-sumsub-deepfake-detection-2026-4.webp" alt="Veriff vs Sumsub per-check pricing comparison -- deepfake-resistant identity verification" title="Veriff vs Sumsub per-check pricing comparison -- deepfake-resistant identity verification" width="1200" height="630" loading="lazy" decoding="async" />
+
+## Passive vs Active Liveness: Which Actually Stops Deepfake Video
+
+Passive liveness scores a single frame or short clip against known spoof signatures such as screen glare and moire patterns. It is fast and low-friction, which is why so many basic liveness checks default to it, and why high-res deepfakes are engineered to beat it first.
+
+Active liveness demands a challenge the deepfake pipeline has to render in real time: turn your head left, blink twice, or read a randomized number aloud. Real-time rendering under challenge conditions is harder for current deepfake bypass tools than pre-rendering a static clip.
+
+[FaceOnLive](/vendors/faceonlive-identity-verification-software) positions its live liveness checks around deterring presentation attacks, with both on-prem and cloud deployment paths. A free trial reduces the friction of testing the claim before committing budget. [Meon eKYC](/vendors/meon-ekyc) ships lightweight liveness as part of a broader remote onboarding flow. It works for lower-risk consumer onboarding but should be stress-tested against high-res deepfake video before deploying in a high-assurance context.
+
+<img src="/images/blog/veriff-vs-sumsub-deepfake-detection-2026-5.webp" alt="Active challenge-response liveness vs passive deepfake detection -- biometric KYC 2026" title="Active challenge-response liveness vs passive deepfake detection -- biometric KYC 2026" width="1200" height="630" loading="lazy" decoding="async" />
+
+## Deepfake Audio Detection and Multi-Modal Verification
+
+Video is not the only channel fraudsters manipulate. Deepfake voice detection is becoming a parallel requirement as attackers pair synthesized face with cloned voice for call-center identity checks and voice-authenticated transactions.
+
+A study from the Idiap Research Institute (cited by [TruthScan](https://truthscan.com/blog/deepfake-statistics/)) found humans caught high-quality deepfake videos only **24.5%** of the time. People are **36%** less likely to catch deepfake video manipulation than deepfake image manipulation. Motion adds convincing detail a static image cannot fake as easily, which is why audio and video deepfake detection increasingly need to run together rather than as separate checks.
+
+Vendors building multi-modal verification (face, voice, and document chip data in one session) are better positioned against this than single-signal point solutions.
+
+<img src="/images/blog/veriff-vs-sumsub-deepfake-detection-2026-6.webp" alt="Multi-modal deepfake detection combining face and document chip verification" title="Multi-modal deepfake detection combining face and document chip verification" width="1200" height="630" loading="lazy" decoding="async" />
+
+## Document-Level Defenses: NFC Chips Beyond Optical Scanning
+
+A high-res deepfake attacking the selfie step is only half the fraud pipeline. The other half is a forged or manipulated document. NFC chip verification (reading the biometric chip in ePassports) puts a vendor above competitors relying solely on optical document scanning. The chip data is cryptographically signed and far harder to forge than a photo of a document.
+
+Regula and Alice Biometrics both lean into document-chip verification as a core differentiator rather than an add-on. Worth prioritizing if your fraud model assumes attackers already have access to high-quality document templates.
+
+> AI defensive tools lose **45 to 50%** of their detection effectiveness when moved from controlled lab conditions into real-world deployment, per [DeepStrike](https://deepstrike.io/blog/deepfake-statistics-2025).
+
+That lab-to-field drop is why we verify compliance claims against public certificates and documented audits rather than vendor-supplied accuracy percentages. A false-accept rate measured in a controlled iBeta environment tells you little about how a detection algorithm performs against a live, adversarial fraud ring using current-generation generative tools.
+
+The economics only make this worse. Tools capable of running a sophisticated liveness bypass now cost as little as **$5** to access, per Shufti Pro. Deepfakes already account for **40%** of biometric fraud attempts against modern identity systems. Gartner projects **30%** of enterprises will treat identity verification as unreliable in isolation by the end of this year.
+
+<img src="/images/blog/veriff-vs-sumsub-deepfake-detection-2026-7.webp" alt="NFC ePassport chip verification as defense against deepfake document fraud -- biometric KYC" title="NFC ePassport chip verification as defense against deepfake document fraud -- biometric KYC" width="1200" height="630" loading="lazy" decoding="async" />
+
+## Enterprise PKI-Backed Alternatives: Entrust and Jumio
+
+Not every buyer needs a deepfake detection tool built for consumer-scale onboarding volume. [Entrust Identity Verification](/vendors/entrust-identity-verification) combines PKI-backed credential issuance with identity verification, aimed at regulated enterprise environments where credential lifecycle management matters as much as the initial liveness check.
+
+[Jumio](/vendors/jumio) bundles ID verification, document verification, and AML screening into a single compliance-heavy onboarding stack. Both vendors list pricing as "Contact Us" only, which is the friction we flag consistently. It forces a sales call before an engineering team can validate anything against real test data.
+
+**Avoid if:** Your organization needs transparent, self-serve per-check pricing to model unit economics before a procurement cycle starts. Both Entrust and Jumio require a sales conversation before you see a number.
+
+## Practical Checklist: Deepfake-Resistant Vendor Evaluation
+
+For teams evaluating their own onboarding stack, these are the specific checks worth running against any vendor claiming deepfake detection:
+
+- Ask for the iBeta PAD Level 2 certificate directly, not a summary claim on a pricing page.
+- Confirm whether liveness is passive, active, or both. Passive-only is weaker against high-res deepfake video.
+- Test the vendor against a virtual-camera injection attempt in a sandbox before going live. This is now the dominant bypass vector.
+- Check for device and sensor fingerprinting as a layer independent of face-scoring. That is what catches injected feeds.
+- Look for NFC chip reading on ePassports as a defense against document-side manipulation paired with a deepfake selfie.
+- Evaluate audio deepfake detection if any part of your onboarding flow involves a voice channel.
+- Request real verification data, not sandbox demos, when trialing a free tier. Sandbox accuracy figures do not reflect adversarial field conditions.
+
+## Conclusion: Deepfake Detection Is a Layered Problem
+
+Spotting high-res deepfakes that fool basic liveness checks is no longer about training staff to notice unnatural blinking. It is about procuring a stack that combines active liveness, injection-attack detection, document chip verification, and audio deepfake detection. Then verifying every one of those claims against a certificate rather than a marketing page.
+
+Veriff and Sumsub both clear the bar on transparent pricing and documented coverage. Veriff favors cost efficiency at scale. Sumsub favors bundled AML compliance. Neither is a complete answer alone. Deepfake detection in 2026 is a layered defense, and the vendors worth six-figure budgets are the ones that publish audit-ready proof.
+
+[Compare all identity verification vendors →](/categories/identity-verification)
+
+---
+
+## FAQ
+
+### Can basic liveness checks detect high-res deepfakes in 2026?
+
+Passive single-frame liveness fails against current-generation deepfakes because the attacks are trained against those exact spoof signatures. Active challenge-response liveness combined with injection-attack detection catches significantly more than passive checks alone.
+
+### What is the difference between a deepfake detection tool and a liveness check?
+
+A liveness check confirms a real human is in front of the camera. A deepfake detection tool analyzes whether the media itself has been synthetically generated. Strong identity verification stacks run both simultaneously, not one instead of the other.
+
+### How do injection attacks bypass liveness checks without a physical mask or deepfake video on screen?
+
+Injection attacks use virtual camera software to feed pre-recorded or synthesized video directly into the verification pipeline, bypassing the physical camera sensor. Detecting this requires device fingerprinting and camera API validation, not just facial analysis.
+
+### Is deepfake video harder to detect than deepfake images?
+
+Yes. People are roughly 36% less likely to catch deepfake video manipulation compared to deepfake images. Motion adds convincing detail that a static frame cannot fake as easily.
+
+### Which identity verification vendor has the best deepfake detection in 2026?
+
+No single vendor covers every attack vector. Veriff and Sumsub both score well on documented liveness and fraud prevention. Regula and Alice Biometrics add NFC chip verification as an additional document-side defense against deepfake-paired document fraud.
+
+### Is paying for enterprise deepfake detection software worth it in 2026?
+
+For regulated industries facing high-value fraud exposure, yes. Deepfakes now account for around 40% of biometric fraud attempts, and a single successful bypass typically outweighs the per-verification price difference between budget and enterprise-grade vendors.
+
+### Can audio deepfake detection be added to an existing identity verification stack?
+
+Most modern identity verification platforms are modular enough to layer voice-based challenge-response checks alongside existing facial liveness. This matters as fraudsters pair synthesized video with cloned voice for call-center and voice-authenticated transactions.
+
+---
+
+**About the author:** James Whitfield is a Senior Security Analyst at PrimeBiometry, where he covers identity verification, KYC compliance, and biometric authentication platforms. He has evaluated more than 40 identity and fraud prevention vendors across financial services and regulated industries.
