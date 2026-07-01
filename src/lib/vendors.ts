@@ -89,7 +89,12 @@ export type Vendor = {
   pricing_summary: string;
   starting_price: StartingPrice | null;
   min_monthly_commitment: { amount: number; currency: string; raw: string } | null;
-  free_trial: { days: number | null } | null;
+  free_trial: {
+    days?: number | null;
+    verifications?: number | null;
+    requires_card?: boolean;
+    note?: string;
+  } | null;
   free_tier: { amount: number | null; unit: string | null } | null;
   has_free_trial: boolean;
   value_tier: ValueTier | null;
@@ -136,6 +141,7 @@ export type Vendor = {
     total_funding?: string;
     funding_stage?: string;
     funding_display?: boolean;
+    funding_source_url?: string | null;
   };
   region: Region | null;
   // editorial visuals
@@ -209,6 +215,33 @@ export const VALUE_TIER_LABELS: Record<ValueTier, string> = {
   mid: "Mid-market",
   enterprise: "Enterprise",
 };
+
+// Price-tier facet — order = display order (cheapest first)
+export const VALUE_TIER_FILTER_ORDER: ValueTier[] = ["budget", "mid", "enterprise"];
+export const VALUE_TIER_GLYPH: Record<ValueTier, string> = {
+  budget: "$",
+  mid: "$$",
+  enterprise: "$$$",
+};
+
+// Billing-model buckets — consolidate 6 raw pricing_model values into 4 buyer-facing options.
+// Each bucket maps to the pricing_model strings it should match.
+export type BillingBucketKey = "per_check" | "subscription" | "freemium" | "custom";
+export const BILLING_BUCKETS: Record<BillingBucketKey, { label: string; matches: PricingModel[] }> = {
+  per_check: { label: "Pay-per-verification", matches: ["per_check"] },
+  subscription: { label: "Subscription", matches: ["flat_monthly", "flat_yearly", "per_user"] },
+  freemium: { label: "Freemium", matches: ["freemium"] },
+  custom: { label: "Contact sales", matches: ["custom"] },
+};
+export const BILLING_FILTER_ORDER: BillingBucketKey[] = ["per_check", "subscription", "freemium", "custom"];
+
+export function getVendorBillingBucket(vendor: Vendor): BillingBucketKey | null {
+  const model = vendor.pricing_model;
+  for (const key of BILLING_FILTER_ORDER) {
+    if (BILLING_BUCKETS[key].matches.includes(model)) return key;
+  }
+  return null;
+}
 
 // SDK / Integration facet — keys match normalized vendor.sdk_types
 export const SDK_FILTER_LABELS: Record<string, string> = {
@@ -443,12 +476,65 @@ export function getPriceBand(vendor: Vendor): string | null {
   }
 }
 
-// Single-line price for DecisionCard. Prefers normalized starting_price,
-// falls back to raw vendor.pricing string when normalization is missing.
-export function getDecisionPriceLabel(vendor: Vendor): string {
+/**
+ * Canonical vendor-attribute read helpers.
+ *
+ * All render surfaces (DecisionCard, sidebar, VendorCard, homepage FAQ, blog inline)
+ * MUST go through these — never read `vendor.pricing` / `vendor.pricing_summary` / etc
+ * directly. This is the single-source-of-truth boundary that keeps every block on
+ * every page in sync.
+ */
+
+// Primary price display — used everywhere a single-line price is shown.
+// Reads starting_price.raw (authoritative) and falls back to pricing.
+export function getVendorPriceDisplay(vendor: Vendor): string {
   if (vendor.starting_price?.raw) return vendor.starting_price.raw;
   if (vendor.pricing) return vendor.pricing;
   return "Contact for pricing";
+}
+
+export function getVendorPriceTiers(vendor: Vendor) {
+  return vendor.website_data?.pricing_plans ?? [];
+}
+
+export function getVendorMinCommitment(vendor: Vendor): string | null {
+  const mc = vendor.min_monthly_commitment;
+  if (!mc) return null;
+  return mc.raw ?? `${mc.currency === "USD" ? "$" : mc.currency === "EUR" ? "€" : mc.currency === "GBP" ? "£" : ""}${mc.amount}/mo`;
+}
+
+// Trial display — returns { label, detail } for two-line rendering, or null when no trial.
+export function getVendorTrialDisplay(vendor: Vendor): { label: string; detail: string | null } | null {
+  if (!vendor.has_free_trial) return null;
+  const t = vendor.free_trial;
+  if (!t) return { label: "Free trial available", detail: null };
+
+  // Prefer explicit note when supplied (richest info)
+  if (t.note) return { label: "Free trial", detail: t.note };
+
+  const parts: string[] = [];
+  if (t.verifications) parts.push(`${t.verifications} free verifications`);
+  if (t.days) parts.push(`${t.days}-day trial`);
+  if (parts.length === 0) return { label: "Free trial available", detail: null };
+  return { label: "Free trial", detail: parts.join(" · ") };
+}
+
+export function getVendorFoundedYear(vendor: Vendor): number | null {
+  return vendor.website_data?.founded_year ?? vendor.company_data?.founded_year ?? null;
+}
+
+// Funding display — returns "$30M Series B" or null when not verified / hidden.
+export function getVendorFundingDisplay(vendor: Vendor): string | null {
+  const c = vendor.company_data;
+  if (!c || !c.funding_display) return null;
+  if (!c.total_funding) return null;
+  return c.funding_stage ? `${c.total_funding} ${c.funding_stage}` : c.total_funding;
+}
+
+// Compact starting amount for schema.org Offer / calculator / inline blog references.
+export function getVendorStartingAmount(vendor: Vendor): { amount: number; currency: string } | null {
+  if (!vendor.starting_price?.amount) return null;
+  return { amount: vendor.starting_price.amount, currency: vendor.starting_price.currency };
 }
 
 // Pick up to N compliance flags from the given order that are true on the vendor.

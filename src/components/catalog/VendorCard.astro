@@ -6,7 +6,10 @@ import {
   getCoverageLabel,
   getSourceAttribution,
   getValueTierLabel,
+  getVendorBillingBucket,
   getVendorIndustries,
+  getVendorPriceDisplay,
+  getVendorTrialDisplay,
   pickComplianceFlags,
   type Vendor,
 } from "../../lib/vendors";
@@ -34,14 +37,18 @@ const industryTokens = getVendorIndustries(vendor).join(",");
 const hasHighConfidenceRating = vendor.rating > 0 && vendor.reviews_count >= 10;
 const hasLowConfidenceRating = vendor.rating > 0 && vendor.reviews_count > 0 && vendor.reviews_count < 10;
 
-// Text fallback when no concrete price — strip the redundant tier info
+// Canonical price display — always through helper. When starting_price is null,
+// show tier-based fallback text; otherwise render the reconciled starting_price.raw.
 const pricingDisplay = vendor.starting_price === null
   ? vendor.value_tier === "enterprise"
     ? "Contact sales"
     : vendor.value_tier === "mid"
     ? "Pricing on request"
     : "Custom pricing"
-  : (vendor.pricing_summary || vendor.pricing);
+  : getVendorPriceDisplay(vendor);
+
+const trial = getVendorTrialDisplay(vendor);
+const billingBucket = getVendorBillingBucket(vendor) ?? "";
 
 // Only show specific regional/country coverage — suppress all "Global" claims (baseline for IDV)
 const showCoverage = coverage && !vendor.global_claim;
@@ -56,7 +63,9 @@ const showCoverage = coverage && !vendor.global_claim;
   data-name={vendor.name}
   data-featured={vendor.featured}
   data-pricing-model={vendor.pricing_model}
+  data-billing-bucket={billingBucket}
   data-value-tier={vendor.value_tier ?? ""}
+  data-starting-price={vendor.starting_price?.amount ?? ""}
   data-region={vendor.region ?? ""}
   data-sdks={sdkTokens}
   data-compliance={complianceTokens}
@@ -185,19 +194,19 @@ const showCoverage = coverage && !vendor.global_claim;
   </p>
 
   <!-- Tier + free trial — separate row, left-aligned -->
-  {(vendor.starting_price !== null && valueTier || vendor.has_free_trial) && (
+  {(vendor.starting_price !== null && valueTier || trial) && (
     <div class="flex flex-wrap items-center gap-1">
       {vendor.starting_price !== null && valueTier && (
         <span class="text-xs rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-zinc-600 dark:text-zinc-400">
           {valueTier}
         </span>
       )}
-      {vendor.has_free_trial && (
+      {trial && (
         <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400">
           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
             <path d="m229.66 77.66-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69 218.34 66.34a8 8 0 0 1 11.32 11.32Z"/>
           </svg>
-          Free trial
+          {trial.label}
         </span>
       )}
     </div>

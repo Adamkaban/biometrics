@@ -12,6 +12,9 @@ import {
   COMPLIANCE_LABELS,
   buildItemListSchema,
   getVendorIndustries,
+  getVendorBillingBucket,
+  VALUE_TIER_FILTER_ORDER,
+  BILLING_FILTER_ORDER,
   type IndustryBucketKey,
 } from "../../lib/vendors";
 import siteConfig from "../../../site.config";
@@ -42,6 +45,18 @@ const counts = {
     (Object.keys(INDUSTRY_BUCKETS) as IndustryBucketKey[]).map((k) => [
       k,
       vendors.filter((v) => getVendorIndustries(v).includes(k)).length,
+    ])
+  ),
+  tier: Object.fromEntries(
+    VALUE_TIER_FILTER_ORDER.map((k) => [
+      k,
+      vendors.filter((v) => v.value_tier === k).length,
+    ])
+  ),
+  billing: Object.fromEntries(
+    BILLING_FILTER_ORDER.map((k) => [
+      k,
+      vendors.filter((v) => getVendorBillingBucket(v) === k).length,
     ])
   ),
 };

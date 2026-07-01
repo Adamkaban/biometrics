@@ -4,7 +4,8 @@ import {
   DECISION_COMPLIANCE_CHECKLIST,
   vendorMeetsCompliance,
   getPriceBand,
-  getDecisionPriceLabel,
+  getVendorPriceDisplay,
+  getVendorTrialDisplay,
 } from "../../lib/vendors";
 import siteConfig from "../../../site.config";
 import Check from "phosphor-astro/Check.astro";
@@ -21,7 +22,8 @@ interface Props {
 const { vendor, verdict, bestFor, avoidIf, integrationComplexity } = Astro.props;
 
 const priceBand = getPriceBand(vendor);
-const priceLabel = getDecisionPriceLabel(vendor);
+const priceLabel = getVendorPriceDisplay(vendor);
+const trial = getVendorTrialDisplay(vendor);
 
 const integrationTone = {
   Low: "text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-900",
@@ -85,10 +87,13 @@ const complianceRow = DECISION_COMPLIANCE_CHECKLIST.map((item) => ({
         {integrationComplexity}
       </span>
     </div>
-    {vendor.has_free_trial && (
+    {trial && (
       <div>
         <p class="text-[11px] uppercase tracking-wide text-zinc-500 dark:text-zinc-400">Trial</p>
-        <p class="text-sm text-emerald-700 dark:text-emerald-400 mt-0.5">Free trial available</p>
+        <p class="text-sm text-emerald-700 dark:text-emerald-400 mt-0.5">{trial.label}</p>
+        {trial.detail && (
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{trial.detail}</p>
+        )}
       </div>
     )}
   </div>

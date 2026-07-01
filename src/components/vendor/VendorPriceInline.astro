@@ -1,0 +1,67 @@
+---
+/**
+ * Inline live-read of vendor attributes from vendors-normalized.json.
+ * Use inside blog MDX where a number is critical (comparison posts, pricing guides).
+ *
+ * Examples:
+ *   <VendorPriceInline slug="idenfy" field="display" />       → €1.25 per verification
+ *   <VendorPriceInline slug="idenfy" field="starting_amount" />→ €1.25
+ *   <VendorPriceInline slug="veriff" field="trial_days" />    → 15 days
+ *   <VendorPriceInline slug="sumsub" field="founded_year" />  → 2015
+ *
+ * Renders unknown/missing values as an empty span so build never breaks; the
+ * audit script catches missing data instead.
+ */
+import {
+  getVendorBySlug,
+  getVendorPriceDisplay,
+  getVendorStartingAmount,
+  getVendorFoundedYear,
+} from "../../lib/vendors";
+
+type Field =
+  | "display"
+  | "starting_amount"
+  | "trial_days"
+  | "trial_verifications"
+  | "founded_year";
+
+interface Props {
+  slug: string;
+  field: Field;
+  fallback?: string;
+}
+
+const { slug, field, fallback = "" } = Astro.props;
+const vendor = getVendorBySlug(slug);
+
+let text = fallback;
+
+if (vendor) {
+  switch (field) {
+    case "display":
+      text = getVendorPriceDisplay(vendor);
+      break;
+    case "starting_amount": {
+      const sp = getVendorStartingAmount(vendor);
+      if (sp) {
+        const symbol = sp.currency === "USD" ? "$" : sp.currency === "EUR" ? "€" : sp.currency === "GBP" ? "£" : "";
+        text = `${symbol}${sp.amount}`;
+      }
+      break;
+    }
+    case "trial_days":
+      if (vendor.free_trial?.days) text = `${vendor.free_trial.days} days`;
+      break;
+    case "trial_verifications":
+      if (vendor.free_trial?.verifications) text = `${vendor.free_trial.verifications} free verifications`;
+      break;
+    case "founded_year": {
+      const y = getVendorFoundedYear(vendor);
+      if (y) text = String(y);
+      break;
+    }
+  }
+}
+---
+<span class="font-mono">{text}</span>

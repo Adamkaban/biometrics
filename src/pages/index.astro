@@ -4,7 +4,7 @@ import VendorCard from "../components/catalog/VendorCard.astro";
 import HeroSearch from "../components/catalog/HeroSearch";
 import HomeExpertText from "../components/home/HomeExpertText.astro";
 import CalculatorCTA from "../components/home/CalculatorCTA.astro";
-import { vendors, getCategorySlug, categories, CATEGORY_SLUGS } from "../lib/vendors";
+import { vendors, getCategorySlug, categories, CATEGORY_SLUGS, getVendorBySlug, getVendorPriceDisplay } from "../lib/vendors";
 import { getCollection } from "astro:content";
 import {
   IdentificationCard,
@@ -34,10 +34,11 @@ const categoryData = [
 
 // FAQ stats — computed once, used in homepage FAQ answers
 const gdprCount = vendors.filter((v) => v.compliance_flags?.gdpr).length;
-const publishedPricingCount = vendors.filter((v) => {
-  const p = (v.pricing ?? "").toLowerCase();
-  return !p.includes("contact") && !p.includes("custom") && !p.includes("request") && p.trim() !== "";
-}).length;
+const publishedPricingCount = vendors.filter((v) => v.starting_price !== null).length;
+
+// Live-read canonical vendor prices for the FAQ answer — avoids hardcoding stale data
+const idenfyVendor = getVendorBySlug("idenfy");
+const idenfyPrice = idenfyVendor ? getVendorPriceDisplay(idenfyVendor) : "$0.80 per verification";
 
 // Lightweight data for HeroSearch island
 const searchVendors = vendors.map((v) => ({ name: v.name, slug: v.slug }));
@@ -91,7 +92,7 @@ const faqSchema = {
       name: "How much does KYC software cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "KYC software pricing ranges from $0.55 per verification (iDenfy pay-as-you-go) to $1.50+ per check at enterprise tier. Most platforms offer free trials or sandbox access. Monthly SaaS plans typically start at $299–$999/month for small teams. Pricing scales with verification volume, document types, and compliance certifications required.",
+        text: `KYC software pricing ranges from ${idenfyPrice} (iDenfy pay-as-you-go) to $1.50+ per check at enterprise tier. Most platforms offer free trials or sandbox access. Monthly SaaS plans typically start at $299–$999/month for small teams. Pricing scales with verification volume, document types, and compliance certifications required.`,
       },
     },
     {
@@ -158,7 +159,7 @@ const schema = {
 
 <BaseLayout
   title="Best Identity Verification & KYC Software 2026"
-  description="Compare 69 identity verification, KYC, and AML software vendors. Independent scores on price, accuracy, and compliance. iDenfy $0.55/check, Veriff 99.6% accuracy."
+  description={`Compare ${vendors.length} identity verification, KYC, and AML software vendors. Independent scores on price, accuracy, and compliance. iDenfy ${idenfyPrice}, Veriff 99.6% accuracy.`}
   canonicalUrl="https://primebiometry.com"
   schema={[schema, breadcrumbSchema, itemListSchema, faqSchema]}
 >
@@ -293,7 +294,7 @@ const schema = {
             How much does KYC software cost?
           </dt>
           <dd class="mt-2 text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            KYC software pricing ranges from $0.55 per verification (iDenfy pay-as-you-go) to
+            KYC software pricing ranges from {idenfyPrice} (iDenfy pay-as-you-go) to
             $1.50+ per check at enterprise tier. Of the {vendors.length} platforms we track, {publishedPricingCount} publish
             pricing transparently — the rest require a sales call for a quote. Monthly SaaS plans start
             at $299–$999/month for small teams and scale with verification volume, document types, and

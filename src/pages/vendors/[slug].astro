@@ -22,6 +22,11 @@ import {
   getActiveComplianceFlags,
   INDUSTRY_BUCKETS,
   SDK_FILTER_LABELS,
+  getVendorPriceDisplay,
+  getVendorTrialDisplay,
+  getVendorMinCommitment,
+  getVendorFundingDisplay,
+  getVendorFoundedYear,
 } from "../../lib/vendors";
 import type { Vendor } from "../../lib/vendors";
 import siteConfig from "../../../site.config";
@@ -58,14 +63,10 @@ function trimToWordBoundary(text: string, maxLen: number): string {
 }
 
 function pricingSummary(v: Vendor): string {
-  const raw = (v.pricing ?? "").toLowerCase();
-  if (raw.includes("free trial")) return "offers a free trial";
-  if (raw === "free") return "is free to use";
-  if (raw.startsWith("starting at") || raw.startsWith("from")) {
-    return `pricing ${v.pricing!.toLowerCase()}`;
-  }
-  if (raw.includes("contact")) return "uses contact-based enterprise pricing";
-  return v.pricing ? `pricing: ${v.pricing}` : "pricing on request";
+  const display = getVendorPriceDisplay(v);
+  const raw = display.toLowerCase();
+  if (raw.includes("contact") || raw.includes("quote")) return "uses contact-based enterprise pricing";
+  return `pricing ${display.toLowerCase()}`;
 }
 
 const metaDescription = entry.data.metaDescription
@@ -581,7 +582,7 @@ const faqSchema = {
             )}
 
             <!-- Company info -->
-            {(vendor.website_data?.headquarters || vendor.website_data?.founded_year || vendor.company_data?.total_funding || vendor.countries_count != null || vendor.global_claim) && (
+            {(vendor.website_data?.headquarters || getVendorFoundedYear(vendor) || getVendorFundingDisplay(vendor) || vendor.countries_count != null || vendor.global_claim) && (
               <div class="mt-6 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
                 {vendor.website_data?.headquarters && (
                   <p class="flex items-center gap-1.5">
@@ -589,16 +590,16 @@ const faqSchema = {
                     {vendor.website_data.headquarters}
                   </p>
                 )}
-                {vendor.website_data?.founded_year && (
+                {getVendorFoundedYear(vendor) && (
                   <p class="flex items-center gap-1.5">
                     <CalendarBlank width={14} height={14} class="shrink-0" aria-hidden="true" />
-                    Founded {vendor.website_data.founded_year}
+                    Founded {getVendorFoundedYear(vendor)}
                   </p>
                 )}
-                {vendor.company_data?.funding_display && vendor.company_data?.total_funding && (
+                {getVendorFundingDisplay(vendor) && (
                   <p class="flex items-center gap-1.5">
                     <Money width={14} height={14} class="shrink-0" aria-hidden="true" />
-                    {vendor.company_data.total_funding} {vendor.company_data.funding_stage}
+                    {getVendorFundingDisplay(vendor)}
                   </p>
                 )}
                 {vendor.countries_count != null ? (
@@ -628,34 +629,36 @@ const faqSchema = {
             )}
 
             <!-- Pricing summary -->
-            <div>
-              <p class="text-xs uppercase tracking-wide text-zinc-500 mb-1">
-                Pricing
-              </p>
-              <p class="text-lg font-mono font-semibold text-zinc-900 dark:text-zinc-100">
-                {vendor.pricing_summary || vendor.pricing}
-              </p>
-              {vendor.starting_price?.raw && vendor.starting_price.raw !== vendor.pricing_summary && (
-                <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                  Source: <span class="font-mono">{vendor.starting_price.raw}</span>
-                </p>
-              )}
-              {vendor.min_monthly_commitment && (
-                <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                  Min commitment: <span class="font-mono">${vendor.min_monthly_commitment.amount}/mo</span>
-                </p>
-              )}
-              {vendor.free_trial && (
-                <p class="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
-                  Free trial{vendor.free_trial.days ? ` (${vendor.free_trial.days} days)` : ""}
-                </p>
-              )}
-              {vendor.free_tier && (
-                <p class="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
-                  Free tier{vendor.free_tier.amount ? ` (${vendor.free_tier.amount} ${vendor.free_tier.unit ?? ""})` : ""}
-                </p>
-              )}
-            </div>
+            {(() => {
+              const priceDisplay = getVendorPriceDisplay(vendor);
+              const minCommit = getVendorMinCommitment(vendor);
+              const trial = getVendorTrialDisplay(vendor);
+              return (
+                <div>
+                  <p class="text-xs uppercase tracking-wide text-zinc-500 mb-1">
+                    Pricing
+                  </p>
+                  <p class="text-lg font-mono font-semibold text-zinc-900 dark:text-zinc-100">
+                    {priceDisplay}
+                  </p>
+                  {minCommit && (
+                    <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                      Min commitment: <span class="font-mono">{minCommit}</span>
+                    </p>
+                  )}
+                  {trial && (
+                    <p class="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
+                      {trial.label}{trial.detail ? ` — ${trial.detail}` : ""}
+                    </p>
+                  )}
+                  {vendor.free_tier && (
+                    <p class="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
+                      Free tier{vendor.free_tier.amount ? ` (${vendor.free_tier.amount} ${vendor.free_tier.unit ?? ""})` : ""}
+                    </p>
+                  )}
+                </div>
+              );
+            })()}
 
             <!-- Integration complexity -->
             <div>

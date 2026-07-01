@@ -4,6 +4,8 @@ type FacetCounts = {
   sdk: Record<string, number>;
   compliance: Record<string, number>;
   industry: Record<string, number>;
+  tier: Record<string, number>;
+  billing: Record<string, number>;
 };
 
 interface Props {
@@ -47,6 +49,21 @@ const INDUSTRY_OPTIONS: Array<{ key: string; label: string }> = [
   { key: "igaming", label: "Gambling / iGaming" },
   { key: "healthcare", label: "Healthcare" },
   { key: "ecommerce", label: "E-commerce" },
+];
+
+// Price tier facet — glyph pairs "$" / "$$" / "$$$" for scanability
+const TIER_OPTIONS: Array<{ key: string; label: string }> = [
+  { key: "budget", label: "Budget ($)" },
+  { key: "mid", label: "Mid-market ($$)" },
+  { key: "enterprise", label: "Enterprise ($$$)" },
+];
+
+// Billing model facet — bucketed 6 raw pricing_model values into 4 buyer-facing options
+const BILLING_OPTIONS: Array<{ key: string; label: string }> = [
+  { key: "per_check", label: "Pay-per-verification" },
+  { key: "subscription", label: "Subscription" },
+  { key: "freemium", label: "Freemium" },
+  { key: "custom", label: "Contact sales" },
 ];
 
 // Single-facet → dedicated landing-page URL maps
@@ -100,6 +117,8 @@ function applyFilters(): void {
   const selectedSdks = getSet(params, "sdk");
   const selectedCompliance = getSet(params, "compliance");
   const selectedIndustries = getSet(params, "industry");
+  const selectedTiers = getSet(params, "tier");
+  const selectedBilling = getSet(params, "billing");
 
   cards.forEach((card) => {
     let visible = true;
@@ -153,6 +172,16 @@ function applyFilters(): void {
       if (!match) visible = false;
     }
 
+    if (visible && selectedTiers.size > 0) {
+      const cardTier = card.dataset.valueTier ?? "";
+      if (!selectedTiers.has(cardTier)) visible = false;
+    }
+
+    if (visible && selectedBilling.size > 0) {
+      const cardBucket = card.dataset.billingBucket ?? "";
+      if (!selectedBilling.has(cardBucket)) visible = false;
+    }
+
     card.classList.toggle("hidden", !visible);
   });
 
@@ -169,6 +198,19 @@ function applyFilters(): void {
 
       if (sort === "name") {
         return (a.dataset.name ?? "").localeCompare(b.dataset.name ?? "");
+      }
+      if (sort === "price-asc" || sort === "price-desc") {
+        // Vendors without a starting_price sink to the bottom regardless of direction
+        const aRaw = a.dataset.startingPrice;
+        const bRaw = b.dataset.startingPrice;
+        const aHas = aRaw !== undefined && aRaw !== "";
+        const bHas = bRaw !== undefined && bRaw !== "";
+        if (!aHas && !bHas) return 0;
+        if (!aHas) return 1;
+        if (!bHas) return -1;
+        const aPrice = parseFloat(aRaw!);
+        const bPrice = parseFloat(bRaw!);
+        return sort === "price-asc" ? aPrice - bPrice : bPrice - aPrice;
       }
       return parseFloat(b.dataset.rating ?? "0") - parseFloat(a.dataset.rating ?? "0");
     });
@@ -192,6 +234,8 @@ function isAnyFilterActive(params: URLSearchParams): boolean {
     !!params.get("sdk") ||
     !!params.get("compliance") ||
     !!params.get("industry") ||
+    !!params.get("tier") ||
+    !!params.get("billing") ||
     !!params.get("search") ||
     (!!params.get("sort") && params.get("sort") !== "rating")
   );
@@ -204,10 +248,18 @@ function getDedicatedPageUrl(params: URLSearchParams): { href: string; label: st
   const sdks = Array.from(getSet(params, "sdk"));
   const compliance = Array.from(getSet(params, "compliance"));
   const industries = Array.from(getSet(params, "industry"));
+  const tiers = Array.from(getSet(params, "tier"));
+  const billing = Array.from(getSet(params, "billing"));
 
+  // Include tier/billing in total so the dedicated-page suggestion suppresses
+  // when combined with them (those don't have SEO landing pages).
   const totalSelections =
-    categorySlugs.length + sdks.length + compliance.length + industries.length;
+    categorySlugs.length + sdks.length + compliance.length + industries.length +
+    tiers.length + billing.length;
   if (totalSelections !== 1) return null;
+
+  // Only category/industry/sdk/compliance map to dedicated pages
+  if (tiers.length || billing.length) return null;
 
   if (categorySlugs.length === 1) {
     const slug = categorySlugs[0];
@@ -349,6 +401,8 @@ export default function VendorFilters({ categories, initialParams, counts }: Pro
   const selectedSdks = getSet(params, "sdk");
   const selectedCompliance = getSet(params, "compliance");
   const selectedIndustries = getSet(params, "industry");
+  const selectedTiers = getSet(params, "tier");
+  const selectedBilling = getSet(params, "billing");
   const minRating = ratingParam || "";
   const trialOnly = trialParam === "true";
   const anyActive = isAnyFilterActive(params);
@@ -454,6 +508,30 @@ export default function VendorFilters({ categories, initialParams, counts }: Pro
         ))}
       </CollapsibleSection>
 
+      <CollapsibleSection title="Price Tier" defaultOpen>
+        {TIER_OPTIONS.map(({ key, label }) => (
+          <FacetCheckbox
+            key={key}
+            checked={selectedTiers.has(key)}
+            onChange={(next) => toggleInSet("tier", key, next)}
+            label={label}
+            count={counts.tier[key] ?? 0}
+          />
+        ))}
+      </CollapsibleSection>
+
+      <CollapsibleSection title="Billing Model" defaultOpen={false}>
+        {BILLING_OPTIONS.map(({ key, label }) => (
+          <FacetCheckbox
+            key={key}
+            checked={selectedBilling.has(key)}
+            onChange={(next) => toggleInSet("billing", key, next)}
+            label={label}
+            count={counts.billing[key] ?? 0}
+          />
+        ))}
+      </CollapsibleSection>
+
       <CollapsibleSection title="Integration / Deployment" defaultOpen={false}>
         {SDK_OPTIONS.map(({ key, label }) => (
           <FacetCheckbox
@@ -499,6 +577,8 @@ export default function VendorFilters({ categories, initialParams, counts }: Pro
           className="w-full text-sm border border-zinc-200 dark:border-zinc-700 rounded-md px-3 py-1.5 bg-white dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300"
         >
           <option value="rating">Top Rated</option>
+          <option value="price-asc">Price: low → high</option>
+          <option value="price-desc">Price: high → low</option>
           <option value="name">Name A–Z</option>
         </select>
       </CollapsibleSection>

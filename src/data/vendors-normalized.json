@@ -24,7 +24,7 @@
       "rating": 4.7,
       "reviews_count": 3,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -135,7 +135,8 @@
         "company_size_range": "51-200",
         "total_funding": "$30.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -166,7 +167,7 @@
       "rating": 5,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -299,7 +300,8 @@
         "company_size_range": "51-200",
         "total_funding": "$16.0M",
         "funding_stage": "Series A",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -330,7 +332,7 @@
       "rating": 3.5,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -459,7 +461,8 @@
         "company_size_range": "5,001+",
         "total_funding": "$40.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -490,7 +493,7 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Get Price",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -685,7 +688,8 @@
       "company_data": {
         "total_funding": "$350.0M",
         "funding_stage": "Series B",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -716,7 +720,7 @@
       "rating": 5,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Get Price",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -855,7 +859,8 @@
       "company_data": {
         "total_funding": "$30.0M",
         "funding_stage": "Series A",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -1079,7 +1084,8 @@
         "total_funding": "$15.0M",
         "funding_stage": "IPO",
         "funding_display": false,
-        "_funding_display_original": true
+        "_funding_display_original": true,
+        "funding_source_url": null
       },
       "region": "MENA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -1360,7 +1366,8 @@
       "company_data": {
         "employee_count": 6,
         "company_size_range": "1-10",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -1391,10 +1398,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Paid",
+      "pricing": "From €10/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "€10/month",
+      "starting_price": {
+        "amount": 10,
+        "currency": "EUR",
+        "period": "monthly",
+        "raw": "€10/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -1490,7 +1502,8 @@
         "company_size_range": "201-500",
         "total_funding": "$630.0M",
         "funding_stage": "Seed",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -1521,14 +1534,14 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Contact vendor for pricing",
+      "pricing": "From $0",
       "pricing_model": "freemium",
-      "pricing_summary": "From $29/mo",
+      "pricing_summary": "$0",
       "starting_price": {
-        "amount": 29,
+        "amount": 0,
         "currency": "USD",
-        "period": "monthly",
-        "raw": "$29/mo"
+        "period": "per_check",
+        "raw": "$0"
       },
       "min_monthly_commitment": null,
       "free_trial": {
@@ -1722,7 +1735,8 @@
         "free_trial_url": "https://account.zunoy.com/register?product=uptime&utm_source=www.google.com&utm_medium=referral&utm_campaign=organic&zutm_product=uptime&zutm_page=home&zutm_url=zunoy.com%2Fuptime"
       },
       "company_data": {
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -1754,7 +1768,7 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Contact vendor",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -1948,7 +1962,8 @@
       "company_data": {
         "total_funding": "$1.1B",
         "funding_stage": "IPO",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -1979,9 +1994,9 @@
       "rating": 4.5,
       "reviews_count": 68,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "From $250/month (12-month minimum)",
       "pricing_model": "flat_monthly",
-      "pricing_summary": "From $250/month",
+      "pricing_summary": "Starting at $250/month (12-month minimum)",
       "starting_price": {
         "amount": 250,
         "currency": "USD",
@@ -2132,8 +2147,9 @@
         "company_size_range": "51-200",
         "total_funding": "$200.0M",
         "funding_stage": "Series D",
-        "funding_display": true,
-        "_founded_year_original": 2024
+        "funding_display": false,
+        "_founded_year_original": 2024,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -2178,7 +2194,7 @@
       "rating": 4.4,
       "reviews_count": 16,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -2328,7 +2344,8 @@
         "company_size_range": "501-1,000",
         "total_funding": "$47.2M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -2359,7 +2376,7 @@
       "rating": 4.7,
       "reviews_count": 28,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -2504,7 +2521,8 @@
         "company_size_range": "51-200",
         "total_funding": "$3.0M",
         "funding_stage": "Private Equity",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -2549,7 +2567,7 @@
       "rating": 4.8,
       "reviews_count": 15,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -2609,7 +2627,8 @@
         "total_funding": "$1.3M",
         "funding_stage": "Series B",
         "funding_display": false,
-        "_funding_display_original": true
+        "_funding_display_original": true,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -2654,9 +2673,9 @@
       "rating": 4.3,
       "reviews_count": 5,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "From $35k/year",
       "pricing_model": "flat_yearly",
-      "pricing_summary": "From $35,000/year",
+      "pricing_summary": "$35k/year",
       "starting_price": {
         "amount": 35000,
         "currency": "USD",
@@ -2770,7 +2789,8 @@
         "company_size_range": "1,001-5,000",
         "total_funding": "$35.0M",
         "funding_stage": "Series C",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -2801,9 +2821,9 @@
       "rating": 5,
       "reviews_count": 3,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "From $300 / month",
       "pricing_model": "per_check",
-      "pricing_summary": "From $300/mo",
+      "pricing_summary": "$300 / month",
       "starting_price": {
         "amount": 300,
         "currency": "USD",
@@ -2929,7 +2949,8 @@
         "company_size_range": "51-200",
         "total_funding": "$13.0M",
         "funding_stage": "Private Equity",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -2960,7 +2981,7 @@
       "rating": 5,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -3026,7 +3047,8 @@
         "company_size_range": "201-500",
         "total_funding": "$15.0M",
         "funding_stage": "Series D",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3057,7 +3079,7 @@
       "rating": 4,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -3130,7 +3152,8 @@
         "company_size_range": "51-200",
         "total_funding": "$25.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3161,7 +3184,7 @@
       "rating": 5,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -3246,7 +3269,8 @@
         "company_size_range": "51-200",
         "total_funding": "$23.2M",
         "funding_stage": "Series B",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3278,7 +3302,7 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Get Price",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -3393,7 +3417,8 @@
         "company_size_range": "51-200",
         "total_funding": "$1.6M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3424,7 +3449,7 @@
       "rating": 4.5,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "per_check",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -3484,7 +3509,8 @@
         "company_size_range": "11-50",
         "total_funding": "$200.0M",
         "funding_stage": "Seed",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3517,7 +3543,7 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Usage Based, Per Month",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -3579,7 +3605,8 @@
         "company_size_range": "11-50",
         "total_funding": "$8.5B",
         "funding_stage": "Pre-Seed",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3700,7 +3727,8 @@
         "total_funding": "$30.0M",
         "funding_stage": "Seed",
         "funding_display": false,
-        "_funding_display_original": true
+        "_funding_display_original": true,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3732,10 +3760,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "$1200 Per User, Per Month",
+      "pricing": "From $1200/user/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$1200/user/month",
+      "starting_price": {
+        "amount": 1200,
+        "currency": "USD",
+        "period": "per_user",
+        "raw": "$1200/user/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -3793,7 +3826,8 @@
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "funding_stage": "Acquired",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -3914,7 +3948,8 @@
         "company_size_range": "201-500",
         "total_funding": "$150.0M",
         "funding_stage": "Private Equity",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4053,7 +4088,8 @@
         "company_size_range": "201-500",
         "total_funding": "$150.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4085,10 +4121,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Contact vendor for pricing",
+      "pricing": "From $49/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$49/month",
+      "starting_price": {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$49/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -4186,7 +4227,8 @@
         "employee_count_range": "501-1,000",
         "company_size_range": "501-1,000",
         "total_funding": "$50.0M",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4219,7 +4261,7 @@
       "rating": 5,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Paid",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -4312,7 +4354,8 @@
         "total_funding": "$476.0M",
         "funding_stage": "Private Equity",
         "funding_display": false,
-        "_funding_display_original": true
+        "_funding_display_original": true,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4344,10 +4387,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Contact vendor for pricing",
+      "pricing": "From $29/month",
       "pricing_model": "flat_monthly",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$29/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -4444,7 +4492,8 @@
         "employee_count_range": "2-10",
         "company_size_range": "1-10",
         "total_funding": "$435.0M",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4476,7 +4525,7 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Get Price",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -4532,7 +4581,8 @@
         "total_funding": "$18.0M",
         "funding_stage": "Seed",
         "funding_display": false,
-        "_funding_display_original": true
+        "_funding_display_original": true,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4628,7 +4678,8 @@
         "company_size_range": "11-50",
         "total_funding": "$1.0B",
         "funding_stage": "Series A",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4659,10 +4710,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Starting price €1, Per Year",
+      "pricing": "From €1,/year",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "€1,/year",
+      "starting_price": {
+        "amount": 1,
+        "currency": "EUR",
+        "period": "yearly",
+        "raw": "€1,/year"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -4731,7 +4787,8 @@
         "employee_count_range": "11-50",
         "company_size_range": "11-50",
         "funding_stage": "Seed",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4816,7 +4873,8 @@
         "employee_count_range": "11-50",
         "company_size_range": "11-50",
         "total_funding": "$67.2M",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4848,10 +4906,15 @@
       "rating": 2,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Paid",
+      "pricing": "From £10/user/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "£10/user/month",
+      "starting_price": {
+        "amount": 10,
+        "currency": "GBP",
+        "period": "per_user",
+        "raw": "£10/user/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -4954,7 +5017,8 @@
         "company_size_range": "11-50",
         "total_funding": "$7.0M",
         "funding_stage": "Seed",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -4986,7 +5050,7 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Paid",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -5094,7 +5158,8 @@
         "company_size_range": "11-50",
         "total_funding": "$165.0M",
         "funding_stage": "Acquired",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -5126,10 +5191,15 @@
       "rating": 5,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Contact vendor for pricing",
+      "pricing": "From $29/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$29/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": {
         "days": 14
@@ -5236,7 +5306,8 @@
         "company_size_range": "51-200",
         "total_funding": "$12.8M",
         "funding_stage": "Series B",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -5268,9 +5339,9 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Starting at $7.50/month",
+      "pricing": "From $7.50 / transaction",
       "pricing_model": "per_check",
-      "pricing_summary": "From $7.5/check",
+      "pricing_summary": "$7.50 / transaction",
       "starting_price": {
         "amount": 7.5,
         "currency": "USD",
@@ -5368,7 +5439,8 @@
         "company_size_range": "501-1,000",
         "total_funding": "$371.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -5400,10 +5472,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "$5000 Flat Rate, Per Year",
+      "pricing": "From $5000/year",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$5000/year",
+      "starting_price": {
+        "amount": 5000,
+        "currency": "USD",
+        "period": "yearly",
+        "raw": "$5000/year"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -5483,7 +5560,8 @@
         "company_size_range": "11-50",
         "total_funding": "$1.0B",
         "funding_stage": "Private Equity",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -5515,10 +5593,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Contact vendor for pricing",
+      "pricing": "From $49/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$49/month",
+      "starting_price": {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$49/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -5618,7 +5701,8 @@
         "founded_year": 2018,
         "employee_count_range": "11-50",
         "company_size_range": "11-50",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -5735,7 +5819,8 @@
         "founded_year": 2008,
         "total_funding": "$217.6B",
         "funding_stage": "Acquired",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -5767,10 +5852,15 @@
       "rating": 4.5,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Get Price",
+      "pricing": "From $29 per user/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29 per user/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "per_user",
+        "raw": "$29 per user/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -5872,7 +5962,8 @@
         "total_funding": "$9.4M",
         "funding_stage": "IPO",
         "funding_display": false,
-        "_funding_display_original": true
+        "_funding_display_original": true,
+        "funding_source_url": null
       },
       "region": "APAC",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -5906,14 +5997,14 @@
       "rating": 4.9,
       "reviews_count": 216,
       "rating_breakdown": null,
-      "pricing": "Starting at €1.20/verification",
+      "pricing": "From €1.25 per verification",
       "pricing_model": "per_check",
-      "pricing_summary": "From €1.20/verification",
+      "pricing_summary": "€1.25 per verification",
       "starting_price": {
-        "amount": 1.2,
+        "amount": 1.25,
         "currency": "EUR",
         "period": "per_check",
-        "raw": "€1.20 per verification"
+        "raw": "€1.25 per verification"
       },
       "min_monthly_commitment": {
         "amount": 125,
@@ -5921,7 +6012,10 @@
         "raw": "€125/mo minimum"
       },
       "free_trial": {
-        "days": 14
+        "days": null,
+        "verifications": 500,
+        "requires_card": false,
+        "note": "500 free identity verifications, no credit card required"
       },
       "free_tier": null,
       "has_free_trial": true,
@@ -6120,7 +6214,8 @@
         "company_size_range": "51-200",
         "total_funding": "$1.1M",
         "funding_stage": "Private Equity",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -6170,10 +6265,15 @@
       "rating": 5,
       "reviews_count": 68,
       "rating_breakdown": null,
-      "pricing": "Free trial available",
+      "pricing": "From $99/mo",
       "pricing_model": "flat_monthly",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$99/mo",
+      "starting_price": {
+        "amount": 99,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$99/mo"
+      },
       "min_monthly_commitment": null,
       "free_trial": {
         "days": null
@@ -6424,8 +6524,9 @@
         "company_size_range": "51-200",
         "total_funding": "$196.0M",
         "funding_stage": "Series D",
-        "funding_display": true,
-        "_founded_year_original": 2007
+        "funding_display": false,
+        "_founded_year_original": 2007,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -6472,7 +6573,7 @@
       "rating": 4.5,
       "reviews_count": 23,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -6609,7 +6710,8 @@
         "employee_count_range": "501-1,000",
         "company_size_range": "501-1,000",
         "funding_stage": "Acquired",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -6655,7 +6757,7 @@
       "rating": 4.3,
       "reviews_count": 33,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -6874,7 +6976,8 @@
         "employee_count_range": "51-200",
         "company_size_range": "51-200",
         "total_funding": "$20.0M",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -6908,14 +7011,14 @@
       "rating": 4.4,
       "reviews_count": 60,
       "rating_breakdown": null,
-      "pricing": "Free trial available",
+      "pricing": "From $0.80 per verification",
       "pricing_model": "per_check",
-      "pricing_summary": "From $0.8/check",
+      "pricing_summary": "$0.80 per verification",
       "starting_price": {
         "amount": 0.8,
         "currency": "USD",
         "period": "per_check",
-        "raw": "$0.80\nper verification"
+        "raw": "$0.80 per verification"
       },
       "min_monthly_commitment": {
         "amount": 49,
@@ -6923,7 +7026,10 @@
         "raw": "$49/mo starter minimum"
       },
       "free_trial": {
-        "days": 15
+        "days": 15,
+        "verifications": null,
+        "requires_card": false,
+        "note": "15-day free trial"
       },
       "free_tier": null,
       "has_free_trial": true,
@@ -7161,7 +7267,8 @@
       "company_data": {
         "total_funding": "$1.5B",
         "funding_stage": "Series C",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -7209,9 +7316,9 @@
       "rating": 4.8,
       "reviews_count": 80,
       "rating_breakdown": null,
-      "pricing": "Free trial available",
+      "pricing": "From €0.50–€1.40 per verification",
       "pricing_model": "per_check",
-      "pricing_summary": "From €0.50/verification",
+      "pricing_summary": "€0.50–€1.40 per verification",
       "starting_price": {
         "amount": 0.5,
         "currency": "EUR",
@@ -7418,7 +7525,8 @@
         "company_size_range": "51-200",
         "total_funding": "$26.4M",
         "funding_stage": "Private Equity",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -7465,7 +7573,7 @@
       "rating": 4.4,
       "reviews_count": 111,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "flat_monthly",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -7635,7 +7743,8 @@
         "company_size_range": "501-1,000",
         "total_funding": "$100.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -7685,14 +7794,14 @@
       "rating": 4.6,
       "reviews_count": 112,
       "rating_breakdown": null,
-      "pricing": "Free trial available",
+      "pricing": "From $1.35 per verification",
       "pricing_model": "per_check",
-      "pricing_summary": "From $1.35/check",
+      "pricing_summary": "$1.35 per verification",
       "starting_price": {
         "amount": 1.35,
         "currency": "USD",
         "period": "per_check",
-        "raw": "$1.35\n\nper verification"
+        "raw": "$1.35 per verification"
       },
       "min_monthly_commitment": {
         "amount": 149,
@@ -7700,7 +7809,10 @@
         "raw": "$149/mo minimum"
       },
       "free_trial": {
-        "days": 14
+        "days": 14,
+        "verifications": 50,
+        "requires_card": false,
+        "note": "14-day free trial with 50 free checks"
       },
       "free_tier": null,
       "has_free_trial": true,
@@ -7878,7 +7990,8 @@
         "company_size_range": "501-1,000",
         "total_funding": "$30.0M",
         "funding_stage": "Series B",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -7924,10 +8037,15 @@
       "rating": 5,
       "reviews_count": 10,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "From $29/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$29/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -8135,7 +8253,8 @@
         "founded_year": 2005,
         "employee_count_range": "11-50",
         "company_size_range": "11-50",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -8181,10 +8300,15 @@
       "rating": 4.5,
       "reviews_count": 20,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "From $20/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$20/month",
+      "starting_price": {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$20/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -8388,7 +8512,8 @@
         "founded_year": 2012,
         "total_funding": "$12.3M",
         "funding_stage": "Series B",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -8435,14 +8560,14 @@
       "rating": 5,
       "reviews_count": 4,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "From $19/month",
       "pricing_model": "flat_monthly",
-      "pricing_summary": "From $99/mo",
+      "pricing_summary": "$19/month",
       "starting_price": {
-        "amount": 99,
+        "amount": 19,
         "currency": "USD",
         "period": "monthly",
-        "raw": "$99/mo"
+        "raw": "$19/month"
       },
       "min_monthly_commitment": null,
       "free_trial": {
@@ -8652,7 +8777,8 @@
       },
       "company_data": {
         "total_funding": "$1.0B",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -8684,7 +8810,7 @@
       "rating": 4.5,
       "reviews_count": 22,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -8845,7 +8971,8 @@
         "company_size_range": "51-200",
         "total_funding": "$10.0M",
         "funding_stage": "Private Equity",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -8890,7 +9017,7 @@
       "rating": 4.3,
       "reviews_count": 5,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -9043,7 +9170,8 @@
         "free_trial_url": "https://biometricvendor.com/free-trial"
       },
       "company_data": {
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -9076,7 +9204,7 @@
       "rating": 4.8,
       "reviews_count": 38,
       "rating_breakdown": null,
-      "pricing": "Free trial available",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -9245,7 +9373,8 @@
         "employee_count_range": "201-500",
         "company_size_range": "201-500",
         "funding_stage": "Series D",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -9295,7 +9424,7 @@
       "rating": 5,
       "reviews_count": 52,
       "rating_breakdown": null,
-      "pricing": "Free trial available",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -9411,7 +9540,8 @@
         "company_size_range": "51-200",
         "total_funding": "$100.0M",
         "funding_stage": "Private Equity",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -9451,14 +9581,14 @@
       "rating": 4.5,
       "reviews_count": 56,
       "rating_breakdown": null,
-      "pricing": "Free",
+      "pricing": "From $0 / per check",
       "pricing_model": "per_check",
-      "pricing_summary": "From $0.95/check",
+      "pricing_summary": "$0 / per check",
       "starting_price": {
-        "amount": 0.95,
+        "amount": 0,
         "currency": "USD",
         "period": "per_check",
-        "raw": "$0.95 per check"
+        "raw": "$0 / per check"
       },
       "min_monthly_commitment": null,
       "free_trial": null,
@@ -9681,8 +9811,9 @@
         "company_size_range": "201-500",
         "total_funding": "$20.0M",
         "funding_stage": "Series A",
-        "funding_display": true,
-        "_founded_year_original": 2016
+        "funding_display": false,
+        "_founded_year_original": 2016,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -9728,9 +9859,9 @@
       "rating": 4.7,
       "reviews_count": 59,
       "rating_breakdown": null,
-      "pricing": "Starting at £250.00",
+      "pricing": "From £15",
       "pricing_model": "custom",
-      "pricing_summary": "From £15/mo",
+      "pricing_summary": "from £15",
       "starting_price": {
         "amount": 15,
         "currency": "GBP",
@@ -9963,7 +10094,8 @@
         "company_size_range": "51-200",
         "total_funding": "$196.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -10009,7 +10141,7 @@
       "rating": 4.5,
       "reviews_count": 15,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "per_user",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -10174,7 +10306,8 @@
         "company_size_range": "11-50",
         "total_funding": "$4.0M",
         "funding_stage": "Series B",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -10220,14 +10353,14 @@
       "rating": 2.5,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "From $0.45 Per Verification",
       "pricing_model": "per_check",
-      "pricing_summary": "From $0.45/check",
+      "pricing_summary": "$0.45 Per Verification",
       "starting_price": {
         "amount": 0.45,
         "currency": "USD",
         "period": "per_check",
-        "raw": "$0.45\nPer Verification"
+        "raw": "$0.45 Per Verification"
       },
       "min_monthly_commitment": null,
       "free_trial": {
@@ -10484,7 +10617,8 @@
         "company_size_range": "11-50",
         "total_funding": "$7.0M",
         "funding_stage": "Series B",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -10515,9 +10649,9 @@
       "rating": 5,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Free for candidates",
+      "pricing": "From $199/month",
       "pricing_model": "per_user",
-      "pricing_summary": "From $199/mo",
+      "pricing_summary": "$199/month",
       "starting_price": {
         "amount": 199,
         "currency": "USD",
@@ -10679,7 +10813,8 @@
         "founded_year": 2007,
         "total_funding": "$127.9M",
         "funding_stage": "Series D",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": null,
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -10711,7 +10846,7 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -10922,7 +11057,8 @@
         "company_size_range": "51-200",
         "total_funding": "$1.0B",
         "funding_stage": "Acquired",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "EU",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -10953,10 +11089,15 @@
       "rating": 0,
       "reviews_count": 0,
       "rating_breakdown": null,
-      "pricing": "Contact for pricing",
+      "pricing": "From $29/month",
       "pricing_model": "flat_monthly",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$29/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -11168,7 +11309,8 @@
         "company_size_range": "51-200",
         "total_funding": "$50.0M",
         "funding_stage": "Series A",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -11202,10 +11344,15 @@
       "rating": 4.5,
       "reviews_count": 1,
       "rating_breakdown": null,
-      "pricing": "Contact vendor",
+      "pricing": "From $29/month",
       "pricing_model": "custom",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$29/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -11418,7 +11565,8 @@
         "company_size_range": "11-50",
         "total_funding": "$1.0M",
         "funding_stage": "Series A",
-        "funding_display": false
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -11452,10 +11600,15 @@
       "rating": 5,
       "reviews_count": 3,
       "rating_breakdown": null,
-      "pricing": "Contact vendor",
+      "pricing": "From $29/month",
       "pricing_model": "flat_monthly",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$29/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -11657,7 +11810,8 @@
         "total_funding": "$1.4M",
         "funding_stage": "Seed",
         "funding_display": false,
-        "_founded_year_original": 2024
+        "_founded_year_original": 2024,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -11690,9 +11844,9 @@
       "rating": 4.8,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Contact vendor",
+      "pricing": "From €0.25 per check",
       "pricing_model": "per_check",
-      "pricing_summary": "From €0.25/check",
+      "pricing_summary": "€0.25 per check",
       "starting_price": {
         "amount": 0.25,
         "currency": "EUR",
@@ -11895,7 +12049,8 @@
         "company_size_range": "51-200",
         "total_funding": "$50.0M",
         "funding_stage": "Series D",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -11929,10 +12084,15 @@
       "rating": 4.3,
       "reviews_count": 2,
       "rating_breakdown": null,
-      "pricing": "Contact vendor",
+      "pricing": "From $29/month",
       "pricing_model": "flat_monthly",
-      "pricing_summary": "Contact Sales",
-      "starting_price": null,
+      "pricing_summary": "$29/month",
+      "starting_price": {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly",
+        "raw": "$29/month"
+      },
       "min_monthly_commitment": null,
       "free_trial": null,
       "free_tier": null,
@@ -12110,7 +12270,8 @@
         "employee_count_range": "1,001-5,000",
         "company_size_range": "1,001-5,000",
         "total_funding": "$10.0M",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -12141,7 +12302,7 @@
       "rating": 4.4,
       "reviews_count": 43,
       "rating_breakdown": null,
-      "pricing": "Contact",
+      "pricing": "Contact vendor for pricing",
       "pricing_model": "custom",
       "pricing_summary": "Contact Sales",
       "starting_price": null,
@@ -12271,7 +12432,8 @@
         "company_size_range": "1,001-5,000",
         "total_funding": "$400.0M",
         "funding_stage": "Acquired",
-        "funding_display": true
+        "funding_display": false,
+        "funding_source_url": null
       },
       "region": "NA",
       "last_normalized_at": "2026-06-17T21:54:38.810Z",
@@ -12292,5 +12454,6 @@
         }
       ]
     }
-  ]
+  ],
+  "last_reconciled_at": "2026-07-01T18:25:33.671Z"
 }
